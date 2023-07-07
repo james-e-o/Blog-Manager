@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+ 
+/* why does body styling not work in react.js */
+}
+
+div.App {
+    height: 100vh;
+    background-color: white;
+}
+
+header {
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    height: 8%;
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(194, 194, 194, 0.884);
+}
+
+header h1{
+    padding: 10px 25px;
+    color: gray;
+    font-weight:bolder;
+    font-size: xx-large;
+}
+h1 span {
+    /* color: rgb(209, 209, 209); */
+    /* color: rgb(151, 13, 13); */
+    color: blueviolet;
+}
+nav {
+    padding: 8px 25px;
+}
+
+nav ul{
+    list-style: none;
+    display: none;
+    justify-content: space-between;
+}
+nav li {
+    border-radius: 35px;
+    font-weight: 100;
+    /* box-shadow: inset; */
+    border: 1px solid gray;
+    padding: 5px 7px;
+    color: gray;
+    margin: 5px;
+}
+nav li:last-child {
+    border-radius: 35px;
+    font-weight: 100;
+    color: white;
+    background-color: gray;
+    padding: 5px 11px;
+    margin: 5px;
+}
+
+main{
+    
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+}
+.main .h1-tag{
+    padding: 20px;
+}
+.main h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    margin-top: 50px;
+    padding: 0px 10px;
+    font-size: 35px;
+    text-align: center;
+}
+.main h1 span {
+    font-family: sans-serif;
+    color: rgb(180, 180, 180);
+    /* color: royalblue; */
+}
+.main div.section{
+    color: white;
+    height:fit-content;
+    margin-top: 5px;
+    background-color: black;
+}
+div.section p{
+    padding: 30px;
+    font-weight: 200;
+    font-size: large;
+}
+div.section p button{
+    margin-top: 15px;
+    font-size: large;
+    padding: 6px 10px;
+    font-weight: 200;
+    border-radius: 25px;
+    background-color: white;
+}
+
+@media (min-width: 640px) {
+    nav ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav svg {
+        display: none;
+    }
+  }
