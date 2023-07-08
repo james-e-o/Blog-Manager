@@ -1,4 +1,5 @@
 import './App.css';
+import cms from './contents/cms-img.png'
 
 function App() {
   return (
@@ -16,12 +17,21 @@ function App() {
       <main>
         <div className='main'>
           <div className='h1-tag'>
-            <h1>Create <span>Manage and Publish </span>engaging blog contents <span>with our cms</span>.</h1>
-          </div>
-          <div className='section'>
-            <p>
+            <h1>Create<span>, Manage & Publish </span>engaging blog contents <span>with our cms</span>.</h1>
+            <p id='cta'>
             Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.<br />
             <button>Start now</button>
+            </p>
+          </div>
+          <div className='txt-content'>
+            <p id='cta'>
+            Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.<br />
+            <button>Start now</button>
+            </p>
+          </div>
+          <div className='img-content'>
+            <p id='img'>
+              <img src={cms} alt="cms-img" />
             </p>
           </div>
         </div>

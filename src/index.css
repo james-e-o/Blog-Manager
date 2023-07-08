@@ -11,8 +11,8 @@ body{
 }
 
 div.App {
-    height: 100vh;
-    background-color: white;
+    /* height: 100vh; */
+    background-color:rgb(250, 250, 250);
 }
 
 header {
@@ -21,14 +21,14 @@ header {
     justify-content: space-between;
     height: 8%;
     background-color: white;
-    box-shadow: 0px 1px 4px rgba(194, 194, 194, 0.884);
+    box-shadow: 0px 1px 4px rgba(128, 128, 128, 0.747);
 }
 
 header h1{
     padding: 10px 25px;
     color: gray;
     font-weight:bolder;
-    font-size: xx-large;
+    font-size: x-large;
 }
 h1 span {
     /* color: rgb(209, 209, 209); */
@@ -64,6 +64,7 @@ nav li:last-child {
 
 main{
     
+    
 }
 .main {
     display: flex;
@@ -75,36 +76,61 @@ main{
     padding: 20px;
 }
 .main h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-weight: 900;
     margin-top: 50px;
     padding: 0px 10px;
     font-size: 35px;
-    text-align: center;
+    /* text-align: center; */
+    color: orange;
 }
 .main h1 span {
     font-family: sans-serif;
     color: rgb(180, 180, 180);
     /* color: royalblue; */
 }
-.main div.section{
-    color: white;
-    height:fit-content;
+div.h1-tag p#cta{
     margin-top: 5px;
-    background-color: black;
-}
-div.section p{
-    padding: 30px;
+    padding: 10px;
     font-weight: 200;
     font-size: large;
+    line-height: 24px;
+    text-align: center;
 }
-div.section p button{
-    margin-top: 15px;
+div.h1-tag p button{
+    margin-top: 30px;
     font-size: large;
-    padding: 6px 10px;
+    outline: none;
+    border: none;
+    padding: 8px 15px;
     font-weight: 200;
     border-radius: 25px;
+    background-color: blueviolet;
+    color: white;
+}
+.main div.txt-content{
+    color: black;
+    height:fit-content;
+    margin-top: 5px;
+    /* background-color: rgb(88, 88, 88); */
+    background-color: rgb(255, 232, 188);
+}
+
+.main div.img-content{
+    color: white;
+    height:fit-content;
+    /* background-color: rgb(255, 224, 165); */
     background-color: white;
+}
+div.img-content p#img{
+    padding: 30px;
+    height: 260px;
+    width: 350px;
+    float: right;
+}
+p#img img{
+    height: 100%;
+    width: 100%;
 }
 
 @media (min-width: 640px) {
