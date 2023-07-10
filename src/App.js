@@ -23,19 +23,38 @@ function App() {
             <button>Start now</button>
             </p>
           </div>
-          <div className='txt-content'>
-            <p id='cta'>
-            Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.<br />
-            <button>Start now</button>
-            </p>
-          </div>
           <div className='img-content'>
             <p id='img'>
               <img src={cms} alt="cms-img" />
             </p>
           </div>
+          <div className='features'>
+            <p id='feature1'>
+              <h4>Feature 1</h4>
+              <article>
+              Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.
+              </article>
+            </p>
+          </div>
+          <div className='reviews'>
+            <p id='rev 1'>
+              <figure></figure>
+              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+            </p>
+            <p id='rev 2'>
+              <figure></figure>
+              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div>
+            </p>
+            <p id='rev 3'>
+              <figure></figure>
+              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div>
+            </p>
+          </div>
         </div>
       </main>
+      <footer style={{backgroundColor:'blueviolet'}}>
+        <p id='copyright'>Copyright &#169;2023, James.E.O | All rights reserved.</p>
+      </footer>
     </div>
   );
 }

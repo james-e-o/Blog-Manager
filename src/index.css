@@ -76,51 +76,45 @@ main{
     padding: 20px;
 }
 .main h1 {
-    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: sans-serif;
     font-weight: 900;
     margin-top: 50px;
     padding: 0px 10px;
     font-size: 35px;
     /* text-align: center; */
-    color: orange;
+    color: transparent;
+    background-image: linear-gradient(to right, orange, blueviolet);
+    background-clip: text;
 }
 .main h1 span {
-    font-family: sans-serif;
-    color: rgb(180, 180, 180);
+    /* font-family: sans-serif; */
+    color: rgb(172, 172, 172);
     /* color: royalblue; */
 }
 div.h1-tag p#cta{
-    margin-top: 5px;
+    margin-top: 20px;
     padding: 10px;
     font-weight: 200;
     font-size: large;
-    line-height: 24px;
+    line-height: 25px;
     text-align: center;
 }
 div.h1-tag p button{
-    margin-top: 30px;
+    margin-top: 35px;
     font-size: large;
     outline: none;
     border: none;
     padding: 8px 15px;
     font-weight: 200;
     border-radius: 25px;
-    background-color: blueviolet;
-    color: white;
-}
-.main div.txt-content{
     color: black;
-    height:fit-content;
-    margin-top: 5px;
-    /* background-color: rgb(88, 88, 88); */
-    background-color: rgb(255, 232, 188);
+    background-image: linear-gradient(to bottom, rgb(228, 228, 228), rgb(124, 123, 123));
 }
-
 .main div.img-content{
-    color: white;
+    background-color: rgb(255, 209, 122);
     height:fit-content;
-    /* background-color: rgb(255, 224, 165); */
-    background-color: white;
+    /* transform: rotate(23deg); */
+    background-color: rgb(203, 157, 247);
 }
 div.img-content p#img{
     padding: 30px;
@@ -132,6 +126,45 @@ p#img img{
     height: 100%;
     width: 100%;
 }
+.main div.txt-content{
+    color: black;
+    height:fit-content;
+    margin-top: 5px;
+    /* background-color: rgb(255, 209, 122); */
+}
+.main div.reviews{
+    background-color: white;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* transform: rotate(23deg); */
+}
+.reviews p {
+    /* display: flex; */
+    /* justify-content:space-between; */
+    /* text-align: center; */
+    margin: 15px 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px rgba(173, 173, 173, 0.747);
+}
+p figure {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(197, 138, 253);
+}
+p figure ~ div {
+    display: inline-block;
+    padding: 5px;
+    color: green;
+}
+
+
 
 @media (min-width: 640px) {
     nav ul{
