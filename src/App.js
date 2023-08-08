@@ -1,6 +1,11 @@
 import './App.css';
 import Svg from './Components/icon';
 import cms from './contents/cms-img.png'
+// app.js
+process.env.CI = 'false';
+
+// Your code here
+
 
 function App() {
   return (
