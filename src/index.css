@@ -12,7 +12,7 @@ body{
 }
 div.App {
     /* height: 100vh; */
-    background-color:rgb(233, 233, 233);
+    /* background-color:rgb(233, 233, 233); */
 }
 hr {
     margin: 0px auto;
@@ -24,6 +24,7 @@ hr {
 }
 
 header {
+    z-index: 4;
     position: sticky;
     top: 0px;
     left: 0px;
@@ -33,7 +34,7 @@ header {
     justify-content: space-between;
     height: 8%;
     background-color: white;
-    /* background-color:rgb(210, 140, 253); */
+    background-color:rgb(238, 238, 238);
     box-shadow: 0px 1px 4px rgba(128, 128, 128, 0.747);
 }
 
@@ -86,8 +87,25 @@ main{
     justify-content: center; */
 }
 .main .h1-tag{
+    background-image: url(./contents/skripten1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 20px;
+    backdrop-filter: opacity(0.8);
+    position: relative;
 }
+
+.opaque {
+    background-color: white;
+    position: absolute;
+    bottom: 0%;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    opacity: 0.8;
+    z-index: -1;
+}
+
 .main h1 {
     font-family: sans-serif;
     font-weight: 900;
@@ -98,6 +116,7 @@ main{
     color: transparent;
     background-image: linear-gradient(to right, orange, blueviolet);
     background-clip: text;
+    z-index: 3;
 }
 .main h1 span {
     /* font-family: sans-serif; */
@@ -111,6 +130,7 @@ div.h1-tag p#cta{
     font-size: large;
     line-height: 25px;
     text-align: center;
+    z-index: 3;
 }
 div.h1-tag p button{
     margin-top: 35px;
@@ -199,7 +219,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
+
 #copyright {
     text-align: center;
     margin-top: 15px;
