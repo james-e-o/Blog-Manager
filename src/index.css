@@ -24,33 +24,31 @@ hr {
 }
 
 header {
-    z-index: 4;
     position: sticky;
     top: 0px;
     left: 0px;
     right: 0px;
-    padding:20px;
+    padding:8px 10px;
     display: flex;
     justify-content: space-between;
-    height: 8%;
-    background-color: white;
-    background-color:rgb(238, 238, 238);
-    box-shadow: 0px 1px 4px rgba(128, 128, 128, 0.747);
+    background-color:blueviolet;
+    border-bottom: 1px solid rgb(170, 154, 185);
 }
 
 header h1{
-    padding: 10px 25px;
-    color: gray;
+    padding: 10px 20px;
+    color: #ffb325;
     font-weight:bolder;
     font-size: x-large;
 }
 h1 span {
     /* color: rgb(209, 209, 209); */
     /* color: rgb(151, 13, 13); */
-    color: blueviolet;
+    color: darkturquoise;
 }
 nav {
-    padding: 8px 25px;
+    padding: 8px 18px;
+    display: flex;
 }
 
 nav ul{
@@ -60,20 +58,35 @@ nav ul{
 }
 nav li {
     border-radius: 35px;
-    font-weight: 100;
+    font-weight: 600;
+    line-height: normal;
+    list-style: none;
+    border: 1px solid white;
+    padding: 5px 11px;
+    color:rgb(238, 238, 238);
+    margin:0px 15px;
+    /* background-color: rgb(51, 170, 51); */
+}
+nav ul li {
+    border-radius: 35px;
+    font-weight: 600;
+    line-height: normal;
     /* box-shadow: inset; */
     border: 1px solid gray;
-    padding: 5px 7px;
-    color: gray;
+    padding: 5px 17px;
+    color: #ffb325;
     margin: 5px;
 }
-nav li:last-child {
+nav ul li:last-child {
     border-radius: 35px;
-    font-weight: 100;
+    font-weight: 300;
     color: white;
     background-color: gray;
     padding: 5px 11px;
     margin: 5px;
+}
+nav svg {
+    fill: rgb(238, 238, 238);
 }
 
 main{
@@ -87,23 +100,8 @@ main{
     justify-content: center; */
 }
 .main .h1-tag{
-    background-image: url(./contents/skripten1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+   background-color: blueviolet;
     padding: 20px;
-    backdrop-filter: opacity(0.8);
-    position: relative;
-}
-
-.opaque {
-    background-color: white;
-    position: absolute;
-    bottom: 0%;
-    top: 0%;
-    left: 0%;
-    right: 0%;
-    opacity: 0.8;
-    z-index: -1;
 }
 
 .main h1 {
@@ -113,10 +111,10 @@ main{
     padding: 0px 10px;
     font-size: 35px;
     text-align: center;
-    color: transparent;
+    color: #ffb325;
+    /* color: transparent;
     background-image: linear-gradient(to right, orange, blueviolet);
-    background-clip: text;
-    z-index: 3;
+    background-clip: text; */
 }
 .main h1 span {
     /* font-family: sans-serif; */
@@ -130,7 +128,6 @@ div.h1-tag p#cta{
     font-size: large;
     line-height: 25px;
     text-align: center;
-    z-index: 3;
 }
 div.h1-tag p button{
     margin-top: 35px;
@@ -146,7 +143,6 @@ div.h1-tag p button{
 .main div.img-content{
     background-color: rgb(255, 209, 122);
     height:fit-content;
-    /* transform: rotate(23deg); */
     background-color: rgb(255, 255, 255);
 }
 div.img-content p#img{
