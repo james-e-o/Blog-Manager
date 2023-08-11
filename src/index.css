@@ -1,6 +1,29 @@
 /* import pic from './contents/github profile pic.jpeg' */
-
-
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Righteous&family=Six+Caps&display=swap');
+@font-face {
+    font-family: "LuckiestGuy";
+    src: url("./contents/Luckiest_Guy/LuckiestGuy-Regular.ttf");
+}
+@font-face {
+    font-family: "BrunoAce";
+    src: url("./contents/Bruno_Ace/BrunoAce-Regular.ttf");
+}
+@font-face {
+    font-family: "Pacifico";
+    src: url("./contents/Pacifico/Pacifico-Regular.ttf");
+}
+@font-face {
+    font-family: "RubikMoonrocks";
+    src: url("./contents/Rubik_Moonrocks/RubikMoonrocks-Regular.ttf");
+}
+@font-face {
+    font-family: "SupermercadoOne";
+    src: url("./contents/Supermercado_One/SupermercadoOne-Regular.ttf");
+}
+@font-face {
+    font-family: "TitanOne";
+    src: url("./contents/Titan_One/TitanOne-Regular.ttf");
+}
 
 * {
     padding: 0;
@@ -27,6 +50,7 @@ hr {
 }
 
 header {
+    height: fit-content;
     position: sticky;
     top: 0px;
     left: 0px;
@@ -39,19 +63,23 @@ header {
 }
 
 header h1{
+    font-family:Pacifico;
     padding: 10px 20px;
-    color: rgb(255, 223, 39);
+    color: rgb(255, 197, 8);
     font-weight:bolder;
     font-size: x-large;
 }
 h1 span {
+    font-family: Pacifico;
     /* color: rgb(209, 209, 209); */
     /* color: rgb(151, 13, 13); */
     color: darkturquoise;
 }
 nav {
+    position: relative;
     padding: 8px 18px;
-    display: flex;
+    display: block;
+
 }
 
 nav ul{
@@ -59,16 +87,16 @@ nav ul{
     display: none;
     justify-content: space-between;
 }
-nav li {
-    border-radius: 35px;
+nav button {
+    display: inline-block;
+    border-radius: 36px;
     font-weight: 600;
-    line-height: normal;
-    list-style: none;
     border: 1px solid white;
-    padding: 5px 11px;
+    padding: 8px 15px;
     color:white;
     margin:0px 15px;
-    /* background-color: rgb(51, 170, 51); */
+    background-color: transparent;
+    font-size: medium;
 }
 nav ul li {
     border-radius: 35px;
@@ -89,6 +117,8 @@ nav ul li:last-child {
     margin: 5px;
 }
 nav svg {
+    position: relative;
+    top: 5px;
     fill: white;
 }
 
@@ -108,12 +138,13 @@ main{
 }
 
 .main h1 {
+    line-height: 180%;
     font-family:Helvetica, sans-serif;
     font-weight: 900;
-    margin-top: 50px;
+    margin-top: 25px;
     padding: 0px 10px;
-    font-size: 35px;
-    color: white;
+    font-size: 41px;
+    color: rgb(97, 253, 136);
     /* color: transparent;
     background-image: linear-gradient(to right, orange, blueviolet);
     background-clip: text; */
