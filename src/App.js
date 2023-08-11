@@ -5,7 +5,7 @@ import cms from './contents/cms-img.png'
 function App() {
   const [isActive, setIsactive]=useState(false)
   useEffect(()=>{
-    const ScrollYvalue = 450
+    const ScrollYvalue = 465
     window.addEventListener('scroll',(e)=>{
       if (window.scrollY>ScrollYvalue){
         setIsactive(true)
@@ -33,7 +33,7 @@ function App() {
           <div className='h1-tag'>
             <h1>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
-            Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.<br />
+            With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
             <button>Get started</button>
             </p>
           </div>

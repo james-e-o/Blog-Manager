@@ -169,15 +169,17 @@ main{
 }
 .main h1 span {
     font-family: Capriola;
-    color: rgb(172, 172, 172);
+    color: rgb(201, 201, 201);
 }
 div.h1-tag p#cta{
     margin-top: 20px;
     padding: 10px;
-    font-weight: 400;
+    /* font-family: sans-serif; */
+    font-weight: 200;
     font-size: large;
     line-height: 25px;
     text-align: center;
+    color: white;
 }
 div.h1-tag p button{
     margin-top: 35px;
