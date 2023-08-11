@@ -1,16 +1,23 @@
 import './App.css';
+import React, { useState, useEffect, useRef } from 'react';
 import Svg from './Components/icon';
 import cms from './contents/cms-img.png'
-// app.js
-// process.env.CI = 'false';
-
-// Your code here
-
 
 function App() {
+  const [headbg, setHeadbg]=useState("")
+  const refHeader =useRef('')
+  useEffect(()=>{
+    const ScrollYvalue = 448
+    window.addEventListener('scroll',(e)=>{
+      if (window.scrollY>=ScrollYvalue){
+        console.log('happy')
+        // refHeader.current.classlist.toggle('header-scroll')
+      } 
+    })
+  })
   return (
     <div className="App">
-      <header className="App-header">
+      <header ref={refHeader} className="App-header">
        <h1>Skript_<span>n</span></h1>
        <nav>
        <button>&#9998; Write</button>
@@ -24,7 +31,7 @@ function App() {
       <main>
         <div className='main'>
           <div className='h1-tag'>
-            <h1>Write<span>, Manage & Publish </span>engaging articles <span>with us</span>.</h1>
+            <h1>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
             Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.<br />
             <button>Get started</button>
@@ -36,12 +43,12 @@ function App() {
             </p>
           </div>
           <div className='features'>
-            <p id='feature1'>
+            <div id='feature1'>
               <h4>Feature 1</h4>
               <article>
               Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.
               </article>
-            </p>
+            </div>
           </div>
           <div className='reviews'>
             <div className='rev'>
@@ -60,7 +67,7 @@ function App() {
         </div>
       </main>
       <footer>
-        <h3 style={{fontFamily:'Trebuchet MS'}}>Skript__n</h3><br /> 
+        <h3>Skript_n</h3><br /> 
         {/* <hr/> */}
         <div className='footdiv'>
           <div> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. </div>
