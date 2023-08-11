@@ -1,9 +1,12 @@
 /* import pic from './contents/github profile pic.jpeg' */
+
+
+
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body{
@@ -31,13 +34,13 @@ header {
     padding:8px 10px;
     display: flex;
     justify-content: space-between;
-    background-color:blueviolet;
+    background-color:slateblue;
     border-bottom: 1px solid rgb(170, 154, 185);
 }
 
 header h1{
     padding: 10px 20px;
-    color: #ffb325;
+    color: rgb(255, 223, 39);
     font-weight:bolder;
     font-size: x-large;
 }
@@ -63,7 +66,7 @@ nav li {
     list-style: none;
     border: 1px solid white;
     padding: 5px 11px;
-    color:rgb(238, 238, 238);
+    color:white;
     margin:0px 15px;
     /* background-color: rgb(51, 170, 51); */
 }
@@ -86,11 +89,11 @@ nav ul li:last-child {
     margin: 5px;
 }
 nav svg {
-    fill: rgb(238, 238, 238);
+    fill: white;
 }
 
 main{
-    font-family: tahoma;
+    font-family:  Trebuchet MS, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
 }
 .main {
@@ -100,18 +103,17 @@ main{
     justify-content: center; */
 }
 .main .h1-tag{
-   background-color: blueviolet;
+   background-color: slateblue;
     padding: 20px;
 }
 
 .main h1 {
-    font-family: sans-serif;
+    font-family:Helvetica, sans-serif;
     font-weight: 900;
     margin-top: 50px;
     padding: 0px 10px;
     font-size: 35px;
-    text-align: center;
-    color: #ffb325;
+    color: white;
     /* color: transparent;
     background-image: linear-gradient(to right, orange, blueviolet);
     background-clip: text; */
