@@ -4,20 +4,25 @@ import Svg from './Components/icon';
 import cms from './contents/cms-img.png'
 
 function App() {
-  const [headbg, setHeadbg]=useState("")
+  const [isActive, setIsactive]=useState(false)
   const refHeader =useRef('')
   useEffect(()=>{
     const ScrollYvalue = 448
     window.addEventListener('scroll',(e)=>{
-      if (window.scrollY>=ScrollYvalue){
-        console.log('happy')
+      if (window.scrollY>ScrollYvalue){
+        // console.log('happy')
+        setIsactive(!isActive)
         // refHeader.current.classlist.toggle('header-scroll')
       } 
     })
   })
+
+
   return (
+    
     <div className="App">
-      <header ref={refHeader} className="App-header">
+
+      <header ref={refHeader} className={isActive ? "App-header active" : "App-header"}>
        <h1>Skript_<span>n</span></h1>
        <nav>
        <button>&#9998; Write</button>

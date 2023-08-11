@@ -66,12 +66,12 @@ header {
     border-bottom: 1px solid rgb(170, 154, 185);
 }
 
-.header-scroll {
+.active {
     background-color: white;
 }
 
 .nav-scroll {
-    
+
 }
 
 header h1{
@@ -108,7 +108,7 @@ nav button {
     color:white;
     margin:0px 15px;
     background-color: transparent;
-    font-size: large;
+    font-size: medium;
     font-family: monospace;
 }
 nav ul li {
@@ -149,7 +149,7 @@ main{
 }
 
 .main h1 {
-    line-height: 160%;
+    line-height: 130%;
     font-family:  RubikMoonrocks;
     /* font-family: sans-serif; */
     font-weight: 900;
