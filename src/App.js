@@ -1,32 +1,27 @@
 import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
-import Svg from './Components/icon';
 import cms from './contents/cms-img.png'
 
 function App() {
   const [isActive, setIsactive]=useState(false)
-  const refHeader =useRef('')
   useEffect(()=>{
-    const ScrollYvalue = 448
+    const ScrollYvalue = 450
     window.addEventListener('scroll',(e)=>{
       if (window.scrollY>ScrollYvalue){
-        // console.log('happy')
-        setIsactive(!isActive)
-        // refHeader.current.classlist.toggle('header-scroll')
-      } 
+        setIsactive(true)
+      }else {setIsactive(false)}
     })
-  })
+  },[])
 
-
+  
   return (
-    
     <div className="App">
 
-      <header ref={refHeader} className={isActive ? "App-header active" : "App-header"}>
+      <header className={isActive? "header active":"header"}>
        <h1>Skript_<span>n</span></h1>
-       <nav>
-       <button>&#9998; Write</button>
-       <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 64 64" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg"><path d="M21.86,18.73H9.18a2,2,0,0,1,0-4H21.86a2,2,0,0,1,0,4Z"/><path d="M54.82,18.73H34.88a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,34H9.18a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,49.27H30.07a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/></svg>
+       <nav >
+       <button className={isActive?"nav-button":""}>&#9998; Write</button>
+       <svg className={isActive?"nav-svg":""} data-name="Layer 1" id="Layer_1" viewBox="0 0 64 64" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg"><path d="M21.86,18.73H9.18a2,2,0,0,1,0-4H21.86a2,2,0,0,1,0,4Z"/><path d="M54.82,18.73H34.88a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,34H9.18a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,49.27H30.07a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/></svg>
        <ul>
           <li>Sign up</li>
           <li>Login</li>
