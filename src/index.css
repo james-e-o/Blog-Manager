@@ -2,48 +2,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Righteous&family=Six+Caps&display=swap');
 @font-face {
     font-family: "LuckiestGuy";
-    src: url("./contents/Luckiest_Guy/LuckiestGuy-Regular.ttf");
+    src: url("./contents/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf");
 }
 @font-face {
     font-family: "BrunoAce";
-    src: url("./contents/Bruno_Ace/BrunoAce-Regular.ttf");
+    src: url("./contents/fonts/Bruno_Ace/BrunoAce-Regular.ttf");
 }
 @font-face {
     font-family: "Pacifico";
-    src: url("./contents/Pacifico/Pacifico-Regular.ttf");
+    src: url("./contents/fonts/Pacifico/Pacifico-Regular.ttf");
 }
 @font-face {
     font-family: "RubikMoonrocks";
-    src: url("./contents/Rubik_Moonrocks/RubikMoonrocks-Regular.ttf");
+    src: url("./contents/fonts/Rubik_Moonrocks/RubikMoonrocks-Regular.ttf");
 }
 @font-face {
     font-family: "SupermercadoOne";
-    src: url("./contents/Supermercado_One/SupermercadoOne-Regular.ttf");
+    src: url("./contents/fonts/Supermercado_One/SupermercadoOne-Regular.ttf");
 }
 @font-face {
     font-family: "TitanOne";
-    src: url("./contents/Titan_One/TitanOne-Regular.ttf");
+    src: url("./contents/fonts/Titan_One/TitanOne-Regular.ttf");
 }
 @font-face {
     font-family: "Capriola";
-    src: url("./contents/Capriola/Capriola-Regular.ttf");
+    src: url("./contents/fonts/Capriola/Capriola-Regular.ttf");
 }
 
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    font-family:Capriola;
+    /* font-family:Capriola; */
 }
 
-body{
- 
-/* why does body styling not work in react.js */
-}
-div.App {
-    /* height: 100vh; */
-    /* background-color:rgb(233, 233, 233); */
-}
 hr {
     margin: 0px auto;
     color: black;
@@ -53,230 +45,7 @@ hr {
     background: black;
 }
 
-.header {
-    height: fit-content;
-    position: sticky;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    padding:8px 10px;
-    display: flex;
-    justify-content: space-between;
-    background-color:slateblue;
-    border-bottom: 1px solid rgb(170, 154, 185);
-    transition: background-color 280ms ease;
-}
 
-.active {
-    background-color: white;
-}
-
-header h1{
-    font-family:Pacifico;
-    padding: 10px 20px;
-    color: rgb(255, 197, 8);
-    font-weight:bolder;
-    font-size: x-large;
-}
-header h1 span {
-    font-family: Pacifico;
-    /* color: rgb(209, 209, 209); */
-    /* color: rgb(151, 13, 13); */
-    color: darkturquoise;
-}
-nav {
-    position: relative;
-    padding: 8px 18px;
-    display: block;
-    color:white;
-}
-
-nav ul{
-    list-style: none;
-    display: none;
-    justify-content: space-between;
-}
-nav button {
-    display: inline-block;
-    border-radius: 36px;
-    font-weight: 600;
-    border: 1px solid white;
-    padding: 6px 12px;
-    color:white;
-    margin:0px 15px;
-    background-color: transparent;
-    font-size: medium;
-    font-family: monospace;
-    transition: color 200ms ease, border 200ms ease;
-}
-.nav-button {
-    color: black;
-    border: 1px solid black;
-}
-nav ul li {
-    border-radius: 35px;
-    font-weight: 600;
-    line-height: normal;
-    /* box-shadow: inset; */
-    border: 1px solid gray;
-    padding: 5px 17px;
-    color: #ffb325;
-    margin: 5px;
-}
-nav ul li:last-child {
-    border-radius: 35px;
-    font-weight: 300;
-    color: white;
-    background-color: gray;
-    padding: 5px 11px;
-    margin: 5px;
-}
-nav svg {
-    position: relative;
-    top: 5px;
-    fill: white;
-    transition: fill 200ms ease;
-}
-.nav-svg {
-    fill: black;
-}
-
-main{
-    font-family:  Trebuchet MS, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
-}
-.main {
-    display: flex;
-    flex-direction: column;
-}
-.main .h1-tag{
-   background-color: slateblue;
-    padding: 20px;
-}
-
-.main h1 {
-    line-height: 145%;
-    font-family:  RubikMoonrocks;
-    /* font-family: sans-serif; */
-    font-weight: 900;
-    margin-top: 25px;
-    padding: 0px 10px;
-    font-size: 41px;
-    color: rgb(97, 253, 136);
-    /* color: transparent;
-    background-image: linear-gradient(to right, orange, blueviolet);
-    background-clip: text; */
-}
-.main h1 span {
-    font-family: Capriola;
-    color: rgb(201, 201, 201);
-}
-div.h1-tag p#cta{
-    margin-top: 20px;
-    padding: 10px;
-    /* font-family: sans-serif; */
-    font-weight: 200;
-    font-size: large;
-    line-height: 25px;
-    text-align: center;
-    color: white;
-}
-div.h1-tag p button{
-    margin-top: 35px;
-    font-size: large;
-    font-weight: 400;
-    outline: none;
-    border: none;
-    padding: 8px 15px;
-    font-weight: 200;
-    border-radius: 25px;
-    color: black;
-    background-image: linear-gradient(to bottom,rgb(255, 216, 145),rgb(142, 129, 226));
-}
-.main div.img-content{
-    background-color: rgb(255, 209, 122);
-    height:fit-content;
-    background-color: rgb(255, 255, 255);
-}
-div.img-content p#img{
-    padding: 30px;
-    height: 260px;
-    width: 350px;
-    float: right;
-}
-p#img img{
-    height: 100%;
-    width: 100%;
-}
-.main div.txt-content{
-    color: black;
-    height:fit-content;
-    margin-top: 5px;
-    /* background-color: rgb(255, 209, 122); */
-}
-.main div.reviews{
-    background-color: white;
-    height:fit-content;
-    display: flex;
-    flex-direction: column;
-   align-items: end;
-}
-.reviews div.rev {
-    width: 70vw;
-    margin: 15px 20px;
-    padding: 15px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 1px 4px rgba(173, 173, 173, 0.747);
-}
-div.rev figure {
-    padding: 5px;
-    border-radius: 50%;
-    width: 40px;
-    background-repeat: no-repeat;
-    /* background-clip: content-box; */
-    background-size: cover;
-    background-position:50% 10%;
-    height: 40px;
-   background-image: url(./contents/githubpic.jpeg);
-}
-figure img {
-    width: 100%;
-    height: 100%;
-}
-div figure ~ div {
-    padding: 5px;
-    color: green;
-}
-footer {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-top: 10px;
-    padding: 20px;
-    background-color: rgb(255, 228, 179);
-}
-footer h3 {
-    font-family: Pacifico;
-}
-.footdiv {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    gap: 25%;
-}
-.footdiv div {
-    padding: 3px;
-}
-.footdiv div:last-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-#copyright {
-    text-align: center;
-    margin-top: 15px;
-}
 
 
 @media (min-width: 640px) {

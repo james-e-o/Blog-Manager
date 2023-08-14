@@ -1,0 +1,104 @@
+.header {
+    height: fit-content;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding:8px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color:slateblue;
+    border-bottom: 1px solid rgb(170, 154, 185);
+    transition: background-color 280ms ease;
+}
+
+.active {
+    background-color: white;
+}
+
+header h1{
+    font-family:Pacifico;
+    padding: 10px 20px;
+    color: rgb(255, 197, 8);
+    font-weight:bolder;
+    font-size: x-large;
+}
+header h1 span {
+    font-family: Pacifico;
+    color: darkturquoise;
+}
+nav {
+    position: relative;
+    padding: 8px 18px;
+    display: block;
+    color:white;
+}
+
+nav ul{
+    list-style: none;
+    display: none;
+    justify-content: space-between;
+}
+nav button {
+    display: inline-block;
+    border-radius: 36px;
+    font-weight: 600;
+    border: 1px solid white;
+    padding: 6px 12px;
+    color:white;
+    margin:0px 15px;
+    background-color: transparent;
+    font-size: medium;
+    font-family: monospace;
+    transition: color 200ms ease, border 200ms ease;
+}
+.nav-button {
+    color: white;
+    background-color: orangered;
+    border: 1px solid orangered;
+}
+nav ul li {
+    border-radius: 35px;
+    font-weight: 600;
+    line-height: normal;
+    /* box-shadow: inset; */
+    border: 1px solid gray;
+    padding: 5px 17px;
+    color: #ffb325;
+    margin: 5px;
+}
+nav ul li:last-child {
+    border-radius: 35px;
+    font-weight: 300;
+    color: white;
+    background-color: gray;
+    padding: 5px 11px;
+    margin: 5px;
+}
+nav .svg {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+nav svg {
+    position: relative;
+    top: 5px;
+    fill: white;
+    transition: fill 200ms ease;
+}
+/* why can't .nav-svg below be added to svg without .svg */
+.nav-svg {
+    fill: black;
+}
+div.toggle-menu {
+    position: absolute;
+    height: 800px;
+    background-color:transparent;
+    border: 2px solid rgb(103, 23, 23);
+    width: 300px;
+    top: calc(100% - 70px );
+    right: calc(-10px);
+}
+.toggle-off {
+    right: calc(-100%);
+}
