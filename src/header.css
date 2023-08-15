@@ -80,7 +80,7 @@ nav .svg {
     width: 30px;
     display: inline-block;
 }
-nav svg {
+.main-svg {
     position: relative;
     top: 5px;
     fill: white;
@@ -90,15 +90,28 @@ nav svg {
 .nav-svg {
     fill: black;
 }
-div.toggle-menu {
+.toggle-menu {
     position: absolute;
-    height: 800px;
-    background-color:transparent;
-    border: 2px solid rgb(103, 23, 23);
+    height: 100vh;
+    overflow: hidden;
+    background-color:white;
     width: 300px;
-    top: calc(100% - 70px );
-    right: calc(-10px);
+    top: calc(0px );
+    right: calc(0px);
+    z-index: 1;
+    transition: width 200ms ease;
 }
 .toggle-off {
-    right: calc(-100%);
+    width: 0px;
+}
+
+div.menu-header {
+   height: 58px;
+   color: black;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding: 10px 20px;
+   border-bottom: 1px solid rgb(255, 242, 214);
+   /* background-color: pink */
 }
