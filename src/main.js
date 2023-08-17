@@ -13,19 +13,21 @@ const Main = () => {
             </p>
           </div>
           <div className='featured-content'>
-          <p id='niche'>Find your niche</p>
-          <div className='category'>
-            <p className='categories'>Finance</p>
-            <p className='categories'>Business</p>
-            <p className='categories'>Culture</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Politics</p>
-            <p className='categories'>Sports</p>
-            <p className='categories'>Music</p>
-            <p className='categories'>Faith</p>
-            <p className='categories'>Art</p>
-            <p className='categories'>News</p>
-          </div>
+            <p id='niche'>Find your niche</p>
+            <div className='category'>
+              <button className='categories'>Finance</button>
+              <button className='categories'>Business</button>
+              <button className='categories'>Culture</button>
+              <button className='categories'>Technology</button>
+              <button className='categories'>Politics</button>
+              <button className='categories'>Sports</button>
+              <button className='categories'>Music</button>
+              <button className='categories'>Faith</button>
+              <button className='categories'>Self Improvement</button>
+              <button className='categories'>Art</button>
+              <button className='categories'>News</button>
+            </div>
+            <p id='see'><span>→ </span>See more topics</p>
             <div id='feature1'>
                 <h4>Find your niche</h4>
                 <article>

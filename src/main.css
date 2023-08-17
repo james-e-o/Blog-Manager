@@ -39,6 +39,7 @@ main{
     color: white;
 }
 .h1-tag p button{
+    
     margin-top: 35px;
     font-size: large;
     font-weight: 400;
@@ -48,11 +49,11 @@ main{
     font-weight: 200;
     border-radius: 25px;
     color: black;
-    background-image: linear-gradient(to bottom,rgb(255, 216, 145),rgb(155, 142, 238));
-    transition: background-image 140ms ease-out;
+    background-image: linear-gradient(to bottom,#ffd891,#9b8eee);
+    transition: linear-gradient 0.5s ease;
 }
-.h1-tag p button:hover:focus{
-    background-image: linear-gradient(to bottom,rgb(245, 204, 128),rgb(114, 104, 182));
+.h1-tag p button:hover{
+    background-image: linear-gradient(to bottom,#f5cc80,#7268b6);
 }
 
 
@@ -63,8 +64,8 @@ main{
     padding: 20px 10px 15px;
     margin-left: 10px;
     font-size: medium;
-    color: rgb(163, 163, 163);
-    transition: margin-left 800ms ease-out, color 800ms ease-out;
+    color: rgb(149, 141, 179);
+    transition: margin-left 190ms ease-out, color 190ms ease-out;
 }
 #niche:hover{
     color: rgb(82, 82, 82);
@@ -79,12 +80,24 @@ main{
     margin-top: 10px;
     border-radius: 15px;
     padding: 9px 13px;
-    background-color: rgb(232, 230, 245);
+    background-color: #fff5bb;
     font-size: smaller;
     transition: background-color 400ms ease-out;
+    border: none;
 }
 .categories:hover {
-    background-color: rgb(191, 187, 214);
+    background-color: rgb(224, 219, 252);
+}
+.featured-content #see {
+    padding: 10px 10px ;
+    margin-left: 10px;
+    font-size: smaller;
+    color: rgb(149, 141, 179);
+    transition: margin-left 190ms ease-out, color 190ms ease-out;
+}
+#niche:hover{
+    color: rgb(82, 82, 82);
+    margin-left: 16px;
 }
 
 
