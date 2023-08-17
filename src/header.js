@@ -37,7 +37,7 @@ const Header = () => {
               <div className='menu-header'>               
                 <svg  xmlns="http://www.w3.org/2000/svg" onClick={(e)=> setMenuActive(!menuActive)} fill='gray' height="38" viewBox="0 -960 960 960" width="38"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
               </div>
-              <div>
+              <div className='menu-main'>
                   <ul>
                     <li>Sign up</li>
                     <li>Login</li>

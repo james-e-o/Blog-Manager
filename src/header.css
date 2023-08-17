@@ -57,17 +57,21 @@ nav button {
     background-color: orangered;
     border: 1px solid orangered;
 }
-nav ul li {
+ul {
+    display: flex;
+}
+ul li {
     border-radius: 35px;
     font-weight: 600;
     line-height: normal;
     /* box-shadow: inset; */
     border: 1px solid gray;
     padding: 5px 17px;
-    color: #ffb325;
+    color: gray;
     margin: 5px;
+    list-style: none;
 }
-nav ul li:last-child {
+ul li:last-child {
     border-radius: 35px;
     font-weight: 300;
     color: white;
@@ -105,6 +109,8 @@ nav .svg {
     width: 0px;
 }
 
+
+
 div.menu-header {
    height: 58px;
    color: black;
@@ -112,11 +118,18 @@ div.menu-header {
    align-items: center;
    justify-content: flex-end;
    padding: 10px 20px;
-   border-bottom: 1px solid rgb(255, 242, 214);
+   border-bottom: 1px solid rgb(245, 245, 245);
    /* background-color: pink */
 }
 
 .scroll{
     position: fixed;
     top: var(--scrollY);
+}
+
+div.menu-main {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
