@@ -80,7 +80,7 @@ main{
     border-radius: 15px;
     padding: 9px 13px;
     background-color: rgb(232, 230, 245);
-    font-size: small;
+    font-size: medium;
     transition: background-color 400ms ease-out;
 }
 .categories:hover {

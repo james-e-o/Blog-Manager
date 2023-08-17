@@ -5,6 +5,9 @@ const Header = () => {
     const [offline, setOffline]=useState(false)
     const [menuActive, setMenuActive]=useState(false)
     useEffect(()=>{   
+      window.onresize=()=>{
+        console.log(window.innerWidth)
+      }
       const ScrollYvalue = 465
       window.addEventListener('scroll',(e)=>{
         if (window.scrollY>ScrollYvalue){
@@ -33,6 +36,12 @@ const Header = () => {
        <div className={menuActive? "toggle-menu":"toggle-menu toggle-off"}>
               <div className='menu-header'>               
                 <svg  xmlns="http://www.w3.org/2000/svg" onClick={(e)=> setMenuActive(!menuActive)} fill='gray' height="38" viewBox="0 -960 960 960" width="38"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+              </div>
+              <div>
+                  <ul>
+                    <li>Sign up</li>
+                    <li>Login</li>
+                  </ul>
               </div>
           </div>
     </header>
