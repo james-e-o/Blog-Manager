@@ -107,12 +107,12 @@ div.reviews{
 div.rev figure {
     padding: 5px;
     border-radius: 50%;
-    width: 40px;
+    width: 15px;
     background-repeat: no-repeat;
     /* background-clip: content-box; */
     background-size: cover;
     background-position:50% 10%;
-    height: 40px;
+    height: 15px;
    background-image: url(./contents/images/githubpic.jpeg);
 }
 figure img {
