@@ -48,7 +48,11 @@ main{
     font-weight: 200;
     border-radius: 25px;
     color: black;
-    background-image: linear-gradient(to bottom,rgb(255, 216, 145),rgb(142, 129, 226));
+    background-image: linear-gradient(to bottom,rgb(255, 216, 145),rgb(155, 142, 238));
+    transition: background-image 140ms ease-out;
+}
+.h1-tag p button:hover:focus{
+    background-image: linear-gradient(to bottom,rgb(245, 204, 128),rgb(114, 104, 182));
 }
 
 
@@ -57,14 +61,30 @@ main{
 }
 .featured-content #niche {
     padding: 20px 10px 15px;
+    margin-left: 10px;
     font-size: medium;
-    color: gray;
+    color: rgb(163, 163, 163);
+    transition: margin-left 800ms ease-out, color 800ms ease-out;
+}
+#niche:hover{
+    color: rgb(82, 82, 82);
+    margin-left: 16px;
 }
 .category {
     padding: 10px;
 }
 .categories {
-    
+    display: inline-grid;
+    margin-right: 12px ;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 9px 13px;
+    background-color: rgb(232, 230, 245);
+    font-size: small;
+    transition: background-color 400ms ease-out;
+}
+.categories:hover {
+    background-color: rgb(191, 187, 214);
 }
 
 

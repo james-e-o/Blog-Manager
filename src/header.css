@@ -115,3 +115,8 @@ div.menu-header {
    border-bottom: 1px solid rgb(255, 242, 214);
    /* background-color: pink */
 }
+
+.scroll{
+    position: fixed;
+    top: var(--scrollY);
+}
