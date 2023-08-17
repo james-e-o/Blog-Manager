@@ -15,16 +15,16 @@ const Main = () => {
           <div className='featured-content'>
           <p id='niche'>Find your niche</p>
           <div className='category'>
+            <p className='categories'>Finance</p>
+            <p className='categories'>Business</p>
+            <p className='categories'>Culture</p>
             <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
-            <p className='categories'>Technology</p>
+            <p className='categories'>Politics</p>
+            <p className='categories'>Sports</p>
+            <p className='categories'>Music</p>
+            <p className='categories'>Faith</p>
+            <p className='categories'>Art</p>
+            <p className='categories'>News</p>
           </div>
             <div id='feature1'>
                 <h4>Find your niche</h4>
