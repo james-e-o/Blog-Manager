@@ -2,14 +2,14 @@ import './header.css'
 import React, { useState, useEffect } from 'react';
 
 const Header = () => {
+    const [value, setValue]=useState(window.scrollY)
+    const [scroll, setScroll]= useState('')
     const [offline, setOffline]=useState(false)
     const [menuActive, setMenuActive]=useState(false)
     useEffect(()=>{   
-      window.onresize=()=>{
-        console.log(window.innerWidth)
-      }
       const ScrollYvalue = 465
       window.addEventListener('scroll',(e)=>{
+        setScroll(window.scrollY)
         if (window.scrollY>ScrollYvalue){
           setOffline(true)
         }else {setOffline(false)}
@@ -18,6 +18,13 @@ const Header = () => {
           if (menuActive===true && e.clientX<92)
           setMenuActive(!menuActive)
        })
+       if (menuActive){
+        document.body.style.position = 'fixed'
+        document.body.style.top = `-${value}px`
+       }else{
+        document.body.style.position = ''
+        // document.body.style.top = '-500px'
+       }
     },[menuActive])
    
   return (

@@ -49,22 +49,24 @@ main{
     font-weight: 200;
     border-radius: 25px;
     color: black;
-    background-image: linear-gradient(to bottom,#ffd891,#9b8eee);
-    transition: linear-gradient 0.5s ease;
+    background-image:  linear-gradient(to bottom,#ffdb98,#7b6aef);
+    transition: transform 0.2s ease;
 }
 .h1-tag p button:hover{
-    background-image: linear-gradient(to bottom,#f5cc80,#7268b6);
+   
+   transform: scale(1.06)
 }
 
-
+/* FEATURED CONTENT */
 .featured-content {
     padding: 20px;
 }
 .featured-content #niche {
+    display: inline-block;
     padding: 20px 10px 15px;
     margin-left: 10px;
     font-size: medium;
-    color: rgb(149, 141, 179);
+    color: rgb(124, 124, 124);
     transition: margin-left 190ms ease-out, color 190ms ease-out;
 }
 #niche:hover{
@@ -88,19 +90,25 @@ main{
 .categories:hover {
     background-color: rgb(224, 219, 252);
 }
-.featured-content #see {
-    padding: 10px 10px ;
-    margin-left: 10px;
+.featured-content .see {
+    display: block;
+    margin: 10px;
+    padding: 5px ;
     font-size: smaller;
     color: rgb(149, 141, 179);
-    transition: margin-left 190ms ease-out, color 190ms ease-out;
 }
-#niche:hover{
-    color: rgb(82, 82, 82);
-    margin-left: 16px;
+#arrow {
+    display: inline-block;
+    transition: transform 200ms ease-out;
 }
-
-
+#see {
+    display: inline-block;
+    transform: translateX(18px);
+}
+.see:hover #arrow{
+    transform: translateX(12px);
+    color: #ffbb28;
+}
 
 div.reviews{
     background-color: white;

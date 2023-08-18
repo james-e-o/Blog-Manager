@@ -2,6 +2,10 @@ import React from 'react'
 import './main.css'
 
 const Main = () => {
+  // function toggleArrow(e){
+  //        const arrow= e.target.previousSibling
+  //        arrow.classlist.toggle('arrow')
+  // }
   return (
     <main>
         <div className='main'>
@@ -27,7 +31,7 @@ const Main = () => {
               <button className='categories'>Art</button>
               <button className='categories'>News</button>
             </div>
-            <p id='see'><span>→ </span>See more topics</p>
+            <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>
             <div id='feature1'>
                 <h4>Find your niche</h4>
                 <article>
