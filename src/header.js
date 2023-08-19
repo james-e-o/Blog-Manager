@@ -1,15 +1,17 @@
 import './header.css'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Header = () => {
-    const [value, setValue]=useState(window.scrollY)
+    // const [value, setValue]=useState('')
     const [scroll, setScroll]= useState('')
     const [offline, setOffline]=useState(false)
     const [menuActive, setMenuActive]=useState(false)
+    const scrollOffset =useRef('')
     useEffect(()=>{   
       const ScrollYvalue = 465
       window.addEventListener('scroll',(e)=>{
-        setScroll(window.scrollY)
+        scrollOffset.current=window.scrollY
+      
         if (window.scrollY>ScrollYvalue){
           setOffline(true)
         }else {setOffline(false)}
@@ -20,11 +22,12 @@ const Header = () => {
        })
        if (menuActive){
         document.body.style.position = 'fixed'
-        document.body.style.top = `-${value}px`
+        document.body.style.top = `-${scrollOffset.current}px`
        }else{
         document.body.style.position = ''
-        // document.body.style.top = '-500px'
+        window.scrollTo(0, 300);
        }
+       console.log(scrollOffset.current)
     },[menuActive])
    
   return (
