@@ -6,21 +6,28 @@ footer {
 }
 footer h3 {
     font-family: Pacifico;
+    margin-left: 10px;
 }
 .footdiv {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
-    gap: 25%;
+    /* gap: 25%; */
 }
-.footdiv div {
+.footdiv div.foot-brief {
     padding: 3px;
+    display: flex;
+    flex-direction: column;
 }
-.footdiv div:last-child {
+div.foot-brief p {
+  padding: 3px;
+}
+.footdiv div.foot-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-right: 10%;
 }
 
 #copyright {

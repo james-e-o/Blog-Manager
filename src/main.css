@@ -64,9 +64,10 @@ main{
 .featured-content #niche {
     display: inline-block;
     padding: 20px 10px 15px;
+    font-weight: 600;
     margin-left: 10px;
     font-size: medium;
-    color: rgb(124, 124, 124);
+    color: rgb(126, 126, 126);
     transition: margin-left 190ms ease-out, color 190ms ease-out;
 }
 #niche:hover{

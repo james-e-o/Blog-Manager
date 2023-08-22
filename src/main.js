@@ -32,8 +32,8 @@ const Main = () => {
               <button className='categories'>News</button>
             </div>
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>
-            <div id='feature1'>
-                <h4>Find your niche</h4>
+            <div id='podcast'>
+                <h2>Start a podcast</h2>
                 <article>
                 Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.
                 </article>
