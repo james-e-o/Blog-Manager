@@ -42,7 +42,7 @@ main{
     
     margin-top: 35px;
     font-size: large;
-    font-weight: 400;
+    font-weight: 900;
     outline: none;
     border: none;
     padding: 8px 15px;
@@ -110,6 +110,30 @@ main{
     transform: translateX(12px);
     color: #ffbb28;
 }
+
+
+/* PODCAST */
+div#podcast {
+    font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+#podcast h2 {
+    text-decoration: underline;
+    padding: 0px 10px;
+}
+#podcast article {padding: 13px 5px; margin-left: 5px;}
+#podcast button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    margin-left: 7px;
+}
+
 
 div.reviews{
     background-color: white;

@@ -31,14 +31,15 @@ const Main = () => {
               <button className='categories'>Art</button>
               <button className='categories'>News</button>
             </div>
-            <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>
-            <div id='podcast'>
-                <h2>Start a podcast</h2>
+            <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
+          </div>
+          <div id='podcast'>
+              <h2>Start a podcast</h2>
                 <article>
                 Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.
                 </article>
+                <button>Get started</button>
             </div>
-          </div>
           <div className='reviews'>
             <div className='rev'>
               <figure></figure>
