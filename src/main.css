@@ -19,6 +19,7 @@ main{
     margin-top: 25px;
     padding: 0px 10px;
     font-size: 41px;
+    /* color: rgb(0, 243, 247); */
     /* color: rgb(97, 253, 136); */
     color: rgb(255, 209, 103);
     /* color: transparent;
@@ -58,11 +59,63 @@ main{
    transform: scale(1.06)
 }
 
-/* FEATURED CONTENT */
-.featured-content {
+/* FEATURED */
+div.featured{
+    padding: 20px;
+    background-color: white;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.featured h4#reads {
+    display: inline-block;
+    padding: 20px 10px 15px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-size: medium;
+    color: rgb(126, 126, 126);
+}
+.featured div.reads {
+    width: 70vw;
+    margin: 15px 20px;
+    padding: 15px;
+    background-color: white;
+    /* border-radius: 10px; */
+    box-shadow: 0px 1px 4px rgba(173, 173, 173, 0.747);
+}
+div.read_id {
+    display: flex;
+    align-items: center;
+}
+div.read_id figure {
+    display: inline-block;
+    padding: 5px;
+    width: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:50% 10%;
+    height: 15px;
+   background-image: url(./contents/images/githubpic.jpeg);
+}
+div.read_id figure ~ h5 {
+    display: inline-block;
+    margin-left: 8px;
+}
+figure img {
+    width: 100%;
+    height: 100%;
+}
+.reads h4 {
+    margin-top: 6px;
+    
+}
+
+
+/* NICHE CONTENT */
+.niche-content {
     padding: 20px;
 }
-.featured-content #niche {
+.niche-content #niche {
     display: inline-block;
     padding: 20px 10px 15px;
     font-weight: 600;
@@ -84,7 +137,7 @@ main{
     margin-top: 10px;
     border-radius: 15px;
     padding: 9px 13px;
-    background-color: #fff9b5;
+    background-color: rgb(255, 245, 222);
     font-size: smaller;
     transition: background-color 400ms ease-out;
     border: none;
@@ -92,7 +145,8 @@ main{
 .categories:hover {
     background-color: rgb(224, 219, 252);
 }
-.featured-content .see {
+.niche-content .see {
+    cursor: pointer;
     display: block;
     margin: 10px;
     padding: 5px ;
@@ -116,22 +170,35 @@ main{
 /* PODCAST */
 div#podcast {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(./contents/images/podcaster.jpeg);
+    background-image:url(./contents/images/podcaster.jpeg) ;
     background-repeat: no-repeat;
-    /* background-clip: content-box; */
+    background-clip: border-box;
+    border: 1px solid white;
     background-size: cover;
     background-position:50% 10%;
-    color:rgb(17, 105, 146) ;
+    color:green ;
     padding: 20px;
+    position: relative;
+    z-index: -1;
+}
+#podcast .podcast-gradient {
+    z-index: -1;
+    background-image: linear-gradient(to right, white 38%, transparent);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
 }
 #podcast .podcast-wrapper {
+    z-index: 2;
     flex-direction: column;
     display: flex;
     justify-content: flex-start;
 }
 #podcast h2 {
-    text-decoration: underline;
     padding: 0px 10px;
+    font-family: SupermercadoOne;
     font-size: x-large;
     width: 60%;
 }
@@ -139,8 +206,10 @@ div#podcast {
     padding: 13px 5px;
     margin-left: 5px;
     width: 80%;
+    color: darkgreen;
 }
 #podcast button {
+    z-index: 3;
     padding: 10px 15px;
     border-radius: 10px;
     border: none;
@@ -151,6 +220,8 @@ div#podcast {
 }
 
 
+
+/* REVIEWS */
 div.reviews{
     background-color: white;
     height:fit-content;
@@ -166,7 +237,12 @@ div.reviews{
     border-radius: 10px;
     box-shadow: 0px 1px 4px rgba(173, 173, 173, 0.747);
 }
+div.rev_id {
+    display: flex;
+    align-items: center;
+}
 div.rev figure {
+    display: inline-block;
     padding: 5px;
     border-radius: 50%;
     width: 15px;
@@ -176,6 +252,10 @@ div.rev figure {
     background-position:50% 10%;
     height: 15px;
    background-image: url(./contents/images/githubpic.jpeg);
+}
+div.rev figure ~ h5 {
+    display: inline-block;
+    margin-left: 8px;
 }
 figure img {
     width: 100%;

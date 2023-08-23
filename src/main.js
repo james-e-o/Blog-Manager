@@ -1,6 +1,8 @@
 import React from 'react'
 import './main.css'
 
+const title = 'My Name'
+const content = 'Title of my book is the fairy and the mao'
 const Main = () => {
   // function toggleArrow(e){
   //        const arrow= e.target.previousSibling
@@ -16,7 +18,18 @@ const Main = () => {
             <button>Get started</button>
             </p>
           </div>
-          <div className='featured-content'>
+          <div className='featured'>
+            <h4 id='reads'>Top reads</h4>
+            <div className='reads'>
+              <div className='read_id'>
+                <figure></figure>
+                <h5>{title}</h5>
+              </div> 
+              <h4 id='read_content'>{content}.</h4> 
+            </div>
+          </div>
+          <hr />
+          <div className='niche-content'>
             <p id='niche'>Find your niche</p>
             <div className='category'>
               <button className='categories'>Finance</button>
@@ -34,6 +47,7 @@ const Main = () => {
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
           </div>
           <div id='podcast'>
+            <div className='podcast-gradient'></div>
             <div className='podcast-wrapper'>
               <h2>Start your own podcast</h2>
               <article>
@@ -44,8 +58,11 @@ const Main = () => {
           </div>
           <div className='reviews'>
             <div className='rev'>
-              <figure></figure>
-              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+              <div className='rev_id'>
+                <figure></figure>
+                <h5>Name</h5>
+              </div> 
+              <div>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
             </div>
             <div className='rev'>
               <figure></figure>

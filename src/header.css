@@ -1,5 +1,5 @@
 .header {
-    z-index: 1;
+    z-index: 10;
     height: fit-content;
     position: sticky;
     top: 0px;
@@ -103,7 +103,7 @@ nav .svg {
     width: 300px;
     top: calc(0px );
     right: calc(0px);
-    z-index: 1;
+    z-index: 10;
     transition: width 200ms ease;
 }
 .toggle-off {
