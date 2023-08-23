@@ -34,12 +34,14 @@ const Main = () => {
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
           </div>
           <div id='podcast'>
-              <h2>Start a podcast</h2>
-                <article>
-                Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.
-                </article>
-                <button>Get started</button>
+            <div className='podcast-wrapper'>
+              <h2>Start your own podcast</h2>
+              <article>
+              Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.
+              </article>
             </div>
+            <button>Get started</button>
+          </div>
           <div className='reviews'>
             <div className='rev'>
               <figure></figure>

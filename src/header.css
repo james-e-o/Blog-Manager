@@ -55,8 +55,8 @@ nav button {
 }
 .nav-button {
     color: white;
-    background-color: orangered;
-    border: 1px solid orangered;
+    background-color: rgb(255, 103, 48);
+    border: 1px solid rgb(255, 103, 48);
 }
 ul {
     display: flex;
