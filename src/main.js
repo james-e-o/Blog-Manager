@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './main.css'
+import { useRef, useEffect, useMemo } from 'react'
 
-const title = 'My Name'
-const content = 'Title of my book is the fairy and the mao'
+
 const Main = () => {
-  // function toggleArrow(e){
-  //        const arrow= e.target.previousSibling
-  //        arrow.classlist.toggle('arrow')
-  // }
+      const title = 'My Name'
+      const content = 'Title of my book is the fairy and the mao'
+      const dynamicColor = useRef("")
+      const value = useRef("")
+      const colors= ['#00f3f7','#61fd88','#ffd167']
+      const [colorState, setColorState]= useState(false)
+      const memoized = useMemo(()=>{
+        return value.current
+      },[colorState])
+  
+      useEffect(()=>{
+        
+        setColorState(!colorState)
+        dynamicColor.current.style.color = `${colors[Number(memoized)]}`
+        value.current = colorState
+      },[])
   return (
     <main>
         <div className='main'>
           <div className='h1-tag'>
-            <h1>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
+            <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
             With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
             <button>Get started</button>

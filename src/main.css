@@ -21,7 +21,7 @@ main{
     font-size: 41px;
     /* color: rgb(0, 243, 247); */
     /* color: rgb(97, 253, 136); */
-    color: rgb(255, 209, 103);
+    color: var(--dynamite);
     /* color: transparent;
     background-image: linear-gradient(to right, orange, blueviolet);
     background-clip: text; */

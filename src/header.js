@@ -1,5 +1,6 @@
 import './header.css'
 import React, { useState, useEffect, useRef} from 'react';
+import{Link} from 'react-router-dom'
 
 const Header = () => {
   const [scroll, setScroll]= useState('')
@@ -49,8 +50,8 @@ const Header = () => {
               </div>
               <div className='menu-main'>
                   <ul>
-                    <li>Sign up</li>
-                    <li>Login</li>
+                    <li><Link to='/sign' state={'signup'}>Sign up</Link></li>
+                    <li><Link to='/sign' state={'login'}>Login</Link></li>
                   </ul>
               </div>
           </div>
