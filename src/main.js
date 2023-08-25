@@ -1,24 +1,25 @@
 import React, { useState } from 'react'
 import './main.css'
 import { useRef, useEffect, useMemo } from 'react'
+import { Like, Share, Comment, Views, Subscribe } from './svg'
 
 
 const Main = () => {
       const title = 'My Name'
       const content = 'Title of my book is the fairy and the mao'
       const dynamicColor = useRef("")
-      const value = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
-      const memoized = useMemo(()=>{
-        return value.current
-      },[colorState])
-  
+     
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      } 
       useEffect(()=>{
-        
-        setColorState(!colorState)
-        dynamicColor.current.style.color = `${colors[Number(memoized)]}`
-        value.current = colorState
+        const randomColor = getRandomIntInclusive(0,2)
+        dynamicColor.current.style.color = `${colors[randomColor]}`
+        setColorState(randomColor)
       },[])
   return (
     <main>
@@ -31,18 +32,60 @@ const Main = () => {
             </p>
           </div>
           <div className='featured'>
-            <h4 id='reads'>Top reads</h4>
-            <div className='reads'>
-              <div className='read_id'>
-                <figure></figure>
-                <h5>{title}</h5>
-              </div> 
-              <h4 id='read_content'>{content}.</h4> 
-            </div>
+            <p id='reads'>Top reads</p>
+                      <div className='reads'>
+                        <div className='read_id'>
+                          <figure></figure>
+                          <h5>{title}</h5>
+                        </div> 
+                        <h4 id='read_content'>{content}.</h4>
+                        <div id='engagement'>
+                          <div><Views/> {'9k'}</div>
+                          <div><Like/> {'16k'}</div>
+                          <div><Comment/> {'10k'}</div>
+                        </div>
+                      </div>
+                      <div className='reads'>
+                        <div className='read_id'>
+                          <figure></figure>
+                          <h5>{title}</h5>
+                        </div> 
+                        <h4 id='read_content'>{content}.</h4>
+                        <div id='engagement'>
+                          <div><Views/> {'9k'}</div>
+                          <div><Like/> {'16k'}</div>
+                          <div><Comment/> {'10k'}</div>
+                        </div>
+                      </div>
+                      <div className='reads'>
+                        <div className='read_id'>
+                          <figure></figure>
+                          <h5>{title}</h5>
+                        </div> 
+                        <h4 id='read_content'>{content}.</h4>
+                        <div id='engagement'>
+                          <div><Views/><span>{'9k'}</span></div>
+                          <div><Like/><span>{'16k'}</span></div>
+                          <div><Comment/><span>{'10k'}</span></div>
+                        </div>
+                      </div>
+                      <div className='reads'>
+                        <div className='read_id'>
+                          <figure></figure>
+                          <h5>{title}</h5>
+                        </div> 
+                        <h4 id='read_content'>{content}.</h4>
+                        <div id='engagement'>
+                          <div><Views/> {'9k'}</div>
+                          <div><Like/> {'16k'}</div>
+                          <div><Comment/> {'10k'}</div>
+                        </div>
+                      </div>
           </div>
-          <hr />
+          
           <div className='niche-content'>
             <p id='niche'>Find your niche</p>
+            {/* <hr className='inner'/> */}
             <div className='category'>
               <button className='categories'>Finance</button>
               <button className='categories'>Business</button>
