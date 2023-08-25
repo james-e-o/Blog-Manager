@@ -91,27 +91,35 @@ div.read_id {
 div.read_id figure {
     display: inline-block;
     padding: 5px;
-    width: 15px;
+    width: 13px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position:50% 10%;
-    height: 15px;
+    height: 13px;
    background-image: url(./contents/images/githubpic.jpeg);
-}
-div.read_id figure ~ h5 {
-    display: inline-block;
-    margin-left: 8px;
-    font-weight:normal;
-    font-size: 13px;
 }
 figure img {
     width: 100%;
     height: 100%;
 }
+div.read_id figure ~ h5 {
+    display: inline-block;
+    margin:0px 8px;
+    font-weight:normal;
+    font-size: 12px;
+    width: 54%;
+    overflow-x: ;
+}
+div.read_id p {
+    font-weight:normal;
+    font-size: 12px;
+
+}
 .reads h4 {
     margin-top: 6px;
     font-weight:bolder;
-    font-size:15px;
+    font-size:14px;
+    
 }
 .reads #engagement {
     padding: 7px 0px 0px;
@@ -119,16 +127,16 @@ figure img {
    justify-content: flex-start;
     font-size: x-small;
     font-weight: 100;
-    gap: 50px;
+    gap: 30px;
 }
-div#engagement div{
+div#engagement  div{
     display: flex;
     align-items: center;
     gap: 5px;
 }
 div.engagement-svg svg{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     
 }
 
@@ -154,7 +162,7 @@ div.engagement-svg svg{
     margin-top: 10px;
     border-radius: 15px;
     padding: 9px 13px;
-    background-color: #ffecca;
+    background-color: #ffedde;
     font-size: smaller;
     transition: background-color 400ms ease-out;
     border: none;
@@ -193,14 +201,14 @@ div#podcast {
     border: 1px solid white;
     background-size: cover;
     background-position:50% 10%;
-    color:green ;
+    color:white ;
     padding: 20px;
     position: relative;
     z-index: -1;
 }
 #podcast .podcast-gradient {
     z-index: -1;
-    background-image: linear-gradient(to right, purple -35%, transparent 70%);
+    background-image: linear-gradient(to right, purple -50%, transparent 76%);
     position: absolute;
     left: 0px;
     right: 0px;
@@ -216,14 +224,14 @@ div#podcast {
 #podcast h2 {
     padding: 0px 10px;
     font-family: SupermercadoOne;
-    font-size: x-large;
+    font-size: xx-large;
     width: 60%;
 }
 #podcast article {
     padding: 13px 5px;
     margin-left: 5px;
     width: 80%;
-    color: darkgreen;
+    color: white;
 }
 #podcast button {
     z-index: 3;

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './main.css'
 import { useRef, useEffect, useMemo } from 'react'
-import { Like, Share, Comment, Views, Subscribe } from './svg'
+import { Like, Share, Comment, Views, Subscribe, Bookmark } from './svg'
 
 
 const Main = () => {
-      const title = 'My Name'
+      const title = 'james Onwuasoanya'
       const content = 'Title of my book is the fairy and the mao'
       const dynamicColor = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
@@ -33,54 +33,64 @@ const Main = () => {
           </div>
           <div className='featured'>
             <p id='reads'>Top reads</p>
+
                       <div className='reads'>
                         <div className='read_id'>
                           <figure></figure>
                           <h5>{title}</h5>
+                          <p>{'12'}mins read</p>
                         </div> 
                         <h4 id='read_content'>{content}.</h4>
                         <div id='engagement'>
+                          <div className='post-date'>{'Aug. 24'}</div>
                           <div><Views/> {'9k'}</div>
-                          <div><Like/> {'16k'}</div>
-                          <div><Comment/> {'10k'}</div>
+                          {/* <div><Like/> {'16k'}</div> */}
+                          <div><Bookmark/></div>
                         </div>
                       </div>
                       <div className='reads'>
                         <div className='read_id'>
                           <figure></figure>
                           <h5>{title}</h5>
+                          <p>{'12'}mins read</p>
                         </div> 
                         <h4 id='read_content'>{content}.</h4>
                         <div id='engagement'>
+                          <div className='post-date'>{'Aug. 24'}</div>
                           <div><Views/> {'9k'}</div>
-                          <div><Like/> {'16k'}</div>
-                          <div><Comment/> {'10k'}</div>
+                          {/* <div><Like/> {'16k'}</div> */}
+                          <div><Bookmark/></div>
                         </div>
                       </div>
                       <div className='reads'>
                         <div className='read_id'>
                           <figure></figure>
                           <h5>{title}</h5>
+                          <p>{'12'}mins read</p>
                         </div> 
                         <h4 id='read_content'>{content}.</h4>
                         <div id='engagement'>
-                          <div><Views/><span>{'9k'}</span></div>
-                          <div><Like/><span>{'16k'}</span></div>
-                          <div><Comment/><span>{'10k'}</span></div>
-                        </div>
-                      </div>
-                      <div className='reads'>
-                        <div className='read_id'>
-                          <figure></figure>
-                          <h5>{title}</h5>
-                        </div> 
-                        <h4 id='read_content'>{content}.</h4>
-                        <div id='engagement'>
+                          <div className='post-date'>{'Aug. 24'}</div>
                           <div><Views/> {'9k'}</div>
-                          <div><Like/> {'16k'}</div>
-                          <div><Comment/> {'10k'}</div>
+                          {/* <div><Like/> {'16k'}</div> */}
+                          <div><Bookmark/></div>
                         </div>
                       </div>
+                      <div className='reads'>
+                        <div className='read_id'>
+                          <figure></figure>
+                          <h5>{title}</h5>
+                          <p>{'12'}mins read</p>
+                        </div> 
+                        <h4 id='read_content'>{content}.</h4>
+                        <div id='engagement'>
+                          <div className='post-date'>{'Aug. 24'}</div>
+                          <div><Views/> {'9k'}</div>
+                          {/* <div><Like/> {'16k'}</div> */}
+                          <div><Bookmark/></div>
+                        </div>
+                      </div>
+                      
           </div>
           
           <div className='niche-content'>
@@ -106,7 +116,7 @@ const Main = () => {
             <div className='podcast-wrapper'>
               <h2>Start your own podcast</h2>
               <article>
-              Veniam pariatur cillum ullamco proident et id Lorem excepteur ad. Commodo qui excepteur tempor veniam deserunt eu dolore eu.
+                {'Get paid from your passionate subscribers'}
               </article>
             </div>
             <button>Get started</button>
