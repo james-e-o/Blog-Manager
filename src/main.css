@@ -108,7 +108,7 @@ div.read_id figure ~ h5 {
     font-weight:normal;
     font-size: 12px;
     width: 54%;
-    overflow-x: ;
+    overflow-x:hidden ;
 }
 div.read_id p {
     font-weight:normal;
@@ -193,47 +193,49 @@ div.engagement-svg svg{
 
 
 /* PODCAST */
-div#podcast {
+
+div#podcast1 {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(107, 93, 93) ;
+    padding: 20px ;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    gap:-10px;
+}
+#podcast1 .podcast1-gradient {
+    z-index: -1;
+    width: 40%;
     background-image:url(./contents/images/podcaster.jpeg) ;
     background-repeat: no-repeat;
     background-clip: border-box;
     border: 1px solid white;
     background-size: cover;
-    background-position:50% 10%;
-    color:white ;
-    padding: 20px;
-    position: relative;
-    z-index: -1;
+    background-position:90% 50%;
+    border-radius:62% 38% 38% 62% / 31% 51% 49% 69% ;
 }
-#podcast .podcast-gradient {
-    z-index: -1;
-    background-image: linear-gradient(to right, purple -50%, transparent 76%);
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-}
-#podcast .podcast-wrapper {
+#podcast1 .podcast1-wrapper {
     z-index: 2;
     flex-direction: column;
+    width: 60%;
     display: flex;
     justify-content: flex-start;
 }
-#podcast h2 {
+#podcast1 h2 {
     padding: 0px 10px;
     font-family: SupermercadoOne;
-    font-size: xx-large;
+    font-size: x-large;
     width: 60%;
+   
 }
-#podcast article {
+#podcast1 article {
     padding: 13px 5px;
     margin-left: 5px;
     width: 80%;
-    color: white;
+    color: rgb(31, 26, 26);
+    font-size: 15px;
 }
-#podcast button {
+#podcast1 button {
     z-index: 3;
     padding: 10px 15px;
     border-radius: 10px;
@@ -242,6 +244,7 @@ div#podcast {
     background-color: rgb(255, 102, 14);
     font-weight: 700;
     margin-left: 7px;
+    width: fit-content;
 }
 
 
