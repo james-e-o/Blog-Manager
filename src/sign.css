@@ -16,3 +16,7 @@ div.sign-header {
     font-family: Pacifico;
     color: darkturquoise;
 }
+
+main.sign-main {
+    padding: 20px;
+}
