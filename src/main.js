@@ -115,10 +115,10 @@ const Main = () => {
                                                           <div id='podcast1'>
                                                             <div className='podcast1-wrapper'>
                                                               <h2>Start your own podcast</h2>
-                                                              <article>
-                                                                {'Get paid from your passionate subscribers'}
-                                                              </article>
-                                                              <button>Get started</button>
+                                                                <article>
+                                                                  {'Get paid from your passionate subscribers'}
+                                                                </article>
+                                                                <button>Get started</button>                                                          
                                                             </div>                                                          
                                                             <div className='podcast1-gradient'></div>
                                                           </div>

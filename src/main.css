@@ -204,6 +204,7 @@ div#podcast1 {
     gap:-10px;
 }
 #podcast1 .podcast1-gradient {
+    position: relative;
     z-index: -1;
     width: 40%;
     background-image:url(./contents/images/podcaster.jpeg) ;
@@ -213,20 +214,20 @@ div#podcast1 {
     background-size: cover;
     background-position:90% 50%;
     border-radius:62% 38% 38% 62% / 31% 51% 49% 69% ;
+  right: 27px;
 }
 #podcast1 .podcast1-wrapper {
     z-index: 2;
     flex-direction: column;
     width: 60%;
     display: flex;
-    justify-content: flex-start;
 }
 #podcast1 h2 {
     padding: 0px 10px;
     font-family: SupermercadoOne;
     font-size: x-large;
     width: 60%;
-   
+   display: inline-block;
 }
 #podcast1 article {
     padding: 13px 5px;
