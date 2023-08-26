@@ -1,14 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+import './sign.css';
 
 const Sign = () => {
     const [status, setStatus] = useState('Login')
+    useEffect(()=>{
+      document.body.style.position = 'static'
+    })
   return (
     <div className='sign'>
-        <header className='sign-header'>
+        <div className='sign-header'>
             <h1>Skript_<span>n</span></h1>
-        </header>
+        </div>
         <main className='sign-main'>
             <div className='sign-wrap'>
             {status=='Login'?(

@@ -197,7 +197,7 @@ div.engagement-svg svg{
 div#podcast1 {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     color:rgb(107, 93, 93) ;
-    padding: 20px ;
+    padding:7px 20px ;
     position: relative;
     z-index: -1;
     display: flex;
@@ -221,6 +221,7 @@ div#podcast1 {
     flex-direction: column;
     width: 60%;
     display: flex;
+    margin-left: 6px;
 }
 #podcast1 h2 {
     padding: 0px 10px;

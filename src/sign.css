@@ -1,0 +1,18 @@
+div.sign-header {
+    background-color: slateblue;
+    height:300px;
+    border-radius:100% 0% 100% 0% / 0% 45% 55% 100%  ;
+}
+
+.sign-header h1{
+    padding: 18px 30px;
+    font-family:Pacifico;
+    color: rgb(255, 197, 8);
+    font-weight:bolder;
+    font-size: x-large;
+}
+
+.sign-header h1 span {
+    font-family: Pacifico;
+    color: darkturquoise;
+}

@@ -112,16 +112,16 @@ const Main = () => {
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
           </div>
 
-                                                          <div id='podcast1'>
-                                                            <div className='podcast1-wrapper'>
-                                                              <h2>Start your own podcast</h2>
-                                                                <article>
-                                                                  {'Get paid from your passionate subscribers'}
-                                                                </article>
-                                                                <button>Get started</button>                                                          
-                                                            </div>                                                          
-                                                            <div className='podcast1-gradient'></div>
-                                                          </div>
+          <div id='podcast1'>
+            <div className='podcast1-wrapper'>
+              <h2>Start your own podcast</h2>
+                <article>
+                  {'Get paid from your passionate subscribers'}
+                </article>
+                <button>Get started</button>                                                          
+            </div>                                                          
+            <div className='podcast1-gradient'></div>
+          </div>
           <div className='reviews'>
             <div className='rev'>
               <div className='rev_id'>
