@@ -4,7 +4,8 @@ import Header from './header';
 import Footer from './footer';
 import React, { useState,useEffect, Children } from 'react';
 import { Route, Router, createBrowserRouter, RouterProvider, Routes} from 'react-router-dom';
-import Sign from './sign';
+// import Sign from './sign';
+import {Sign, Signup, Signin} from './sign'
 
 const Home = () => {
   return (
@@ -25,12 +26,12 @@ const router = createBrowserRouter([
     element:<Sign/>,
     Children: [
       {
-        path:'signup',
-        element:<Sign/>
+        path:'/signup',
+        element:<Signup/>
       },
       {
-        path:'login',
-        element:<Sign/>
+        path:'/login',
+        element:<Signin/>
       }
     ]
   }
@@ -38,9 +39,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
       <RouterProvider router={router}/>
-    </div>
   );
 }
 

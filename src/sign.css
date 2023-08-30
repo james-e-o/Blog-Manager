@@ -16,7 +16,59 @@ div.sign-header {
     font-family: Pacifico;
     color: darkturquoise;
 }
+.sign-header p{
+    margin-top: 20px;
+    font-size: 34px;
+    font-family: BrunoAce;
+    padding:30px;
+    color: white;
+}
 
 main.sign-main {
     padding: 20px;
+}
+
+
+
+div.form {
+    width: 75%;
+    height: 50px;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid slateblue;
+}
+
+input {
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    padding-left: 10px;
+    left: 0px;
+    top: 0px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.form span {
+    position: absolute;
+    top: 20%;
+    padding-left: 10px;
+    transition: all 0.26s ease;
+    font-size: 20px;
+    font-weight:lighter;
+    pointer-events: none;
+}
+
+input:focus ~ span,
+input:invalid ~ span
+/* .movie      */
+{
+   transform: translateY(-94%);
+   padding: 4px 5px;
+   background-color: white; 
+   font-size: small;
+   font-weight:lighter;
+   margin-left: 12px;
+   color: slateblue;
 }
