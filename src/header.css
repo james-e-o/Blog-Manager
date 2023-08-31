@@ -59,28 +59,6 @@ nav button {
     background-color: rgb(255, 103, 48);
     border: 1px solid rgb(255, 103, 48);
 }
-ul {
-    display: flex;
-}
-ul li {
-    border-radius: 35px;
-    font-weight: 600;
-    line-height: normal;
-    /* box-shadow: inset; */
-    border: 1px solid gray;
-    padding: 5px 17px;
-    color: gray;
-    margin: 5px;
-    list-style: none;
-}
-ul li:last-child {
-    border-radius: 35px;
-    font-weight: 300;
-    color: white;
-    background-color: gray;
-    padding: 5px 11px;
-    margin: 5px;
-}
 nav .svg {
     height: 30px;
     width: 30px;
@@ -96,6 +74,13 @@ nav .svg {
 .nav-svg {
     fill: black;
 }
+
+
+
+
+
+
+
 .toggle-menu {
     position: absolute;
     height: 100vh;
@@ -110,9 +95,6 @@ nav .svg {
 .toggle-off {
     width: 0px;
 }
-
-
-
 div.menu-header {
    height: 58px;
    color: black;
@@ -121,17 +103,33 @@ div.menu-header {
    justify-content: flex-end;
    padding: 10px 20px;
    border-bottom: 1px solid rgb(245, 245, 245);
-   /* background-color: pink */
 }
-
 .scroll{
     position: fixed;
     top: var(--scrollY);
 }
-
 div.menu-main {
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.menu-main ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    
+}
+.menu-main ul a {
+    text-align: center;
+    border-radius: 2px;
+    font-weight: 500;
+    line-height: normal;
+    border: 1px solid gray;
+    width: 50%;
+    color: slateblue;
+    text-decoration: none;
+    margin: 5px;  
+    padding: 15px;
+    font-weight: 600;
 }

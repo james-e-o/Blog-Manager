@@ -1,6 +1,6 @@
 div.sign-header {
     background-color: slateblue;
-    height:300px;
+    height:240px;
     border-radius:100% 0% 100% 0% / 0% 45% 55% 100%  ;
 }
 
@@ -20,22 +20,19 @@ div.sign-header {
     margin-top: 5px;
     font-size: 34px;
     font-family: BrunoAce;
-    padding:30px;
+    padding:25px;
     color: white;
 }
-
 main.sign-main {
     padding: 20px;
 }
-
-.sign-main div.signin {
-    margin-top: 8px;
+.sign-main> div.signin,div.signup {
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: start;
 }
-
 div.form {
     width: 75%;
     position: relative;
@@ -47,7 +44,6 @@ div.form {
     font-weight: 500;
     padding: 4px 2px;
 }
-
 input {
     width: 90%;
     padding: 10px;
