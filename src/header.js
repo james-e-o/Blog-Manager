@@ -50,8 +50,8 @@ const Header = () => {
               </div>
               <div className='menu-main'>
                   <ul>
-                    <li><Link to='/sign' state={'signup'}>Sign up</Link></li>
-                    <li><Link to='/sign' state={'login'}>Login</Link></li>
+                    <li><Link to='/sign' state={{signValue:'signup'}}>Sign up</Link></li>
+                    <li><Link to='/sign' state={{signValue:'login'}}>Sign up</Link></li>
                   </ul>
               </div>
           </div>
