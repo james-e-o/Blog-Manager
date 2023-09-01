@@ -27,7 +27,6 @@ main.sign-main {
     padding: 20px;
 }
 .sign-main> div.signin,div.signup {
-    margin-top: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +45,7 @@ div.form {
 }
 input {
     width: 90%;
-    padding: 10px;
+    padding: 6px;
     border-radius: 4px;
     outline: none;
     background-color: transparent;

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './main.css'
 import { useRef, useEffect, useMemo } from 'react'
-import { Like, Share, Comment, Views, Subscribe, Bookmark } from './svg'
+import { Like, Share, Comment, Views, Subscribe, Bookmark } from '../svg'
+import { Link } from 'react-router-dom'
 
 
 const Main = () => {
@@ -28,7 +29,7 @@ const Main = () => {
             <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
             With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
-            <button>Get started</button>
+            <Link to={'sign'} state={{signValue:'start'}}><button>Get started</button></Link>
             </p>
           </div>
           <div className='featured'>

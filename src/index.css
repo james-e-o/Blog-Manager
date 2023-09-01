@@ -2,31 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Righteous&family=Six+Caps&display=swap');
 @font-face {
     font-family: "LuckiestGuy";
-    src: url("./contents/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf");
+    src: url("./Components/contents/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf");
 }
 @font-face {
     font-family: "BrunoAce";
-    src: url("./contents/fonts/Bruno_Ace/BrunoAce-Regular.ttf");
+    src: url("./Components/contents/fonts/Bruno_Ace/BrunoAce-Regular.ttf");
 }
 @font-face {
     font-family: "Pacifico";
-    src: url("./contents/fonts/Pacifico/Pacifico-Regular.ttf");
+    src: url("./Components/contents/fonts/Pacifico/Pacifico-Regular.ttf");
 }
 @font-face {
     font-family: "RubikMoonrocks";
-    src: url("./contents/fonts/Rubik_Moonrocks/RubikMoonrocks-Regular.ttf");
+    src: url("./Components/contents/fonts/Rubik_Moonrocks/RubikMoonrocks-Regular.ttf");
 }
 @font-face {
     font-family: "SupermercadoOne";
-    src: url("./contents/fonts/Supermercado_One/SupermercadoOne-Regular.ttf");
+    src: url("./Components/contents/fonts/Supermercado_One/SupermercadoOne-Regular.ttf");
 }
 @font-face {
     font-family: "TitanOne";
-    src: url("./contents/fonts/Titan_One/TitanOne-Regular.ttf");
+    src: url("./Components/contents/fonts/Titan_One/TitanOne-Regular.ttf");
 }
 @font-face {
     font-family: "Capriola";
-    src: url("./contents/fonts/Capriola/Capriola-Regular.ttf");
+    src: url("./Components/contents/fonts/Capriola/Capriola-Regular.ttf");
 }
 
 * {
@@ -42,7 +42,7 @@
 
 hr {
     margin: 0px auto;
-    /* color: black; */
+    color: black;
     font-weight: 100;
     border: 0px;
     height: 1px;

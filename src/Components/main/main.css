@@ -96,7 +96,7 @@ div.read_id figure {
     background-size: cover;
     background-position:50% 10%;
     height: 13px;
-   background-image: url(./contents/images/githubpic.jpeg);
+   background-image: url(../contents/images/githubpic.jpeg);
 }
 figure img {
     width: 100%;
@@ -207,7 +207,7 @@ div#podcast1 {
     position: relative;
     z-index: -1;
     width: 40%;
-    background-image:url(./contents/images/podcaster.jpeg) ;
+    background-image:url(../contents/images/podcaster.jpeg) ;
     background-repeat: no-repeat;
     background-clip: border-box;
     border: 1px solid white;
@@ -281,7 +281,7 @@ div.rev figure {
     background-size: cover;
     background-position:50% 10%;
     height: 15px;
-   background-image: url(./contents/images/githubpic.jpeg);
+   background-image: url(../contents/images/githubpic.jpeg);
 }
 div.rev figure ~ h5 {
     display: inline-block;
