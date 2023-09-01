@@ -57,7 +57,7 @@ export const Signin = () => {
         <input type="password" />
       </div>
       <div className='login-options'>
-          <div id='slide' style={{display:'flex', justifyContent:'space-between',alignItems:'center', width:'99%'}}>
+          <div id='slide' style={{display:'flex', justifyContent:'space-around',alignItems:'center', width:'99%'}}>
             <p style={{color:'slateblue', fontSize:'13px', padding:'5px'}}>forgot details?</p>
             <button style={{padding: '8px 28px',fontSize:'15px',color:'white', background:'slateblue', border:'none', borderRadius:'4px',}}>Slide in</button>
           </div>
