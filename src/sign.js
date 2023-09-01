@@ -18,7 +18,7 @@ export const Sign = () => {
 export const Signup = () => {
   return (
     <div className='signup'>
-      <h4 style={{padding:'5px 15px'}}>Sign up</h4>
+      <h5 style={{padding:'5px 15px'}}>Sign up</h5>
       <div className="form">
        <p>Username:</p>
         <input type="email" />
@@ -46,7 +46,7 @@ export const Signup = () => {
 export const Signin = () => {
   return (
     <div className='signin'>
-      <h4 style={{padding:'5px 15px'}}>Login</h4>
+      <h5 style={{padding:'5px 15px'}}>Login</h5>
        <div className="form">
        <p>Email:</p>
         <input type="email" />
