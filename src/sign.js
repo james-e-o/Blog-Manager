@@ -4,13 +4,14 @@ import { useState,useEffect } from 'react'
 import { Google } from './Components/svg';
 
 
+
 export const Sign = () => {
   return (
      <div className='menu-main' style={{marginTop:'20px',gap:'8px'}}>
         <Link to='signup' state={{signValue:'signup'}} style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px', padding:'7px'}}>Sign up</p></Link>
         <Link to='login' state={{signValue:'login'}} style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}>Login</p></Link>
         <div style={{display:'flex',justifyContent:'space-between', marginTop:'15px', fontSize:'14px',color:'slategray'}}><hr style={{width:'38%',  color:'#d1cfe2',position:'relative',top:'9px'}}/> or <hr style={{width:'38%', color:'#d1cfe2', position:'relative',top:'9px'}}/></div>
-       <Link to='/google.com' state={{signValue:'login'}} style={{width:'70%'}}><p style={{display:'flex', fontSize:'14px',fontWeight:'light',  justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}><Google idth='48' eight='48'/>Sign  with Google</p></Link>
+       <Link to='/google.com' state={{signValue:'login'}} style={{width:'70%'}}><div style={{display:'flex', fontSize:'14px',fontWeight:'light',  justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}><Google idth='48' eight='48'/>Sign  with Google</div></Link>
       </div>
   )
 }
@@ -58,11 +59,15 @@ export const Signin = () => {
       </div>
       <div className='login-options'>
           <div id='slide' style={{display:'flex', justifyContent:'space-around',alignItems:'center', width:'99%'}}>
-            <p style={{color:'slateblue', fontSize:'13px', padding:'5px'}}>forgot details?</p>
-            <button style={{padding: '8px 28px',fontSize:'15px',color:'white', background:'slateblue', border:'none', borderRadius:'4px',}}>Slide in</button>
+            <Link>
+                <p style={{color:'slateblue', fontSize:'13px', padding:'5px'}}>forgot details?</p>
+            </Link>
+            <Link to={'/loggedin'}>
+                <button style={{padding: '8px 28px',fontSize:'15px',color:'white', background:'slateblue', border:'none',   borderRadius:'4px',}}>Slide in</button>
+            </Link>
           </div>
           <div style={{display:'flex',justifyContent:'space-between', marginTop:'15px', fontSize:'14px',color:'slategray'}}><hr style={{width:'38%',  color:'#d1cfe2',position:'relative',top:'9px'}}/> or <hr style={{width:'38%', color:'#d1cfe2', position:'relative',top:'9px'}}/></div>
-          <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px', padding:'5px'}}><Google idth='48' eight='48'/> Continue with Google</p>
+          <div style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px', padding:'5px'}}><Google idth='48' eight='48'/> Continue with Google</div>
           <Link to='/sign/signup' state={{signValue:'signup'}} style={{width:'70%'}}> <div style={{fontSize:'12px',fontWeight:'light', marginTop:'10px',padding:'5px', color:'#6559ac'}}>Create Account</div></Link>
 
       </div>

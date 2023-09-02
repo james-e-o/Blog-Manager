@@ -3,11 +3,17 @@ import Main from '../main/main';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {Sign, Signup, Signin} from '../../sign'
+
 
 // route imports
 import Corelayout from '../../Layouts/corelayout';
 import Signlayout from '../../Layouts/signlayout';
+import LoggedIn from '../../Layouts/LoggedinLayout';
+
+
+// page imports
+import {Sign, Signup, Signin} from '../../sign'
+
 
 const Home = () => {
   return (
@@ -32,6 +38,10 @@ const router = createBrowserRouter([
             {path:'login',element:<Signin/>},
             {path:'signup',element:<Signup/>}           
           ]
+        },
+        {
+          path:'loggedin',
+          element:<LoggedIn/>
         }
     ]
   }
