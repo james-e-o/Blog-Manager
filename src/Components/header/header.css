@@ -30,54 +30,76 @@ header h1 span {
     color: darkturquoise;
 }
 nav {
-    position: relative;
+    align-items: center;
     padding: 8px 18px;
-    display: block;
+    display: flex;
     color:white;
-}
-
-nav ul{
-    list-style: none;
-    display: none;
     justify-content: space-between;
 }
-nav button {
+
+nav.desktop{
+    display: flex;
+    margin-right: 15px;
+}
+/* .desktop ul li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+} */
+.desktop ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 6px;
+    transition: color 150ms linear;
+}
+.desktop ul li:hover{
+    color: rgb(200, 245, 255);
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 6px;
+}
+nav button, .started {
     display: inline-block;
     border-radius: 36px;
     font-weight: 600;
     border: 1px solid white;
-    padding: 6px 12px;
+    padding: 7px 12px;
     color:white;
     margin:0px 15px;
     background-color: transparent;
     font-size: medium;
     font-family: monospace;
-    transition: color 200ms ease, border 200ms ease;
+    transition: background-color 200ms ease, border 200ms ease;
+}
+nav button:hover {
+    color: white;
+    background-color: rgb(135, 120, 235);
+    transition:  background-color 150ms ease;
 }
 .nav-button {
     color: white;
     background-color: rgb(255, 103, 48);
     border: 1px solid rgb(255, 103, 48);
 }
-nav .svg {
+div.svg {
     height: 30px;
     width: 30px;
+    /* background-color: black; */
     display: inline-block;
 }
 .main-svg {
+    height: 100%;
+    width: 100%;
     position: relative;
-    top: 5px;
     fill: white;
     transition: fill 200ms ease;
 }
-/* why can't .nav-svg below be added to svg without .svg */
 .nav-svg {
     fill: black;
 }
-
-
-
-
+/* why can't .nav-svg below be added to svg without .svg */
 
 
 
@@ -86,7 +108,7 @@ nav .svg {
     height: 100vh;
     overflow: hidden;
     background-color:white;
-    width: 300px;
+    width: 310px;
     top: calc(0px );
     right: calc(0px);
     z-index: 10;

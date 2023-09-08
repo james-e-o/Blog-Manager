@@ -3,19 +3,22 @@ import Main from '../main/main';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-
+import { useContext, useEffect, useState , createContext} from 'react';
 
 // route imports
 import Corelayout from '../../Layouts/corelayout';
 import Signlayout from '../../Layouts/signlayout';
-import LoggedIn from '../../Layouts/LoggedinLayout';
-
+import LoggedIn from '../../Layouts/loggedinLayout';
 
 // page imports
 import {Sign, Signup, Signin} from '../../sign'
+import Notfound from '../Errors/Notfound';
+import UserDashboard from '../dashboards/UserDashboard';
 
+//context export
+export const screenWidth = createContext('')
 
-const Home = () => {
+const Home = () => {  
   return (
     <div>
       <Header />
@@ -41,7 +44,14 @@ const router = createBrowserRouter([
         },
         {
           path:'loggedin',
-          element:<LoggedIn/>
+          element:<LoggedIn/>,
+          children: [
+            {index:true, element:<UserDashboard/>}
+          ]
+        },
+        {
+          path:"*",
+          element:<Notfound/>
         }
     ]
   }
@@ -49,7 +59,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-      <RouterProvider router={router}/>
+        <RouterProvider router={router}/>
   );
 }
 

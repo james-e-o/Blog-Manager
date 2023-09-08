@@ -55,18 +55,3 @@ hr.inner{
     height: 1px;
     box-shadow: 1px 1px 0px rgb(165, 165, 165);
 }
-
-
-
-
-@media (min-width: 640px) {
-    nav ul{
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    nav svg {
-        display: none;
-    }
-  }
