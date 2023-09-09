@@ -3,7 +3,7 @@ import Main from '../main/main';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import { useContext, useEffect, useState , createContext} from 'react';
+import {createContext} from 'react';
 
 // route imports
 import Corelayout from '../../Layouts/corelayout';

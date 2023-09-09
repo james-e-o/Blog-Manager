@@ -3,7 +3,7 @@ const app = express()
 const PORT = process.env.PORT || 8080
 
 app.get('/api/name',(req,res)=>{
-    res.send({name:'Jamiecruise'})
+    res.send({name:'Jamiecruise', id:20})
     console.log(req.ips)
 })
 

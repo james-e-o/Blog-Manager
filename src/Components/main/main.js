@@ -2,7 +2,7 @@ import './main-mobile.css'
 import './main-tab.css'
 import './main-desk.css'
 import { useRef,useState, useEffect, useContext } from 'react'
-import { Like, Share, Comment, Views, Subscribe, Bookmark } from '../svg'
+import {  Views, Bookmark } from '../svg'
 import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
 
@@ -14,7 +14,7 @@ const Main = () => {
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
       const screen = useContext(screenWidth)
-      const niches = ['Finance', 'Business', 'Culture', 'Technology','Politics', 'Sports', 'Music', 'Religion', 'Self Improvement', 'Art', 'News']
+      const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
      
       function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
@@ -64,7 +64,7 @@ const Main = () => {
             <p id='niche'>Find your niche</p>
             <div className='category'>
               {niches.map((niche)=>(
-                <button className='categories'>{niche}</button>
+                <button className='categories' key={niche.id}>{niche.name}</button>
               ))}
             </div>
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
@@ -132,7 +132,7 @@ const Main = () => {
             <p id='niche'>Find your niche</p>
             <div className='category'>
               {niches.map((niche)=>(
-                <button className='categories'>{niche}</button>
+                <button className='categories' key={niche.id}>{niche.name}</button>
               ))}            
             </div>
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           

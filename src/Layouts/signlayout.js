@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet,NavLink,Link,useLocation} from 'react-router-dom'
+import { Outlet,useLocation} from 'react-router-dom'
 import { useEffect } from 'react'
 import './sign.css'
 
@@ -8,7 +8,6 @@ const Signlayout = () => {
     let {state} = useLocation()
     useEffect(()=>{
         document.body.style.position = 'static'
-        console.log(state.signValue)
     })
   return (
     <div className='sign'>
