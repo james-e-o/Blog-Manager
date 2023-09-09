@@ -8,7 +8,7 @@ import {createContext} from 'react';
 // route imports
 import Corelayout from '../../Layouts/corelayout';
 import Signlayout from '../../Layouts/signlayout';
-import LoggedIn from '../../Layouts/loggedinLayout';
+import LoggedIn from '../../Layouts/LoggedLayout';
 
 // page imports
 import {Sign, Signup, Signin} from '../../sign'
