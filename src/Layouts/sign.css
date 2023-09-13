@@ -26,33 +26,90 @@ div.sign-header {
 main.sign-main {
     padding: 20px;
 }
-.sign-main> div.signin,div.signup {
+.sign-main> div {
+    width: 100%;
+    text-align: center;
+}
+.sign-main> div form{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: start;
+    width: 100%;
 }
-div.form {
-    width: 75%;
-    position: relative;
-    margin-top: 11px;
+.inputdiv {
+   margin-top: 20px;
+   width: 68%;
+   height: 30px;
+   border-bottom: 1px solid slateblue;
+   position: relative;
 }
-.form p{
-    font-size: 11px;
-    color: rgb(42, 41, 41);
-    font-weight: 500;
-    padding: 4px 2px;
+.inputdivfocus {
+   margin-top: 20px;
+   width: 68%;
+   height: 30px;
+   border-bottom: 1px solid slategray;
+   position: relative;
 }
-input {
-    width: 90%;
-    padding: 6px;
-    border-radius: 4px;
+.inputspan {
+    transition: top 150ms linear;
+    padding-left: 2px;
+    position: absolute;
+    top: -6px;
+    color: slategray;
+    font-size: 10px;
+}
+.inputspanfocus {
+    transition: top 150ms linear;
+    padding-left: 2px;
+    position: absolute;
+    top: 11px;
+    color: slategray;
+    font-size: 12px;
+}
+#inputdiv input {
+    border: none;
     outline: none;
+    position: absolute;
     background-color: transparent;
-    border: 1px solid rgb(183, 174, 236);
+    height: 100%;
+    width: 97%;
+    padding: 0px 0px 1px 2px;
 }
-div.login-options{
-    width: 75%;
-    margin-top: 15px;
+form button{
+    margin-top: 18px;
+    width: 68%;
+    padding:6px;
+    color: white;
+    background: slateblue;
+    border-radius: 5px;
+    border: none;
+    font-size: 13px;
 }
+form p#forgot{
+    width: 68%;
+    padding:4px;
+    color: rgb(209, 0, 10);
+    font-size: 11px;
+}
+div#google {
+    width: 66%;
+    display: flex;
+    font-size: 13px;
+    font-weight: 400;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 4px;
+}
+div #sign-in-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    width: 100%; 
+}
+
 
