@@ -31,10 +31,10 @@ export const Signup = () => {
   return (
     <div className='signup'>
       <h5 style={{padding:'5px 15px'}}>Sign up</h5>
-      <Form >
-        <Indiv placehold={"Username"} value={(e)=>{setUserName(e.target.value)}}/>
-        <Indiv placehold={"Email"} value={(e)=>{setEmail(e.target.value)}}/>
-        <Indiv placehold={"Password"} value={(e)=>{setPassword(e.target.value)}}/>  
+      <Form on>
+        <Indiv name={"username"}placehold={"Username"} value={(e)=>{setUserName(e.target.value)}}/>
+        <Indiv name={"email"}placehold={"Email"} value={(e)=>{setEmail(e.target.value)}}/>
+        <Indiv name={"password"}placehold={"Password"} value={(e)=>{setPassword(e.target.value)}}/>  
         <button type='submit' >Sign up</button>  
       </Form>
       <div id='sign-in-option'>
@@ -57,8 +57,8 @@ export const Signin = () => {
     <div className='signin'>
       <h5 style={{padding:'5px 15px'}}>Login</h5>
       <Form>
-        <Indiv placehold={"Email"} value={(e)=>{setEmail(e.target.value)}}/>
-        <Indiv placehold={"Password"} value={(e)=>{setPassword(e.target.value)}}/>
+        <Indiv name={"email"} placehold={"Email"} value={(e)=>{setEmail(e.target.value)}}/>
+        <Indiv name={"password"} placehold={"Password"} value={(e)=>{setPassword(e.target.value)}}/>
         <p id='forgot'> <Link style={{color:'orange'}} to='/makeup' state={{signVal:'signup'}}>forgot details?</Link></p>    
         <button type='submit' >Slide in</button>  
       </Form>
@@ -72,13 +72,13 @@ export const Signin = () => {
   )
 }
 
-const Indiv = ({value, placehold}) => {
+const Indiv = ({name, value, placehold}) => {
   const [inputFocus, setInputFocus] = useState(false)
   // let value
   return (
     <div id='inputdiv' className={inputFocus?"inputdiv":"inputdivfocus"}>
       <span className={inputFocus?"inputspan":"inputspanfocus"}>{placehold}</span>
-      <input name='' onInput={value} onFocus={(e)=>{e.preventDefault(); setInputFocus(true)}} onBlur={(e)=>{e.target.value.length===0? setInputFocus(false):setInputFocus(true)}} type="text"/>
+      <input name={name} onInput={value} onFocus={(e)=>{e.preventDefault(); setInputFocus(true)}} onBlur={(e)=>{e.target.value.length===0? setInputFocus(false):setInputFocus(true)}} type="text"/>
     </div>
   )
 }
