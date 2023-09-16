@@ -6,8 +6,8 @@ const LoggedIn = () => {
 
   return (
     <div>
-        <h1>Loggedin</h1>
-        <p>{part.split('/').filter(vim => vim !== '').map(vim => {return <Link>{` /${vim}`}</Link>})}</p>
+        {/* <h1>Loggedin</h1>
+        <p>{part.split('/').filter(vim => vim !== '').map(vim => {return <Link>{` /${vim}`}</Link>})}</p> */}
         <Outlet />
     </div>
   )

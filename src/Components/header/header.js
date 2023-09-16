@@ -42,7 +42,7 @@ const Header = () => {
   return (
     
     <header className={offline? "header active":"header"}>
-      <h1>Skript_<span>n</span></h1> 
+      <h1 className='landing'>Skript_<span>n</span></h1> 
      
        {
         //  MOBILE

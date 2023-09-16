@@ -15,6 +15,9 @@ import {Sign, Signup, Signin} from '../../sign'
 import Notfound from '../Errors/Notfound';
 import UserDashboard from '../dashboards/UserDashboard';
 
+//actions
+import { signupValidate,loginValidation } from '../../sign';
+
 //context export
 export const screenWidth = createContext('')
 
@@ -38,12 +41,12 @@ const router = createBrowserRouter([
           element:<Signlayout/>,
           children:[
             {index:true, element:<Sign/>},
-            {path:'login',element:<Signin/>},
-            {path:'signup',element:<Signup/>}           
+            {path:'login',element:<Signin/>,action : loginValidation},
+            {path:'signup',element:<Signup/>,action : signupValidate}             
           ]
         },
         {
-          path:'loggedin',
+          path:'dashboard',
           element:<LoggedIn/>,
           children: [
             {index:true, element:<UserDashboard/>}
@@ -64,6 +67,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 

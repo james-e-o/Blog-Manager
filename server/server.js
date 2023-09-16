@@ -8,6 +8,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
+// app.use(express.static(b))
 
 app.post('/signup',(req, res)=>{
 

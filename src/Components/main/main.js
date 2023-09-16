@@ -27,7 +27,7 @@ const Main = () => {
         setColorState(randomColor)
 
         // fetch()
-      },[])
+      },[screen])
   return (
   
     <main>
@@ -171,13 +171,18 @@ const Main = () => {
       ):(
       //  -- DESKTOP --
       <>
-        <div className='main'>
-          <div className='h1-tag'>
-            <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
-            <p id='cta'>
-            With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
-            <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
-            </p>
+        <div className='main-desk'>
+          <div className='main-display'>
+            <div className='h1-tag'>
+              <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
+              <p id='cta'>
+              With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
+              <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
+              </p>
+            </div>
+            <div className='h1-art'>
+                keyboards
+            </div>          
           </div>
           <div className='featured'>
             <p id='reads'>Top reads</p>
@@ -200,17 +205,9 @@ const Main = () => {
           <div className='niche-content'>
             <p id='niche'>Find your niche</p>
             <div className='category'>
-              <button className='categories'>Finance</button>
-              <button className='categories'>Business</button>
-              <button className='categories'>Culture</button>
-              <button className='categories'>Technology</button>
-              <button className='categories'>Politics</button>
-              <button className='categories'>Sports</button>
-              <button className='categories'>Music</button>
-              <button className='categories'>Faith</button>
-              <button className='categories'>Self Improvement</button>
-              <button className='categories'>Art</button>
-              <button className='categories'>News</button>
+              {niches.map((niche)=>(
+                <button className='categories' key={niche.id}>{niche.name}</button>
+              ))}            
             </div>
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
           </div>

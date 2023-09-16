@@ -17,7 +17,7 @@
     background-color: white;
 }
 
-header h1{
+.header h1.landing{
     
     font-family:Pacifico;
     padding: 10px 20px;
@@ -25,11 +25,11 @@ header h1{
     font-weight:bolder;
     font-size: x-large;
 }
-header h1 span {
+.header h1 span {
     font-family: Pacifico;
     color: darkturquoise;
 }
-nav {
+.header nav {
     align-items: center;
     padding: 8px 18px;
     display: flex;
@@ -37,7 +37,7 @@ nav {
     justify-content: space-between;
 }
 
-nav.desktop{
+.header nav.desktop{
     display: flex;
     margin-right: 15px;
 }
@@ -60,7 +60,7 @@ nav.desktop{
     padding: 5px;
     margin: 6px;
 }
-nav button, .started {
+.header nav button, .started {
     display: inline-block;
     border-radius: 36px;
     font-weight: 600;
@@ -73,7 +73,7 @@ nav button, .started {
     font-family: monospace;
     transition: background-color 200ms ease, border 200ms ease;
 }
-nav button:hover {
+.header nav button:hover {
     color: white;
     background-color: rgb(135, 120, 235);
     transition:  background-color 150ms ease;
@@ -83,7 +83,7 @@ nav button:hover {
     background-color: rgb(255, 103, 48);
     border: 1px solid rgb(255, 103, 48);
 }
-div.svg {
+.header div.svg {
     height: 30px;
     width: 30px;
     /* background-color: black; */

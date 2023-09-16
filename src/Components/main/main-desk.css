@@ -1,0 +1,307 @@
+main{
+    font-family:   Arial, sans-serif;
+    
+}
+
+.main-desk {
+    display: flex;
+    flex-direction: column;
+}
+.main-desk div.main-display {
+    background-color: slateblue;
+    display: flex;
+    justify-content: space-evenly;
+    height: 480px;
+    padding: 20px;
+}
+.main-desk div.main-display  .h1-tag{
+   background-color:slateblue;
+   width: 47%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+}
+.main-desk div.main-display  .h1-art{
+   background-color:slateblue;
+   width: 47%;
+}
+
+.main-desk .h1-tag h1 {
+    line-height: 142%;
+    font-family:  RubikMoonrocks, Capriola, Arial, Helvetica, sans-serif;
+    text-align: start;
+    font-weight: 900;
+    margin-top: 25px;
+    padding: 0px 10px;
+    font-size: 41px;
+}
+.main-desk .h1-tag h1 span {
+    font-family: Capriola;
+    color: rgb(201, 201, 201);
+}
+.main-desk .h1-tag p#cta{
+    margin-top: 20px;
+    padding: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 200;
+    font-size: large;
+    line-height: 25px;
+    text-align: start;
+    color: white;
+}
+.main-desk .h1-tag p button{
+    
+    margin-top: 35px;
+    font-size: large;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    padding: 8px 25px;
+    font-weight: normal;
+    border-radius: 15px;
+    color: black;
+    background-image:  linear-gradient(to bottom,#ffdb98,#7b6aef);
+    transition: transform 0.2s ease;
+}
+.main-desk .h1-tag p button:hover{
+   
+   transform: scale(1.06)
+}
+
+/* FEATURED */
+.main-desk div.featured{
+    padding: 20px;
+    background-color: white;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.main-desk .featured p#reads {
+    display: inline-block;
+    padding: 20px 10px 15px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(126, 126, 126);
+}
+.main-desk .featured div.reads {
+    margin: 7px 0px 0px 10px;
+    padding: 10px;
+    background-color: white;
+    /* border-radius: 10px; */
+    box-shadow: 1px 1px 0px rgba(173, 173, 173, 0.747);
+}
+.main-desk div.read_id {
+    display: flex;
+    align-items: center;
+}
+.main-desk div.read_id figure {
+    display: inline-block;
+    padding: 5px;
+    width: 13px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:50% 10%;
+    height: 13px;
+   background-image: url(../contents/images/githubpic.jpeg);
+}
+.main-desk figure img {
+    width: 100%;
+    height: 100%;
+}
+.main-desk div.read_id figure ~ h5 {
+    display: inline-block;
+    margin:0px 8px;
+    font-weight:normal;
+    font-size: 12px;
+    width: 54%;
+    overflow-x:hidden ;
+}
+.main-desk div.read_id p {
+    font-weight:normal;
+    font-size: 12px;
+
+}
+.main-desk .reads h4 {
+    margin-top: 6px;
+    font-weight:bolder;
+    font-size:14px;
+    
+}
+.main-desk .reads #engagement {
+    padding: 7px 0px 0px;
+    display: flex;
+   justify-content: flex-start;
+    font-size: x-small;
+    font-weight: 100;
+    gap: 30px;
+}
+.main-desk div#engagement  div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.main-desk div.engagement-svg svg{
+    width: 15px;
+    height: 15px;
+    
+}
+
+
+/* NICHE CONTENT */
+.main-desk .niche-content {
+    padding: 20px;
+}
+.main-desk .niche-content #niche {
+    display: inline-block;
+    padding: 20px 10px 7px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-size: 16px;
+    color: rgb(94, 94, 94);
+}
+.main-desk .category {
+    padding: 10px;
+}
+.main-desk .categories {
+    display: inline-grid;
+    margin-right: 10px ;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 9px 13px;
+    background-color: #ffedde;
+    font-size: smaller;
+    transition: background-color 400ms ease-out;
+    border: none;
+}
+.main-desk .categories:hover {
+    background-color: rgb(224, 219, 252);
+}
+.main-desk .niche-content .see {
+    cursor: pointer;
+    display: block;
+    margin: 10px;
+    padding: 5px ;
+    font-size: smaller;
+    color: rgb(149, 141, 179);
+}
+.main-desk #arrow {
+    display: inline-block;
+    transition: transform 200ms ease-out;
+}
+.main-desk #see {
+    display: inline-block;
+    transform: translateX(18px);
+}
+.main-desk .see:hover #arrow{
+    transform: translateX(12px);
+    color: #ffbb28;
+}
+
+
+/* PODCAST */
+
+.main-desk div#podcast1 {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(107, 93, 93) ;
+    padding:7px 20px ;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    gap:-10px;
+}
+.main-desk #podcast1 .podcast1-gradient {
+    position: relative;
+    z-index: -1;
+    width: 40%;
+    background-image:url(../contents/images/podcaster.jpeg) ;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    border: 1px solid white;
+    background-size: cover;
+    background-position:90% 50%;
+    border-radius:62% 38% 38% 62% / 31% 51% 49% 69% ;
+  right: 27px;
+}
+.main-desk #podcast1 .podcast1-wrapper {
+    z-index: 2;
+    flex-direction: column;
+    width: 60%;
+    display: flex;
+    margin-left: 6px;
+}
+.main-desk #podcast1 h2 {
+    padding: 0px 10px;
+    font-family: SupermercadoOne;
+    font-size: x-large;
+    width: 60%;
+   display: inline-block;
+}
+.main-desk #podcast1 article {
+    padding: 13px 5px;
+    margin-left: 5px;
+    width: 80%;
+    color: rgb(31, 26, 26);
+    font-size: 15px;
+}
+.main-desk #podcast1 button {
+    z-index: 3;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 102, 14);
+    font-weight: 700;
+    margin-left: 7px;
+    width: fit-content;
+}
+
+
+
+/* REVIEWS */
+.main-desk div.reviews{
+    background-color: white;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+   align-items: flex-end;
+}
+.main-desk .reviews div.rev {
+    width: 70vw;
+    margin: 15px 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px rgba(173, 173, 173, 0.747);
+}
+.main-desk div.rev_id {
+    display: flex;
+    align-items: center;
+}
+.main-desk div.rev figure {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 50%;
+    width: 15px;
+    background-repeat: no-repeat;
+    /* background-clip: content-box; */
+    background-size: cover;
+    background-position:50% 10%;
+    height: 15px;
+   background-image: url(../contents/images/githubpic.jpeg);
+}
+.main-desk div.rev figure ~ h5 {
+    display: inline-block;
+    margin-left: 8px;
+}
+.main-desk figure img {
+    width: 100%;
+    height: 100%;
+}
+.main-desk div figure ~ div {
+    padding: 5px;
+    color: green;
+}
