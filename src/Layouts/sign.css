@@ -38,15 +38,15 @@ main.sign-main {
     width: 100%;
 }
 .inputdiv {
-   margin-top: 20px;
-   width: 68%;
+   margin-bottom: 20px;
+   width: 70%;
    height: 30px;
    border-bottom: 1px solid slateblue;
    position: relative;
 }
 .inputdivfocus {
-   margin-top: 20px;
-   width: 68%;
+   margin-bottom: 20px;
+   width: 70%;
    height: 30px;
    border-bottom: 1px solid slategray;
    position: relative;
@@ -55,7 +55,7 @@ main.sign-main {
     transition: top 150ms linear;
     padding-left: 2px;
     position: absolute;
-    top: -6px;
+    top: -1px;
     color: slategray;
     font-size: 10px;
 }
@@ -72,28 +72,49 @@ main.sign-main {
     outline: none;
     position: absolute;
     background-color: transparent;
-    height: 100%;
+    height: 60%;
+    top: 8px;
     width: 97%;
     padding: 0px 0px 1px 2px;
 }
+#inputdiv input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#inputdiv #icon {
+    display: inline-block;
+    padding: 3px 10px;
+    position: absolute;
+    fill: black;
+    left: 85%;
+    top: 8px;
+}
 form button{
-    margin-top: 18px;
-    width: 68%;
-    padding:6px;
+    margin-top: 8px;
+    width: 70%;
+    padding:7px;
     color: white;
     background: slateblue;
-    border-radius: 5px;
+    border-radius: 25px;
     border: none;
     font-size: 13px;
 }
+#inputdiv p#error {
+    position: absolute;
+    font-size: 10px;
+    padding-left: 2px;
+    top: 31px;
+    font-style: italic;
+    color: #de0000;
+    font-weight: lighter;
+}
 form p#forgot{
-    width: 68%;
+    width: 70%;
     padding:4px;
     color: rgb(209, 0, 10);
     font-size: 11px;
 }
 div#google {
-    width: 66%;
+    width: 68%;
     display: flex;
     font-size: 13px;
     font-weight: 400;
