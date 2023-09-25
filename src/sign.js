@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
 import {Form, Link, redirect, useActionData} from 'react-router-dom'
 import { useState} from 'react'
-import { Google, Views } from './Components/svg';
+import { Google, Noviews, Views } from './Components/svg';
 
 
 
@@ -20,19 +19,17 @@ export const Sign = () => {
 export const Signup = () => {
   const data = useActionData()
   
-  
   return (
     <div className='signup'>
       <h5 style={{padding:'7px 15px'}}>Sign up</h5>
       <Form method='post' action='/sign/signup'>
         <Indiv error ={data && data.usernameError} type={'text'} name={"username"}placehold={"Username"}/>
         <Indiv error ={data && data.emailError} type={'text'} name={"email"}placehold={"Email"}/>
-        <Indiv icon={true} error ={data && (data.passwordError || data.passwordError2)}type={'password'} altType={'text'} name={"password"}placehold={"Password"}/>  
+        <Indiv icon={true} error ={data && (data.passwordError || data.passwordError2)} type={'password'} altType={'text'} name={"password"} placehold={"Password"}/>  
         <button >Sign up</button>  
       </Form>
       <div id='sign-in-option'>
         <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
-
         <div id='google'><Google /> Sign up with Google</div>
         <p style={{width:'63%',marginTop:'3px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/login'>have an account?  <span style={{fontSize:'11px', color:'slateblue'}}>Login</span></Link></p>  
       </div>
@@ -67,14 +64,11 @@ export const Signin = () => {
 const Indiv = ({name, value, placehold, type, error, icon, altType}) => {
   const [inputFocus, setInputFocus] = useState(false)
   const [hide, setHide] =useState(true)
-  useEffect(()=>{
-      
-  })
   return (
     <div id='inputdiv' className={inputFocus?"inputdiv":"inputdivfocus"}>
       <span className={inputFocus?"inputspan":"inputspanfocus"}>{placehold}</span>
-      {icon && inputFocus?<Views run={console.log(hide)}/>:""}
-      <input name={name} onInput={value} onFocus={(e)=>{e.preventDefault(); setInputFocus(true)}} onBlur={(e)=>{e.target.value.length===0? setInputFocus(false):setInputFocus(true)}} type={!hide?altType:type}/>
+      {icon && inputFocus?<div id="icon" onClick={()=>setHide(!hide)}>{hide?<Views/>:<Noviews/>}</div>:""}
+      <input name={name} onInput={value} onFocus={(e)=>{e.preventDefault(); setInputFocus(true)}} onBlur={(e)=>{ if (e.target.value.length===0) {setInputFocus(false); if(!hide)setHide(!hide)} else {setInputFocus(true)}}} type={!hide?altType:type}/>
       <p id='error'>{error}</p>
     </div>
   )

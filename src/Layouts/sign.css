@@ -1,3 +1,5 @@
+
+
 div.sign-header {
     background-color: slateblue;
     height:240px;
@@ -87,6 +89,11 @@ main.sign-main {
     fill: black;
     left: 85%;
     top: 8px;
+    z-index: 2;
+}
+#inputdiv div.engagement-svg svg{
+    width: 18px;
+    height: 18px;
 }
 form button{
     margin-top: 8px;
