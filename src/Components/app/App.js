@@ -41,8 +41,8 @@ const router = createBrowserRouter([
           element:<Signlayout/>,
           children:[
             {index:true, element:<Sign/>},
-            {path:'login',element:<Signin/>,action : loginValidation},
-            {path:'signup',element:<Signup/>,action : signupValidate}             
+            {path:'login',element:<Signin/>, action : loginValidation},
+            {path:'signup',element:<Signup/>, action : signupValidate}             
           ]
         },
         {

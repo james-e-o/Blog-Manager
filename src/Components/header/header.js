@@ -36,7 +36,6 @@ const Header = () => {
         window.scrollTo(0, scroll);
        }
        setScroll(scrollOffset.current)
-       console.log(scroll)
   },[menuActive,screen])
    
   return (

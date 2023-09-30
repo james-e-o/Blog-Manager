@@ -2,16 +2,16 @@ main{
     font-family:   Arial, sans-serif;
     
 }
-.main {
+.mobile-main {
     display: flex;
     flex-direction: column;
 }
-.main .h1-tag{
+.mobile-main .h1-tag{
    background-color: slateblue;
-    padding: 20px;
+    padding: 20px 20px 45px;
 }
 
-.h1-tag h1 {
+.mobile-main .h1-tag h1 {
     line-height: 142%;
     font-family:  RubikMoonrocks, Capriola, Arial, Helvetica, sans-serif;
     /* font-family: sans-serif; */
@@ -26,11 +26,11 @@ main{
     background-image: linear-gradient(to right, orange, blueviolet);
     background-clip: text; */
 }
-.h1-tag h1 span {
+.mobile-main .h1-tag h1 span {
     font-family: Capriola;
     color: rgb(201, 201, 201);
 }
-.h1-tag p#cta{
+.mobile-main .h1-tag p#cta{
     margin-top: 20px;
     padding: 10px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -40,9 +40,9 @@ main{
     text-align: center;
     color: white;
 }
-.h1-tag p button{
+.mobile-main .h1-tag p button{
     
-    margin-top: 35px;
+    margin-top: 28px;
     font-size: large;
     font-weight: 900;
     outline: none;
@@ -54,13 +54,13 @@ main{
     background-image:  linear-gradient(to bottom,#ffdb98,#7b6aef);
     transition: transform 0.2s ease;
 }
-.h1-tag p button:hover{
+.mobile-main .h1-tag p button:hover{
    
    transform: scale(1.06)
 }
 
 /* FEATURED */
-div.featured{
+.mobile-main div.featured{
     padding: 20px;
     background-color: white;
     height:fit-content;
@@ -68,7 +68,7 @@ div.featured{
     flex-direction: column;
     margin-bottom: 5px;
 }
-.featured p#reads {
+.mobile-main .featured p#reads {
     display: inline-block;
     padding: 20px 10px 15px;
     font-weight: 600;
@@ -84,11 +84,11 @@ div.featured{
     /* border-radius: 10px; */
     box-shadow: 1px 1px 0px rgba(173, 173, 173, 0.747);
 }
-div.read_id {
+.mobile-main div.read_id {
     display: flex;
     align-items: center;
 }
-div.read_id figure {
+.mobile-main div.read_id figure {
     display: inline-block;
     padding: 5px;
     width: 13px;
@@ -98,11 +98,11 @@ div.read_id figure {
     height: 13px;
    background-image: url(../contents/images/githubpic.jpeg);
 }
-figure img {
+.mobile-main figure img {
     width: 100%;
     height: 100%;
 }
-div.read_id figure ~ h5 {
+.mobile-main div.read_id figure ~ h5 {
     display: inline-block;
     margin:0px 8px;
     font-weight:normal;
@@ -110,18 +110,18 @@ div.read_id figure ~ h5 {
     width: 54%;
     overflow-x:hidden ;
 }
-div.read_id p {
+.mobile-main div.read_id p {
     font-weight:normal;
     font-size: 12px;
 
 }
-.reads h4 {
+.mobile-main .reads h4 {
     margin-top: 6px;
     font-weight:bolder;
     font-size:14px;
     
 }
-.reads #engagement {
+.mobile-main .reads #engagement {
     padding: 7px 0px 0px;
     display: flex;
    justify-content: flex-start;
@@ -129,12 +129,12 @@ div.read_id p {
     font-weight: 100;
     gap: 30px;
 }
-div#engagement  div{
+.mobile-main div#engagement  div{
     display: flex;
     align-items: center;
     gap: 5px;
 }
-div.engagement-svg svg{
+.mobile-main div.engagement-svg svg{
     width: 20px;
     height: 20px;
     
@@ -142,10 +142,10 @@ div.engagement-svg svg{
 
 
 /* NICHE CONTENT */
-.niche-content {
+.mobile-main .niche-content {
     padding: 20px;
 }
-.niche-content #niche {
+.mobile-main .niche-content #niche {
     display: inline-block;
     padding: 20px 10px 7px;
     font-weight: 600;
@@ -153,10 +153,10 @@ div.engagement-svg svg{
     font-size: 16px;
     color: rgb(94, 94, 94);
 }
-.category {
+.mobile-main .category {
     padding: 10px;
 }
-.categories {
+.mobile-main .categories {
     display: inline-grid;
     margin-right: 10px ;
     margin-top: 10px;
@@ -167,10 +167,10 @@ div.engagement-svg svg{
     transition: background-color 400ms ease-out;
     border: none;
 }
-.categories:hover {
+.mobile-main .categories:hover {
     background-color: rgb(224, 219, 252);
 }
-.niche-content .see {
+.mobile-main .niche-content .see {
     cursor: pointer;
     display: block;
     margin: 10px;
@@ -178,15 +178,15 @@ div.engagement-svg svg{
     font-size: smaller;
     color: rgb(149, 141, 179);
 }
-#arrow {
+.mobile-main #arrow {
     display: inline-block;
     transition: transform 200ms ease-out;
 }
-#see {
+.mobile-main #see {
     display: inline-block;
     transform: translateX(18px);
 }
-.see:hover #arrow{
+.mobile-main .see:hover #arrow{
     transform: translateX(12px);
     color: #ffbb28;
 }
@@ -194,7 +194,7 @@ div.engagement-svg svg{
 
 /* PODCAST */
 
-div#podcast1 {
+.mobile-main div#podcast1 {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     color:rgb(107, 93, 93) ;
     padding:7px 20px ;
@@ -202,8 +202,9 @@ div#podcast1 {
     z-index: -1;
     display: flex;
     gap:-10px;
+    margin-bottom: 55px;
 }
-#podcast1 .podcast1-gradient {
+.mobile-main #podcast1 .podcast1-gradient {
     position: relative;
     z-index: -1;
     width: 40%;
@@ -216,28 +217,28 @@ div#podcast1 {
     border-radius:62% 38% 38% 62% / 31% 51% 49% 69% ;
   right: 27px;
 }
-#podcast1 .podcast1-wrapper {
+.mobile-main #podcast1 .podcast1-wrapper {
     z-index: 2;
     flex-direction: column;
     width: 60%;
     display: flex;
     margin-left: 6px;
 }
-#podcast1 h2 {
+.mobile-main #podcast1 h2 {
     padding: 0px 10px;
     font-family: SupermercadoOne;
     font-size: x-large;
     width: 60%;
    display: inline-block;
 }
-#podcast1 article {
+.mobile-main #podcast1 article {
     padding: 13px 5px;
     margin-left: 5px;
     width: 80%;
     color: rgb(31, 26, 26);
     font-size: 15px;
 }
-#podcast1 button {
+.mobile-main #podcast1 button {
     z-index: 3;
     padding: 10px 15px;
     border-radius: 10px;
@@ -250,48 +251,114 @@ div#podcast1 {
 }
 
 
+/* LIFECYCLE */
+.mobile-main section.lifecycle-wrapper {
+    background-color: rgb(161, 205, 255);
+    color: white;
+    height: 400px;
+    margin-bottom: 55px;
+}
+.mobile-main section.lifecycle-wrapper h1 {
+    margin: 20px;
+    font-family: RubikMoonrocks;
+}
+
+
 
 /* REVIEWS */
-div.reviews{
+.mobile-main section.review-wrapper {
+    height: fit-content;
+}
+.mobile-main .review-wrapper .review-header{
+    font-weight: 200;
+    display: inline-block;
+    font-size:20px ;
+    margin: 8px 25px;
+    font-family: BrunoAce;
+    background-color: #b7aef3;
+    padding: 4px 6px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    color: white;
+}
+.mobile-main .review-wrapper div.reviews{
+    margin: 0px 20px;
     background-color: white;
     height:fit-content;
-    display: flex;
-    flex-direction: column;
-   align-items: flex-end;
+    overflow-x: scroll;
+    width:90vw ;
 }
-.reviews div.rev {
-    width: 70vw;
-    margin: 15px 20px;
+.mobile-main .reviews div.review-scroll {
+    width: calc(498%);
+}
+.mobile-main .reviews .review-scroll div.rev {
+    width: 75vw;
+    display: inline-block;
+    margin: 0px 15px 10px 0px;
     padding: 15px;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 1px 4px rgba(173, 173, 173, 0.747);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    border: 2px solid #b7aef3;
+    height: calc(205px);
 }
-div.rev_id {
-    display: flex;
-    align-items: center;
-}
-div.rev figure {
+.mobile-main .reviews .review-scroll div.rev figure {
     display: inline-block;
     padding: 5px;
     border-radius: 50%;
-    width: 15px;
+    width: 30px;
     background-repeat: no-repeat;
-    /* background-clip: content-box; */
     background-size: cover;
     background-position:50% 10%;
-    height: 15px;
-   background-image: url(../contents/images/githubpic.jpeg);
+    height: 30px;
+    background-image: url(../contents/images/githubpic.jpeg);
+    margin-left: 10px;
 }
-div.rev figure ~ h5 {
-    display: inline-block;
-    margin-left: 8px;
-}
-figure img {
+.mobile-main section.review-wrapper figure img {
     width: 100%;
     height: 100%;
 }
-div figure ~ div {
+.mobile-main .reviews .review-scroll div.rev .review-content {
+    font-weight: bolder;
+    margin-top: 3px;
     padding: 5px;
-    color: green;
+    height: 55px;
+    overflow-y: scroll;
+}
+.mobile-main .reviews .review-scroll div.rev div.review-id {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-top: 9px;
+    border-top: 1px solid #000000;
+    margin-left: 5px;
+    padding: 5px 0px;
+    width: fit-content;
+}
+.mobile-main .review-scroll div.rev .review-id h5 {
+    display: inline-block;
+    font-size: 14px;
+}
+.mobile-main .review-scroll div.rev .review-id p {
+    display: inline-block;
+    font-size: 12px;
+     margin-top: 5px;
+}
+.mobile-main .review-wrapper .review-scroller {
+    display: flex;
+    justify-content: center;
+    margin: 5px 20px; 
+    gap: 15px;
+}
+.mobile-main .review-wrapper .review-scroller div{
+  padding: 2px 5px;
+}
+.mobile-main div.engagement-svg svg {
+    width: 30px;
+    height: 30px;
+    fill: #9e93e6;
 }

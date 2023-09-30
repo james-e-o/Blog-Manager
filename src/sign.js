@@ -1,4 +1,4 @@
-import {Form, Link, redirect, useActionData} from 'react-router-dom'
+import {Form, Link, useActionData} from 'react-router-dom'
 import { useState} from 'react'
 import { Google, Noviews, Views } from './Components/svg';
 
@@ -40,14 +40,14 @@ export const Signup = () => {
 
 //SIGN- IN
 export const Signin = () => {
-  const loginResponse = useActionData()
+  const data = useActionData()
   
   return (
     <div className='signin'>
       <h5 style={{padding:'8px 15px'}}>Login</h5>
       <Form method='post' action='/sign/signup'>
-        <Indiv type={'text'} name={"email"} placehold={"Email"} />
-        <Indiv icon={true} type={'password'} name={"password"} placehold={"Password"}/>
+        <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
+        <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
         <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
         <button type='submit' >Slide in</button>  
       </Form>
@@ -74,7 +74,6 @@ const Indiv = ({name, value, placehold, type, error, icon, altType}) => {
   )
 }
 
-
 export const  signupValidate = async ({request}) => {
   //VALIDATE
   const formdata = await request.formData()
@@ -85,6 +84,7 @@ export const  signupValidate = async ({request}) => {
     email: formdata.get("email"),
     password: formdata.get("password")
   }
+
   console.log(data)
 
   if (data.username.length < 5){
@@ -97,16 +97,32 @@ export const  signupValidate = async ({request}) => {
     return {passwordError : "password must be above 6 characters"}
   } else if (!data.password.match(validPassword))
     return {passwordError2 : "password must conatain numbers & letters"}
-
-  return redirect('/')
+   
+    const response = await fetch('http://localhost:8080/',{method:"post"})
+    const datas = response.json()
+  return datas
 }      
 
-export const  loginValidation = async ({params,request }) => {
+export const  loginValidation = async ({request }) => {
   //VALIDATE
   const formdata = await request.formData()
+  const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+  const validPassword = /^[A-Za-z0-9]*$/
   const data = {
     email: formdata.get("email"),
     password: formdata.get("password")
   }
   console.log(data)
+
+  if (!data.email.match(validEmail)){
+    return {emailError : "enter a valid email address"}
+  }
+  if (data.password.length < 6 ){
+    return {passwordError : "password must be above 6 characters"}
+  } else if (!data.password.match(validPassword))
+    return {passwordError2 : "password must conatain numbers & letters"}
+   
+  const response = await fetch('http://localhost:8080/',{method:"post"})
+  const datas = response.json()
+  return datas
 }

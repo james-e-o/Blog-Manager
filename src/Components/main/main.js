@@ -2,7 +2,7 @@ import './main-mobile.css'
 import './main-tab.css'
 import './main-desk.css'
 import { useRef,useState, useEffect, useContext } from 'react'
-import {  Views, Bookmark } from '../svg'
+import {  Views, Bookmark, Left, Right } from '../svg'
 import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
 
@@ -11,6 +11,8 @@ const Main = () => {
       const title = 'james Onwuasoanya'
       const content = 'Title of my book is the fairy and the mao'
       const dynamicColor = useRef("")
+      const scrollReview = useRef("")
+      const scrollReviewRight = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
       const screen = useContext(screenWidth)
@@ -21,12 +23,17 @@ const Main = () => {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1) + min);
       } 
+      function handleReviewLeft(e){
+        scrollReview.current?.scrollTo({left :-300,behavior: 'smooth'});
+      }
+      function handleReviewRight(e){
+        let current = scrollReview.current.style.scrollX
+        scrollReview.current?.scrollTo({left :current + current*100,behavior: 'smooth'});
+      }
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
         dynamicColor.current.style.color = `${colors[randomColor]}`
         setColorState(randomColor)
-
-        // fetch()
       },[screen])
   return (
   
@@ -34,7 +41,7 @@ const Main = () => {
       {screen < 480 ? 
       //-- MOBILE --
       (<>
-        <div className='main'>
+        <div className='mobile-main'>
           <div className='h1-tag'>
             <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
@@ -80,29 +87,74 @@ const Main = () => {
             </div>                                                          
             <div className='podcast1-gradient'></div>
           </div>
+
+          {/* LIFECYCLE */}
+          <section className="lifecycle-wrapper">
+            <h1>Content life cycle</h1>
+          </section>
+
           {/* REVIEWS */}
-          <div className='reviews'>
-            <div className='rev'>
-              <div className='rev_id'>
-                <figure></figure>
-                <h5>Name</h5>
-              </div> 
-              <div>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-            </div>
-            <div className='rev'>
-              <figure></figure>
-              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div>
-            </div>
-            <div className='rev'>
-              <figure></figure>
-              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div>
+          <section className='review-wrapper'>
+            <p className='review-header'>Our reviews</p>
+            <div ref={scrollReview} className='reviews'>  
+            <div className='review-scroll'>
+              <div className='rev'>
+                <figure className='review-image'></figure>                       
+                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <h5> Name</h5>
+                  <p id='review-portfolio'>CEO abc enterprise</p> 
+                </div> 
+              </div>
+              {/* again */}
+              <div className='rev'>
+                <figure className='review-image'></figure>                       
+                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <h5> Name</h5>
+                  <p id='review-portfolio'>CEO abc enterprise</p> 
+                </div> 
+              </div>
+              {/* again */}
+              <div className='rev'>
+                <figure className='review-image'></figure>                       
+                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <h5> Name</h5>
+                  <p id='review-portfolio'>CEO abc enterprise</p> 
+                </div> 
+              </div>
+              {/* again */}
+              <div className='rev'>
+                <figure className='review-image'></figure>                       
+                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <h5> Name</h5>
+                  <p id='review-portfolio'>CEO abc enterprise</p> 
+                </div> 
+              </div>
+              {/* again */}
+              <div className='rev'>
+                <figure className='review-image'></figure>                       
+                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <h5> Name</h5>
+                  <p id='review-portfolio'>CEO abc enterprise</p> 
+                </div> 
+              </div>
             </div>
           </div>
+            <div className='review-scroller'>
+              <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
+              <div className='arrow-right' onClick={handleReviewRight}><Right /></div>
+            </div>
+          </section>
+          
         </div>
       </>):screen < 720 ? 
       //  -- TABLET --
       (<>
-        <div className='main'>
+        <div className='tab-main'>
           <div className='h1-tag'>
             <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
@@ -171,7 +223,7 @@ const Main = () => {
       ):(
       //  -- DESKTOP --
       <>
-        <div className='main-desk'>
+        <div className='desk-main'>
           <div className='main-display'>
             <div className='h1-tag'>
               <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
