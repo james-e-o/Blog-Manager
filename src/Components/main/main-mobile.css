@@ -1,3 +1,4 @@
+
 main{
     font-family:   Arial, sans-serif;
     
@@ -203,6 +204,7 @@ main{
     display: flex;
     gap:-10px;
     margin-bottom: 55px;
+    background-color: rgb(170, 214, 255);
 }
 .mobile-main #podcast1 .podcast1-gradient {
     position: relative;
@@ -252,16 +254,60 @@ main{
 
 
 /* LIFECYCLE */
-.mobile-main section.lifecycle-wrapper {
-    background-color: rgb(161, 205, 255);
-    color: white;
+.mobile-main section.lifecycle {
     height: 400px;
     margin-bottom: 55px;
 }
-.mobile-main section.lifecycle-wrapper h1 {
-    margin: 20px;
-    font-family: RubikMoonrocks;
+.mobile-main div.lifecycle-header {
+   display: flex;
+   align-items: center;
 }
+.mobile-main section.lifecycle p#question-mark {
+    display: inline-block;
+    margin-left: 20px;
+    transform: rotate(11deg);
+}
+.mobile-main section.lifecycle h2 {
+    padding: 5px;
+    display: inline-block;
+    font-family: RubikMoonrocks;
+    color:transparent;
+    background: linear-gradient(to right, #9b95f1 3%, rgb(49, 197, 255) 20%, #ffcc6d);
+    background-clip: text;
+    text-align: center;
+}
+.mobile-main div.lifecycle-content {
+   margin-left: 25px;
+   margin-top: 10px;
+ }
+.mobile-main div.lifecycle-content div.phase {
+   display: block;
+ }
+ .mobile-main .phase  div.phase-wrap{
+    background-color: rgb(121, 236, 121);
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 140px;
+    height: fit-content;
+    padding: 12px 25px;
+ }
+ .mobile-main div.phase-wrap p {
+    position: relative;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    width: 70px;
+    text-align: center;
+ }
+ /* .mobile-main div.lifecycle-content div:nth-child(2){
+    
+ }
+ .mobile-main div.lifecycle-content div:last-child{
+    
+    color: #ffcc6d;
+ } */
+ 
 
 
 
@@ -273,9 +319,10 @@ main{
     font-weight: 200;
     display: inline-block;
     font-size:20px ;
-    margin: 8px 25px;
+    margin: 8px 27px;
     font-family: BrunoAce;
-    background-color: #b7aef3;
+    
+    background: linear-gradient(to left top, #a4d6ff, #6969e0);
     padding: 4px 6px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 0px;
@@ -289,21 +336,22 @@ main{
     height:fit-content;
     overflow-x: scroll;
     width:90vw ;
+    position: relative;
 }
 .mobile-main .reviews div.review-scroll {
-    width: calc(498%);
+    width: max-content;
 }
 .mobile-main .reviews .review-scroll div.rev {
     width: 75vw;
     display: inline-block;
-    margin: 0px 15px 10px 0px;
+    margin: 0px 15px 10px 3px;
     padding: 15px;
     background-color: white;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
-    border: 2px solid #b7aef3;
+    border: 2px solid orange;
     height: calc(205px);
 }
 .mobile-main .reviews .review-scroll div.rev figure {
@@ -317,6 +365,7 @@ main{
     height: 30px;
     background-image: url(../contents/images/githubpic.jpeg);
     margin-left: 10px;
+    border: 2px solid skyblue;
 }
 .mobile-main section.review-wrapper figure img {
     width: 100%;
@@ -334,7 +383,7 @@ main{
     flex-direction: column;
     align-items:flex-start;
     margin-top: 9px;
-    border-top: 1px solid #000000;
+    border-top: 2px solid skyblue;
     margin-left: 5px;
     padding: 5px 0px;
     width: fit-content;
@@ -355,7 +404,7 @@ main{
     gap: 15px;
 }
 .mobile-main .review-wrapper .review-scroller div{
-  padding: 2px 5px;
+  padding: 0px 5px;
 }
 .mobile-main div.engagement-svg svg {
     width: 30px;

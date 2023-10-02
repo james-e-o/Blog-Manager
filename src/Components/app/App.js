@@ -14,9 +14,11 @@ import LoggedIn from '../../Layouts/LoggedLayout';
 import {Sign, Signup, Signin} from '../../sign'
 import Notfound from '../Errors/Notfound';
 import UserDashboard from '../dashboards/UserDashboard';
+import About from '../about/About';
 
 //actions
 import { signupValidate,loginValidation } from '../../sign';
+
 
 //context export
 export const screenWidth = createContext('')
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
     element: <Corelayout />,
     children:[
         {index:true, element:<Home/>},
+        {
+          path:'about',
+          element:<About/>,
+        },
         {
           path:'sign', 
           element:<Signlayout/>,

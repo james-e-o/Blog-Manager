@@ -5,14 +5,16 @@ import { useRef,useState, useEffect, useContext } from 'react'
 import {  Views, Bookmark, Left, Right } from '../svg'
 import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
+import questionMark from "../contents/images/question-mark.png"
 
 
 const Main = () => {
       const title = 'james Onwuasoanya'
       const content = 'Title of my book is the fairy and the mao'
       const dynamicColor = useRef("")
-      const scrollReview = useRef("")
-      const scrollReviewRight = useRef("")
+      const scrollWrap = useRef("")
+      const scroll = useRef("")
+      const reviews = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
       const screen = useContext(screenWidth)
@@ -24,16 +26,31 @@ const Main = () => {
         return Math.floor(Math.random() * (max - min + 1) + min);
       } 
       function handleReviewLeft(e){
-        scrollReview.current?.scrollTo({left :-300,behavior: 'smooth'});
+        let scrollWidth = scroll.current.clientWidth
+        let scrollStart = scroll.current.offsetLeft
+        let fraction = scrollWidth/5
+        console.log(scrollStart)
+        scrollWrap.current?.scrollBy({left :-fraction,behavior: 'smooth'});
+        return
       }
       function handleReviewRight(e){
-        let current = scrollReview.current.style.scrollX
-        scrollReview.current?.scrollTo({left :current + current*100,behavior: 'smooth'});
+        let scrollWidth = scroll.current.clientWidth
+        let scrollStart = scroll.current.offsetLeft
+        let fraction = scrollWidth/5
+        console.log(scrollStart)
+        scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
+        return
       }
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
         dynamicColor.current.style.color = `${colors[randomColor]}`
         setColorState(randomColor)
+
+        // scroll.current?.addEventListener('scroll',(e)=>{
+        //     scroll.current?.addEventListener('pointerup',(e)=>{
+        //       if (reviews.current.)
+        //     })
+        // })
       },[screen])
   return (
   
@@ -89,16 +106,26 @@ const Main = () => {
           </div>
 
           {/* LIFECYCLE */}
-          <section className="lifecycle-wrapper">
-            <h1>Content life cycle</h1>
+          <section className="lifecycle">
+            <div className='lifecycle-header'>
+              <p id='question-mark'><img src={questionMark} alt="question" /></p>
+              <h2>Content strategy</h2>
+            </div>
+            <div className='lifecycle-content'>
+              <div className='phase'>
+                <div className='phase-wrap'>
+                  <p>planning phase</p>
+                </div>                
+              </div>
+            </div>          
           </section>
 
           {/* REVIEWS */}
-          <section className='review-wrapper'>
-            <p className='review-header'>Our reviews</p>
-            <div ref={scrollReview} className='reviews'>  
-            <div className='review-scroll'>
-              <div className='rev'>
+        <section className='review-wrapper'>
+          <p className='review-header'>Our reviews</p>
+          <div ref={scrollWrap} className='reviews'>  
+            <div ref={scroll} className='review-scroll'>
+              <div className='rev' ref={reviews}>
                 <figure className='review-image'></figure>                       
                 <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
                 <div className='review-id'>
@@ -107,7 +134,7 @@ const Main = () => {
                 </div> 
               </div>
               {/* again */}
-              <div className='rev'>
+              <div className='rev' ref={reviews}>
                 <figure className='review-image'></figure>                       
                 <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
                 <div className='review-id'>
@@ -148,7 +175,7 @@ const Main = () => {
               <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
               <div className='arrow-right' onClick={handleReviewRight}><Right /></div>
             </div>
-          </section>
+        </section>
           
         </div>
       </>):screen < 720 ? 
