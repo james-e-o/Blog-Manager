@@ -27,16 +27,18 @@ const Main = () => {
       } 
       function handleReviewLeft(e){
         let scrollWidth = scroll.current.clientWidth
+        let childElememts = scroll.current.childElementCount
         let scrollStart = scroll.current.offsetLeft
-        let fraction = scrollWidth/5
-        console.log(scrollStart)
+        let fraction = scrollWidth/childElememts
+        console.log(childElememts)
         scrollWrap.current?.scrollBy({left :-fraction,behavior: 'smooth'});
         return
       }
       function handleReviewRight(e){
         let scrollWidth = scroll.current.clientWidth
+        let childElememts = scroll.current.childElementCount
         let scrollStart = scroll.current.offsetLeft
-        let fraction = scrollWidth/5
+        let fraction = scrollWidth/childElememts
         console.log(scrollStart)
         scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
         return
@@ -142,6 +144,51 @@ const Main = () => {
           <p className='review-header'>Our reviews</p>
           <div ref={scrollWrap} className='reviews'>  
             <div ref={scroll} className='review-scroll'>
+
+              <div className='rev' ref={reviews}>
+                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <figure className='review-image'></figure>                       
+                  <div className='review-persona'>
+                    <h5> Name</h5>
+                    <p className='review-portfolio'>CEO abc enterprise</p> 
+                  </div>
+                </div> 
+              </div>
+              {/* again */}
+              <div className='rev' ref={reviews}>
+                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <figure className='review-image'></figure>                       
+                  <div className='review-persona'>
+                    <h5> Name</h5>
+                    <p className='review-portfolio'>CEO abc enterprise</p> 
+                  </div>
+                </div> 
+              </div>
+              {/* again */}
+              <div className='rev' ref={reviews}>
+                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <figure className='review-image'></figure>                       
+                  <div className='review-persona'>
+                    <h5> Name</h5>
+                    <p className='review-portfolio'>CEO abc enterprise</p> 
+                  </div>
+                </div> 
+              </div>
+              {/* again */}
+              <div className='rev' ref={reviews}>
+                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <figure className='review-image'></figure>                       
+                  <div className='review-persona'>
+                    <h5> Name</h5>
+                    <p className='review-portfolio'>CEO abc enterprise</p> 
+                  </div>
+                </div> 
+              </div>
+              {/* again */}
               <div className='rev' ref={reviews}>
                 <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
                 <div className='review-id'>
