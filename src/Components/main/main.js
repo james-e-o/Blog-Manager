@@ -2,7 +2,7 @@ import './main-mobile.css'
 import './main-tab.css'
 import './main-desk.css'
 import { useRef,useState, useEffect, useContext } from 'react'
-import {  Views, Bookmark, Left, Right } from '../svg'
+import {  Views, Bookmark, Left, Right, Newlink } from '../svg'
 import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
 import questionMark from "../contents/images/question-mark.png"
@@ -46,10 +46,12 @@ const Main = () => {
         dynamicColor.current.style.color = `${colors[randomColor]}`
         setColorState(randomColor)
 
-        // scroll.current?.addEventListener('scroll',(e)=>{
-        //     scroll.current?.addEventListener('pointerup',(e)=>{
-        //       if (reviews.current.)
-        //     })
+        // let xpoint
+        // let newpoint
+        // scroll.current?.addEventListener('pointerdown',(e)=>{
+        //   // if ()
+        //   xpoint = e.x
+        //   console.log(xpoint,)
         // })
       },[screen])
   return (
@@ -66,8 +68,23 @@ const Main = () => {
             <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
             </p>
           </div>
+          <Link to="/about" style={{textDecoration:"none"}}><div className="aboutlink"><span>Know more about us </span><Newlink/></div></Link>
           <div className='featured'>
-            <p id='reads'>Top reads</p>
+            <div id='reads'>Top reads</div>
+                      <div className='reads'>
+                        <div className='read_id'>
+                          <figure></figure>
+                          <h5>{title}</h5>
+                          <p>{'12'}mins read</p>
+                        </div> 
+                        <h4 id='read_content'>{content}.</h4>
+                        <div id='engagement'>
+                          <div className='post-date'>{'Aug. 24'}</div>
+                          <div><Views/> {'9k'}</div>
+                          {/* <div><Like/> {'16k'}</div> */}
+                          <div><Bookmark/> {'bookmark'}</div>
+                        </div>
+                      </div>
                       <div className='reads'>
                         <div className='read_id'>
                           <figure></figure>
@@ -126,49 +143,16 @@ const Main = () => {
           <div ref={scrollWrap} className='reviews'>  
             <div ref={scroll} className='review-scroll'>
               <div className='rev' ref={reviews}>
-                <figure className='review-image'></figure>                       
-                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
                 <div className='review-id'>
-                  <h5> Name</h5>
-                  <p id='review-portfolio'>CEO abc enterprise</p> 
+                  <figure className='review-image'></figure>                       
+                  <div className='review-persona'>
+                    <h5> Name</h5>
+                    <p className='review-portfolio'>CEO abc enterprise</p> 
+                  </div>
                 </div> 
               </div>
               {/* again */}
-              <div className='rev' ref={reviews}>
-                <figure className='review-image'></figure>                       
-                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <h5> Name</h5>
-                  <p id='review-portfolio'>CEO abc enterprise</p> 
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev'>
-                <figure className='review-image'></figure>                       
-                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <h5> Name</h5>
-                  <p id='review-portfolio'>CEO abc enterprise</p> 
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev'>
-                <figure className='review-image'></figure>                       
-                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <h5> Name</h5>
-                  <p id='review-portfolio'>CEO abc enterprise</p> 
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev'>
-                <figure className='review-image'></figure>                       
-                <div className="review-content">Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <h5> Name</h5>
-                  <p id='review-portfolio'>CEO abc enterprise</p> 
-                </div> 
-              </div>
             </div>
           </div>
             <div className='review-scroller'>

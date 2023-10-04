@@ -60,6 +60,26 @@ main{
    transform: scale(1.06)
 }
 
+div.aboutlink {
+    padding: 20px;
+    margin: 25px 25px 15px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    gap: 12px;
+    color: black;
+}
+.mobile-main div.aboutlink div.engagement-svg svg {
+    width: 19px;
+    height: 19px;
+    fill: black;
+} 
+
+
+
 /* FEATURED */
 .mobile-main div.featured{
     padding: 20px;
@@ -69,20 +89,24 @@ main{
     flex-direction: column;
     margin-bottom: 5px;
 }
-.mobile-main .featured p#reads {
+.mobile-main .featured div#reads {
     display: inline-block;
-    padding: 20px 10px 15px;
+    padding: 7px;
     font-weight: 600;
-    margin-left: 10px;
-    font-size: 16px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
     font-weight: 600;
     color: rgb(126, 126, 126);
+    border: 1px solid black;
+    width: fit-content;
+    border-top-right-radius: 12px;
 }
 .featured div.reads {
-    margin: 7px 0px 0px 10px;
-    padding: 10px;
+    margin: 7px 7px 8px 10px;
+    padding: 10px 15px;
     background-color: white;
-    /* border-radius: 10px; */
+    border-radius: 10px;
     box-shadow: 1px 1px 0px rgba(173, 173, 173, 0.747);
 }
 .mobile-main div.read_id {
@@ -127,7 +151,7 @@ main{
     display: flex;
    justify-content: flex-start;
     font-size: x-small;
-    font-weight: 100;
+    font-weight: normal;
     gap: 30px;
 }
 .mobile-main div#engagement  div{
@@ -148,11 +172,16 @@ main{
 }
 .mobile-main .niche-content #niche {
     display: inline-block;
-    padding: 20px 10px 7px;
+    padding: 7px;
     font-weight: 600;
-    margin-left: 10px;
-    font-size: 16px;
-    color: rgb(94, 94, 94);
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(126, 126, 126);
+    border: 1px solid black;
+    width: fit-content;
+    border-top-right-radius: 12px;
 }
 .mobile-main .category {
     padding: 10px;
@@ -163,7 +192,7 @@ main{
     margin-top: 10px;
     border-radius: 15px;
     padding: 9px 13px;
-    background-color: #ffedde;
+    background-color: rgb(213, 243, 243);
     font-size: smaller;
     transition: background-color 400ms ease-out;
     border: none;
@@ -185,10 +214,10 @@ main{
 }
 .mobile-main #see {
     display: inline-block;
-    transform: translateX(18px);
+    transform: translateX(10px);
 }
 .mobile-main .see:hover #arrow{
-    transform: translateX(12px);
+    transform: translateX(8px);
     color: #ffbb28;
 }
 
@@ -203,7 +232,7 @@ main{
     z-index: -1;
     display: flex;
     gap:-10px;
-    margin-bottom: 55px;
+    padding: 15px 0px;
     background-color: rgb(170, 214, 255);
 }
 .mobile-main #podcast1 .podcast1-gradient {
@@ -256,7 +285,9 @@ main{
 /* LIFECYCLE */
 .mobile-main section.lifecycle {
     height: 400px;
-    margin-bottom: 55px;
+    padding-top: 55px;
+    padding-bottom: 55px;
+    background-color: #f3f3f3;
 }
 .mobile-main div.lifecycle-header {
    display: flex;
@@ -290,7 +321,7 @@ main{
     padding: 5px;
     border-radius: 140px;
     height: fit-content;
-    padding: 12px 25px;
+    padding: 12px 14px;
  }
  .mobile-main div.phase-wrap p {
     position: relative;
@@ -298,36 +329,24 @@ main{
     font-weight: bold;
     color: white;
     width: 70px;
+    aspect-ratio: 1;
     text-align: center;
  }
- /* .mobile-main div.lifecycle-content div:nth-child(2){
-    
- }
- .mobile-main div.lifecycle-content div:last-child{
-    
-    color: #ffcc6d;
- } */
- 
-
-
-
 /* REVIEWS */
+/* .mobile-main section.review-wrapper * {outline: 1px solid rgb(128, 190, 34);} */
 .mobile-main section.review-wrapper {
     height: fit-content;
+    background-color: #f3f3f3;
 }
 .mobile-main .review-wrapper .review-header{
     font-weight: 200;
     display: inline-block;
     font-size:20px ;
     margin: 8px 27px;
-    font-family: BrunoAce;
-    
+    font-family: BrunoAce;  
     background: linear-gradient(to left top, #a4d6ff, #6969e0);
     padding: 4px 6px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius: 12px;
     color: white;
 }
 .mobile-main .review-wrapper div.reviews{
@@ -339,7 +358,9 @@ main{
     position: relative;
 }
 .mobile-main .reviews div.review-scroll {
+    position: relative;
     width: max-content;
+    background-color: #f3f3f3;
 }
 .mobile-main .reviews .review-scroll div.rev {
     width: 75vw;
@@ -352,7 +373,9 @@ main{
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
     border: 2px solid orange;
-    height: calc(205px);
+    height: fit-content;
+    position: relative;
+    /* touch-action: none */
 }
 .mobile-main .reviews .review-scroll div.rev figure {
     display: inline-block;
@@ -371,31 +394,41 @@ main{
     width: 100%;
     height: 100%;
 }
+.mobile-main .reviews .review-scroll div.rev .review-content p {
+    font-size:x-large;
+    font-weight: 700;
+
+}
 .mobile-main .reviews .review-scroll div.rev .review-content {
-    font-weight: bolder;
-    margin-top: 3px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
-    height: 55px;
+    height: 70px;
     overflow-y: scroll;
+    line-height: 110%;
+    margin: auto 0px;
 }
 .mobile-main .reviews .review-scroll div.rev div.review-id {
     display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    margin-top: 9px;
-    border-top: 2px solid skyblue;
-    margin-left: 5px;
+    gap: 13px;
+    margin-top: 3px;
     padding: 5px 0px;
     width: fit-content;
 }
-.mobile-main .review-scroll div.rev .review-id h5 {
+.mobile-main .reviews .review-scroll div.rev .review-persona{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    justify-content: center;
+}
+.mobile-main .review-scroll .review-id .review-persona h5{
     display: inline-block;
     font-size: 14px;
 }
-.mobile-main .review-scroll div.rev .review-id p {
+.mobile-main .review-scroll .review-id .review-persona p {
     display: inline-block;
     font-size: 12px;
-     margin-top: 5px;
+     margin-top: 3px;
 }
 .mobile-main .review-wrapper .review-scroller {
     display: flex;
@@ -406,8 +439,8 @@ main{
 .mobile-main .review-wrapper .review-scroller div{
   padding: 0px 5px;
 }
-.mobile-main div.engagement-svg svg {
+/* .mobile-main div.engagement-svg svg {
     width: 30px;
     height: 30px;
     fill: #9e93e6;
-}
+} */
