@@ -12,30 +12,8 @@ main{
     padding: 10px 20px 80px;
     position: relative;
     /* overflow: hidden; */
-    width: fit-content;
+    /* width: fit-content; */
 }
-/* .mobile-main .h1-tag::before{
-    content: "";    
-    background-color: rgb(255, 0, 0);
-    border-radius: 15px;
-    border: 30px solid rgb(255, 255, 255);
-    width: 60%;
-    height: 5px;
-    padding: 20px;
-    position: absolute;
-}
-.mobile-main .h1-tag::after{
-    content: "";
-    background-color: rgb(238, 255, 0);
-    border-radius: 15px;
-    border: 30px solid rgb(255, 255, 255);
-    width: 60%;
-    z-index: 10;
-    height: 5px;
-    transform: rotate(17deg);
-    padding: 20px;
-    position: absolute;
-} */
 .mobile-main .h1-tag .art::before{
     content: "";
     position: absolute;
