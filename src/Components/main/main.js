@@ -65,10 +65,10 @@ const Main = () => {
           <div className='h1-tag'>
             <div className='art'></div>
             <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
-            <p id='cta'>
+            <div id='cta'>
               <p className="punch-line">With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br /></p>
               <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
-            </p>
+            </div>
           </div>
           <Link  to="/about" style={{textDecoration:"none", zIndex:"-1"}}><div className="aboutlink"><span>Know more about us </span><Newlink/></div></Link>
           <div className='featured'>
