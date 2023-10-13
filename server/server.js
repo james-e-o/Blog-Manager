@@ -10,9 +10,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(bodyParser.json())
-// app.use(express.static(b))
+app.use(express.static('build'))
 
-app.post('/',(req, res)=>{
+app.get('/api/',(req, res)=>{
     res.json({
         "id": 1,
         "name": "Leanne Graham",

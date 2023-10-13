@@ -14,7 +14,7 @@ const Main = () => {
       const dynamicColor = useRef("")
       const scrollWrap = useRef("")
       const scroll = useRef("")
-      const reviews = useRef("")
+      const reviews = useRef("".id)
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
       const screen = useContext(screenWidth)
@@ -38,7 +38,7 @@ const Main = () => {
         let scrollWidth = scroll.current.clientWidth
         let childElememts = scroll.current.childElementCount
         let scrollStart = scroll.current.offsetLeft
-        let fraction = scrollWidth/childElememts
+        let fraction = scrollWidth/childElememts 
         console.log(scrollStart)
         scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
         return
@@ -48,12 +48,11 @@ const Main = () => {
         dynamicColor.current.style.color = `${colors[randomColor]}`
         setColorState(randomColor)
 
-        // let xpoint
         // let newpoint
-        // scroll.current?.addEventListener('pointerdown',(e)=>{
-        //   // if ()
-        //   xpoint = e.x
-        //   console.log(xpoint,)
+        // scroll.current.addEventListener('pointercancel',(e)=>{
+        //   let scrollArray = Array.from(scroll.current.children) 
+        //   let distance = e.x 
+        //   console.log(scrollArray.indexOf(e.target.closest('div.rev')),distance )
         // })
       },[screen])
   return (
@@ -64,13 +63,14 @@ const Main = () => {
       (<>
         <div className='mobile-main'>
           <div className='h1-tag'>
+            <div className='art'></div>
             <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
-            With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
-            <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
+              <p className="punch-line">With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br /></p>
+              <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
             </p>
           </div>
-          <Link to="/about" style={{textDecoration:"none"}}><div className="aboutlink"><span>Know more about us </span><Newlink/></div></Link>
+          <Link  to="/about" style={{textDecoration:"none", zIndex:"-1"}}><div className="aboutlink"><span>Know more about us </span><Newlink/></div></Link>
           <div className='featured'>
             <div id='reads'>Top reads</div>
                       <div className='reads'>
@@ -127,70 +127,40 @@ const Main = () => {
           {/* LIFECYCLE */}
           <section className="lifecycle">
             <div className='lifecycle-header'>
-              <p id='question-mark'><img src={questionMark} alt="question" /></p>
+              <p id='question-mark'><img src={questionMark} width={"40px"} height={"40px"} alt="question" /></p>
               <h2>Content strategy</h2>
             </div>
             <div className='lifecycle-content'>
               <div className='phase'>
-                <div className='phase-wrap'>
+                <div className='phase-wrap1'>
+                  <p>planning phase</p>
+                </div>                
+              </div>
+              <div className='phase'>
+                <div className='phase-wrap2'>
+                  <p>planning phase</p>
+                </div>                
+              </div>
+              <div className='phase'>
+                <div className='phase-wrap3'>
                   <p>planning phase</p>
                 </div>                
               </div>
             </div>          
           </section>
 
+          {/* FEATURES */}
+          <section className="features">
+
+          </section>
           {/* REVIEWS */}
-        <section className='review-wrapper'>
+          <section className='review-wrapper'>
           <p className='review-header'>Our reviews</p>
           <div ref={scrollWrap} className='reviews'>  
             <div ref={scroll} className='review-scroll'>
 
               <div className='rev' ref={reviews}>
-                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <figure className='review-image'></figure>                       
-                  <div className='review-persona'>
-                    <h5> Name</h5>
-                    <p className='review-portfolio'>CEO abc enterprise</p> 
-                  </div>
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev' ref={reviews}>
-                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <figure className='review-image'></figure>                       
-                  <div className='review-persona'>
-                    <h5> Name</h5>
-                    <p className='review-portfolio'>CEO abc enterprise</p> 
-                  </div>
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev' ref={reviews}>
-                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <figure className='review-image'></figure>                       
-                  <div className='review-persona'>
-                    <h5> Name</h5>
-                    <p className='review-portfolio'>CEO abc enterprise</p> 
-                  </div>
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev' ref={reviews}>
-                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <figure className='review-image'></figure>                       
-                  <div className='review-persona'>
-                    <h5> Name</h5>
-                    <p className='review-portfolio'>CEO abc enterprise</p> 
-                  </div>
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev' ref={reviews}>
-                <div className="review-content"><p>"</p> Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className="review-content"><p>"</p>first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
                 <div className='review-id'>
                   <figure className='review-image'></figure>                       
                   <div className='review-persona'>
