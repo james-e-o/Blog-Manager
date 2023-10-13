@@ -14,7 +14,6 @@ const Main = () => {
       const dynamicColor = useRef("")
       const scrollWrap = useRef("")
       const scroll = useRef("")
-      const reviews = useRef("".id)
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
       const screen = useContext(screenWidth)
@@ -64,7 +63,7 @@ const Main = () => {
         <div className='mobile-main'>
           <div className='h1-tag'>
             <div className='art'></div>
-            <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
+              <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <div id='cta'>
               <p className="punch-line">With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br /></p>
               <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
@@ -119,7 +118,7 @@ const Main = () => {
                 <article>
                   {'Get paid from your passionate subscribers'}
                 </article>
-                <button>Get started</button>                                                          
+                <button>Get started</button>                                                 
             </div>                                                          
             <div className='podcast1-gradient'></div>
           </div>
@@ -150,16 +149,16 @@ const Main = () => {
           </section>
 
           {/* FEATURES */}
-          <section className="features">
+          {/* <section className="features">
 
-          </section>
+          </section> */}
           {/* REVIEWS */}
           <section className='review-wrapper'>
           <p className='review-header'>Our reviews</p>
           <div ref={scrollWrap} className='reviews'>  
             <div ref={scroll} className='review-scroll'>
 
-              <div className='rev' ref={reviews}>
+              <div className='rev'>
                 <div className="review-content"><p>"</p>first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
                 <div className='review-id'>
                   <figure className='review-image'></figure>                       
