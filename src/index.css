@@ -36,9 +36,10 @@
     /* font-family:Capriola; */
 }
 
-/* body {
-    position:static;
-} */
+body {
+    overflow-anchor: none;
+  }
+  
 
 hr {
     margin: 0px auto;

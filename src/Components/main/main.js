@@ -24,24 +24,24 @@ const Main = () => {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1) + min);
       } 
-      function handleReviewLeft(e){
-        let scrollWidth = scroll.current.clientWidth
-        let childElememts = scroll.current.childElementCount
-        let scrollStart = scroll.current.offsetLeft
-        let fraction = scrollWidth/childElememts
-        console.log(childElememts)
-        scrollWrap.current?.scrollBy({left :-fraction,behavior: 'smooth'});
-        return
-      }
-      function handleReviewRight(e){
-        let scrollWidth = scroll.current.clientWidth
-        let childElememts = scroll.current.childElementCount
-        let scrollStart = scroll.current.offsetLeft
-        let fraction = scrollWidth/childElememts 
-        console.log(scrollStart)
-        scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
-        return
-      }
+      // function handleReviewLeft(e){
+      //   let scrollWidth = scroll.current.clientWidth
+      //   let childElememts = scroll.current.childElementCount
+      //   let scrollStart = scroll.current.offsetLeft
+      //   let fraction = scrollWidth/childElememts
+      //   console.log(childElememts)
+      //   scrollWrap.current?.scrollBy({left :-fraction,behavior: 'smooth'});
+      //   return
+      // }
+      // function handleReviewRight(e){
+      //   let scrollWidth = scroll.current.clientWidth
+      //   let childElememts = scroll.current.childElementCount
+      //   let scrollStart = scroll.current.offsetLeft
+      //   let fraction = scrollWidth/childElememts 
+      //   console.log(scrollStart)
+      //   scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
+      //   return
+      // }
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
         dynamicColor.current.style.color = `${colors[randomColor]}`
@@ -171,10 +171,10 @@ const Main = () => {
               {/* again */}
             </div>
           </div>
-            <div className='review-scroller'>
+            {/* <div className='review-scroller'>
               <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
               <div className='arrow-right' onClick={handleReviewRight}><Right /></div>
-            </div>
+            </div> */}
         </section>
           
         </div>
