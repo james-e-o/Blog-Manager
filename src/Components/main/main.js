@@ -6,6 +6,7 @@ import {  Views, Bookmark, Left, Right, Newlink } from '../svg'
 import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
 import questionMark from "../contents/images/question-mark.png"
+import LightBulb from "../contents/images/lightbulb.png"
 
 
 const Main = () => {
@@ -24,24 +25,24 @@ const Main = () => {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1) + min);
       } 
-      // function handleReviewLeft(e){
-      //   let scrollWidth = scroll.current.clientWidth
-      //   let childElememts = scroll.current.childElementCount
-      //   let scrollStart = scroll.current.offsetLeft
-      //   let fraction = scrollWidth/childElememts
-      //   console.log(childElememts)
-      //   scrollWrap.current?.scrollBy({left :-fraction,behavior: 'smooth'});
-      //   return
-      // }
-      // function handleReviewRight(e){
-      //   let scrollWidth = scroll.current.clientWidth
-      //   let childElememts = scroll.current.childElementCount
-      //   let scrollStart = scroll.current.offsetLeft
-      //   let fraction = scrollWidth/childElememts 
-      //   console.log(scrollStart)
-      //   scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
-      //   return
-      // }
+      function handleReviewLeft(e){
+        let scrollWidth = scroll.current.clientWidth
+        let childElememts = scroll.current.childElementCount
+        let scrollStart = scroll.current.offsetLeft
+        let fraction = scrollWidth/childElememts
+        console.log(childElememts)
+        scrollWrap.current?.scrollBy({left :-fraction,behavior: 'smooth'});
+        return
+      }
+      function handleReviewRight(e){
+        let scrollWidth = scroll.current.clientWidth
+        let childElememts = scroll.current.childElementCount
+        let scrollStart = scroll.current.offsetLeft
+        let fraction = scrollWidth/childElememts 
+        console.log(scrollStart)
+        scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
+        return
+      }
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
         dynamicColor.current.style.color = `${colors[randomColor]}`
@@ -112,7 +113,7 @@ const Main = () => {
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
           </div>
           {/* PODCAST */}
-          <div id='podcast1'>
+          <div id='podcast'>
             <div className='podcast1-wrapper'>
               <h2>Start your own podcast</h2>
                 <article>
@@ -120,13 +121,13 @@ const Main = () => {
                 </article>
                 <button>Get started</button>                                                 
             </div>                                                          
-            <div className='podcast1-gradient'></div>
+            <div className='podcast-gradient'></div>
           </div>
 
           {/* LIFECYCLE */}
           <section className="lifecycle">
             <div className='lifecycle-header'>
-              <p id='question-mark'><img src={questionMark} width={"40px"} height={"40px"} alt="question" /></p>
+              <p id='question-mark'><img src={LightBulb} width={"40px"} height={"50px"} alt="question" /></p>
               <h2>Content strategy</h2>
             </div>
             <div className='lifecycle-content'>
@@ -171,10 +172,10 @@ const Main = () => {
               {/* again */}
             </div>
           </div>
-            {/* <div className='review-scroller'>
+            <div className='review-scroller'>
               <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
               <div className='arrow-right' onClick={handleReviewRight}><Right /></div>
-            </div> */}
+            </div>
         </section>
           
         </div>

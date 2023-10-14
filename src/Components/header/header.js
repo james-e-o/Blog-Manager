@@ -7,7 +7,7 @@ const Header = () => {
   const [scroll, setScroll]= useState('')
   const [offline, setOffline]=useState(false)
   const [menuActive, setMenuActive]=useState(false)
-  const scrollOffset =useRef(Window.scrollY)
+  const scrollOffset =useRef(window.scrollY)
   const screen = useContext(screenWidth)
 
   useEffect(()=>{  

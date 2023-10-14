@@ -9,7 +9,6 @@ const Corelayout = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
   useEffect(() => {
     window.onresize = () => {
-      console.log(innerWidth)
       setInnerWidth(window.innerWidth)
     }
   })
