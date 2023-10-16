@@ -2,7 +2,7 @@ import './main-mobile.css'
 import './main-tab.css'
 import './main-desk.css'
 import { useRef,useState, useEffect, useContext } from 'react'
-import {  Views, Bookmark, Left, Right, Newlink } from '../svg'
+import {  Views, Bookmark, Left, Right, Newlink, Arrow } from '../svg'
 import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
 import questionMark from "../contents/images/question-mark.png"
@@ -127,23 +127,40 @@ const Main = () => {
           {/* LIFECYCLE */}
           <section className="lifecycle">
             <div className='lifecycle-header'>
-              <p id='question-mark'><img src={LightBulb} width={"40px"} height={"50px"} alt="question" /></p>
               <h2>Content strategy</h2>
+              <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
             </div>
             <div className='lifecycle-content'>
               <div className='phase'>
                 <div className='phase-wrap1'>
-                  <p>planning phase</p>
+                  <p className='phase-core'>planning phase</p>  
+                  <div className="phase1-port port1"><p>planning phase</p></div>  
+                  <div className="phase1-port port2"><p>planning phase</p></div>  
+                  <div className="phase1-port port3"><p>planning phase</p></div>  
+                  <div className="phase1-port port4"><p>planning phase</p></div>  
+                  <div className="phase1-port port5"><p>planning phase</p></div>  
                 </div>                
               </div>
               <div className='phase'>
                 <div className='phase-wrap2'>
-                  <p>planning phase</p>
+                  <p className='phase-core'>planning phase</p>
+                  <div className="phase2-port port1"><p>planning phase</p></div>  
+                  <div className="phase2-port port2"><p>planning phase</p></div>  
+                  <div className="phase2-port port3"><p>planning phase</p></div>  
+                  <div className="phase2-port port4"><p>planning phase</p></div>  
+                  <div className="phase2-port port5"><p>planning phase</p></div> 
+                  <div className="phase2-port port5"><p>planning phase</p></div> 
                 </div>                
               </div>
               <div className='phase'>
                 <div className='phase-wrap3'>
-                  <p>planning phase</p>
+                  <p className='phase-core'>planning phase</p>
+                  <div className="phase3-port port1"><p>planning phase</p></div>  
+                  <div className="phase3-port port2"><p>planning phase</p></div>  
+                  <div className="phase3-port port3"><p>planning phase</p></div>  
+                  <div className="phase3-port port4"><p>planning phase</p></div>  
+                  <div className="phase3-port port5"><p>planning phase</p></div> 
+                  <div className="phase3-port port5"><p>planning phase</p></div> 
                 </div>                
               </div>
             </div>          

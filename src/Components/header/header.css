@@ -1,7 +1,7 @@
 .header {
     z-index: 12;
     height: fit-content;
-    position: sticky;
+    position: sticky ;
     top: 0px;
     left: 0px;
     right: 0px;

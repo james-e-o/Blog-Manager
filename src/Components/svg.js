@@ -63,6 +63,13 @@ export const Menu = () => {
     </div>
   )
 }
+export const Arrow = () => {
+  return (
+    <div className='engagement-svg'>                      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,8H11V5a1,1,0,0,0-1.707-.707l-7,7a1,1,0,0,0,0,1.414l7,7A1,1,0,0,0,11,19V16H21a1,1,0,0,0,1-1V9A1,1,0,0,0,21,8Z" style={{fill:"#ff891a"}}/></svg>
+    </div>
+  )
+}
 export const Left = () => {
   return (
     <div 
@@ -98,7 +105,7 @@ export const Facebook = () => {
 export const Newlink = () => {
   return (
     <div className='engagement-svg'>    
-      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+      <svg id="newlink" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
     </div>
   )
 }

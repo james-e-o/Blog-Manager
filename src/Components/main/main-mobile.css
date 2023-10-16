@@ -1,6 +1,7 @@
 
 main{
     font-family:   Arial, sans-serif;
+    overflow-x: hidden;
     
 }
 .mobile-main {
@@ -116,7 +117,7 @@ div.aboutlink {
     color: black;
     box-shadow: 0px 3px 4px rgb(170, 170, 170);
 }
-.mobile-main div.aboutlink div.engagement-svg svg {
+.mobile-main div.aboutlink div.engagement-svg svg#newlink {
     width: 19px;
     height: 19px;
     fill: black;
@@ -288,14 +289,13 @@ div.aboutlink {
     position: relative;
     display: flex;
     height: fit-content;
-    gap:-10px;
-    z-index: 5;
-    padding: 15px 25px 35px;
-    /* background: linear-gradient(to left, #b0a6f7 10%, transparent); */
+    gap:10px;
+    padding: 15px 25px 30px;
     background-repeat: no-repeat;
-    background-position:94% 8%;
+    background-position:94% 10%;
     background-size:55%;
     background-image:url(../contents/images/podcasts5.avif) ;
+    z-index: 6;
 }
 
 .mobile-main #podcast .podcast-gradient {
@@ -339,11 +339,11 @@ div.aboutlink {
     border-radius: 10px;
     border: none;
     color:rgb(255, 255, 255);
-    /* background-color:rgb(112, 105, 143); */
-    background-color:rgb(243, 176, 113);
+    background-color:rgb(112, 105, 143);
+    /* background-color:rgb(243, 176, 113); */
     font-weight: 700;
     margin-left: 7px;
-    margin-top: 9px;
+    margin-top: 20px;
     width: fit-content;
 }
 
@@ -359,9 +359,11 @@ div.aboutlink {
     position: relative;
     height: fit-content;
     padding-top: 55px;
-    padding-bottom: 55px;
+    padding-bottom: 85px;
     background-color: #f8f8f8;
-    background-color: slateblue;
+    background-color: rgb(205, 200, 230);
+    /* overflow-x: hidden; */
+    z-index: 4;
 }
 .mobile-main section.lifecycle::before {
     content: "";
@@ -370,29 +372,36 @@ div.aboutlink {
     color:rgb(107, 93, 93) ;
     position: absolute;
     height: 34%;
-    transform: rotate(11deg) scale(1.15) skewX(-33deg);
+    transform: rotate(11deg) scale(1.16) skewX(-33deg);
     top: -37%;
-    left: 28%;
+    left: 30%;
     padding: 20px;
     background-color: white;
-    z-index: 0;
+    z-index: 4;
 }
 .mobile-main div.lifecycle-header {
    display: flex;
    align-items: center;
+   justify-content: center;
 }
-.mobile-main section.lifecycle p#question-mark {
+.mobile-main section.lifecycle p#light-bulb {
     display: inline-block;
-    margin-left: 20px;
-    transform: rotate(11deg);
+    border-radius: 50%;
+    filter: saturate(20) brightness(3) drop-shadow(15px);
+    box-shadow:2px 5px 10px rgba(255, 255, 79, 0.212);
+    margin-left: 20px;padding-left: 9px;
+    backdrop-filter: blur(35);
+    background-color: rgba(255, 255, 79, 0.185);
+    transform: rotate(180deg) translateY(-10px);
 }
 .mobile-main section.lifecycle h2 {
     padding: 5px;
     display: inline-block;
     font-family: RubikMoonrocks;
-    color:transparent;
-    background: linear-gradient(to right, #9b95f1 3%, rgb(49, 197, 255) 20%, #ffcc6d);
-    background-clip: text;
+    color:rgb(255, 251, 244);
+    text-shadow: 2px 5px 10px rgb(177, 177, 177);
+    /* background: linear-gradient(to right, #9b95f1 3%, rgb(49, 197, 255) 20%, #ffcc6d); */
+    /* background-clip: text; */
     text-align: center;
 }
 .mobile-main div.lifecycle-content {
@@ -401,7 +410,7 @@ div.aboutlink {
  }
 .mobile-main div.lifecycle-content div.phase {
    display: block;
-   margin-bottom: 25px;
+   margin-bottom: 45px;
  }
  .mobile-main .phase  > 
  .phase-wrap1, 
@@ -416,19 +425,23 @@ div.aboutlink {
     box-shadow: 2px 5px 12px rgb(178, 179, 179);
  }
  .mobile-main .phase  div.phase-wrap1{
-    background-image: conic-gradient(rgb(228, 228, 228), rgb(102, 102, 102), rgb(228, 228, 228));
-    left: 15%; 
+    background-image: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    left: 6%; 
+    transform: scale(0.75);
+    box-shadow: -5px 3px 12px #b2b3b3;
  }
  .mobile-main .phase  div.phase-wrap2{
-    background-image: conic-gradient(rgb(255, 246, 230), orange, rgb(255, 246, 230)); 
+    background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
     left: 55%;
-    transform: translateY(13%) scale(1.08);
+    transform: translateY(13%) scale(0.78);
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
+    box-shadow: -2px 5px 12px #b2b3b3;
  }
  .mobile-main .phase  div.phase-wrap3{
-    background-image: conic-gradient(rgb(218, 244, 255), rgb(5, 215, 243), rgb(218, 244, 255)); 
+    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
     border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
-    transform: translateY(13%) scale(1.03);
+    transform: translateY(13%) scale(0.76);
+    box-shadow: -6px 8px 12px #b2b3b3;
  }
  .mobile-main .phase > 
  div::before
@@ -440,7 +453,6 @@ div.aboutlink {
     opacity: 1;
     width: 53%;
     z-index: 4px;
-    background-color: transparent;
     position: absolute;
     display: inline-block;
     padding: 25px;
@@ -449,22 +461,33 @@ div.aboutlink {
     padding: 12px 14px;
  }
  .mobile-main .phase  div.phase-wrap1::before{
-    content: "";
-    background-image: conic-gradient(rgb(228, 228, 228), rgb(102, 102, 102), rgb(228, 228, 228));
+    background-image: conic-gradient(from 49deg,#dfe2c6, rgb(102, 102, 102), #f6f8df);
  }
+ /* .mobile-main .phase  div.phase-wrap1::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    top:-1px;
+    transform: scale(1.06);
+    left: 0px;
+    aspect-ratio: 1;
+    border-bottom: 4px solid black;
+    background-color: transparent;
+    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58% ;
+ } */
  .mobile-main .phase  div.phase-wrap2::before{
     content: "";
     border-radius: 69% 31% 62% 38% / 23% 42% 58% 77% ;
-    background-image: conic-gradient(rgb(255, 249, 239), orange, rgb(255, 249, 239)); 
+    background-image: conic-gradient(#f8e7ca, orange, #fff1da); 
  }
  .mobile-main .phase  div.phase-wrap3::before{
     content: "";
-    background-image: conic-gradient(rgb(218, 244, 255), rgb(5, 215, 243), rgb(218, 244, 255));
+    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff);
  }
  .mobile-main .phase > 
- div.phase-wrap1 p,
- div.phase-wrap2 p,
- div.phase-wrap3 p {
+ div.phase-wrap1 p.phase-core,
+ div.phase-wrap2 p.phase-core,
+ div.phase-wrap3 p.phase-core {
     position: relative;
     top: 22px;
     font-size: 15px;
@@ -476,12 +499,139 @@ div.aboutlink {
     font-family: Capriola;
     line-height: 120%;
  }
+ .mobile-main .phase  div > 
+ div.phase1-port, 
+ div.phase2-port, 
+ div.phase3-port {
+    position: absolute;
+    top: 115%;
+ }
+ 
+ /* div.phase1-port p, 
+ div.phase2-port p, 
+ div.phase3-port p {
+    position: absolute;
+ } */
+ .mobile-main div.phase1-port.port1 {
+    transform: translateX(-55%) translateY(-25%);
+    padding: 5px;
+    background-image: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    width:50px;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase1-port.port2 {
+    transform: translateX(6%) translateY(115%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase1-port.port3 {
+    transform: translateX(99%) translateY(15%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase1-port.port4 {
+    transform: translateX(165%) translateY(-100%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase1-port.port5 {
+    transform: translateX(145%) translateY(-230%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+
+
+ /* PHASE-2 */
+ .mobile-main div.phase2-port.port1 {
+    transform: translateX(-100%) translateY(-185%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase2-port.port2 {
+    transform: translateX(-120%) translateY(-50%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase2-port.port3 {
+    transform: translateX(-5%) translateY(20%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase2-port.port4 {
+    transform: translateX(75%) translateY(15%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase2-port.port5 {
+    transform: translateX(70%) translateY(-410%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+
+
+ /* PHASE-3 */
+ .mobile-main div.phase3-port.port1 {
+    transform: translateX(-25%) translateY(-400%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase3-port.port2 {
+    transform: translateX(-20%) translateY(50%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase3-port.port3 {
+    transform: translateX(86%) translateY(30%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase3-port.port4 {
+    transform: translateX(150%) translateY(-60%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+ .mobile-main div.phase3-port.port5 {
+    transform: translateX(145%) translateY(-210%);
+    width:50px;
+    background: (from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
+    border-radius: 50%;
+    aspect-ratio:1;
+ }
+
+
+
 
 
 
  
 /* REVIEWS */
-/* .mobile-main section.review-wrapper * {outline: 1px solid rgb(128, 190, 34);} */
 .mobile-main section.review-wrapper {
     height: fit-content;
     background-color: #f3f3f3;
