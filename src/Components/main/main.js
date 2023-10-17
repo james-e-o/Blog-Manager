@@ -5,7 +5,8 @@ import { useRef,useState, useEffect, useContext } from 'react'
 import {  Views, Bookmark, Left, Right, Newlink, Arrow } from '../svg'
 import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
-import questionMark from "../contents/images/question-mark.png"
+import Ui from "../contents/images/ui.png"
+import Secure from "../contents/images/secure.png"
 import LightBulb from "../contents/images/lightbulb.png"
 
 
@@ -167,9 +168,23 @@ const Main = () => {
           </section>
 
           {/* FEATURES */}
-          {/* <section className="features">
+          <section className="features">
+                <div className="features-wrap">
+                  <div className="feature">
+                    <figure><img src={Secure} alt="secure" /></figure>
+                    <p></p>
+                  </div>
+                  <div className="feature">
+                    <figure><img src={Ui} alt="ui2" /></figure>
+                    <p></p>
+                  </div>
+                  <div className="feature">
+                    <figure></figure>
+                    <p></p>
+                  </div>
 
-          </section> */}
+                </div>
+          </section>
           {/* REVIEWS */}
           <section className='review-wrapper'>
           <p className='review-header'>Our reviews</p>
