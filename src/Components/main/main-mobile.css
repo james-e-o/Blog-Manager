@@ -66,12 +66,12 @@ main{
     position: relative;
     margin-top: 20px;
     padding: 10px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:ClashDisplay, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: 165px;
     /* font-family:monospace; */
     font-weight: 600;
     word-spacing: 1px;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 25px;
     text-align: start;
     color: rgb(250, 250, 250);
@@ -79,14 +79,14 @@ main{
 .mobile-main .h1-tag div#cta p.punch-line{
     position: relative;
     top: 5px;
-    width: 60%;
+    width: 50%;
     /* height: ; */
     padding: 10px;
 }
 .mobile-main .h1-tag div button{
     margin-top: 23px;
     font-size: large;
-    font-weight: 900;
+    font-weight: bold;
     outline: none;
     border: none;
     padding: 6px 17px;
@@ -284,7 +284,7 @@ div.aboutlink {
 /* PODCAST */
 
 .mobile-main div#podcast {
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-family: ClashDisplay;
     color:rgb(107, 93, 93) ;
     position: relative;
     display: flex;
@@ -320,7 +320,7 @@ div.aboutlink {
 }
 .mobile-main #podcast h2 {
     padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ClashDisplay;
     font-size: x-large;
     width: 60%;
     display: inline-block;
@@ -396,7 +396,7 @@ div.aboutlink {
 .mobile-main section.lifecycle h2 {
     padding: 5px;
     display: inline-block;
-    font-family: RubikMoonrocks;
+    font-family: ClashDisplay;
     color:rgb(255, 251, 244);
     text-shadow: 2px 5px 10px rgb(177, 177, 177);
     /* background: linear-gradient(to right, #9b95f1 3%, rgb(49, 197, 255) 20%, #ffcc6d); */

@@ -71,7 +71,7 @@ const Main = () => {
               <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
             </div>
           </div>
-          <Link  to="/about" style={{textDecoration:"none", zIndex:"-1"}}><div className="aboutlink"><span>Know more about us </span><Newlink/></div></Link>
+          <Link  to="/about" style={{textDecoration:"none"}}><div className="aboutlink"><span>Know more about us </span><Newlink/></div></Link>
           <div className='featured'>
             <div id='reads'>Top reads</div>
                       <div className='reads'>

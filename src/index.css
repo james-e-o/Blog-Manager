@@ -28,6 +28,11 @@
     font-family: "Capriola";
     src: url("./Components/contents/fonts/Capriola/Capriola-Regular.ttf");
 }
+@font-face {
+    font-family: "ClashDisplay";
+    src: url("./Components/contents/fonts/ClashDisplay_Complete/Variable/ClashDisplay-Variable.ttf");
+}
+
 
 * {
     padding: 0;
