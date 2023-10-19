@@ -421,26 +421,29 @@ div.aboutlink {
     border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
     height: fit-content;
     padding: 12px 14px;
-    box-shadow: 2px 5px 12px rgb(178, 179, 179);
+    box-shadow: 2px 5px 12px #999a9a;
  }
  .mobile-main .phase  div.phase-wrap1{
     background-image: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
     left: 6%; 
     transform: scale(0.75);
-    box-shadow: -5px 3px 12px #b2b3b3;
+    box-shadow: -5px 5px 7px #666767;
+    position: relative;
  }
  .mobile-main .phase  div.phase-wrap2{
     background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
     left: 55%;
     transform: translateY(13%) scale(0.78);
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
-    box-shadow: -2px 5px 12px #b2b3b3;
+    box-shadow: -2px 5px 6px #949392;
+    position: relative;
  }
  .mobile-main .phase  div.phase-wrap3{
     background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
     border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
     transform: translateY(13%) scale(0.76);
-    box-shadow: -6px 8px 12px #b2b3b3;
+    box-shadow: -6px 6px 7px #818282;
+    position: relative;
  }
  .mobile-main .phase > 
  div::before
@@ -462,7 +465,7 @@ div.aboutlink {
  .mobile-main .phase  div.phase-wrap1::before{
     background-image: conic-gradient(from 49deg,#dfe2c6, rgb(102, 102, 102), #f6f8df);
  }
- .mobile-main .phase  div.phase-wrap1::after{
+ /* .mobile-main .phase  div.phase-wrap1::after{
     content: "";
     position: absolute;
     width: 100%;
@@ -473,13 +476,15 @@ div.aboutlink {
     border-bottom: 1px solid lightgrey;
     background-color: transparent;
     border-radius: 27% 73% 32% 68% / 42% 30% 70% 58% ;
- }
+ } */
  .mobile-main .phase  div.phase-wrap2::before{
     content: "";
     border-radius: 69% 31% 62% 38% / 23% 42% 58% 77% ;
     background-image: conic-gradient(#f8e7ca, orange, #fff1da); 
+    top: 19%;
+    left: 14%;
  }
- .mobile-main .phase  div.phase-wrap2::after{
+ /* .mobile-main .phase  div.phase-wrap2::after{
     content: "";
     position: absolute;
     width: 100%;
@@ -490,12 +495,12 @@ div.aboutlink {
     border-bottom: 1px solid lightgrey;
     background-color: transparent;
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
- }
+ } */
  .mobile-main .phase  div.phase-wrap3::before{
     content: "";
     background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff);
  }
- .mobile-main .phase  div.phase-wrap3::after{
+ /* .mobile-main .phase  div.phase-wrap3::after{
     content: "";
     position: absolute;
     width: 100%;
@@ -506,7 +511,7 @@ div.aboutlink {
     border-bottom: 1px solid lightgrey;
     background-color: transparent;
     border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
- }
+ } */
  .mobile-main .phase > 
  div.phase-wrap1 p.phase-core,
  div.phase-wrap2 p.phase-core,
@@ -530,11 +535,6 @@ div.aboutlink {
     top: 115%;
  }
  
- /* div.phase1-port p, 
- div.phase2-port p, 
- div.phase3-port p {
-    position: absolute;
- } */
  .mobile-main div.phase1-port.port1 {
     transform: translateX(-115%) translateY(5%);
     background-image: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
@@ -575,6 +575,8 @@ div.aboutlink {
  /* PHASE-2 */
  .mobile-main div.phase2-port.port1 {
     transform: translateX(-180%) translateY(-235%);
+    text-align: center;
+    vertical-align: middle;
     width:50px;
     background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
@@ -590,21 +592,21 @@ div.aboutlink {
  .mobile-main div.phase2-port.port3 {
     transform: translateX(-40%) translateY(25%);
     width:50px;
-    background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
+    background: conic-gradient(#f8e7ca, orange, #f8e7ca); 
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
     aspect-ratio:1;
  }
  .mobile-main div.phase2-port.port4 {
     transform: translateX(125%) translateY(20%);
     width:50px;
-    background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
+    background: conic-gradient(#f8e7ca, orange, #f8e7ca); 
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
     aspect-ratio:1;
  }
  .mobile-main div.phase2-port.port5 {
     transform: translateX(115%) translateY(-390%);
     width:50px;
-    background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
+    background: conic-gradient(#f8e7ca, orange, #f8e7ca); 
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
     aspect-ratio:1;
  }
@@ -614,7 +616,7 @@ div.aboutlink {
  .mobile-main div.phase3-port.port1 {
     transform: translateX(-50%) translateY(-400%);
     width:50px;
-    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
+    background: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
     border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
     aspect-ratio:1;
  }
@@ -645,6 +647,37 @@ div.aboutlink {
     background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
     border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
     aspect-ratio:1;
+ }
+ .mobile-main .portview {
+    transform: translateX(0%) translateY(0%);
+    position: absolute;
+    top: 0px;
+    width:285px;
+    background:rgb(245, 245, 245);
+    border-radius: 30px;
+    aspect-ratio:1.8;
+    box-shadow: 0px 6px 25px 0px white inset;
+    z-index: 1;
+ }
+ .mobile-main .portview::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width:80%;
+    background:rgb(255, 255, 255);
+    border-radius: 35px;
+    aspect-ratio:7.0;
+    filter: blur(12px);
+    z-index: 1;
+ }
+ .mobile-main div.port p{
+    position: absolute;
+    font-family: Capriola;
+    color: white;
+    font-size: 18px;
+    top: 25%;
+    left: 40%;
  }
 
 

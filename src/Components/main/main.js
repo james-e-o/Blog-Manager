@@ -18,6 +18,7 @@ const Main = () => {
       const scroll = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
+      const [toggleport, setToggleport]=useState(false)
       const screen = useContext(screenWidth)
       const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
      
@@ -43,6 +44,13 @@ const Main = () => {
         console.log(scrollStart)
         scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
         return
+      }
+      function Pop(e){
+          const allPort = document.querySelectorAll(".mobile-main .port")
+          let Element = e.target.closest(".port")
+          // allPort.forEach(port =>port.classList.contains("portview")? port.classList.remove("portview"):"")
+          Element.classList.toggle("portview")
+          console.log("popping",Element)
       }
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
@@ -135,33 +143,31 @@ const Main = () => {
               <div className='phase'>
                 <div className='phase-wrap1'>
                   <p className='phase-core'>planning phase</p>  
-                  <div className="phase1-port port1"><p>planning phase</p></div>  
-                  <div className="phase1-port port2"><p>planning phase</p></div>  
-                  <div className="phase1-port port3"><p>planning phase</p></div>  
-                  <div className="phase1-port port4"><p>planning phase</p></div>  
-                  <div className="phase1-port port5"><p>planning phase</p></div>  
+                  <div className="phase1-port port port1" onClick={Pop}><p>1</p></div>  
+                  <div className="phase1-port port port2" onClick={Pop}><p>2</p></div>  
+                  <div className="phase1-port port port3" onClick={Pop}><p>3</p></div>  
+                  <div className="phase1-port port port4" onClick={Pop}><p>4</p></div>  
+                  <div className="phase1-port port port5" onClick={Pop}><p>5</p></div>  
                 </div>                
               </div>
               <div className='phase'>
                 <div className='phase-wrap2'>
                   <p className='phase-core'>planning phase</p>
-                  <div className="phase2-port port1"><p>planning phase</p></div>  
-                  <div className="phase2-port port2"><p>planning phase</p></div>  
-                  <div className="phase2-port port3"><p>planning phase</p></div>  
-                  <div className="phase2-port port4"><p>planning phase</p></div>  
-                  <div className="phase2-port port5"><p>planning phase</p></div> 
-                  <div className="phase2-port port5"><p>planning phase</p></div> 
+                  <div className=" portview" onClick={Pop}><p>1</p></div>  
+                  <div className="phase2-port port port2" onClick={Pop}><p>2</p></div>  
+                  <div className="phase2-port port port3" onClick={Pop}><p>3</p></div>  
+                  <div className="phase2-port port port4" onClick={Pop}><p>4</p></div>  
+                  <div className="phase2-port port port5" onClick={Pop}><p>5</p></div>  
                 </div>                
               </div>
               <div className='phase'>
                 <div className='phase-wrap3'>
                   <p className='phase-core'>planning phase</p>
-                  <div className="phase3-port port1"><p>planning phase</p></div>  
-                  <div className="phase3-port port2"><p>planning phase</p></div>  
-                  <div className="phase3-port port3"><p>planning phase</p></div>  
-                  <div className="phase3-port port4"><p>planning phase</p></div>  
-                  <div className="phase3-port port5"><p>planning phase</p></div> 
-                  <div className="phase3-port port5"><p>planning phase</p></div> 
+                  <div className="phase3-port port port1" onClick={Pop}><p>1</p></div>  
+                  <div className="phase3-port port port2" onClick={Pop}><p>2</p></div>  
+                  <div className="phase3-port port port3" onClick={Pop}><p>3</p></div>  
+                  <div className="phase3-port port port4" onClick={Pop}><p>4</p></div>  
+                  <div className="phase3-port port port5" onClick={Pop}><p>5</p></div>  
                 </div>                
               </div>
             </div>          
@@ -360,3 +366,10 @@ const Main = () => {
 }
 
 export default Main
+
+
+// export const Port = () => {
+//   return (
+//     <div className="phase1-port port port1" onClick={Pop}><p>1</p></div>
+//   )
+// }
