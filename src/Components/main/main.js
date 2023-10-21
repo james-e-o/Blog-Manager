@@ -413,7 +413,7 @@ export const Port = ({phase, port}) => {
     let y =box.y
     hipPop.style.setProperty("--popleft",`${x}px`)
     hipPop.style.setProperty('--poptop',`${y}px`)
-    hipPop.classList.toggle("hippop")
+    hipPop.classList.add("hippop")
     // childElement.classList.toggle("portview")
     //   allPort.forEach(port =>{
     //     let classes = port.classList

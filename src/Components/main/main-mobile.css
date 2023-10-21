@@ -618,8 +618,9 @@ div.aboutlink {
     /* left: var(--popleft); */
  }
  .hippop {
-    transform: translateX(-50%) translateY(-70%);
+    transform: translateX(-50%) translateY(-80%);
     width:190px;
+    padding: 15px;
     aspect-ratio:1.8;
     background:rgb(245, 245, 245);
     border-radius: 30px;
