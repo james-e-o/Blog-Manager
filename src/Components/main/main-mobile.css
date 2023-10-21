@@ -465,18 +465,6 @@ div.aboutlink {
  .mobile-main .phase  div.phase-wrap1::before{
     background-image: conic-gradient(from 49deg,#dfe2c6, rgb(102, 102, 102), #f6f8df);
  }
- /* .mobile-main .phase  div.phase-wrap1::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    top:-1px;
-    transform: scale(1.06);
-    left: 0px;
-    aspect-ratio: 1;
-    border-bottom: 1px solid lightgrey;
-    background-color: transparent;
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58% ;
- } */
  .mobile-main .phase  div.phase-wrap2::before{
     content: "";
     border-radius: 69% 31% 62% 38% / 23% 42% 58% 77% ;
@@ -484,35 +472,11 @@ div.aboutlink {
     top: 19%;
     left: 14%;
  }
- /* .mobile-main .phase  div.phase-wrap2::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    top:-1px;
-    transform: scale(1.06);
-    left: 0px;
-    aspect-ratio: 1;
-    border-bottom: 1px solid lightgrey;
-    background-color: transparent;
-    border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
- } */
  .mobile-main .phase  div.phase-wrap3::before{
     content: "";
     background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff);
  }
- /* .mobile-main .phase  div.phase-wrap3::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    top:-1px;
-    transform: scale(1.06);
-    left: 0px;
-    aspect-ratio: 1;
-    border-bottom: 1px solid lightgrey;
-    background-color: transparent;
-    border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
- } */
- .mobile-main .phase > 
+.mobile-main .phase > 
  div.phase-wrap1 p.phase-core,
  div.phase-wrap2 p.phase-core,
  div.phase-wrap3 p.phase-core {
@@ -533,6 +497,7 @@ div.aboutlink {
  div.phase3-port {
     position: absolute;
     top: 115%;
+    z-index: 5;
  }
  
  .mobile-main div.phase1-port.port1 {
@@ -575,8 +540,6 @@ div.aboutlink {
  /* PHASE-2 */
  .mobile-main div.phase2-port.port1 {
     transform: translateX(-180%) translateY(-235%);
-    text-align: center;
-    vertical-align: middle;
     width:50px;
     background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
     border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
@@ -648,16 +611,35 @@ div.aboutlink {
     border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
     aspect-ratio:1;
  }
+ #hippop {
+    position: absolute;
+    opacity: 1;
+    z-index: 100;
+    /* left: var(--popleft); */
+ }
+ .hippop {
+    transform: translateX(-50%) translateY(-70%);
+    width:190px;
+    aspect-ratio:1.8;
+    background:rgb(245, 245, 245);
+    border-radius: 30px;
+    position: absolute;
+    opacity: 1;
+    z-index: 100;
+    /* left: 300px; */
+    left: var(--popleft);
+    top: var(--poptop);
+ }
  .mobile-main .portview {
-    transform: translateX(0%) translateY(0%);
+    transform: translateX(-50%) translateY(0%);
     position: absolute;
     top: 0px;
-    width:285px;
+    width:290px;
     background:rgb(245, 245, 245);
     border-radius: 30px;
     aspect-ratio:1.8;
     box-shadow: 0px 6px 25px 0px white inset;
-    z-index: 1;
+    /* z-index: 9950; */
  }
  .mobile-main .portview::before {
     content: "";
@@ -669,7 +651,7 @@ div.aboutlink {
     border-radius: 35px;
     aspect-ratio:7.0;
     filter: blur(12px);
-    z-index: 1;
+    z-index: 5;
  }
  .mobile-main div.port p{
     position: absolute;
@@ -678,6 +660,15 @@ div.aboutlink {
     font-size: 18px;
     top: 25%;
     left: 40%;
+ }
+ .mobile-main div.port div.pop{
+    position: absolute;
+    font-family: Capriola;
+    color: white;
+    font-size: 18px;
+    top: 25%;
+    left: 40%;
+
  }
 
 

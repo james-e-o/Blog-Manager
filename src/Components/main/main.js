@@ -18,7 +18,6 @@ const Main = () => {
       const scroll = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
-      const [toggleport, setToggleport]=useState(false)
       const screen = useContext(screenWidth)
       const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
      
@@ -45,17 +44,49 @@ const Main = () => {
         scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
         return
       }
+
       function Pop(e){
-          const allPort = document.querySelectorAll(".mobile-main .port")
-          let Element = e.target.closest(".port")
-          // allPort.forEach(port =>port.classList.contains("portview")? port.classList.remove("portview"):"")
-          Element.classList.toggle("portview")
-          console.log("popping",Element)
+        const allPort = document.querySelectorAll(".mobile-main .port")
+        let Element = e.target.closest(".port")
+        // Element.classList.toggle(`${Element.classList[0]}`,`${Element.classList[1]}`,`${Element.classList[2]}`)
+        Element.classList.replace(`${Element.classList[0]}`,"portview")
+        Element.classList.replace(`${Element.classList[1]}`,"portview")
+        Element.classList.replace(`${Element.classList[2]}`,"portview")
+        // allPort.forEach(port =>{
+        //   let classes = port.classList
+        //   if(port !== e.target.closest(".port") && port.classList.contains("portview"))
+        //   {port.classList.remove("portview")
+        //    port.classList.add()
+        //   }
+        //   console.log('buyrt',Element)
+        // })
+        console.log('buyrt',Element.classList[1])
       }
+      function Pop1(e){
+        const allPort = document.querySelectorAll(".mobile-main .port")
+        let Element = e.target.closest(".port")
+        let childElement= Element.firstChild
+        childElement.classList.toggle("portview")
+          allPort.forEach(port =>{
+            let classes = port.classList
+            if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
+            {
+              port.firstChild.classList.toggle("portview")
+            //  port.classList.add()
+            }
+            // console.log(port,Element)
+          })
+        console.log(childElement)
+      }
+      
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
         dynamicColor.current.style.color = `${colors[randomColor]}`
         setColorState(randomColor)
+
+        
+        // Element.classList.toggle("portview")
+        console.log("popping",Element)
 
         // let newpoint
         // scroll.current.addEventListener('pointercancel',(e)=>{
@@ -140,36 +171,37 @@ const Main = () => {
               <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
             </div>
             <div className='lifecycle-content'>
+            <div id="hippop">hip hip hip!</div>
               <div className='phase'>
-                <div className='phase-wrap1'>
+                <div className='phase-wrap1'>               
                   <p className='phase-core'>planning phase</p>  
-                  <div className="phase1-port port port1" onClick={Pop}><p>1</p></div>  
-                  <div className="phase1-port port port2" onClick={Pop}><p>2</p></div>  
-                  <div className="phase1-port port port3" onClick={Pop}><p>3</p></div>  
-                  <div className="phase1-port port port4" onClick={Pop}><p>4</p></div>  
-                  <div className="phase1-port port port5" onClick={Pop}><p>5</p></div>  
-                </div>                
+                  <Port phase={1} port={1} />  
+                  <Port phase={1} port={2} />  
+                  <Port phase={1} port={3} />  
+                  <Port phase={1} port={4} />  
+                  <Port phase={1} port={5} />
+                </div>                 
               </div>
               <div className='phase'>
                 <div className='phase-wrap2'>
-                  <p className='phase-core'>planning phase</p>
-                  <div className=" portview" onClick={Pop}><p>1</p></div>  
-                  <div className="phase2-port port port2" onClick={Pop}><p>2</p></div>  
-                  <div className="phase2-port port port3" onClick={Pop}><p>3</p></div>  
-                  <div className="phase2-port port port4" onClick={Pop}><p>4</p></div>  
-                  <div className="phase2-port port port5" onClick={Pop}><p>5</p></div>  
+                  <p className='phase-core'>planning phase</p>                  
+                  <Port phase={2} port={1} />  
+                  <Port phase={2} port={2} />  
+                  <Port phase={2} port={3} />  
+                  <Port phase={2} port={4} />  
+                  <Port phase={2} port={5} />  
                 </div>                
               </div>
               <div className='phase'>
                 <div className='phase-wrap3'>
                   <p className='phase-core'>planning phase</p>
-                  <div className="phase3-port port port1" onClick={Pop}><p>1</p></div>  
-                  <div className="phase3-port port port2" onClick={Pop}><p>2</p></div>  
-                  <div className="phase3-port port port3" onClick={Pop}><p>3</p></div>  
-                  <div className="phase3-port port port4" onClick={Pop}><p>4</p></div>  
-                  <div className="phase3-port port port5" onClick={Pop}><p>5</p></div>  
+                  <Port phase={3} port={1} />  
+                  <Port phase={3} port={2} />  
+                  <Port phase={3} port={3} />  
+                  <Port phase={3} port={4} />  
+                  <Port phase={3} port={5} />   
                 </div>                
-              </div>
+              </div>         
             </div>          
           </section>
 
@@ -368,8 +400,37 @@ const Main = () => {
 export default Main
 
 
-// export const Port = () => {
-//   return (
-//     <div className="phase1-port port port1" onClick={Pop}><p>1</p></div>
-//   )
-// }
+export const Port = ({phase, port}) => {
+  const allPort = document.querySelectorAll(".mobile-main .port")
+  const hipPop = document.getElementById("hippop")
+  const lifecycle = document.querySelector(".lifecycle")
+
+  function Pop1(e){
+    let Element = e.target.closest(".port")
+    let box = Element.getBoundingClientRect()
+    let childElement= Element.firstChild
+    let x =box.x
+    let y =box.y
+    hipPop.style.setProperty("--popleft",`${x}px`)
+    hipPop.style.setProperty('--poptop',`${y}px`)
+    hipPop.classList.toggle("hippop")
+    // childElement.classList.toggle("portview")
+    //   allPort.forEach(port =>{
+    //     let classes = port.classList
+    //     if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
+    //     {port.firstChild.classList.toggle("portview")}
+    //   })
+    console.log(box.x,box.y)
+  }
+  const [toggleport, setToggleport]=useState(false)
+  const parentClass = `phase${phase}-port port port${port}`
+  const childClass = toggleport? "portview":"pop"
+  return (
+    <div className={parentClass} onClick={Pop1}><div className={childClass}>{port}</div></div>
+    )
+  }
+  
+
+
+
+  // const className = toggleport? `portview`:`phase${phase}-port port port${port}`

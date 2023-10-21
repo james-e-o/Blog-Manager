@@ -1,5 +1,5 @@
 .header {
-    z-index: 12;
+    z-index: 30;
     height: fit-content;
     position: sticky ;
     top: 0px;
@@ -105,19 +105,19 @@
 .toggle-menu {
     position: absolute;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color:white;
     width: 310px;
     top: calc(0px );
     right: calc(0px);
-    z-index: 10;
+    z-index: 20;
     transition: width 200ms ease;
 }
 .toggle-off {
     width: 0px;
 }
 div.menu-header {
-   height: 58px;
+   height: 49px;
    color: black;
    display: flex;
    align-items: center;
@@ -138,7 +138,7 @@ div.menu-main {
 .menu-main ul {
     display: flex;
     list-style: none;
-    width: 100%;
+    width: 98%;
     
 }
 .menu-main ul a {
@@ -147,7 +147,7 @@ div.menu-main {
     font-weight: 500;
     line-height: normal;
     border: 1px solid gray;
-    width: 50%;
+    width: 47%;
     color: slateblue;
     text-decoration: none;
     margin: 5px;  
