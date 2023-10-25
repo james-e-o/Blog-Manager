@@ -34,7 +34,7 @@
     padding: 8px 18px;
     display: flex;
     color:white;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .header nav.desktop{

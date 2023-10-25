@@ -36,7 +36,7 @@ main{
 .mobile-main .h1-tag .art{
     position: absolute;
     background-color:rgb(97, 82, 194);
-    width: 35%;
+    width: 120px;
     border-radius: 10px;
     height: 190px;
     transform: rotate(23deg) translateX(178%) translateY(127%) scale(1.6);
@@ -44,6 +44,7 @@ main{
 }
 
 .mobile-main .h1-tag h1 {
+    min-height:205px;
     position: relative;
     line-height: 142%;
     font-family:  RubikMoonrocks, Arial, Helvetica, sans-serif;
@@ -79,7 +80,7 @@ main{
 .mobile-main .h1-tag div#cta p.punch-line{
     position: relative;
     top: 5px;
-    width: 50%;
+    width: 140px;
     /* height: ; */
     padding: 10px;
 }
@@ -96,7 +97,7 @@ main{
     /* background-image:  linear-gradient(to bottom,#ffdb98,#7b6aef); */
     background-color: white;
     transition: transform 0.2s ease;
-    border: 1px solid slateblue;
+    border: 1px solid rgb(196, 196, 196);
 }
 .mobile-main .h1-tag p button:hover{
    
@@ -154,6 +155,7 @@ div.aboutlink {
     padding: 10px 15px;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 1px 1px 0px rgba(173, 173, 173, 0.747);
 }
 .mobile-main div.read_id {
     display: flex;
@@ -296,9 +298,11 @@ div.aboutlink {
     background-size:55%;
     background-image:url(../contents/images/podcasts5.avif) ;
     z-index: 6;
+    overflow: hidden;
 }
 
 .mobile-main #podcast .podcast-gradient {
+    overflow-x: hidden;
     position: relative;
     z-index: 2;
     width: 50%;
@@ -356,6 +360,7 @@ div.aboutlink {
 
 /* LIFECYCLE */
 .mobile-main section.lifecycle {
+    /* overflow-x: hidden; */
     position: relative;
     height: fit-content;
     padding-top: 55px;
@@ -618,7 +623,7 @@ div.aboutlink {
     /* left: var(--popleft); */
  }
  .hippop {
-    transform: translateX(-50%) translateY(-80%);
+    /* transform: translateX(-50%) translateY(-80%); */
     width:190px;
     padding: 15px;
     aspect-ratio:1.8;
@@ -688,18 +693,33 @@ div.aboutlink {
     
 }
 .mobile-main .features .features-wrap .feature {
+    font-family: ClashDisplay;
     background-color: white;
     margin: 10px 30px;
     height: 200px;
     aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
+    padding: 10px 22px ;
+    flex-direction: column;
     border-radius: 16px;
 }
+.mobile-main .features .features-wrap .feature .feature-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .mobile-main .features .features-wrap .feature figure{
-    padding: 14px;
-    width: 40px;
-    height: 40px;
+    padding: 14px 5px;
+    width: 30px;
+    height: 30px; 
+}
+.mobile-main .features .features-wrap .feature-header p{
+    padding: 14px 5px 5px;
+   font-weight: bold;
+   color: rgb(102, 204, 245);
+}
+.mobile-main .features .features-wrap .feature p.feature-content{
+    font-size: 14px;
+    line-height: 1.25;
 }
 
 
@@ -759,7 +779,7 @@ div.aboutlink {
 
 
 .mobile-main .reviews .review-scroll div.rev {
-    width: 75vw;
+    width: 55vw;
     display: inline-block;
     margin: 0px 15px 15px 2px;
     padding: 15px 15px 15px 20px;
@@ -769,7 +789,7 @@ div.aboutlink {
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid gold;
     height: fit-content;
     position: relative;
 }
@@ -802,7 +822,7 @@ div.aboutlink {
     height: 25px;
     background-image: url(../contents/images/githubpic.jpeg);
     margin-left: 10px;
-    border: 2px solid skyblue;
+    border: 2px solid gold;
 }
 .mobile-main section.review-wrapper figure img {
     width: 100%;

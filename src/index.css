@@ -41,9 +41,9 @@
     /* font-family:Capriola; */
 }
 
-/* body {
-    overflow-anchor: none;
-  } */
+body {
+    width: 100%;
+  }
   
 
 hr {

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { screenWidth } from '../app/App'
 import Ui from "../contents/images/ui.png"
 import Secure from "../contents/images/secure.png"
+import Seo from "../contents/images/seo.png"
 import LightBulb from "../contents/images/lightbulb.png"
 
 
@@ -209,16 +210,27 @@ const Main = () => {
           <section className="features">
                 <div className="features-wrap">
                   <div className="feature">
-                    <figure><img src={Secure} alt="secure" /></figure>
+                    <div className="feature-header">
+                      <figure><img src={Secure} alt="secure" /></figure>
+                      <p className="feature-heading">Secure</p>
+                      </div>
                     <p></p>
                   </div>
                   <div className="feature">
-                    <figure><img src={Ui} alt="ui2" /></figure>
-                    <p></p>
+                    <div className="feature-header">
+                      <figure><img src={Ui} alt="ui2" /></figure>
+                      <p className="feature-heading">Seamless</p>
+                      </div>
+                    <p className='feature-content'> Enjoy a seamless experience on any device, from desktop to tablet and smartphone. 
+                      Our site is built with our users' at heart to give you a smooth reading and publishing expirience. 
+                    </p>
                   </div>
                   <div className="feature">
-                    <figure></figure>
-                    <p></p>
+                    <div className="feature-header">
+                      <figure><img src={Seo} alt="seo" /></figure>
+                      <p className="feature-heading">Optimized</p>
+                    </div>
+                    <p className='feature-content'>Increase your digital presence with our SEO features, which is designed to improve your content search engine rankings, making it easier for explorers to find you.</p>
                   </div>
 
                 </div>
@@ -229,6 +241,17 @@ const Main = () => {
           <div ref={scrollWrap} className='reviews'>  
             <div ref={scroll} className='review-scroll'>
 
+              <div className='rev'>
+                <div className="review-content"><p>"</p>first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+                <div className='review-id'>
+                  <figure className='review-image'></figure>                       
+                  <div className='review-persona'>
+                    <h5> Name</h5>
+                    <p className='review-portfolio'>CEO abc enterprise</p> 
+                  </div>
+                </div> 
+              </div>
+              {/* again */}
               <div className='rev'>
                 <div className="review-content"><p>"</p>first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
                 <div className='review-id'>
@@ -407,10 +430,24 @@ export const Port = ({phase, port}) => {
 
   function Pop1(e){
     let Element = e.target.closest(".port")
+    let containerBox = lifecycle.getBoundingClientRect().width
     let box = Element.getBoundingClientRect()
+    console.log(e.clientX,containerBox)
     let childElement= Element.firstChild
-    let x =box.x
-    let y =box.y
+    let shift = (containerBox/2)/2
+      let x 
+      let y 
+    if (e.clientX < containerBox/2){
+      x =box.x + `${20}px`
+      y =box.y
+    }else if(e.clientX > (containerBox/2)){
+      x = box.x - (containerBox/2.5) 
+      y =box.y
+    }else {
+      x =box.x
+      y =box.y
+    }
+    
     hipPop.style.setProperty("--popleft",`${x}px`)
     hipPop.style.setProperty('--poptop',`${y}px`)
     hipPop.classList.add("hippop")
@@ -420,7 +457,7 @@ export const Port = ({phase, port}) => {
     //     if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
     //     {port.firstChild.classList.toggle("portview")}
     //   })
-    console.log(box.x,box.y)
+    console.log(box.x,box.y,e.clientX, e.clientY)
   }
   const [toggleport, setToggleport]=useState(false)
   const parentClass = `phase${phase}-port port port${port}`
