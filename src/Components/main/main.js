@@ -214,15 +214,15 @@ const Main = () => {
                       <figure><img src={Secure} alt="secure" /></figure>
                       <p className="feature-heading">Secure</p>
                       </div>
-                    <p></p>
+                    <p className='feature-content'>Strong authentication and password security for you database to prevent phising attacks and unauthorized users.</p>
                   </div>
                   <div className="feature">
                     <div className="feature-header">
                       <figure><img src={Ui} alt="ui2" /></figure>
                       <p className="feature-heading">Seamless</p>
                       </div>
-                    <p className='feature-content'> Enjoy a seamless experience on any device, from desktop to tablet and smartphone. 
-                      Our site is built with our users' at heart to give you a smooth reading and publishing expirience. 
+                    <p className='feature-content'>
+                      Our site is built with our users' at heart to give you a smooth reading and content management expirience from desktop to tablet and smartphone. 
                     </p>
                   </div>
                   <div className="feature">
@@ -230,7 +230,7 @@ const Main = () => {
                       <figure><img src={Seo} alt="seo" /></figure>
                       <p className="feature-heading">Optimized</p>
                     </div>
-                    <p className='feature-content'>Increase your digital presence with our SEO features, which is designed to improve your content search engine rankings, making it easier for explorers to find you.</p>
+                    <p className='feature-content'>Great SEO features, designed to improve your content search engine rankings, and increase content engagement from other creators and viewers.</p>
                   </div>
 
                 </div>

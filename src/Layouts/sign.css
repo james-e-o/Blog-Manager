@@ -98,7 +98,7 @@ main.sign-main {
 form button{
     margin-top: 8px;
     width: 70%;
-    padding:7px;
+    padding:12px;
     color: white;
     background: slateblue;
     border-radius: 25px;
@@ -127,10 +127,9 @@ div#google {
     font-weight: 400;
     justify-content: center;
     gap: 8px;
-    margin-top: 5px;
     border: 1px solid black;
     border-radius: 30px;
-    padding: 4px;
+    padding: 8px 4px;
 }
 div #sign-in-option {
     display: flex;

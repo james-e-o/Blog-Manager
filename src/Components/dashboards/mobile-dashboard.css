@@ -17,15 +17,15 @@
 .m-dashboard-header h1{
     
     font-family:Pacifico;
-    padding: 10px 20px;
-    color: rgb(255, 197, 8);
+    padding: 8px 20px;
+    color: orange;
     font-weight:bolder;
-    font-size: 23px;
+    font-size: 19px;
 }
 
 .m-dashboard-header h1 span {
     font-family: Pacifico;
-    color: darkturquoise;
+    color: skyblue;
 }
 .m-dashboard-header nav {
     align-items: center;
@@ -34,7 +34,7 @@
     display: flex;
     color:white;
     justify-content: space-between;
-    width: 40%;
+    width: fit-content;
 }
 .m-dashboard-header nav button{
     color: slateblue;
@@ -47,15 +47,49 @@
 .m-dashboard-header nav figure{
     width: 35px;
     height: 35px;
-    background: black;
+    background: rgb(55, 14, 109);
     border-radius: 50%;
 }
-
-.m-dashboard-header div.svg {
-    height: 25px;
+.m-dashboard-header .engagement-svg svg#menu {
+    fill: rgb(75, 84, 94);
     width: 25px;
-    display: inline-block;
+    height: 25px;
 }
-.m-dashboard-header .svg svg {
-    fill: slategray;
+
+
+
+
+
+
+
+
+
+
+/* DASHBOARD MAIN */
+.m-dashboard-main {
+
+}
+.m-dashboard-main div.search {
+    height: 50px;
+    padding: 10px;
+}
+.m-dashboard-main div.search input{
+    height: inherit;
+    display: block;
+    width: 85%;
+    margin: 7px auto;
+    outline: none;
+    font-size: 17px;
+    padding: 18px;
+    border: none;
+    border-radius: 19px;
+    background-color: rgb(243, 243, 243);
+}
+.m-dashboard-main div.circle-menu{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.m-dashboard-main div.circle-menu svg{
+    fill: green;
 }

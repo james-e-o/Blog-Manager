@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
-import { Menu } from '../svg'
+import { Circle, Menu } from '../svg'
 
 
 const UserDashboard = () => {
@@ -11,14 +11,22 @@ const UserDashboard = () => {
   return (
       //  MOBILE
       screen < 480?(
-        <header className='m-dashboard-header'>
-        <h1>Skript_<span>n</span></h1> 
-          <nav >
-            <button >&#9998; </button>  
-            <figure></figure>
-            <Menu/>      
-          </nav>
+        <div className='m-dashboard'>
+          <header className='m-dashboard-header'>
+            <h1>Skript_<span>n</span></h1> 
+            <nav >
+              <figure></figure>     
+            </nav>
           </header>
+          <main className='m-dashboard-main'>
+              <div className='search'>
+                <input type="search" name="search" id="search" />
+              </div>
+              <div className='categories'></div>
+              <div className='circle-menu'><Circle/></div>
+          </main>
+        </div>
+        
         )
         // TABLET
         :screen<720?(
