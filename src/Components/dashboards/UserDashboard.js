@@ -19,11 +19,20 @@ const UserDashboard = () => {
             </nav>
           </header>
           <main className='m-dashboard-main'>
+              <div className="welcome">
+                <h2>Hi {'James'}</h2>
+              </div>
+              <div className="adverts">d</div>
               <div className='search'>
-                <input type="search" name="search" id="search" />
+                <p id='searchAI'>
+                  Make Ai searches
+                </p>
+                <div className='textarea'>
+                  <textarea name="search" id="" cols="28" rows="2"></textarea>
+                </div>   
               </div>
               <div className='categories'></div>
-              <div className='circle-menu'><Circle/></div>
+              <div className='circle-menu'></div>
           </main>
         </div>
         

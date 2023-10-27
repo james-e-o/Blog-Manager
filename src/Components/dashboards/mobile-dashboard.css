@@ -17,7 +17,7 @@
 .m-dashboard-header h1{
     
     font-family:Pacifico;
-    padding: 8px 20px;
+    padding: 12px 20px;
     color: orange;
     font-weight:bolder;
     font-size: 19px;
@@ -30,7 +30,7 @@
 .m-dashboard-header nav {
     align-items: center;
     padding: 8px 5px;
-    margin-right: 10px;
+    margin-right: 5px;
     display: flex;
     color:white;
     justify-content: space-between;
@@ -45,8 +45,8 @@
 }
 
 .m-dashboard-header nav figure{
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     background: rgb(55, 14, 109);
     border-radius: 50%;
 }
@@ -69,27 +69,78 @@
 .m-dashboard-main {
 
 }
-.m-dashboard-main div.search {
-    height: 50px;
-    padding: 10px;
+.m-dashboard-main div.welcome {
+    height: fit-content;
+    border: none;
+    border-radius: 17px;
+    margin: 10px 22px;
+    font-family: Capriola;
+    padding: 10px 16px;
 }
-.m-dashboard-main div.search input{
-    height: inherit;
+.m-dashboard-main div.adverts {
+    height: 15vh;
+    border: 1px solid black;
+    border-radius: 17px;
+    margin: 15px 22px 20px;
+    padding: 15px;
+    background: rgb(14, 15, 33);
+}
+.m-dashboard-main div.search {
+    height: fit-content;
+    padding:5px 10px;
+    margin:15px 22px;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 17px;
+    background-color: rgb(253, 253, 253);
+}
+.m-dashboard-main div.search p#searchAI{
+    width: 78%;
+    margin: 5px auto 0px;
+    font-family:cursive;
+    padding: 6px;
+    font-size: 13px;
+    color: slateblue;
+    /* font-weight: bold; */
+}
+.m-dashboard-main div.search .textarea{
+    height: fit-content;
+    white-space: auto;
+    font-family: CLashDisplay;
+    border: 1px solid skyblue;
     display: block;
     width: 85%;
-    margin: 7px auto;
+    width: fit-content;
+    margin: 7px auto 12px;
     outline: none;
     font-size: 17px;
-    padding: 18px;
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0px 1px 3px 0px rgba(105, 90, 205, 0.559);
+    background-color: rgb(255, 255, 255);
+}
+.m-dashboard-main div.search .textarea textarea{
+    /* border: 1px solid green; */
     border: none;
-    border-radius: 19px;
-    background-color: rgb(243, 243, 243);
+    outline: none;
+    width: 75%;
+    font-size: 13px;
+    font-family: CLashDisplay;
+    
 }
 .m-dashboard-main div.circle-menu{
     position: fixed;
+     height: 50px;
+    width: 50px;
     bottom: 30px;
+    border-radius: 50%;
     right: 30px;
+    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
 }
 .m-dashboard-main div.circle-menu svg{
-    fill: green;
+    fill: rgb(255, 255, 255);
+   
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    margin: auto;
 }
