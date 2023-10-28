@@ -37,13 +37,13 @@ const UserDashboard = () => {
                 </div>   
               </div>
               <div className='categories'></div>
-              <div className="menu-bar">
+              <div className={!toggleMenu?'menu-bar':'menu-bar menu-width'}>
                 <div className="menu-wrap">
-                  <div className="menu"></div>
-                  <div className="menu"></div>
-                  <div className="menu"></div>
-                  <div className="menu"></div>
-                  <div className={toggleMenu?'menus-icon':'menus-icon open-menu'} onClick={()=>setToggleMenu(!toggleMenu)}><Plus/></div>
+                  <div className={!toggleMenu?'menu':'open-menu'}></div>
+                  <div className={!toggleMenu?'menu':'open-menu'}></div>
+                  {/* <div className={toggleMenu?'menu':'open-menu'}></div> */}
+                  <div className={!toggleMenu?'menu':'open-menu'}></div>
+                  <div className='menus-icon' onClick={()=>setToggleMenu(!toggleMenu)}><Plus/></div>
                 </div>
               </div>
           </main>

@@ -130,14 +130,17 @@
     background-color: transparent;
     position: fixed;
     bottom: 30px;
-    width: fit-content;
     right: 30px;
     height: fit-content;
     display: flex;
     justify-content: end;
 }
+.menu-width{
+    width: 85vw;
+}
 .m-dashboard-main div.menu-bar .menu-wrap{
     background-color: transparent;
+    width: 86%;
     position: relative;
     height: fit-content;
     padding: 3px;
@@ -148,7 +151,7 @@
 .m-dashboard-main .menu-bar div.menus-icon{
     position: relative;
     text-align: center;
-    margin: 3px 0px 3px 6px;
+    margin: 3px 6px;
     height: 50px;
     width: 50px;
     right: 0px;
@@ -160,18 +163,18 @@
     background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
 }
 .m-dashboard-main div.menus-icon svg{
+    top: 1px;
     fill: rgb(255, 255, 255);
     position: relative;
     display: inline-block;
 }
 .m-dashboard-main .menu-bar .menu{
     background-color: black;
-    height: 43px;
-    width: 43px;
-    right: 1%;
-    top: 5px;
+    height: 40px;
+    width: 40px;
+    right: 6%;
+    top: 8px;
     position:absolute;
-    /* position:relative; */
     z-index: 1;
     border-radius: 50%;
     text-align: center;
@@ -179,6 +182,17 @@
     display: inline-block;
     margin: 3px 6px;
 }
-.m-dashboard-main .open-menu {
+.m-dashboard-main .menu-bar .open-menu{
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    right: 1%;
+    top: 1px;
     position:relative;
+    z-index: 1;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    margin: 3px 6px;
 }
