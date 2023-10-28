@@ -1,13 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
-import { Circle, Menu } from '../svg'
+import { Plus, Menu } from '../svg'
 
 
 const UserDashboard = () => {
   const screen = useContext(screenWidth)
+  const menuIcon =useRef()
+  const [toggleMenu,setToggleMenu]=useState(false)
+  // function toggleMenu(){
+  //   menuIcon.classList.toggle("open-menu")
+  // }
   return (
       //  MOBILE
       screen < 480?(
@@ -20,7 +25,7 @@ const UserDashboard = () => {
           </header>
           <main className='m-dashboard-main'>
               <div className="welcome">
-                <h2>Hi {'James'}</h2>
+                <h2>Hi <span>{'James'}</span></h2>
               </div>
               <div className="adverts">d</div>
               <div className='search'>
@@ -32,7 +37,15 @@ const UserDashboard = () => {
                 </div>   
               </div>
               <div className='categories'></div>
-              <div className='circle-menu'></div>
+              <div className="menu-bar">
+                <div className="menu-wrap">
+                  <div className="menu"></div>
+                  <div className="menu"></div>
+                  <div className="menu"></div>
+                  <div className="menu"></div>
+                  <div className={toggleMenu?'menus-icon':'menus-icon open-menu'} onClick={()=>setToggleMenu(!toggleMenu)}><Plus/></div>
+                </div>
+              </div>
           </main>
         </div>
         

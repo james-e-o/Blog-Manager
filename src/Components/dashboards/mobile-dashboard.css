@@ -89,16 +89,16 @@
     height: fit-content;
     padding:5px 10px;
     margin:15px 22px;
-    border: 1px solid rgb(228, 228, 228);
+    border: 1px solid rgb(198, 198, 198);
     border-radius: 17px;
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(249, 249, 249);
 }
 .m-dashboard-main div.search p#searchAI{
     width: 78%;
     margin: 5px auto 0px;
-    font-family:cursive;
+    font-family:Capriola;
     padding: 6px;
-    font-size: 13px;
+    font-size: 14px;
     color: slateblue;
     /* font-weight: bold; */
 }
@@ -119,7 +119,6 @@
     background-color: rgb(255, 255, 255);
 }
 .m-dashboard-main div.search .textarea textarea{
-    /* border: 1px solid green; */
     border: none;
     outline: none;
     width: 75%;
@@ -127,20 +126,59 @@
     font-family: CLashDisplay;
     
 }
-.m-dashboard-main div.circle-menu{
+.m-dashboard-main div.menu-bar{
+    background-color: transparent;
     position: fixed;
-     height: 50px;
-    width: 50px;
     bottom: 30px;
-    border-radius: 50%;
+    width: fit-content;
     right: 30px;
+    height: fit-content;
+    display: flex;
+    justify-content: end;
+}
+.m-dashboard-main div.menu-bar .menu-wrap{
+    background-color: transparent;
+    position: relative;
+    height: fit-content;
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.m-dashboard-main .menu-bar div.menus-icon{
+    position: relative;
+    text-align: center;
+    margin: 3px 0px 3px 6px;
+    height: 50px;
+    width: 50px;
+    right: 0px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
     background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
 }
-.m-dashboard-main div.circle-menu svg{
+.m-dashboard-main div.menus-icon svg{
     fill: rgb(255, 255, 255);
-   
     position: relative;
     display: inline-block;
-    top: 2px;
-    margin: auto;
+}
+.m-dashboard-main .menu-bar .menu{
+    background-color: black;
+    height: 43px;
+    width: 43px;
+    right: 1%;
+    top: 5px;
+    position:absolute;
+    /* position:relative; */
+    z-index: 1;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    margin: 3px 6px;
+}
+.m-dashboard-main .open-menu {
+    position:relative;
 }
