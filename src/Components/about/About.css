@@ -1,28 +1,36 @@
 div.about {
     position: relative;
-    height: 100vh;
     background-image: url(../contents/images/pebbles.webp);
     background-repeat: no-repeat;
     background-color: slateblue;
     background-size: cover;
+    backdrop-filter: opacity(0.2);
     background-position: 70% 50%;
     font-family: ClashDisplay;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    background-attachment: fixed;
+    /* flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
-div.about-filter {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background:linear-gradient(to bottom, white 20px, orange, slateblue);
-    opacity: 0.5;
+.about .about-header h1{
+    
+    font-family:Pacifico;
+    padding: 12px 20px;
+    color: black;
+    font-weight:bolder;
+    font-size: 19px;
 }
-div.about-content {
-    margin: 50px 25px;
+
+.about .about-header h1 span {
+    font-family: Pacifico;
+    color: skyblue;
+}
+div.about-header {
+    background-color: white;
+}
+div.about-content section {
+    margin: 50px 0px;
     padding: 25px 10px;
     position: relative;
     z-index: 1;
@@ -31,13 +39,13 @@ div.about-content {
     background-color: white;
     opacity: 0.9;
 }
-.about-content h1{
-    padding: 15px 20px;
+.about-content>h5, h2{
+    padding: 6px 20px;
     background-color: white;
-    opacity: 0.9;
+    opacity: 0.92;
 }
 div.about-content p{
-    padding: 20px;
+    padding: 10px 20px;
     background-color: white;
     opacity: 0.92;
 }

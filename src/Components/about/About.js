@@ -4,10 +4,23 @@ import "./About.css"
 const About = () => {
   return (
     <div className='about'>
-    <div className='about-filter'></div>
+      <div className='about-header'>
+        <h1>Skript_<span>n</span></h1> 
+      </div>
+      <div className='about-header'></div>
       <div className='about-content'>
-        <h1>About us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis consequuntur ipsum explicabo voluptatum obcaecati. Voluptatibus eligendi suscipit nihil magni sunt! Illo veniam beatae animi quis assumenda fugit soluta ab libero?</p>
+        <section>
+          <h2>About us</h2>
+          <p>Welcome to Skript In, your ultimate solution for blog content management. We understand that creating and managing content for your audience should be a breeze. That's why we've developed Skript In, a user-friendly content management system that empowers you to craft and publish captivating content for your followers to enjoy.</p>
+        </section>
+        <section>
+            <h5>Our Mission</h5>
+            <p>At Skript In, our mission is clear: to simplify content creation and sharing for bloggers, writers, and content creators. We believe that everyone has a story to tell, and we're here to make it easier for you to share your voice with the world.</p>
+        </section>
+        <section>
+            <h5>join our team</h5>
+            <p>Skript In is not just a platform; it's a community. We encourage you to become a part of our growing community by signing up and starting your content journey with us. Share your stories, build connections, and let your voice be heard.</p>
+        </section>   
       </div>
       {/* <div className="about-footer"></div> */}
     </div>
