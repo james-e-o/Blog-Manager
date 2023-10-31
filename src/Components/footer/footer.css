@@ -3,7 +3,7 @@ footer {
     padding: 20px;
     background-color: #ffe3ae;
 }
-footer h3 {
+footer h4 {
     font-family: Pacifico;
     margin-left: 10px;
 }
@@ -20,6 +20,7 @@ footer h3 {
 }
 div.foot-brief p {
   padding: 3px;
+  color: black;
 }
 .footdiv div.foot-icons {
     display: flex;

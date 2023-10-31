@@ -383,6 +383,20 @@ div.aboutlink {
     background-color: white;
     z-index: 4;
 }
+.mobile-main section.lifecycle::after {
+    content: "";
+    width: 70%;
+    border-radius: 14px;
+    color:rgb(107, 93, 93) ;
+    position: absolute;
+    height: 34%;
+    transform: rotate(11deg) scale(1.16) skewX(-33deg);
+    top: -40%;
+    left: -30%;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    z-index: 4;
+}
 .mobile-main div.lifecycle-header {
    display: flex;
    align-items: center;
@@ -402,10 +416,10 @@ div.aboutlink {
     padding: 5px;
     display: inline-block;
     font-family: ClashDisplay;
-    color:rgb(255, 251, 244);
+    color:transparent;
     text-shadow: 2px 5px 10px rgb(177, 177, 177);
-    /* background: linear-gradient(to right, #9b95f1 3%, rgb(49, 197, 255) 20%, #ffcc6d); */
-    /* background-clip: text; */
+    background: linear-gradient(to right, #95e6f1 3%, rgb(164, 229, 255) 20%, #ffcc6d);
+    background-clip: text;
     text-align: center;
 }
 .mobile-main div.lifecycle-content {
@@ -421,7 +435,7 @@ div.aboutlink {
  .phase-wrap2, 
  .phase-wrap3{
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     padding: 25px;
     border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
     height: fit-content;
@@ -511,6 +525,7 @@ div.aboutlink {
     border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
     width:50px;
     aspect-ratio:1;
+    position: relative;
  }
  .mobile-main div.phase1-port.port2 {
     transform: translateX(30%) translateY(70%);
@@ -518,6 +533,7 @@ div.aboutlink {
     background: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
     border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
     aspect-ratio:1;
+    position: relative;
  }
  .mobile-main div.phase1-port.port3 {
     transform: translateX(180%) translateY(10%);
@@ -615,8 +631,17 @@ div.aboutlink {
     background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
     border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
     aspect-ratio:1;
- }
- #hippop {
+}
+.mobile-main div.port div.pop{}
+.mobile-main div.port div.pop{
+   position: absolute;
+   font-family: Capriola;
+   color: white;
+   font-size: 18px;
+   top: 25%;
+   left: 40%;
+}
+#hippop {
     position: absolute;
     opacity: 1;
     z-index: 100;
@@ -624,13 +649,13 @@ div.aboutlink {
  }
  .hippop {
     /* transform: translateX(-50%) translateY(-80%); */
-    width:190px;
+    width:150px;
     padding: 15px;
     aspect-ratio:1.8;
     background:rgb(245, 245, 245);
     border-radius: 30px;
     position: absolute;
-    opacity: 1;
+    opacity: 0;
     z-index: 100;
     /* left: 300px; */
     left: var(--popleft);
@@ -645,7 +670,7 @@ div.aboutlink {
     border-radius: 30px;
     aspect-ratio:1.8;
     box-shadow: 0px 6px 25px 0px white inset;
-    /* z-index: 9950; */
+    z-index: 1000;
  }
  .mobile-main .portview::before {
     content: "";
@@ -657,24 +682,9 @@ div.aboutlink {
     border-radius: 35px;
     aspect-ratio:7.0;
     filter: blur(12px);
-    z-index: 5;
  }
- .mobile-main div.port p{
-    position: absolute;
-    font-family: Capriola;
-    color: white;
-    font-size: 18px;
-    top: 25%;
-    left: 40%;
- }
- .mobile-main div.port div.pop{
-    position: absolute;
-    font-family: Capriola;
-    color: white;
-    font-size: 18px;
-    top: 25%;
-    left: 40%;
-
+ .front {
+    z-index: 1000;
  }
 
 
@@ -755,7 +765,7 @@ div.aboutlink {
 }
 .mobile-main .reviews div.review-scroll {
     position: relative;
-    /* width: max-content; */
+    width: max-content;
     background-color: #f3f3f3;
 }
 
@@ -781,7 +791,7 @@ div.aboutlink {
 .mobile-main .reviews .review-scroll div.rev {
     width: 55vw;
     display: inline-block;
-    margin: 0px 15px 15px 2px;
+    margin: 0px 25px 15px 2px;
     padding: 15px 15px 15px 20px;
     background-color: transparent;
     z-index: 1;
@@ -840,7 +850,7 @@ div.aboutlink {
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
-    height: 57px;
+    height: fit-content;
     overflow-y: scroll;
     line-height: 110%;
     margin: 0px  10px;

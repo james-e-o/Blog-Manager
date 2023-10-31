@@ -172,35 +172,20 @@ const Main = () => {
               <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
             </div>
             <div className='lifecycle-content'>
-            <div id="hippop">hip hip hip!</div>
+            {/* <div id="hippop">hip hip hip!</div> */}
               <div className='phase'>
                 <div className='phase-wrap1'>               
                   <p className='phase-core'>planning phase</p>  
-                  <Port phase={1} port={1} />  
-                  <Port phase={1} port={2} />  
-                  <Port phase={1} port={3} />  
-                  <Port phase={1} port={4} />  
-                  <Port phase={1} port={5} />
                 </div>                 
               </div>
               <div className='phase'>
                 <div className='phase-wrap2'>
                   <p className='phase-core'>planning phase</p>                  
-                  <Port phase={2} port={1} />  
-                  <Port phase={2} port={2} />  
-                  <Port phase={2} port={3} />  
-                  <Port phase={2} port={4} />  
-                  <Port phase={2} port={5} />  
                 </div>                
               </div>
               <div className='phase'>
                 <div className='phase-wrap3'>
                   <p className='phase-core'>planning phase</p>
-                  <Port phase={3} port={1} />  
-                  <Port phase={3} port={2} />  
-                  <Port phase={3} port={3} />  
-                  <Port phase={3} port={4} />  
-                  <Port phase={3} port={5} />   
                 </div>                
               </div>         
             </div>          
@@ -425,33 +410,34 @@ export default Main
 
 export const Port = ({phase, port}) => {
   const allPort = document.querySelectorAll(".mobile-main .port")
-  const hipPop = document.getElementById("hippop")
+  // const hipPop = document.getElementById("hippop")
   const lifecycle = document.querySelector(".lifecycle")
 
   function Pop1(e){
     let Element = e.target.closest(".port")
     let containerBox = lifecycle.getBoundingClientRect().width
     let box = Element.getBoundingClientRect()
-    console.log(e.clientX,containerBox)
     let childElement= Element.firstChild
-    let shift = (containerBox/2)/2
-      let x 
-      let y 
-    if (e.clientX < containerBox/2){
-      x =box.x + `${20}px`
-      y =box.y
-    }else if(e.clientX > (containerBox/2)){
-      x = box.x - (containerBox/2.5) 
-      y =box.y
-    }else {
-      x =box.x
-      y =box.y
-    }
+    console.log(e.clientX,containerBox)
+    // let shift = (containerBox/2)/2
+    //   let x 
+    //   let y 
+    // if (e.clientX < containerBox/2){
+    //   x =box.x + `${20}px`
+    //   y =box.y
+    // }else if(e.clientX > (containerBox/2)){
+    //   x = box.x - (containerBox/2.5) 
+    //   y =box.y
+    // }else {
+    //   x =box.x
+    //   y =box.y
+    // }
     
-    hipPop.style.setProperty("--popleft",`${x}px`)
-    hipPop.style.setProperty('--poptop',`${y}px`)
-    hipPop.classList.add("hippop")
-    // childElement.classList.toggle("portview")
+    // hipPop.style.setProperty("--popleft",`${x}px`)
+    // hipPop.style.setProperty('--poptop',`${y}px`)
+    // hipPop.classList.add("hippop")
+    Element.classList.toggle("front")
+    childElement.classList.toggle("portview")
     //   allPort.forEach(port =>{
     //     let classes = port.classList
     //     if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
