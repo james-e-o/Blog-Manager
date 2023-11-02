@@ -363,8 +363,8 @@ div.aboutlink {
     /* overflow-x: hidden; */
     position: relative;
     height: fit-content;
-    padding-top: 55px;
-    padding-bottom: 85px;
+    padding-top: 50px;
+    padding-bottom: 30px;
     background-color: #979fcb;
     /* background: linear-gradient(to bottom left,#afa9cf 45%, #a7a6a7); */
     z-index: 4;
@@ -409,7 +409,7 @@ div.aboutlink {
     box-shadow:2px 5px 10px rgba(255, 255, 79, 0.212);
     margin-left: 20px;padding-left: 9px;
     backdrop-filter: blur(35);
-    background-color: rgba(255, 255, 79, 0.185);
+    background-color: rgba(215, 215, 38, 0.185);
     transform: rotate(180deg) translateY(-10px);
 }
 .mobile-main section.lifecycle h2 {
@@ -423,245 +423,85 @@ div.aboutlink {
     text-align: center;
 }
 .mobile-main div.lifecycle-content {
-   margin-left: 25px;
-   margin-top: 10px;
+   margin: 10px 25px 0px;
+   display: flex;
+   justify-content: center;
  }
-.mobile-main div.lifecycle-content div.phase {
-   display: block;
-   margin-bottom: 45px;
- }
- .mobile-main .phase  > 
- .phase-wrap1, 
- .phase-wrap2, 
- .phase-wrap3{
-    position: relative;
-    display: inline-flex;
-    padding: 25px;
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
+.mobile-main div.lifecycle-content .content-wrap{
+    margin-top: 40px;
+    width: 100px;
     height: fit-content;
-    padding: 12px 14px;
-    box-shadow: 2px 5px 12px #999a9a;
- }
- .mobile-main .phase  div.phase-wrap1{
-    background-image: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
-    left: 6%; 
-    transform: scale(0.75);
-    box-shadow: -5px 5px 7px #666767;
-    position: relative;
- }
- .mobile-main .phase  div.phase-wrap2{
-    background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
-    left: 55%;
-    transform: translateY(13%) scale(0.78);
-    border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
-    box-shadow: -2px 5px 6px #949392;
-    position: relative;
- }
- .mobile-main .phase  div.phase-wrap3{
-    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
-    border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
-    transform: translateY(13%) scale(0.76);
-    box-shadow: -6px 6px 7px #818282;
-    position: relative;
- }
- .mobile-main .phase > 
- div::before
- {
-    content: "";
-    filter: blur(12px);
-    top: 9%;
-    left: 15%;
-    opacity: 1;
-    width: 53%;
-    z-index: 4px;
-    position: absolute;
-    display: inline-block;
-    padding: 25px;
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58% ;
-    aspect-ratio: 1;
-    padding: 12px 14px;
- }
- .mobile-main .phase  div.phase-wrap1::before{
-    background-image: conic-gradient(from 49deg,#dfe2c6, rgb(102, 102, 102), #f6f8df);
- }
- .mobile-main .phase  div.phase-wrap2::before{
-    content: "";
-    border-radius: 69% 31% 62% 38% / 23% 42% 58% 77% ;
-    background-image: conic-gradient(#f8e7ca, orange, #fff1da); 
-    top: 19%;
-    left: 14%;
- }
- .mobile-main .phase  div.phase-wrap3::before{
-    content: "";
-    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff);
- }
-.mobile-main .phase > 
- div.phase-wrap1 p.phase-core,
- div.phase-wrap2 p.phase-core,
- div.phase-wrap3 p.phase-core {
-    position: relative;
-    top: 22px;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    width: 90px;
-    aspect-ratio: 1;
-    text-align: center;
-    font-family: Capriola;
-    line-height: 120%;
- }
- .mobile-main .phase  div > 
- div.phase1-port, 
- div.phase2-port, 
- div.phase3-port {
-    position: absolute;
-    top: 115%;
-    z-index: 5;
- }
- 
- .mobile-main div.phase1-port.port1 {
-    transform: translateX(-115%) translateY(5%);
-    background-image: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
-    width:50px;
-    aspect-ratio:1;
-    position: relative;
- }
- .mobile-main div.phase1-port.port2 {
-    transform: translateX(30%) translateY(70%);
-    width:50px;
-    background: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
-    aspect-ratio:1;
-    position: relative;
- }
- .mobile-main div.phase1-port.port3 {
-    transform: translateX(180%) translateY(10%);
-    width:50px;
-    background: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
-    aspect-ratio:1;
- }
- .mobile-main div.phase1-port.port4 {
-    transform: translateX(265%) translateY(-125%);
-    width:50px;
-    background:conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
-    aspect-ratio:1;
- }
- .mobile-main div.phase1-port.port5 {
-    transform: translateX(265%) translateY(-285%);
-    width:50px;
-    background: conic-gradient(from 49deg, #d9dbc0, rgb(102, 102, 102), #dce0b9);
-    border-radius: 27% 73% 32% 68% / 42% 30% 70% 58%;
-    aspect-ratio:1;
- }
-
-
- /* PHASE-2 */
- .mobile-main div.phase2-port.port1 {
-    transform: translateX(-180%) translateY(-235%);
-    width:50px;
-    background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
-    border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase2-port.port2 {
-    transform: translateX(-169%) translateY(-70%);
-    width:50px;
-    background-image: conic-gradient(#f8e7ca, orange, #f8e7ca); 
-    border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase2-port.port3 {
-    transform: translateX(-40%) translateY(25%);
-    width:50px;
-    background: conic-gradient(#f8e7ca, orange, #f8e7ca); 
-    border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase2-port.port4 {
-    transform: translateX(125%) translateY(20%);
-    width:50px;
-    background: conic-gradient(#f8e7ca, orange, #f8e7ca); 
-    border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase2-port.port5 {
-    transform: translateX(115%) translateY(-390%);
-    width:50px;
-    background: conic-gradient(#f8e7ca, orange, #f8e7ca); 
-    border-radius: 22% 78% 62% 38% / 62% 66% 34% 38% ;
-    aspect-ratio:1;
- }
-
-
- /* PHASE-3 */
- .mobile-main div.phase3-port.port1 {
-    transform: translateX(-50%) translateY(-400%);
-    width:50px;
-    background: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
-    border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase3-port.port2 {
-    transform: translateX(-65%) translateY(30%);
-    width:50px;
-    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
-    border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase3-port.port3 {
-    transform: translateX(100%) translateY(30%);
-    width:50px;
-    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
-    border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase3-port.port4 {
-    transform: translateX(230%) translateY(-80%);
-    width:50px;
-    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
-    border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
-    aspect-ratio:1;
- }
- .mobile-main div.phase3-port.port5 {
-    transform: translateX(255%) translateY(-250%);
-    width:50px;
-    background-image: conic-gradient(from 25deg,#dae7ff, slateblue, #dae7ff); 
-    border-radius: 69% 31% 62% 38% / 52% 42% 58% 48% ;
-    aspect-ratio:1;
+    transform: rotate(27deg);
 }
-.mobile-main div.port div.pop{}
-.mobile-main div.port div.pop{
-   position: absolute;
-   font-family: Capriola;
-   color: white;
-   font-size: 18px;
-   top: 25%;
-   left: 40%;
+.mobile-main div.lifecycle-content .content-wrap div.port{
+   margin: 4px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
-#hippop {
+.mobile-main  .content-wrap div.eraser{
+   border-top-left-radius: 29px;
+   border-top-right-radius: 29px;
+   border-top: 20px solid white;
+   background-color: #ffc415;
+   height: 40px;
+}
+.mobile-main div.port5{
+   height: 50px;
+   margin: 4px;
+   background-color: chartreuse;
+   border-radius: 4px;
+   padding: 0px 3px;
+}
+.mobile-main div.port4{
+    height: 50px;
+   margin: 4px;
+   background-color: skyblue;
+   border-radius: 4px;
+   padding: 0px 3px;
+}
+.mobile-main div.port3{
+    height: 50px;
+    margin: 4px;
+    background-color: red;
+    border-radius: 4px;
+    padding: 0px 3px;
+}
+.mobile-main div.port2{
+    height: 50px;
+   margin: 4px;
+   background-color: chartreuse;
+   border-radius: 4px;
+   padding: 0px 3px;
+}
+.mobile-main div.port1{
+    height: 50px;
+    margin: 4px;
+    background-color: chartreuse;
+    border-radius: 4px;
+    padding: 0px 3px;
+}
+.mobile-main .content-wrap div.lead {
+    position: relative;
+    height: 1px;
+    width: 1px;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-top: 70px solid #ffc415;
+}
+.mobile-main .content-wrap div.lead::before{
+    content: "";
     position: absolute;
-    opacity: 1;
-    z-index: 100;
-    /* left: var(--popleft); */
- }
- .hippop {
-    /* transform: translateX(-50%) translateY(-80%); */
-    width:150px;
-    padding: 15px;
-    aspect-ratio:1.8;
-    background:rgb(245, 245, 245);
-    border-radius: 30px;
-    position: absolute;
-    opacity: 0;
-    z-index: 100;
-    /* left: 300px; */
-    left: var(--popleft);
-    top: var(--poptop);
- }
- .mobile-main .portview {
+    left: -9px;
+    bottom: 0px;
+    height: 1px;
+    width: 1px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 14px solid black;
+    border-radius: 25px;
+}
+.mobile-main .portview {
     transform: translateX(-50%) translateY(0%);
     position: absolute;
     top: 0px;

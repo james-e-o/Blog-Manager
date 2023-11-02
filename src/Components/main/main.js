@@ -172,22 +172,15 @@ const Main = () => {
               <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
             </div>
             <div className='lifecycle-content'>
-            {/* <div id="hippop">hip hip hip!</div> */}
-              <div className='phase'>
-                <div className='phase-wrap1'>               
-                  <p className='phase-core'>planning phase</p>  
-                </div>                 
+              <div className="content-wrap">
+                <div className="port eraser"></div>
+                <div className="port port1">hallo</div>
+                <div className="port port2">hallo</div>
+                <div className="port port3">hallo</div>
+                <div className="port port4">hallo</div>
+                <div className="port port5">hallo</div>
+                <div className="port lead"></div>
               </div>
-              <div className='phase'>
-                <div className='phase-wrap2'>
-                  <p className='phase-core'>planning phase</p>                  
-                </div>                
-              </div>
-              <div className='phase'>
-                <div className='phase-wrap3'>
-                  <p className='phase-core'>planning phase</p>
-                </div>                
-              </div>         
             </div>          
           </section>
 
@@ -408,50 +401,50 @@ const Main = () => {
 export default Main
 
 
-export const Port = ({phase, port}) => {
-  const allPort = document.querySelectorAll(".mobile-main .port")
-  // const hipPop = document.getElementById("hippop")
-  const lifecycle = document.querySelector(".lifecycle")
+// export const Port = ({phase, port}) => {
+//   const allPort = document.querySelectorAll(".mobile-main .port")
+//   // const hipPop = document.getElementById("hippop")
+//   const lifecycle = document.querySelector(".lifecycle")
 
-  function Pop1(e){
-    let Element = e.target.closest(".port")
-    let containerBox = lifecycle.getBoundingClientRect().width
-    let box = Element.getBoundingClientRect()
-    let childElement= Element.firstChild
-    console.log(e.clientX,containerBox)
-    // let shift = (containerBox/2)/2
-    //   let x 
-    //   let y 
-    // if (e.clientX < containerBox/2){
-    //   x =box.x + `${20}px`
-    //   y =box.y
-    // }else if(e.clientX > (containerBox/2)){
-    //   x = box.x - (containerBox/2.5) 
-    //   y =box.y
-    // }else {
-    //   x =box.x
-    //   y =box.y
-    // }
+//   function Pop1(e){
+//     let Element = e.target.closest(".port")
+//     let containerBox = lifecycle.getBoundingClientRect().width
+//     let box = Element.getBoundingClientRect()
+//     let childElement= Element.firstChild
+//     console.log(e.clientX,containerBox)
+//     // let shift = (containerBox/2)/2
+//     //   let x 
+//     //   let y 
+//     // if (e.clientX < containerBox/2){
+//     //   x =box.x + `${20}px`
+//     //   y =box.y
+//     // }else if(e.clientX > (containerBox/2)){
+//     //   x = box.x - (containerBox/2.5) 
+//     //   y =box.y
+//     // }else {
+//     //   x =box.x
+//     //   y =box.y
+//     // }
     
-    // hipPop.style.setProperty("--popleft",`${x}px`)
-    // hipPop.style.setProperty('--poptop',`${y}px`)
-    // hipPop.classList.add("hippop")
-    Element.classList.toggle("front")
-    childElement.classList.toggle("portview")
-    //   allPort.forEach(port =>{
-    //     let classes = port.classList
-    //     if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
-    //     {port.firstChild.classList.toggle("portview")}
-    //   })
-    console.log(box.x,box.y,e.clientX, e.clientY)
-  }
-  const [toggleport, setToggleport]=useState(false)
-  const parentClass = `phase${phase}-port port port${port}`
-  const childClass = toggleport? "portview":"pop"
-  return (
-    <div className={parentClass} onClick={Pop1}><div className={childClass}>{port}</div></div>
-    )
-  }
+//     // hipPop.style.setProperty("--popleft",`${x}px`)
+//     // hipPop.style.setProperty('--poptop',`${y}px`)
+//     // hipPop.classList.add("hippop")
+//     Element.classList.toggle("front")
+//     childElement.classList.toggle("portview")
+//     //   allPort.forEach(port =>{
+//     //     let classes = port.classList
+//     //     if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
+//     //     {port.firstChild.classList.toggle("portview")}
+//     //   })
+//     console.log(box.x,box.y,e.clientX, e.clientY)
+//   }
+//   const [toggleport, setToggleport]=useState(false)
+//   const parentClass = `phase${phase}-port port port${port}`
+//   const childClass = toggleport? "portview":"pop"
+//   return (
+//     <div className={parentClass} onClick={Pop1}><div className={childClass}>{port}</div></div>
+//     )
+//   }
   
 
 
