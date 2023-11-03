@@ -146,9 +146,9 @@ const Main = () => {
           {/* NICHE */}
           <div className='niche-content'>
             <p id='niche'>Find your niche</p>
-            <div className='category'>
+            <div className='categories'>
               {niches.map((niche)=>(
-                <button className='categories' key={niche.id}>{niche.name}</button>
+                <button className='category' key={niche.id}>{niche.name}</button>
               ))}
             </div>
             <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
@@ -174,11 +174,11 @@ const Main = () => {
             <div className='lifecycle-content'>
               <div className="content-wrap">
                 <div className="port eraser"></div>
-                <div className="port port1">hallo</div>
-                <div className="port port2">hallo</div>
-                <div className="port port3">hallo</div>
-                <div className="port port4">hallo</div>
-                <div className="port port5">hallo</div>
+                <div className="port port1">step 1</div>
+                <div className="port port2">step 2</div>
+                <div className="port port3">step 3</div>
+                <div className="port port4">step 4</div>
+                <div className="port port5">step 5</div>
                 <div className="port lead"></div>
               </div>
             </div>          

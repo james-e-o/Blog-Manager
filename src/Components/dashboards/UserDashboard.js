@@ -3,40 +3,45 @@ import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
-import { Plus, Menu } from '../svg'
+import { Plus, Menu, Notify, Arrow, Arrow_f } from '../svg'
 
 
 const UserDashboard = () => {
   const screen = useContext(screenWidth)
   const menuIcon =useRef()
   const [toggleMenu,setToggleMenu]=useState(false)
-  // function toggleMenu(){
-  //   menuIcon.classList.toggle("open-menu")
-  // }
+  const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
+  const niche3 = niches.filter(niche => niche.id <= 3)
   return (
       //  MOBILE
       screen < 480?(
         <div className='m-dashboard'>
           <header className='m-dashboard-header'>
-            <h1>Skript_<span>n</span></h1> 
+            <div className="user">
+              <figure></figure>
+              <div className="welcome">
+                <p>Hello,</p>
+                <h3>Jamie</h3>
+              </div>
+            </div>
             <nav >
-              <figure></figure>     
+              <figure><Notify/></figure>     
             </nav>
           </header>
           <main className='m-dashboard-main'>
-              <div className="welcome">
-                <h2>Hi <span>{'James'}</span></h2>
+              <div className='search'>
+                <input type="search" name="search" id="" /> 
               </div>
               <div className="adverts">d</div>
-              <div className='search'>
-                <p id='searchAI'>
-                  Make Ai searches
-                </p>
-                <div className='textarea'>
-                  <textarea name="search" id="" cols="28" rows="2"></textarea>
-                </div>   
+                <p className='niche'>niche</p>
+              <div className='categories'>
+                <div className='niche-scroll'>
+                {niche3.map((niche)=>(
+                <div className='category' key={niche.id}>{niche.name}</div>
+                ))}
+                </div>
+                <button className='arrow-f'><Arrow_f/></button>
               </div>
-              <div className='categories'></div>
               <div className={!toggleMenu?'menu-bar':'menu-bar menu-width'}>
                 <div className="menu-wrap">
                   <div className={!toggleMenu?'menu':'open-menu'}></div>

@@ -237,10 +237,10 @@ div.aboutlink {
     border-top-right-radius: 12px;
     background: linear-gradient(to left top, #fabf51, #6969e0)
 }
-.mobile-main .category {
+.mobile-main .categories {
     padding: 10px;
 }
-.mobile-main .categories {
+.mobile-main .category {
     display: inline-grid;
     margin-right: 10px ;
     margin-top: 10px;
@@ -251,7 +251,7 @@ div.aboutlink {
     transition: background-color 185ms ease-out;
     border: none;
 }
-.mobile-main .categories:hover {
+.mobile-main .category:hover {
     background-color: #c8c4dd;
 }
 .mobile-main .niche-content .see {
@@ -417,7 +417,7 @@ div.aboutlink {
     display: inline-block;
     font-family: ClashDisplay;
     color:transparent;
-    text-shadow: 2px 5px 10px rgb(177, 177, 177);
+    text-shadow: -2px 0px 3px rgb(204, 204, 204);
     background: linear-gradient(to right, #95e6f1 3%, rgb(164, 229, 255) 20%, #ffcc6d);
     background-clip: text;
     text-align: center;
@@ -438,13 +438,14 @@ div.aboutlink {
    display: flex;
    justify-content: center;
    align-items: center;
+   font-family: Capriola;
 }
 .mobile-main  .content-wrap div.eraser{
    border-top-left-radius: 29px;
    border-top-right-radius: 29px;
    border-top: 20px solid white;
    background-color: #ffc415;
-   height: 40px;
+   height: 30px;
 }
 .mobile-main div.port5{
    height: 50px;
@@ -452,6 +453,7 @@ div.aboutlink {
    background-color: chartreuse;
    border-radius: 4px;
    padding: 0px 3px;
+   border: 1px solid yellow;
 }
 .mobile-main div.port4{
     height: 50px;
@@ -459,6 +461,7 @@ div.aboutlink {
    background-color: skyblue;
    border-radius: 4px;
    padding: 0px 3px;
+    border: 1px solid yellow;
 }
 .mobile-main div.port3{
     height: 50px;
@@ -466,6 +469,7 @@ div.aboutlink {
     background-color: red;
     border-radius: 4px;
     padding: 0px 3px;
+     border: 1px solid yellow;
 }
 .mobile-main div.port2{
     height: 50px;
@@ -473,6 +477,7 @@ div.aboutlink {
    background-color: chartreuse;
    border-radius: 4px;
    padding: 0px 3px;
+    border: 1px solid yellow;
 }
 .mobile-main div.port1{
     height: 50px;
@@ -480,6 +485,7 @@ div.aboutlink {
     background-color: chartreuse;
     border-radius: 4px;
     padding: 0px 3px;
+     border: 1px solid yellow;
 }
 .mobile-main .content-wrap div.lead {
     position: relative;

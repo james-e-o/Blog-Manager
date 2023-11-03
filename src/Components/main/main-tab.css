@@ -14,13 +14,10 @@
     .tab-main .h1-tag h1 {
         line-height: 142%;
         font-family:  RubikMoonrocks, Capriola, Arial, Helvetica, sans-serif;
-        /* font-family: sans-serif; */
         font-weight: 900;
         margin-top: 25px;
         padding: 0px 10px;
         font-size: 41px;
-        /* color: rgb(0, 243, 247); */
-        /* color: rgb(97, 253, 136); */
         color: var(--dynamite);
         /* color: transparent;
         background-image: linear-gradient(to right, orange, blueviolet);
