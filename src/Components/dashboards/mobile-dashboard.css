@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:#fbfbfb;
+    background-color:rgb(240, 240, 242);
     transition: background-color 280ms ease;
 }
 
@@ -95,7 +95,7 @@
 
 /* DASHBOARD MAIN */
 .m-dashboard-main {
-    background-color:#fbfbfb;
+    background-color:rgb(240, 240, 242);
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
@@ -130,22 +130,20 @@
     margin: 15px 25px 6px;
     padding: 15px;
     background: rgb(14, 15, 33);
-    background: slateblue;
 }
 
 .m-dashboard-main .categories {
-    margin:5px 30px;   
+    margin:5px 30px 20px;   
    display: flex;
-   justify-content: space-around;
+   justify-content: center;
    align-items: center;
     height:fit-content;
-    background-color: #fbfbfb;
 }
 .m-dashboard-main p.niche {
-    margin: 9px 38px 0px;
+    margin: 9px 48px 0px;
     padding: 3px;
     font-size: 13px;
-    color: orange;
+    color: navy;
     font-family:BrunoAce;
 }
 .m-dashboard-main .niche-scroll {
@@ -179,23 +177,43 @@
     background-color: transparent;
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 2px;
     height: fit-content;
     display: flex;
-    justify-content: end;
+    width: 99%;
 }
 .menu-width{
     width: 85vw;
 }
-.m-dashboard-main div.menu-bar .menu-wrap{
-    background-color: transparent;
-    width: 86%;
+.m-dashboard-main div.menu-bar .blunt-fixed-inactive{
+    /* background-color: green; */
+    width: 100%;
     position: relative;
     height: fit-content;
     padding: 3px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    transition: width 250ms ease-in
+}
+.m-dashboard-main div.menu-bar .blunt-fixed-active{
+    background-color: white;
+    width: fit-content;
+    margin: 0px auto;
+    position: relative;
+    height: fit-content;
+    padding: 2px 6px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 1px 1px 5px grey; */
+    transition: width 300ms ease-out
+}
+
+.m-dashboard-main .blunt-fixed-inactive .menu-wrap{
+    height: fit-content;
+    position: relative;
 }
 .m-dashboard-main .menu-bar div.menus-icon{
     position: relative;
@@ -203,22 +221,45 @@
     margin: 3px 6px;
     height: 50px;
     width: 50px;
+    box-shadow: 1px 1px 5px grey;
     right: 0px;
     border-radius: 50%;
     display: inline-flex;
+    transform: scale(1);
     justify-content: center;
     align-items: center;
     z-index: 2;
+    transition: transform 200ms ease;
     background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
 }
-.m-dashboard-main div.menus-icon svg{
+.m-dashboard-main .menu-bar div.menus-icon-active{
+    position: relative;
+    text-align: center;
+    margin: 3px 6px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 1px 1px 5px grey;
+    right: 0px;
+    border-radius: 50%;
+    display: inline-flex;
+    transform: scale(0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition:transform 200ms ease;
+    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
+}
+.m-dashboard-main div svg{
     top: 1px;
+    left: 1px;
+    height: 98.3%;
+    width: 98.3%;
     fill: rgb(255, 255, 255);
     position: relative;
     display: inline-block;
 }
 .m-dashboard-main .menu-bar .menu{
-    background-color: black;
+    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
     height: 40px;
     width: 40px;
     right: 6%;
@@ -228,11 +269,14 @@
     border-radius: 50%;
     text-align: center;
     color: white;
-    display: inline-block;
+    pointer-events: none;
     margin: 3px 6px;
+    opacity: 1;
+    transform: scale(0.8);
+    transition: position 420ms ease-out ;
 }
 .m-dashboard-main .menu-bar .open-menu{
-    background-color: black;
+    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
     height: 40px;
     width: 40px;
     right: 1%;
@@ -244,4 +288,7 @@
     color: white;
     display: inline-block;
     margin: 3px 6px;
+    opacity: 1;
+    transform: scale(1);
+    transition: position 420ms ease-out ;
 }

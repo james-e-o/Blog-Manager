@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
-import { Plus, Menu, Notify, Arrow, Arrow_f } from '../svg'
+import { Plus, Menu, Notify, Arrow, Arrow_f, RoundMenu, Arrow_b } from '../svg'
 
 
 const UserDashboard = () => {
@@ -42,13 +42,24 @@ const UserDashboard = () => {
                 </div>
                 <button className='arrow-f'><Arrow_f/></button>
               </div>
-              <div className={!toggleMenu?'menu-bar':'menu-bar menu-width'}>
-                <div className="menu-wrap">
-                  <div className={!toggleMenu?'menu':'open-menu'}></div>
-                  <div className={!toggleMenu?'menu':'open-menu'}></div>
-                  {/* <div className={toggleMenu?'menu':'open-menu'}></div> */}
-                  <div className={!toggleMenu?'menu':'open-menu'}></div>
-                  <div className='menus-icon' onClick={()=>setToggleMenu(!toggleMenu)}><Plus/></div>
+              <p className='niche'>feed</p>
+              <div className="feeds">
+                  <div className="feed">
+
+                  </div>
+              </div>
+              <div className={'menu-bar'}>
+                <div className={toggleMenu?'blunt-fixed-active':'blunt-fixed-inactive'}>
+                {toggleMenu?(
+                  <div className="menu-wrap">
+                      <div className={toggleMenu?'open-menu':'menu'}>4</div>
+                      <div className={toggleMenu?'open-menu':'menu'}>3</div>
+                      <div className={toggleMenu?'open-menu':'menu'}>2</div>
+                      <div className={toggleMenu?'open-menu':'menu'} onClick={()=>setToggleMenu(!toggleMenu)}>1</div>
+                  </div>
+                ):(
+                  <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>
+                )}
                 </div>
               </div>
           </main>

@@ -64,7 +64,14 @@ export const Google = () => {
 export const Plus = () => {
   return (
     <div className='engagement-svg'>                    
-      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z M37,26H26v11h-2V26H13v-2h11V13h2v11h11V26z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="menu"><path d="M12,0A12,12,0,1,0,24,12,12.01,12.01,0,0,0,12,0Zm4,17H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Zm0-4H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Zm0-4H8A1,1,0,0,1,8,7h8a1,1,0,0,1,0,2Z"></path></svg>
+    </div>
+  )
+}
+export const RoundMenu = () => {
+  return (
+    <div className='engagement-svg'>                    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="menu"><path d="M12,0A12,12,0,1,0,24,12,12.01,12.01,0,0,0,12,0Zm4,17H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Zm0-4H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Zm0-4H8A1,1,0,0,1,8,7h8a1,1,0,0,1,0,2Z"></path></svg>
     </div>
   )
 }
@@ -88,6 +95,13 @@ export const Arrow_f = () => {
   return (
     <div className='engagement-svg'>                      
       <svg xmlns="http://www.w3.org/2000/svg" height="15px" fill="white" viewBox="0 -960 800 800" width="15px"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+    </div>
+  )
+}
+export const Arrow_b = () => {
+  return (
+    <div className='engagement-svg'>                      
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="1.2 1 31.3 31.3" id="left-arrow"><path d="M17 2C8.716 2 2 8.716 2 17s6.716 15 15 15 15-6.716 15-15S25.284 2 17 2zm3.2 20.782a1 1 0 0 1-1.414 1.414L12.3 17.71a.997.997 0 0 1-.292-.71c0-.258.096-.514.292-.71l6.486-6.486a1 1 0 0 1 1.414 1.414L14.418 17l5.782 5.782z"></path></svg>
     </div>
   )
 }
