@@ -186,7 +186,6 @@
     width: 85vw;
 }
 .m-dashboard-main div.menu-bar .blunt-fixed{
-    /* background-color: rgb(16, 24, 5); */
     width: 100%;
     position: relative;
     height: fit-content;
@@ -196,51 +195,33 @@
     align-items: center;
     transition: width 250ms ease-in
 }
-/* .m-dashboard-main div.menu-bar .blunt-fixed-active{
-    background-color: white;
-    width: fit-content;
-    margin: 0px auto;
-    position: relative;
-    height: fit-content;
-    padding: 2px 6px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: width 300ms ease-out
-} */
 .m-dashboard-main .blunt-fixed .menu-wrap{
     height: fit-content;
     width: min-content;
     display: flex;
     justify-content: center;
-    box-shadow: 1px 1px 5px grey;
     border-radius: 50px;
     align-items: center;
     position: relative;
     gap: 3px;
     transition: width 420ms ease-out ;
 }
-.shift {
-    display: flex;
-    opacity: 1;
-}
 .m-dashboard-main .menu-bar div.menus-icon{
     position: relative;
     text-align: center;
     margin: 3px 6px;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     box-shadow: 1px 1px 5px grey;
     right: 0px;
     border-radius: 50%;
     display: inline-flex;
-    transform: scale(1);
+    transform: scale(1.2);
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition:width 200ms ease-out, height 200ms ease-out;
-    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
+    transition: transform 200ms ease-in-out -100ms;
+    background:linear-gradient(to top left, slateblue 16%, skyblue 60%);
 }
 .m-dashboard-main .menu-bar div.menus-icon-active{
     position: relative;
@@ -252,11 +233,12 @@
     right: 0px;
     border-radius: 50%;
     display: inline-flex;
+    transform: scale(1);
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition:width 200ms ease-out, height 200ms ease-out;
-    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
+    transition:transform 200ms ease-in-out;
+    background:linear-gradient(to top left, slateblue 16%, skyblue 60%);
 }
 .m-dashboard-main div svg{
     top: 1px;
@@ -266,26 +248,25 @@
     fill: rgb(255, 255, 255);
     position: relative;
     display: inline-block;
-    transition: all 200ms ease;
+    transition: all 200ms ease-in-out;
 }
 .m-dashboard-main .menu-bar .menu{
-    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
+    background-color:white;
     height: 45px;
     width: 45px;
     right: 3%;
     top: 0px;
-    position:absolute;
     z-index: 1;
     border-radius: 50%;
     text-align: center;
+    transform: scale(0.6);
     color: white;
     pointer-events: none;
     margin: 3px 6px;
-    opacity: 1;
-    /* transition: all 420ms ease-out ; */
+    opacity: 0;
 }
 .open-menu{
-    background:linear-gradient(to top left, slateblue 10%, skyblue 60%);
+    background:linear-gradient(to top left, slateblue 16%, skyblue 60%);
     height: 45px;
     width: 45px;
     z-index: 1;
@@ -295,6 +276,5 @@
     display: inline-block;
     margin: 4px 8px;
     opacity: 1;
-    position:relative;
-    /* transition: all 420ms ease-out ; */
+    box-shadow: 1px 1px 5px rgb(109, 109, 109);
 }

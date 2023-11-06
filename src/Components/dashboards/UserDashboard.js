@@ -51,9 +51,9 @@ const UserDashboard = () => {
               <div className={'menu-bar'}>
                 <div className={'blunt-fixed'}>
                       <div className="menu-wrap">
-                          <div className={toggleMenu?'open-menu':'menu'}>4</div>
-                          <div className={toggleMenu?'open-menu':'menu'}>3</div>
-                          <div className={toggleMenu?'open-menu':'menu'}>2</div>
+                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 200ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>4</div>
+                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 200ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>3</div>
+                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 200ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>2</div>
                       <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
                       </div>
                 </div>
