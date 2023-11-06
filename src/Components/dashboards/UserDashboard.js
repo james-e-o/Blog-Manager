@@ -49,17 +49,13 @@ const UserDashboard = () => {
                   </div>
               </div>
               <div className={'menu-bar'}>
-                <div className={toggleMenu?'blunt-fixed-active':'blunt-fixed-inactive'}>
-                {toggleMenu?(
-                  <div className="menu-wrap">
-                      <div className={toggleMenu?'open-menu':'menu'}>4</div>
-                      <div className={toggleMenu?'open-menu':'menu'}>3</div>
-                      <div className={toggleMenu?'open-menu':'menu'}>2</div>
-                      <div className={toggleMenu?'open-menu':'menu'} onClick={()=>setToggleMenu(!toggleMenu)}>1</div>
-                  </div>
-                ):(
-                  <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>
-                )}
+                <div className={'blunt-fixed'}>
+                      <div className="menu-wrap">
+                          <div className={toggleMenu?'open-menu':'menu'}>4</div>
+                          <div className={toggleMenu?'open-menu':'menu'}>3</div>
+                          <div className={toggleMenu?'open-menu':'menu'}>2</div>
+                      <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
+                      </div>
                 </div>
               </div>
           </main>
