@@ -635,6 +635,7 @@ div.aboutlink {
 
 
 .mobile-main .reviews .review-scroll div.rev {
+    overflow: hidden;
     width: 55vw;
     display: inline-block;
     margin: 0px 25px 15px 2px;
@@ -656,7 +657,7 @@ div.aboutlink {
     z-index: -1;
     left: 0%;
     right: 0%;
-    filter: blur(7px);
+    filter: blur(27px);
     display: inline-block;
     /* background:; */
     background:linear-gradient(to right bottom,#a4d6ff 30%, #6969e0);

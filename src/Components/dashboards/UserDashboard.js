@@ -7,11 +7,14 @@ import { Plus, Menu, Notify, Arrow, Arrow_f, RoundMenu, Arrow_b } from '../svg'
 
 
 const UserDashboard = () => {
+  function togglePop (){
+    
+  }
   const screen = useContext(screenWidth)
   const menuIcon =useRef()
   const [toggleMenu,setToggleMenu]=useState(false)
   const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
-  const niche3 = niches.filter(niche => niche.id <= 3)
+  const niche3 = niches.filter((niche) => niche.name.length <= 5)
   return (
       //  MOBILE
       screen < 480?(
@@ -32,28 +35,33 @@ const UserDashboard = () => {
               <div className='search'>
                 <input type="search" name="search" id="" /> 
               </div>
-              <div className="adverts">d</div>
+              <div className="adverts"></div>
                 <p className='niche'>niche</p>
               <div className='categories'>
                 <div className='niche-scroll'>
                 {niche3.map((niche)=>(
                 <div className='category' key={niche.id}>{niche.name}</div>
                 ))}
+                <button className='arrow-f'>more</button>
                 </div>
-                <button className='arrow-f'><Arrow_f/></button>
               </div>
-              <p className='niche'>feed</p>
-              <div className="feeds">
-                  <div className="feed">
-
+              <p className='niche'>feed</p><div className="feeds">
+                  <div className='feed'>
+                    <div className="feed-content"></div>
+                    <div className="content-image"></div>
+                  </div>
+                  <div className='feed'>
+                    <div className="feed-content"></div>
+                    <div className="content-image"></div>
                   </div>
               </div>
+              
               <div className={'menu-bar'}>
                 <div className={'blunt-fixed'}>
                       <div className="menu-wrap">
-                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 200ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>4</div>
-                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 200ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>3</div>
-                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 200ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>2</div>
+                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}> <div className="menu-pop pop1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione natus facere tempore harum asperiores laudantium magni impedit error explicabo id totam, excepturi et, at cum doloribus voluptas mollitia ipsa.</div></div>
+                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}> <div className="menu-pop pop2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione natus facere tempore harum asperiores laudantium magni impedit error explicabo id totam, excepturi et, at cum doloribus voluptas mollitia ipsa.</div></div>
+                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}> <div className="menu-pop pop3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione natus facere tempore harum asperiores laudantium magni impedit error explicabo id totam, excepturi et, at cum doloribus voluptas mollitia ipsa.</div></div>
                       <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
                       </div>
                 </div>

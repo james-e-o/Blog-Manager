@@ -9,25 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:rgb(240, 240, 242);
+    background-color:rgb(242, 245, 240);
     transition: background-color 280ms ease;
 }
-
-
-/* .m-dashboard-header h1{
-    
-    font-family:Pacifico;
-    padding: 12px 20px;
-    color: orange;
-    font-weight:bolder;
-    font-size: 19px;
-}
-
-.m-dashboard-header h1 span {
-    font-family: Pacifico;
-    color: skyblue;
-} */
-
 .m-dashboard-header div.user {
     display: flex;
     padding: 18px 20px 5px;
@@ -95,7 +79,7 @@
 
 /* DASHBOARD MAIN */
 .m-dashboard-main {
-    background-color:rgb(240, 240, 242);
+    background-color:rgb(242, 245, 240);
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
@@ -124,37 +108,55 @@
     height: 15px;
 }
 .m-dashboard-main div.adverts {
-    height: 15vh;
+    height: 140px;
+    
     border: 1px solid rgb(226, 226, 226);
     border-radius: 27px;
     margin: 15px 25px 6px;
     padding: 15px;
-    background: rgb(14, 15, 33);
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.m-dashboard-main div.adverts::before {
+    content: "";
+    top: 20%;
+    right: 20%;
+    filter: blur(17px);
+    z-index: -1;
+    background:linear-gradient(to right bottom,rgb(255, 191, 139),rgb(121, 121, 255) 80%);
+    border-radius:50% ;
+    height: 40%;
+    aspect-ratio: 1;
+    position: absolute;
+    transform: scale(5.2) rotate(0deg);
 }
 
 .m-dashboard-main .categories {
-    margin:5px 30px 20px;   
+    margin:5px 35px 20px;  
    display: flex;
-   justify-content: center;
    align-items: center;
     height:fit-content;
 }
 .m-dashboard-main p.niche {
     margin: 9px 48px 0px;
     padding: 3px;
-    font-size: 13px;
-    color: navy;
-    font-family:BrunoAce;
+    font-size: 15px;
+    text-decoration: wavy;
+    color: orange;
+    font-family:LuckiestGuy;
 }
 .m-dashboard-main .niche-scroll {
-    display: inline-block;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
-    width: fit-content;
 }
 .m-dashboard-main .category {
-    display: inline-grid;
-    margin-right: 10px ;
-    margin-top: 0px;
+    display: inline-block;
+    margin: 5px 5px;
     border-radius: 15px;
     padding: 7px 13px;
     background-color: white;
@@ -163,16 +165,33 @@
     border: 1px solid slateblue;
 }
 .m-dashboard-main .arrow-f{
-    border-radius: 50%;
+    border-radius: 27px;
     background-color: slateblue;
     display: inline-flex;
-    padding: 1px;
     justify-content: center;
     align-items: center;
-    height: 25px;
-    width: 25px;
-    border: 1px solid slateblue;
+    padding: 7px 10px;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    margin: 5px 5px;
+    font-size: smaller;
 }
+.m-dashboard-main div.feeds {
+    margin: 10px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.m-dashboard-main .feeds div.feed{
+    margin: 15px 2px;
+    height: 160px;
+    width: 87%;
+    background-color: white;
+    border-radius: 37px;
+    box-shadow: 0px 0px 9px 2px rgb(226, 226, 226);
+}
+
+
 .m-dashboard-main div.menu-bar{
     background-color: transparent;
     position: fixed;
@@ -181,6 +200,7 @@
     height: fit-content;
     display: flex;
     width: 99%;
+    z-index: 100;
 }
 .menu-width{
     width: 85vw;
@@ -277,5 +297,25 @@
     margin: 4px 8px;
     opacity: 1;
     box-shadow: 1px 1px 5px rgb(109, 109, 109);
-    
+}
+
+.m-dashboard-main .menu-bar .menu-pop{
+    width: 77vw;
+    height: 250px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 140%;
+    padding: 15px;
+    margin: 1px auto;
+}
+.m-dashboard-main .menu-bar .pop1{
+    background-color: salmon;
+    left: -80%;
+    height: 350px;
+}
+.m-dashboard-main .menu-bar .pop2{
+    background-color: rgb(9, 104, 9);
+}
+.m-dashboard-main .menu-bar .pop3{
+    background-color: teal;  
 }
