@@ -301,10 +301,8 @@
 
 .m-dashboard-main .menu-bar .menu-pop{
     width: 77vw;
-    height: 250px;
-    border-radius: 15px;
+    border-radius: 25px;
     position: absolute;
-    bottom: 140%;
     padding: 15px;
     margin: 1px auto;
 }
@@ -312,10 +310,47 @@
     background-color: salmon;
     left: -80%;
     height: 350px;
+    bottom: 99%;
+    opacity: 0;
+    pointer-events: none;
 }
 .m-dashboard-main .menu-bar .pop2{
     background-color: rgb(9, 104, 9);
+    height: 300px;
+    left: -221%;
+    bottom: 99%;
+    opacity: 0;
+    pointer-events: none;
 }
 .m-dashboard-main .menu-bar .pop3{
-    background-color: teal;  
+    background-color: teal; 
+    left: -364%;
+    bottom: 99%;
+    opacity: 0;
+    height: 250px;
+    pointer-events: none;
+}
+.menu-pop-open1 {
+    background-color: salmon;
+    left: -80%;
+    height: 350px;
+    bottom: 154%;
+    opacity: 1;
+    pointer-events:auto;
+}
+.menu-pop-open2 {
+    background-color: rgb(9, 104, 9);
+    height: 300px;
+    left: -221%; 
+    bottom: 154%;
+    opacity: 1;
+    pointer-events:auto;
+}
+.menu-pop-open3 {
+    background-color: teal; 
+    left: -364%; 
+    bottom: 154%;
+    opacity: 1;
+    height: 250px;
+    pointer-events:auto;
 }

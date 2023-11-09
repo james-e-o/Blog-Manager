@@ -7,12 +7,11 @@ import { Plus, Menu, Notify, Arrow, Arrow_f, RoundMenu, Arrow_b } from '../svg'
 
 
 const UserDashboard = () => {
-  function togglePop (){
+  // function togglePop (){
     
-  }
+  // }
   const screen = useContext(screenWidth)
   const menuIcon =useRef()
-  const [toggleMenu,setToggleMenu]=useState(false)
   const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
   const niche3 = niches.filter((niche) => niche.name.length <= 5)
   return (
@@ -55,17 +54,7 @@ const UserDashboard = () => {
                     <div className="content-image"></div>
                   </div>
               </div>
-              
-              <div className={'menu-bar'}>
-                <div className={'blunt-fixed'}>
-                      <div className="menu-wrap">
-                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}> <div className="menu-pop pop1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione natus facere tempore harum asperiores laudantium magni impedit error explicabo id totam, excepturi et, at cum doloribus voluptas mollitia ipsa.</div></div>
-                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}> <div className="menu-pop pop2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione natus facere tempore harum asperiores laudantium magni impedit error explicabo id totam, excepturi et, at cum doloribus voluptas mollitia ipsa.</div></div>
-                          <div className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}><Plus/> <div className="menu-pop pop3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione natus facere tempore harum asperiores laudantium magni impedit error explicabo id totam, excepturi et, at cum doloribus voluptas mollitia ipsa.</div></div>
-                      <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
-                      </div>
-                </div>
-              </div>
+              <MenuBar/> 
           </main>
         </div>
         
@@ -110,3 +99,44 @@ const UserDashboard = () => {
 }
 
 export default UserDashboard
+
+
+const MenuBar = () => {
+  const [toggleMenu,setToggleMenu]=useState(false)
+  const [togglePop,setTogglePop]=useState(false)
+  const pop = useRef('')
+  function handlePop (e){
+    if(e.target == pop.current)return
+    else {setTogglePop(!togglePop)}
+  }
+  return (
+    <div className={'menu-bar'}>
+      <div className={'blunt-fixed'}>
+          <div className="menu-wrap">
+              <div onClick={handlePop} className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}><Pop1 refValue={pop} isToggled={togglePop}/></div>
+              <div onClick={handlePop} className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}><Pop2 refValue={pop} isToggled={togglePop}/></div>
+              <div onClick={handlePop} className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}><Plus/><Pop3 refValue={pop} isToggled={togglePop}/></div>
+          <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
+          </div>
+      </div>
+    </div>
+  )
+}
+
+
+export const Pop1 = ({isToggled, refValue}) => {
+  const [active, setActive] = useState()
+  return (
+    <div ref={refValue} className={!isToggled?"menu-pop pop1":"menu-pop menu-pop-open1"}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
+  )
+}
+export const Pop2 = ({isToggled, refValue}) => {
+  return (
+    <div ref={refValue} className={!isToggled?"menu-pop pop2":"menu-pop menu-pop-open2"}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
+  )
+}
+export const Pop3 = ({isToggled, refValue}) => {
+  return (
+    <div ref={refValue} className={!isToggled?"menu-pop pop3":"menu-pop menu-pop-open3"}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
+  )
+}
