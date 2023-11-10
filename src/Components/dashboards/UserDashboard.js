@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
 import { Plus, Menu, Notify, Arrow, Arrow_f, RoundMenu, Arrow_b } from '../svg'
-
+const popCheck = createContext('')
 
 const UserDashboard = () => {
   // function togglePop (){
@@ -106,37 +106,36 @@ const MenuBar = () => {
   const [togglePop,setTogglePop]=useState(false)
   const pop = useRef('')
   function handlePop (e){
-    if(e.target == pop.current)return
-    else {setTogglePop(!togglePop)}
+    // if(e.target == pop.current)return
+    // else {
+      setTogglePop(!togglePop)
+    // }
   }
   return (
-    <div className={'menu-bar'}>
+    <popCheck.Provider value={togglePop}>
+      <div className={'menu-bar'}>
       <div className={'blunt-fixed'}>
           <div className="menu-wrap">
-              <div onClick={handlePop} className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}><Pop1 refValue={pop} isToggled={togglePop}/></div>
-              <div onClick={handlePop} className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}><Pop2 refValue={pop} isToggled={togglePop}/></div>
-              <div onClick={handlePop} className={toggleMenu?'open-menu':'menu'} style={toggleMenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}><Plus/><Pop3 refValue={pop} isToggled={togglePop}/></div>
-          <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
+              <Menus handlepop={handlePop} togglemenu={toggleMenu} togglepop={togglePop}><PopUp isToggled={togglePop} index={1}/></Menus>
+              <Menus handlepop={handlePop} togglemenu={toggleMenu} togglepop={togglePop}><PopUp isToggled={togglePop} index={2}/></Menus>
+              <Menus handlepop={handlePop} togglemenu={toggleMenu} togglepop={togglePop}><PopUp isToggled={togglePop} index={3}/></Menus>
+              <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
           </div>
       </div>
-    </div>
+      </div>
+    </popCheck.Provider>
   )
 }
 
+const Menus = ({handlepop, togglemenu, togglepop}) => {
+  return (
+    <div onClick={handlepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}></div>
+  )
+}
 
-export const Pop1 = ({isToggled, refValue}) => {
+export const PopUp = ({index, isToggled, refValue}) => {
   const [active, setActive] = useState()
   return (
-    <div ref={refValue} className={!isToggled?"menu-pop pop1":"menu-pop menu-pop-open1"}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
-  )
-}
-export const Pop2 = ({isToggled, refValue}) => {
-  return (
-    <div ref={refValue} className={!isToggled?"menu-pop pop2":"menu-pop menu-pop-open2"}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
-  )
-}
-export const Pop3 = ({isToggled, refValue}) => {
-  return (
-    <div ref={refValue} className={!isToggled?"menu-pop pop3":"menu-pop menu-pop-open3"}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
+    <div ref={refValue} className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
   )
 }
