@@ -309,7 +309,7 @@
 .m-dashboard-main .menu-bar .pop1{
     background-color: salmon;
     left: -80%;
-    height: 350px;
+    height: 300px;
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
@@ -327,13 +327,13 @@
     left: -364%;
     bottom: 99%;
     opacity: 0;
-    height: 250px;
+    height: 300px;
     pointer-events: none;
 }
 .menu-pop-open1 {
     background-color: salmon;
     left: -80%;
-    height: 350px;
+    height: 300px;
     bottom: 154%;
     opacity: 1;
     pointer-events:auto;
@@ -351,6 +351,6 @@
     left: -364%; 
     bottom: 154%;
     opacity: 1;
-    height: 250px;
+    height: 300px;
     pointer-events:auto;
 }

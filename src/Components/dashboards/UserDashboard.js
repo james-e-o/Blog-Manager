@@ -3,15 +3,11 @@ import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
-import { Plus, Menu, Notify, Arrow, Arrow_f, RoundMenu, Arrow_b } from '../svg'
+import { Plus, Menu, Notify, RoundMenu, Arrow_B } from '../svg'
 const popCheck = createContext('')
 
 const UserDashboard = () => {
-  // function togglePop (){
-    
-  // }
   const screen = useContext(screenWidth)
-  const menuIcon =useRef()
   const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
   const niche3 = niches.filter((niche) => niche.name.length <= 5)
   return (
@@ -54,6 +50,7 @@ const UserDashboard = () => {
                     <div className="content-image"></div>
                   </div>
               </div>
+              
               <MenuBar/> 
           </main>
         </div>
@@ -104,15 +101,20 @@ export default UserDashboard
 const MenuBar = () => {
   const [toggleMenu,setToggleMenu]=useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
+  function resetActiveIndex(){
+    if (activeIndex !== 0){
+      setActiveIndex(0)
+    }
+  }
   return (
     <popCheck.Provider value={activeIndex}>
       <div className={'menu-bar'}>
       <div className={'blunt-fixed'}>
           <div className="menu-wrap">
-              <Menus togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)}/>
-              <Menus togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)}/>
-              <Menus togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)}/>
-              <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>setToggleMenu(!toggleMenu)}>{toggleMenu?<Arrow_b/>:<RoundMenu/>}</div>          
+              <Menus isToggled={activeIndex===1} togglepop={()=>setActiveIndex(1)} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)}/>
+              <Menus isToggled={activeIndex===2} togglepop={()=>setActiveIndex(2)} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)}/>
+              <Menus isToggled={activeIndex===3} togglepop={()=>setActiveIndex(3)} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)}/>
+              <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>
       </div>
       </div>
@@ -120,38 +122,41 @@ const MenuBar = () => {
   )
 }
 
-const Menus = ({togglemenu, index, activeIndex}) => {
-  const [togglePop,setTogglePop]=useState(false)
-  const currentActiveIndex =useContext(popCheck)
-  async function handlePop (e){
-    const parent = e.target.closest('.menu-wrap')
-    // if(e.target == pop.current)return
-    // else {
-      await activeIndex()
-      setTogglePop(!togglePop)
-      let siblings = Array.from(document.querySelectorAll('.menu-pop'))
-      let nonactive = siblings.filter(sibling => !sibling.classList.contains(`menu-pop-open${index}`))
-      siblings.forEach(sibling => {
-        if (!sibling.classList.contains(`pop${index}`)){
-          
-        }
-      })
-      // if (currentActiveIndex === index)
-      console.log(currentActiveIndex,nonactive)
-    // }
-  }
+const Menus = ({togglemenu, index, activeIndex,togglepop, isToggled}) => {
+ 
+  
   return (
-    <div onClick={handlePop} onBlur={()=>currentActiveIndex===index?"":setTogglePop(!togglePop)} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>
-      <div className={!togglePop?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
+    <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>
+      <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
     </div>
   )
 }
 
-// export const PopUp = ({index, refValue}) => {
-//   
-//   const pop = useRef('')
-//   const isToggled = useContext(popCheck)
-//   return (
-//     <div ref={pop} className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
-//   )
+
+// UTILITY CODE HERE
+// =====================
+
+// function handlePop (e){
+//   // const parent = e.target.closest('.menu-wrap')
+//   // if(e.target == pop.current)return
+//   // else {
+//     activeIndex()
+//     setTogglePop(!togglePop)
+//     let siblings = Array.from(document.querySelectorAll('.menu-pop'))
+//     let nonactives = siblings.filter(sibling => !sibling.classList.contains(`menu-pop-open${index}`))
+//     // nonactives.forEach((nonactive)=>{
+//     //   nonactive.classList.remove()
+//     // })
+//     // // siblings.forEach(sibling => {
+//     //   if (!sibling.classList.contains(`pop${index}`)){
+        
+//     //   }
+//     // })
+//     // if (currentActiveIndex === index)
+//     console.log(currentActiveIndex, nonactives)
+//   // }
 // }
+// useEffect(()=>{
+//   activeIndex()
+//   console.log(currentActiveIndex)
+// })

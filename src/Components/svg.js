@@ -98,7 +98,7 @@ export const Arrow_f = () => {
     </div>
   )
 }
-export const Arrow_b = () => {
+export const Arrow_B = () => {
   return (
     <div className='engagement-svg'>                      
      <svg xmlns="http://www.w3.org/2000/svg" viewBox="2.1 1 31.3 31.3" id="left-arrow"><path d="M17 2C8.716 2 2 8.716 2 17s6.716 15 15 15 15-6.716 15-15S25.284 2 17 2zm3.2 20.782a1 1 0 0 1-1.414 1.414L12.3 17.71a.997.997 0 0 1-.292-.71c0-.258.096-.514.292-.71l6.486-6.486a1 1 0 0 1 1.414 1.414L14.418 17l5.782 5.782z"></path></svg>
