@@ -111,9 +111,9 @@ const MenuBar = () => {
       <div className={'menu-bar'}>
       <div className={'blunt-fixed'}>
           <div className="menu-wrap">
-              <Menus isToggled={activeIndex===1} togglepop={()=>setActiveIndex(1)} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)}/>
-              <Menus isToggled={activeIndex===2} togglepop={()=>setActiveIndex(2)} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)}/>
-              <Menus isToggled={activeIndex===3} togglepop={()=>setActiveIndex(3)} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)}/>
+              <Menus isToggled={activeIndex===1} togglepop={()=>setActiveIndex(1)} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)} icon={<Plus/>}/>
+              <Menus isToggled={activeIndex===2} togglepop={()=>setActiveIndex(2)} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} icon={<Plus/>}/>
+              <Menus isToggled={activeIndex===3} togglepop={()=>setActiveIndex(3)} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)} icon={<Plus/>}/>
               <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>
       </div>
@@ -122,11 +122,11 @@ const MenuBar = () => {
   )
 }
 
-const Menus = ({togglemenu, index, activeIndex,togglepop, isToggled}) => {
+const Menus = ({togglemenu, index, icon,togglepop, isToggled}) => {
  
   
   return (
-    <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>
+    <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>{icon}
       <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
     </div>
   )
