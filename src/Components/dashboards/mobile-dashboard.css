@@ -176,6 +176,11 @@
     margin: 5px 5px;
     font-size: smaller;
 }
+
+
+.m-dashboard-main div.feeds * {
+    outline: 1px solid rgb(91, 202, 139);
+}
 .m-dashboard-main div.feeds {
     margin: 10px 26px;
     display: flex;
@@ -183,13 +188,23 @@
     align-items: center;
 }
 .m-dashboard-main .feeds div.feed{
+    display: flex;
+    justify-content: center;
+    gap: 7px;
     margin: 15px 2px;
     height: 160px;
     width: 87%;
     background-color: white;
-    border-radius: 37px;
+    border-radius: 32px;
     box-shadow: 0px 0px 9px 2px rgb(226, 226, 226);
 }
+.m-dashboard-main div.feed .feed-content{
+    width: 48%;
+}
+.m-dashboard-main div.feed .content-image{
+    width: 48%;
+}
+
 
 
 .m-dashboard-main div.menu-bar{
@@ -300,7 +315,7 @@
 }
 
 .m-dashboard-main .menu-bar .menu-pop{
-    width: 77vw;
+    width: 67vw;
     border-radius: 25px;
     position: absolute;
     padding: 15px;
@@ -313,6 +328,7 @@
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
+    transition: all 140ms ease-in-out
 }
 .m-dashboard-main .menu-bar .pop2{
     background-color: rgb(9, 104, 9);
@@ -321,6 +337,7 @@
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
+    transition: all 140ms ease-in-out
 }
 .m-dashboard-main .menu-bar .pop3{
     background-color: teal; 
@@ -329,6 +346,7 @@
     opacity: 0;
     height: 300px;
     pointer-events: none;
+    transition: all 140ms ease-in-out
 }
 .menu-pop-open1 {
     background-color: salmon;
@@ -337,6 +355,7 @@
     bottom: 154%;
     opacity: 1;
     pointer-events:auto;
+    transition: all 200ms ease-in-out
 }
 .menu-pop-open2 {
     background-color: rgb(9, 104, 9);
@@ -345,6 +364,7 @@
     bottom: 154%;
     opacity: 1;
     pointer-events:auto;
+    transition: all 200ms ease-in-out
 }
 .menu-pop-open3 {
     background-color: teal; 
@@ -353,4 +373,5 @@
     opacity: 1;
     height: 300px;
     pointer-events:auto;
+    transition: all 200ms ease-in-out ;
 }
