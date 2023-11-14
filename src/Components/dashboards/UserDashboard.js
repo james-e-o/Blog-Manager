@@ -40,9 +40,19 @@ const UserDashboard = () => {
                 <button className='arrow-f'>more</button>
                 </div>
               </div>
-              <p className='niche'>feed</p><div className="feeds">
+              <p className='niche'>feed</p>
+              <div className="feeds">
                   <div className='feed'>
-                    <div className="feed-content"></div>
+                    <div className="feed-content">
+                      <div className="feed-content-upper">
+                        <p className='content-title'></p>
+                        <p className='content-author'></p>
+                      </div>
+                      <div className="feed-content-lower">
+
+                      </div>
+                      
+                    </div>
                     <div className="content-image"></div>
                   </div>
                   <div className='feed'>
@@ -106,6 +116,11 @@ const MenuBar = () => {
       setActiveIndex(0)
     }
   }
+  useEffect(()=>{
+    window.onresize=()=>{
+      setActiveIndex(0)
+    }
+  })
   return (
     <popCheck.Provider value={activeIndex}>
       <div className={'menu-bar'}>
