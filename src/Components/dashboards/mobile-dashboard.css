@@ -5,11 +5,11 @@
     top: 0px;
     left: 0px;
     right: 0px;
-    padding:20px 10px 5px;
+    padding:12px 10px 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:rgb(242, 245, 240);
+    background-color:rgb(244, 245, 240);
     transition: background-color 280ms ease;
 }
 .m-dashboard-header div.user {
@@ -36,7 +36,7 @@
    font-size: 17px;
 }
 .m-dashboard-header .user .welcome h3{
-   color: slateblue;
+   color: rgb(42, 179, 101);
 }
 .m-dashboard-header nav {
     align-items: center;
@@ -79,7 +79,8 @@
 
 /* DASHBOARD MAIN */
 .m-dashboard-main {
-    background-color:rgb(242, 245, 240);
+    background-color:rgb(244, 245, 240);
+    overflow-x: hidden;
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
@@ -92,7 +93,7 @@
 .m-dashboard-main div.search {
     height: fit-content;
     padding:5px;
-    margin:12px 25px;
+    margin:10px 25px;
     border: 1px solid rgb(235, 235, 235);
     border-radius: 17px;
     background-color: white;
@@ -107,30 +108,59 @@
     font-family: CLashDisplay;
     height: 15px;
 }
-.m-dashboard-main div.adverts {
-    height: 140px;
-    
+.m-dashboard-main .advert-wrapper{
+    margin:10px 24px 7px ;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    position: relative;
+    height: fit-content;
+    width: 90vw;
+}
+/* .m-dashboard-main .advert-wrapper::before{
+    content: "";
+    z-index: 2;
+    position: absolute;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    right: -10px;
+    box-shadow: -23px 0px 25px 5px white inset;
+} */
+div.advert-wrapper::-webkit-scrollbar {
+   display: none;
+   background-color: transparent;
+}
+.m-dashboard-main div.adverts{
+    margin: 0px 5px;
+    width: max-content;
+    position: relative;
+}
+.m-dashboard-main .adverts div.advert{
+    scroll-snap-align: start; 
+    height: 170px;
+    width: 49vw;
     border: 1px solid rgb(226, 226, 226);
-    border-radius: 27px;
-    margin: 15px 25px 6px;
+    border-radius: 23px; 
+    margin: 5px 15px 5px 1px;
     padding: 15px;
     background-color: transparent;
     overflow: hidden;
     z-index: 1;
     position: relative;
+    display: inline-block;
 }
-.m-dashboard-main div.adverts::before {
+.m-dashboard-main .adverts div.advert::before {
     content: "";
     top: 20%;
     right: 20%;
     filter: blur(17px);
     z-index: -1;
-    background:linear-gradient(to right bottom,rgb(255, 191, 139),rgb(121, 121, 255) 80%);
+    background:linear-gradient(to right bottom,rgb(255, 148, 60),rgb(121, 121, 255) 80%);
     border-radius:50% ;
     height: 40%;
     aspect-ratio: 1;
     position: absolute;
-    transform: scale(5.2) rotate(0deg);
+    transform: scale(5) rotate(0deg);
 }
 
 .m-dashboard-main .categories {
@@ -256,7 +286,7 @@
     align-items: center;
     z-index: 2;
     transition: transform 200ms ease-in-out -100ms;
-    background:linear-gradient(to top left, slateblue 16%, skyblue 60%);
+    background:linear-gradient(to top left, slateblue 8%, skyblue 75%);
 }
 .m-dashboard-main .menu-bar div.menus-icon-active{
     position: relative;
@@ -273,7 +303,7 @@
     align-items: center;
     z-index: 2;
     transition:transform 200ms ease-in-out;
-    background:linear-gradient(to top left, slateblue 16%, skyblue 60%);
+    background:linear-gradient(to top left, slateblue 8%, skyblue 75%);
 }
 .m-dashboard-main div svg{
     top: 1px;
@@ -301,7 +331,8 @@
     opacity: 0;
 }
 .open-menu{
-    background:linear-gradient(to top left, slateblue 16%, skyblue 60%);
+    background:linear-gradient(to top left, slateblue 18%, skyblue 75%);
+    /* background-color: slateblue; */
     height: 45px;
     width: 45px;
     z-index: 1;
@@ -328,31 +359,33 @@
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
-    transition: all 140ms ease-in-out
+    transition: all 200ms ease-out -110ms
 }
 .m-dashboard-main .menu-bar .pop2{
-    background-color: rgb(9, 104, 9);
+    background-color: transparent;
     height: 300px;
-    left: -221%;
+    transform: translateX(-50%);
+    left: 23vw;
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
-    transition: all 140ms ease-in-out
+    transition: all 200ms ease-in-out -110ms;
 }
 .m-dashboard-main .menu-bar .pop3{
     background-color: teal; 
-    left: -364%;
+    transform: translateX(-50%);
+    left: 6vw;
     bottom: 99%;
     opacity: 0;
     height: 300px;
     pointer-events: none;
-    transition: all 140ms ease-in-out
+    transition: all 200ms ease-in-out -110ms
 }
 .menu-pop-open1 {
     background-color: salmon;
     left: -80%;
     height: 300px;
-    bottom: 154%;
+    bottom: 200%;
     opacity: 1;
     pointer-events:auto;
     transition: all 200ms ease-in-out
@@ -360,16 +393,19 @@
 .menu-pop-open2 {
     background-color: rgb(9, 104, 9);
     height: 300px;
-    left: -221%; 
-    bottom: 154%;
+    transform: translateX(-50%);
+    left: 23vw; 
+    bottom: 200%;
     opacity: 1;
     pointer-events:auto;
-    transition: all 200ms ease-in-out
+    
+    transition:  200ms ease-in-out
 }
 .menu-pop-open3 {
     background-color: teal; 
-    left: -364%; 
-    bottom: 154%;
+    transform: translateX(-50%);
+    left: 6vw; 
+    bottom: 200%;
     opacity: 1;
     height: 300px;
     pointer-events:auto;

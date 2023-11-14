@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
-import { Plus, Menu, Notify, RoundMenu, Arrow_B } from '../svg'
+import { Plus, Menu, Notify, RoundMenu, Arrow_B, Bookmark2 } from '../svg'
 const popCheck = createContext('')
 
 const UserDashboard = () => {
@@ -30,7 +30,15 @@ const UserDashboard = () => {
               <div className='search'>
                 <input type="search" name="search" id="" /> 
               </div>
-              <div className="adverts"></div>
+              <div className="advert-wrapper">
+                <div className="adverts">
+                  <div className="advert"></div>
+                  <div className="advert"></div>
+                  <div className="advert"></div>
+                  <div className="advert"></div>
+                  <div className="advert"></div>
+                </div>
+              </div>
                 <p className='niche'>niche</p>
               <div className='categories'>
                 <div className='niche-scroll'>
@@ -45,8 +53,8 @@ const UserDashboard = () => {
                   <div className='feed'>
                     <div className="feed-content">
                       <div className="feed-content-upper">
-                        <p className='content-title'></p>
-                        <p className='content-author'></p>
+                        <p className='content-title'>The Value Of Your Value: How To Elevate Your Pricing And Move From Hourly Wages To Outcome-Based Wealth</p>
+                        <p className='content-author'>CATEGORY PIRATES 🏴‍☠️</p>
                       </div>
                       <div className="feed-content-lower">
 
@@ -59,8 +67,7 @@ const UserDashboard = () => {
                     <div className="feed-content"></div>
                     <div className="content-image"></div>
                   </div>
-              </div>
-              
+              </div>         
               <MenuBar/> 
           </main>
         </div>
@@ -127,7 +134,7 @@ const MenuBar = () => {
       <div className={'blunt-fixed'}>
           <div className="menu-wrap">
               <Menus isToggled={activeIndex===1} togglepop={()=>setActiveIndex(1)} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)} icon={<Plus/>}/>
-              <Menus isToggled={activeIndex===2} togglepop={()=>setActiveIndex(2)} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} icon={<Plus/>}/>
+              <Menus isToggled={activeIndex===2} togglepop={()=>setActiveIndex(2)} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} icon={<Bookmark2/>}/>
               <Menus isToggled={activeIndex===3} togglepop={()=>setActiveIndex(3)} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)} icon={<Plus/>}/>
               <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>
@@ -142,7 +149,7 @@ const Menus = ({togglemenu, index, icon,togglepop, isToggled}) => {
   
   return (
     <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>{icon}
-      <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, at quam cum ratione similique, impedit, dignissimos quaerat asperiores illo enim officia debitis aut ab quod nostrum labore voluptatibus a tempore?</div>
+      <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}></div>
     </div>
   )
 }
