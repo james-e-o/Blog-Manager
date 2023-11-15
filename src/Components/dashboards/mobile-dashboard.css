@@ -208,9 +208,9 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 
 
-.m-dashboard-main div.feeds * {
+/* .m-dashboard-main div.feeds * {
     outline: 1px solid rgb(91, 202, 139);
-}
+} */
 .m-dashboard-main div.feeds {
     margin: 10px 26px;
     display: flex;
@@ -218,23 +218,64 @@ div.advert-wrapper::-webkit-scrollbar {
     align-items: center;
 }
 .m-dashboard-main .feeds div.feed{
+    overflow:hidden;
     display: flex;
     justify-content: center;
-    gap: 7px;
     margin: 15px 2px;
     height: 160px;
-    width: 87%;
+    width: 93%;
     background-color: white;
     border-radius: 32px;
     box-shadow: 0px 0px 9px 2px rgb(226, 226, 226);
 }
 .m-dashboard-main div.feed .feed-content{
     width: 48%;
+    padding: 13px 6px 13px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: space-between;
+}
+.m-dashboard-main .feed-content .content-id{
+    display: flex;
+    gap: 6px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.m-dashboard-main .feed-content  .content-id figure{
+    /* position: absolute; */
+    background-color: black;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.m-dashboard-main .feed-content .content-id .content-author{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: medium;
+    font-size: xx-small;
+    padding: 5px 1px;
+    width:60%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .m-dashboard-main div.feed .content-image{
     width: 48%;
+    background-color: yellow;
+    padding: 13px;
 }
-
+.m-dashboard-main .feed-content .content-title{
+    font-weight: bold;
+    font-family:  ClashDisplay;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    height: 40px;
+    width: 100%;
+    overflow: hidden;
+}
 
 
 .m-dashboard-main div.menu-bar{

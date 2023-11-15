@@ -52,14 +52,11 @@ const UserDashboard = () => {
               <div className="feeds">
                   <div className='feed'>
                     <div className="feed-content">
-                      <div className="feed-content-upper">
-                        <p className='content-title'>The Value Of Your Value: How To Elevate Your Pricing And Move From Hourly Wages To Outcome-Based Wealth</p>
-                        <p className='content-author'>CATEGORY PIRATES 🏴‍☠️</p>
-                      </div>
-                      <div className="feed-content-lower">
-
-                      </div>
-                      
+                      <div className="content-id">
+                        <figure></figure>
+                          <p className='content-author'>CATEGORY PIRATES 🏴‍☠️</p>
+                        </div>
+                        <p className='content-title'>The Value Of Your Value: How To Elevate Your Pricing And Move From Hourly Wages To Outcome-Based Wealth</p>  
                     </div>
                     <div className="content-image"></div>
                   </div>
