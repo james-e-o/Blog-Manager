@@ -81,6 +81,14 @@
 .m-dashboard-main {
     background-color:rgb(244, 245, 240);
     overflow-x: hidden;
+    position: relative;
+}
+.m-dashboard-main::before {
+    background-color:cyan;
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
@@ -208,9 +216,7 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 
 
-.m-dashboard-main div.feeds * {
-    outline: 1px solid rgb(91, 202, 139);
-}
+
 .m-dashboard-main div.feeds {
     margin: 10px 26px;
     display: flex;
@@ -381,9 +387,12 @@ div.advert-wrapper::-webkit-scrollbar {
     pointer-events: none;
     transition: all 200ms ease-in-out -110ms
 }
+.filter {
+    
+}
 .menu-pop-open1 {
     background-color: salmon;
-    left: -80%;
+    left: 0%;
     height: 300px;
     bottom: 200%;
     opacity: 1;
