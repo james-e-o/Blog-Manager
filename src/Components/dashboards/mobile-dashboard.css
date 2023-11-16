@@ -33,10 +33,11 @@
 }
 .m-dashboard-header .user .welcome p{
    font-weight: light;
-   font-size: 17px;
+   font-size: 14px;
 }
 .m-dashboard-header .user .welcome h3{
    color: rgb(42, 179, 101);
+   font-size: 18px;
 }
 .m-dashboard-header nav {
     align-items: center;
@@ -85,7 +86,7 @@
 }
 .m-dashboard-main div.blur{
     background-color:transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) brightness(0.9);
     overflow-x: hidden;
     /* position:absolute; */
     top: 0px;
@@ -459,7 +460,7 @@ div.advert-wrapper::-webkit-scrollbar {
 .menu-pop-open2 {
     background-color: rgb(31, 205, 31);
     height: 300px;
-    left: -12px; 
+    left: -12px;
     bottom: 200%;
     opacity: 1;
     pointer-events:auto;
@@ -467,7 +468,7 @@ div.advert-wrapper::-webkit-scrollbar {
     transition:  200ms ease-in-out
 }
 .menu-pop-open3 {
-    background-color: white; 
+    background: linear-gradient(to top, white -3%, rgb(144, 98, 229) 90%);
     border: 1px solid skyblue;
     left: -12px; 
     bottom: 200%;
@@ -476,4 +477,9 @@ div.advert-wrapper::-webkit-scrollbar {
     pointer-events:auto;
     transition: all 200ms ease-in-out ;
     color: black;
+}
+.m-dashboard-main div.create-content {
+    width: 100%;
+    height: 100%;
+   
 }
