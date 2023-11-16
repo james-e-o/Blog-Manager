@@ -468,7 +468,7 @@ div.advert-wrapper::-webkit-scrollbar {
     transition:  200ms ease-in-out
 }
 .menu-pop-open3 {
-    background: linear-gradient(to top, white -3%, rgb(144, 98, 229) 90%);
+    background: linear-gradient(to top, white -3%, rgb(134, 78, 238) 90%);
     border: 1px solid skyblue;
     left: -12px; 
     bottom: 200%;
@@ -479,7 +479,14 @@ div.advert-wrapper::-webkit-scrollbar {
     color: black;
 }
 .m-dashboard-main div.create-content {
+    /* background-color: gray; */
+    padding: 3px 5px;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+
    
 }
