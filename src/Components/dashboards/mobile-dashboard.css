@@ -83,12 +83,17 @@
     overflow-x: hidden;
     position: relative;
 }
-.m-dashboard-main::before {
-    background-color:cyan;
+.m-dashboard-main div.blur{
+    background-color:transparent;
+    backdrop-filter: blur(10px);
     overflow-x: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
+    /* position:absolute; */
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    transition: all 250ms ease-out;
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
@@ -236,7 +241,7 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .m-dashboard-main div.feed .feed-content{
     width: 48%;
-    padding: 13px 6px 13px 12px;
+    padding: 13px 10px 13px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -250,39 +255,55 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .m-dashboard-main .feed-content  .content-id figure{
     /* position: absolute; */
-    background-color: black;
+    background:url(../contents/images/category-pirates-logo.png);
+    margin: 0px 4px;
+    background-size:cover;
+    background-repeat: no-repeat;
     width: 35px;
     height: 35px;
+    border: 1px solid black;
     border-radius: 50%;
     display: inline-block;
 }
 .m-dashboard-main .feed-content .content-id .content-author{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:  'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
+    color: grey;
     font-weight: medium;
-    font-size: xx-small;
+    font-size: x-small;
     padding: 5px 1px;
     width:60%;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     text-overflow: ellipsis;
     overflow: hidden;
 }
 .m-dashboard-main div.feed .content-image{
     width: 48%;
-    background-color: yellow;
-    padding: 13px;
+    background:url(../contents/images/category-pirates.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    padding: 13px 10px 13px;
 }
 .m-dashboard-main .feed-content .content-title{
     font-weight: bold;
     font-family:  ClashDisplay;
-    font-size: 11px;
+    font-size: 12px;
     text-overflow: ellipsis;
     white-space: pre-line;
     height: 40px;
     width: 100%;
     overflow: hidden;
 }
-
+.m-dashboard-main .feed-content .details{
+    padding: 1px 10px;
+    color: gray;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.m-dashboard-main .feed-content .details p{
+    font-size: 10px;
+    font-weight: bold;
+}
 
 .m-dashboard-main div.menu-bar{
     background-color: transparent;
@@ -319,7 +340,7 @@ div.advert-wrapper::-webkit-scrollbar {
     transition: width 420ms ease-out ;
 }
 .m-dashboard-main .menu-bar div.menus-icon{
-    position: relative;
+    /* position: relative; */
     text-align: center;
     margin: 3px 6px;
     height: 45px;
@@ -336,7 +357,7 @@ div.advert-wrapper::-webkit-scrollbar {
     background:linear-gradient(to top left, slateblue 8%, skyblue 75%);
 }
 .m-dashboard-main .menu-bar div.menus-icon-active{
-    position: relative;
+    /* position: relative; */
     text-align: center;
     margin: 3px 7px;
     height: 45px;
@@ -401,7 +422,7 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .m-dashboard-main .menu-bar .pop1{
     background-color: salmon;
-    left: -80%;
+    left: -12px;
     height: 300px;
     bottom: 99%;
     opacity: 0;
@@ -411,8 +432,7 @@ div.advert-wrapper::-webkit-scrollbar {
 .m-dashboard-main .menu-bar .pop2{
     background-color: transparent;
     height: 300px;
-    transform: translateX(-50%);
-    left: 23vw;
+    left: -12px;
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
@@ -420,20 +440,16 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .m-dashboard-main .menu-bar .pop3{
     background-color: teal; 
-    transform: translateX(-50%);
-    left: 6vw;
+    left:-12px;
     bottom: 99%;
     opacity: 0;
     height: 300px;
     pointer-events: none;
     transition: all 200ms ease-in-out -110ms
 }
-.filter {
-    
-}
 .menu-pop-open1 {
     background-color: salmon;
-    left: 0%;
+    left: -12px;
     height: 300px;
     bottom: 200%;
     opacity: 1;
@@ -441,10 +457,9 @@ div.advert-wrapper::-webkit-scrollbar {
     transition: all 200ms ease-in-out
 }
 .menu-pop-open2 {
-    background-color: rgb(9, 104, 9);
+    background-color: rgb(31, 205, 31);
     height: 300px;
-    transform: translateX(-50%);
-    left: 23vw; 
+    left: -12px; 
     bottom: 200%;
     opacity: 1;
     pointer-events:auto;
@@ -452,12 +467,13 @@ div.advert-wrapper::-webkit-scrollbar {
     transition:  200ms ease-in-out
 }
 .menu-pop-open3 {
-    background-color: teal; 
-    transform: translateX(-50%);
-    left: 6vw; 
+    background-color: white; 
+    border: 1px solid skyblue;
+    left: -12px; 
     bottom: 200%;
     opacity: 1;
     height: 300px;
     pointer-events:auto;
     transition: all 200ms ease-in-out ;
+    color: black;
 }

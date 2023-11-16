@@ -45,48 +45,11 @@ const Main = () => {
         scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
         return
       }
-
-      function Pop(e){
-        const allPort = document.querySelectorAll(".mobile-main .port")
-        let Element = e.target.closest(".port")
-        // Element.classList.toggle(`${Element.classList[0]}`,`${Element.classList[1]}`,`${Element.classList[2]}`)
-        Element.classList.replace(`${Element.classList[0]}`,"portview")
-        Element.classList.replace(`${Element.classList[1]}`,"portview")
-        Element.classList.replace(`${Element.classList[2]}`,"portview")
-        // allPort.forEach(port =>{
-        //   let classes = port.classList
-        //   if(port !== e.target.closest(".port") && port.classList.contains("portview"))
-        //   {port.classList.remove("portview")
-        //    port.classList.add()
-        //   }
-        //   console.log('buyrt',Element)
-        // })
-        console.log('buyrt',Element.classList[1])
-      }
-      function Pop1(e){
-        const allPort = document.querySelectorAll(".mobile-main .port")
-        let Element = e.target.closest(".port")
-        let childElement= Element.firstChild
-        childElement.classList.toggle("portview")
-          allPort.forEach(port =>{
-            let classes = port.classList
-            if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
-            {
-              port.firstChild.classList.toggle("portview")
-            //  port.classList.add()
-            }
-            // console.log(port,Element)
-          })
-        console.log(childElement)
-      }
-      
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
         dynamicColor.current.style.color = `${colors[randomColor]}`
         setColorState(randomColor)
 
-        
-        // Element.classList.toggle("portview")
         console.log("popping",Element)
 
         // let newpoint

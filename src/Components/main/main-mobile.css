@@ -54,7 +54,7 @@ main{
     margin-bottom: 25px;
     padding: 0px 10px;
     font-size: 36px;
-    color: var(--dynamite);
+    /* color: var(--dynamite); */
     /* color: transparent;
     background-image: linear-gradient(to right, orange, blueviolet);
     background-clip: text; */

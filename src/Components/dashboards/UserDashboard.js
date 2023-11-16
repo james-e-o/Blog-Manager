@@ -4,15 +4,20 @@ import { Link } from 'react-router-dom'
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
 import { Plus, Menu, Notify, RoundMenu, Arrow_B, Bookmark2 } from '../svg'
+import logo from "../contents/images/category-pirates-logo.png"
+import Content_img from "../contents/images/category-pirates.png"
 const popCheck = createContext('')
 
 const UserDashboard = () => {
   const screen = useContext(screenWidth)
   const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
   const niche3 = niches.filter((niche) => niche.name.length <= 5)
-  const mainDashboard = useRef('')
+  const mainDashboard = useRef("")
+  const blurScreen = useRef("")
+  const [scroll, setScroll]= useState('')
+  const scrollOffset =useRef(window.scrollY)
   useEffect(()=>{
-    
+   
   })
   return (
       //  MOBILE
@@ -31,6 +36,7 @@ const UserDashboard = () => {
             </nav>
           </header>
           <main ref={mainDashboard} className='m-dashboard-main'>
+              <div className="blur" id='blurscreen' ref={blurScreen}></div>
               <div className='search'>
                 <input type="search" name="search" id="" /> 
               </div>
@@ -58,16 +64,29 @@ const UserDashboard = () => {
                     <div className="feed-content">
                       <div className="content-id">
                         <figure></figure>
-                          <p className='content-author'>CATEGORY PIRATES 🏴‍☠️</p>
+                          <p className='content-author'> {"CATEGORY PIRATES"} </p>
                         </div>
-                        <p className='content-title'>The Value Of Your Value: How To Elevate Your Pricing And Move From Hourly Wages To Outcome-Based Wealth</p>  
+                        <div className='content-title'>The Value Of Your Value.</div>
+                        <div className="details">
+                           <p>6 mins read</p>
+                        </div> 
                     </div>
                     <div className="content-image"></div>
                   </div>
                   <div className='feed'>
-                    <div className="feed-content"></div>
+                    <div className="feed-content">
+                      <div className="content-id">
+                        <figure></figure>
+                          <p className='content-author'> {"CATEGORY PIRATES"} </p>
+                        </div>
+                        <div className='content-title'>The Value Of Your Value.</div>
+                        <div className="details">
+                           <p>6 mins read</p>
+                        </div> 
+                    </div>
                     <div className="content-image"></div>
                   </div>
+          
               </div>         
               <MenuBar/> 
           </main>
@@ -119,54 +138,48 @@ export default UserDashboard
 const MenuBar = () => {
   const [toggleMenu,setToggleMenu]=useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [scroll, setScroll]= useState('')
-  const scrollOffset =useRef(window.scrollY)
   function resetActiveIndex(){
     if (activeIndex !== 0){
       setActiveIndex(0)
     }
   }
   useEffect(()=>{
-    window.onresize=()=>{
-      setActiveIndex(0)
-    }
-    window.addEventListener('scroll',(e)=>{
-      scrollOffset.current=window.scrollY
-    })
-    if (activeIndex !== 0){
-      document.body.style.position = 'fixed'
-      document.body.style.top = `-${scrollOffset.current}px`
-     }else{
-      document.body.style.position = ''
-      window.scrollTo(0, scroll);
-     }
-     setScroll(scrollOffset.current)
-  },[activeIndex])
+    if (activeIndex !==0){
+      document.getElementById("blurscreen").style.position="absolute"
+    } else {
+      document.getElementById("blurscreen").style.position="static"
+    }  
+  })
   return (
     <popCheck.Provider value={activeIndex}>
       <div className={'menu-bar'}>
-      <div className={'blunt-fixed'}>
+        <div className={'blunt-fixed'}>
           <div className="menu-wrap">
-              <Menus isToggled={activeIndex===1} togglepop={()=>setActiveIndex(1)} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)} icon={<Plus/>}/>
-              <Menus isToggled={activeIndex===2} togglepop={()=>setActiveIndex(2)} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} icon={<Bookmark2/>}/>
-              <Menus isToggled={activeIndex===3} togglepop={()=>setActiveIndex(3)} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)} icon={<Plus/>}/>
+              <Menus isToggled={activeIndex===1} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==1?setActiveIndex(1):setActiveIndex(0)}} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)} content={"hello world"} icon={<Plus/>}/>
+              <Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} content={"hello world"} icon={<Bookmark2/>}/>
+              <Menus isToggled={activeIndex===3} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==3?setActiveIndex(3):setActiveIndex(0)}} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)} content={<Create/>} icon={<Plus/>}/>
               <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>
-      </div>
+        </div>
       </div>
     </popCheck.Provider>
   )
 }
-
-const Menus = ({togglemenu, index, icon,togglepop, isToggled}) => {
- 
-  
+const Menus = ({togglemenu,content, index, icon,togglepop, isToggled}) => {
   return (
-    <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"relative",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>{icon}
-      <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}></div>
+    <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"static",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>{icon}
+      <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}>{content}</div>
     </div>
   )
 }
+const Create = () => {
+  return (
+    <div>
+      Create new document
+    </div>
+  )
+}
+
 
 
 // UTILITY CODE HERE
@@ -196,3 +209,18 @@ const Menus = ({togglemenu, index, icon,togglepop, isToggled}) => {
 //   activeIndex()
 //   console.log(currentActiveIndex)
 // })
+// function toggleBlur(){
+  //   if (activeIndex !== 0){
+  //     setActiveIndex(0)
+  //   }
+  // }
+  // function disbleScroll(){
+  //   if (activeIndex !== 0){
+  //     document.body.style.position = 'fixed'
+  //     document.body.style.top = `-${scrollOffset.current}px`
+  //    }else{
+  //     document.body.style.position = ''
+  //     window.scrollTo(0, scroll);
+  //    }
+  //    setScroll(scrollOffset.current)
+  // }
