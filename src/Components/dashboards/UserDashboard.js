@@ -10,6 +10,10 @@ const UserDashboard = () => {
   const screen = useContext(screenWidth)
   const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
   const niche3 = niches.filter((niche) => niche.name.length <= 5)
+  const mainDashboard = useRef('')
+  useEffect(()=>{
+    
+  })
   return (
       //  MOBILE
       screen < 480?(
@@ -26,7 +30,7 @@ const UserDashboard = () => {
               <figure><Notify/></figure>     
             </nav>
           </header>
-          <main className='m-dashboard-main'>
+          <main ref={mainDashboard} className='m-dashboard-main'>
               <div className='search'>
                 <input type="search" name="search" id="" /> 
               </div>
@@ -115,6 +119,8 @@ export default UserDashboard
 const MenuBar = () => {
   const [toggleMenu,setToggleMenu]=useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [scroll, setScroll]= useState('')
+  const scrollOffset =useRef(window.scrollY)
   function resetActiveIndex(){
     if (activeIndex !== 0){
       setActiveIndex(0)
@@ -124,7 +130,18 @@ const MenuBar = () => {
     window.onresize=()=>{
       setActiveIndex(0)
     }
-  })
+    window.addEventListener('scroll',(e)=>{
+      scrollOffset.current=window.scrollY
+    })
+    if (activeIndex !== 0){
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollOffset.current}px`
+     }else{
+      document.body.style.position = ''
+      window.scrollTo(0, scroll);
+     }
+     setScroll(scrollOffset.current)
+  },[activeIndex])
   return (
     <popCheck.Provider value={activeIndex}>
       <div className={'menu-bar'}>
