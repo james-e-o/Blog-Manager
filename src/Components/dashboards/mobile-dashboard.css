@@ -94,7 +94,7 @@
     left: 0px;
     right: 0px;
     z-index: 2;
-    transition: all 250ms ease-out;
+    transition: all 50ms ease-in-out;
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
@@ -477,16 +477,72 @@ div.advert-wrapper::-webkit-scrollbar {
     pointer-events:auto;
     transition: all 200ms ease-in-out ;
     color: black;
+    overflow: hidden;
 }
+.menu-pop-open3::before {
+    content: "";
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.693) -3%, rgba(134, 78, 238, 0.537) 90%);;
+    right: 10%;
+    bottom:40%;
+    padding: 3px 5px;
+    width: 22%;
+    height: 20%;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 1;
+}
+.menu-pop-open3::after {
+    content: "";
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.693) -3%, rgba(144, 87, 249, 0.345) 90%);;
+    right: 9%;
+    top: 65%;
+    padding: 3px 5px;
+    width: 9%;
+    height: 8%;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+
+
 .m-dashboard-main div.create-content {
     /* background-color: gray; */
     padding: 3px 5px;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+    color: white;
+}
 
-   
+.m-dashboard-main div.create-content h1 {
+    font-size: 21px;
+    font-family: Capriola;
+}
+.m-dashboard-main div.create-content button#add-content{
+    margin-left: 8px;
+    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 13px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: slateblue;
+    z-index: 2;
+    box-shadow: 0px 1px 7px rgb(165, 165, 165);
 }
