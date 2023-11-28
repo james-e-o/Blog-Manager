@@ -15,6 +15,7 @@ import {Sign, Signup, Signin} from '../../sign'
 import Notfound from '../Errors/Notfound';
 import UserDashboard from '../dashboards/UserDashboard';
 import About from '../about/About';
+import NewContent from '../dashboards/dashboard-components/new-content/new-content';
 
 //actions
 import { signupValidate,loginValidation } from '../../sign';
@@ -55,7 +56,8 @@ const router = createBrowserRouter([
           path:'dashboard',
           element:<LoggedIn/>,
           children: [
-            {index:true, element:<UserDashboard/>}
+            {index:true, element:<UserDashboard/>},
+            {path:"new", element:<NewContent/>}
           ]
         },
         {

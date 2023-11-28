@@ -10,7 +10,7 @@ const Signlayout = () => {
         document.body.style.position = 'static'
     })
   return (
-  <div className='sign'>
+  <div className='sign' style={{backgroundColor:"white"}}>
         <Outlet/>
   </div>
   )

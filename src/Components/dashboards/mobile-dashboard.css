@@ -1,15 +1,15 @@
 .m-dashboard-header {
     z-index: 10;
     height: fit-content;
-    position: sticky;
+    /* position: sticky;
     top: 0px;
     left: 0px;
-    right: 0px;
+    right: 0px; */
     padding:12px 10px 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:rgb(244, 245, 240);
+    background-color: #F1F1F1;
     transition: background-color 280ms ease;
 }
 .m-dashboard-header div.user {
@@ -80,7 +80,7 @@
 
 /* DASHBOARD MAIN */
 .m-dashboard-main {
-    background-color:rgb(244, 245, 240);
+    background-color: #F1F1F1;
     overflow-x: hidden;
     position: relative;
 }
@@ -94,7 +94,7 @@
     left: 0px;
     right: 0px;
     z-index: 2;
-    transition: all 50ms ease-in-out;
+    transition:backdrop-filter 50ms ease-in-out 30ms;
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
@@ -108,7 +108,8 @@
     height: fit-content;
     padding:5px;
     margin:10px 25px;
-    border: 1px solid rgb(235, 235, 235);
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+    border: 1px solid #DBDBDB;
     border-radius: 17px;
     background-color: white;
 }
@@ -238,6 +239,7 @@ div.advert-wrapper::-webkit-scrollbar {
     width: 93%;
     background-color: white;
     border-radius: 32px;
+    border: 1px solid #DBDBDB;
     box-shadow: 0px 0px 9px 2px rgb(226, 226, 226);
 }
 .m-dashboard-main div.feed .feed-content{
@@ -306,6 +308,8 @@ div.advert-wrapper::-webkit-scrollbar {
     font-weight: bold;
 }
 
+
+
 .m-dashboard-main div.menu-bar{
     background-color: transparent;
     position: fixed;
@@ -327,7 +331,7 @@ div.advert-wrapper::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: width 250ms ease-in
+    transition: width 130ms ease-in
 }
 .m-dashboard-main .blunt-fixed .menu-wrap{
     height: fit-content;
@@ -354,7 +358,7 @@ div.advert-wrapper::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition: transform 200ms ease-in-out -100ms;
+    transition: transform 130ms ease-in-out -100ms;
     background:linear-gradient(to top left, slateblue 8%, skyblue 75%);
 }
 .m-dashboard-main .menu-bar div.menus-icon-active{
@@ -371,7 +375,7 @@ div.advert-wrapper::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition:transform 200ms ease-in-out;
+    transition:transform 130ms ease-in-out;
     background:linear-gradient(to top left, slateblue 8%, skyblue 75%);
 }
 .m-dashboard-main div svg{
@@ -382,7 +386,7 @@ div.advert-wrapper::-webkit-scrollbar {
     fill: rgb(255, 255, 255);
     position: relative;
     display: inline-block;
-    transition: all 200ms ease-in-out;
+    transition: all 130ms ease-in-out;
 }
 .m-dashboard-main .menu-bar .menu{
     background-color:white;
@@ -428,7 +432,7 @@ div.advert-wrapper::-webkit-scrollbar {
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
-    transition: all 200ms ease-out -110ms
+    transition: all 130ms ease-out -110ms
 }
 .m-dashboard-main .menu-bar .pop2{
     background-color: transparent;
@@ -437,7 +441,7 @@ div.advert-wrapper::-webkit-scrollbar {
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
-    transition: all 200ms ease-in-out -110ms;
+    transition: all 130ms ease-in-out -110ms;
 }
 .m-dashboard-main .menu-bar .pop3{
     background-color: teal; 
@@ -446,16 +450,18 @@ div.advert-wrapper::-webkit-scrollbar {
     opacity: 0;
     height: 300px;
     pointer-events: none;
-    transition: all 200ms ease-in-out -110ms
+    transition: all 130ms ease-in-out -110ms
 }
 .menu-pop-open1 {
-    background-color: salmon;
+    background-color: white;
+    border: 1px solid skyblue;
     left: -12px;
     height: 300px;
     bottom: 200%;
     opacity: 1;
     pointer-events:auto;
-    transition: all 200ms ease-in-out
+    transition: all 130ms ease-in-out;
+    color: black;
 }
 .menu-pop-open2 {
     background-color: rgb(31, 205, 31);
@@ -465,7 +471,7 @@ div.advert-wrapper::-webkit-scrollbar {
     opacity: 1;
     pointer-events:auto;
     
-    transition:  200ms ease-in-out
+    transition:  130ms ease-in-out
 }
 .menu-pop-open3 {
     background: linear-gradient(to top, white -3%, rgb(134, 78, 238) 90%);
@@ -475,7 +481,7 @@ div.advert-wrapper::-webkit-scrollbar {
     opacity: 1;
     height: 300px;
     pointer-events:auto;
-    transition: all 200ms ease-in-out ;
+    transition: all 130ms ease-in-out ;
     color: black;
     overflow: hidden;
 }

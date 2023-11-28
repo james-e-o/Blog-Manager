@@ -1,15 +1,15 @@
 
-import {Link, Outlet } from 'react-router-dom'
+import {Outlet } from 'react-router-dom'
+import { useContext } from 'react'
+import { screenWidth } from '../Components/app/App'
 
 const LoggedIn = () => {
   const part = '/loggedin/route'
-
+  const screen = useContext(screenWidth)
   return (
-    <div>
-        {/* <h1>Loggedin</h1>
-        <p>{part.split('/').filter(vim => vim !== '').map(vim => {return <Link>{` /${vim}`}</Link>})}</p> */}
-        <Outlet />
-    </div>
+  <div>
+    <Outlet />
+  </div>   
   )
 }
 

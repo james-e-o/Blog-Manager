@@ -31,6 +31,7 @@ main.sign-main {
 .sign-main> div {
     width: 100%;
     text-align: center;
+    
 }
 .sign-main> div form{
     display: flex;
