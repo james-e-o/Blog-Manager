@@ -1,9 +1,18 @@
 import React from 'react'
 import "./new-content.css"
+import { Menu } from '../../../svg'
 
 const NewContent = () => {
   return (
     <div className='mobile-new'>
+      <div className="new-header">
+            <div className="user">
+              <figure></figure>
+            </div>
+            <nav >
+              <figure><Menu/></figure>     
+            </nav>
+      </div>
       <form className="new-main">
        <div className="heading-wrap">
         <h3 className='heading'>New post</h3>
@@ -11,14 +20,24 @@ const NewContent = () => {
        </div>
         <div className="title-wrap">
           <p className='title'>Title</p>
-          <input id='new-post-title' type="text" />
+          <input id='new-post-title' type="text" value={'+'} />
         </div>
         <div className="content-wrap">
           <p className='content'>Content</p>
-          <textarea name="new-post" id="new-post-body" cols="30" rows="10"></textarea>
+          <textarea name="new-post" id="new-post-body" cols="30" rows="18"></textarea>
         </div>
-        <div className="hashtags">
-          #newpost #webdev
+        <div className="hashtag-niche-wrap">
+          <div className="categories">
+            <p className="category">newpost</p>
+            <p className="category">webdev</p>
+            <p className="category">newpost</p>
+          </div>
+          <input id='hashtag' type="search" />
+          <div className="hashtags">
+            <p className="hashtag">#newpost</p>
+            <p className="hashtag">#webdev</p>
+            <p className="hashtag">#newpost</p>
+          </div>
           <input id='hashtag' type="search" />
         </div>
 
