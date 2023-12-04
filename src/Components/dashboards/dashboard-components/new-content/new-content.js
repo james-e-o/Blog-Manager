@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./new-content.css"
 import { Menu } from '../../../svg'
 
 const NewContent = () => {
+  useEffect(()=>{
+   const wrap = document.querySelector("div.mobile-new")
+   wrap.scrollTo(0, 10)
+  })
   return (
     <div className='mobile-new'>
       <div className="new-header">

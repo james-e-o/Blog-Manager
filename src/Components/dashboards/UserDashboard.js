@@ -11,7 +11,7 @@ const popCheck = createContext('')
 const UserDashboard = () => {
   const screen = useContext(screenWidth)
   const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
-  const niche3 = niches.filter((niche) => niche.name.length <= 5)
+  const niche3 = niches.filter((niche) => niche.name.length <= 6)
   const mainDashboard = useRef("")
   const blurScreen = useRef("")
   const [scroll, setScroll]= useState('')
@@ -49,16 +49,14 @@ const UserDashboard = () => {
                   <div className="advert"></div>
                 </div>
               </div>
-                <p className='niche'>niche</p>
+              <p className='niche'>niche</p>
               <div className='categories'>
-                <div className='niche-scroll'>
-                {niche3.map((niche)=>(
-                <div className='category' key={niche.id}>{niche.name}</div>
-                ))}
-                <button className='arrow-f'>more</button>
-                </div>
+                  {niche3.map((niche)=>(
+                  <div className='category' key={niche.id}>{niche.name}</div>
+                  ))}
+                  <button className='arrow-f'>more</button>
               </div>
-              <p className='niche'>feed</p>
+              <p className='niche'>feeds</p>
               <div className="feeds">
                   <div className='feed'>
                     <div className="feed-content">
@@ -176,7 +174,10 @@ const Create = () => {
   return (
     <div className='create-content'>
       <h1>Add new content</h1>
-     <Link to={'new'}><button id='add-content' >Get started</button></Link>
+      <div className='create-buttons'>
+        <Link  to={'new'}><button id='add-content' >New post</button></Link>
+        <Link to={'new'}><button id='add-content' >New post</button></Link>
+      </div>
     </div>
   )
 }
@@ -184,7 +185,7 @@ const Bookmarks = () => {
   return (
     <div className='create-content'>
       <h1>Add new content</h1>
-     <button id='add-content' >Get started</button>
+     <button id='adda-content' >Get started</button>
     </div>
   )
 }
