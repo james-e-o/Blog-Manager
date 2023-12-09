@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import "./new-content.css"
 import { Menu } from '../../../svg'
 
+
 const NewContent = () => {
   useEffect(()=>{
    const wrap = document.querySelector("div.mobile-new")

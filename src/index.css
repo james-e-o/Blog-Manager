@@ -61,7 +61,3 @@ hr.inner{
     height: 1px;
     box-shadow: 1px 1px 0px rgb(165, 165, 165);
 }
-div.logged {
-    height: 100vh;
-    overflow-y: scroll;
-}

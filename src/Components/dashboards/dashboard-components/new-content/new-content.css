@@ -6,7 +6,6 @@ div.mobile-new {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
 }
 .mobile-new div.new-header {
     display: flex;
@@ -112,7 +111,7 @@ div.mobile-new {
 }
 .mobile-new p.title {
     color: rgb(169, 178, 187);
-     font-family: ClashDisplay;
+    font-family: Inter;
      font-weight: 700;
     padding: 12px 0px ;
 }
@@ -136,7 +135,7 @@ div.mobile-new {
 }
 .mobile-new p.content {
     color: rgb(169, 178, 187);
-     font-family: ClashDisplay;
+     font-family: Inter;
      font-weight: 700;
     padding: 12px 5px ;
 }
@@ -156,7 +155,7 @@ p.hashtag {
     padding: 5px;
     color: black;
     margin: 3px 1px;
-    font-family: ClashDisplay;
+    font-family: Inter;
     font-size: 13px;
     font-weight: 600;
 }
@@ -167,7 +166,7 @@ p.category {
     color: white;
     border-radius: 16px;
     margin: 3px 5px;
-    font-family: ClashDisplay;
+    font-family: Inter;
     font-size: 13px;
     font-weight: 600;
 }

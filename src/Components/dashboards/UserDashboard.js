@@ -16,8 +16,23 @@ const UserDashboard = () => {
   const blurScreen = useRef("")
   const [scroll, setScroll]= useState('')
   const scrollOffset =useRef(window.scrollY)
+  function feedPop (){
+    const feedPopBox = document.querySelector("div.feed-pop")
+      feedPopBox.classList.toggle("feed-pop-inactive")
+      feedPopBox.classList.toggle("feed-pop-active")
+      console.log('happy')
+  }
   useEffect(()=>{
-   
+    const feedPopBox = document.querySelector("div.feed-pop")
+   document.addEventListener("click",(e)=>{
+    if (feedPopBox.classList.contains('feed-pop-active') && !e.target.closest("div.feed-pop")){
+      feedPopBox.classList.toggle("feed-pop-inactive")
+      feedPopBox.classList.toggle("feed-pop-active")
+    }else if (!feedPopBox.classList.contains('feed-pop-active') && e.target.matches("div.detail-options")){
+      feedPopBox.classList.toggle("feed-pop-inactive")
+      feedPopBox.classList.toggle("feed-pop-active")
+    }
+   })
   })
   return (
       //  MOBILE
@@ -67,6 +82,7 @@ const UserDashboard = () => {
                         <div className='content-title'>The Value Of Your Value.</div>
                         <div className="details">
                            <p>6 mins read</p>
+                           <div className="detail-options" onClick={feedPop}>...</div>
                         </div> 
                     </div>
                     <div className="content-image"></div>
@@ -80,6 +96,7 @@ const UserDashboard = () => {
                         <div className='content-title'>The Value Of Your Value.</div>
                         <div className="details">
                            <p>6 mins read</p>
+                           <div className="detail-options" onClick={feedPop}>...</div>
                         </div> 
                     </div>
                     <div className="content-image"></div>
@@ -87,6 +104,12 @@ const UserDashboard = () => {
           
               </div>         
               <MenuBar/> 
+              <div className="feed-pop feed-pop-inactive">
+                <p>like</p>
+                <p>bookmark</p>
+                <p>citation</p>
+                <p>concursion</p>
+              </div>
           </main>
         </div>
         

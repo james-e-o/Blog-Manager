@@ -8,7 +8,7 @@ const LoggedIn = () => {
   const screen = useContext(screenWidth)
  
   return (
-  <div className='logged'>
+  <div className='logged' style={{height:"fit-content"}}>
     <Outlet />
   </div>   
   )
