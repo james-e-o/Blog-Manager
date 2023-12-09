@@ -23,16 +23,16 @@ const UserDashboard = () => {
       console.log('happy')
   }
   useEffect(()=>{
-    const feedPopBox = document.querySelector("div.feed-pop")
-   document.addEventListener("click",(e)=>{
-    if (feedPopBox.classList.contains('feed-pop-active') && !e.target.closest("div.feed-pop")){
-      feedPopBox.classList.toggle("feed-pop-inactive")
-      feedPopBox.classList.toggle("feed-pop-active")
-    }else if (!feedPopBox.classList.contains('feed-pop-active') && e.target.matches("div.detail-options")){
-      feedPopBox.classList.toggle("feed-pop-inactive")
-      feedPopBox.classList.toggle("feed-pop-active")
-    }
-   })
+  //   const feedPopBox = document.querySelector("div.feed-pop")
+  //  document.addEventListener("click",(e)=>{
+  //   if (feedPopBox.classList.contains('feed-pop-active') && !e.target.closest("div.feed-pop")){
+  //     feedPopBox.classList.toggle("feed-pop-inactive")
+  //     feedPopBox.classList.toggle("feed-pop-active")
+  //   }else if (!feedPopBox.classList.contains('feed-pop-active') && e.target.matches("div.detail-options")){
+  //     feedPopBox.classList.toggle("feed-pop-inactive")
+  //     feedPopBox.classList.toggle("feed-pop-active")
+  //   }
+  //  })
   })
   return (
       //  MOBILE
