@@ -6,11 +6,21 @@
         display: flex;
         flex-direction: column;
     }
+    .desk-main div.main-display{
+        display: flex;
+        height: 80vh;
+        background-color: slateblue;
+    }
     .desk-main .h1-tag{
        background-color: slateblue;
         padding: 20px;
+        width: 49%;
     }
-    
+    .desk-main .h1-art{
+        background-color: slateblue;
+        padding: 20px;
+        width: 49%;
+     }
     .desk-main .h1-tag h1 {
         line-height: 142%;
         font-family:  RubikMoonrocks, Capriola, Arial, Helvetica, sans-serif;

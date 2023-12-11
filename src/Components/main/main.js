@@ -8,6 +8,7 @@ import Ui from "../contents/images/ui.png"
 import Secure from "../contents/images/secure.png"
 import Seo from "../contents/images/seo.png"
 import LightBulb from "../contents/images/lightbulb.png"
+import { screenWidth } from '../app/App'
 
 
 const Main = () => {
