@@ -4,7 +4,6 @@ import './main-desk.css'
 import { useRef,useState, useEffect, useContext } from 'react'
 import {  Views, Bookmark, Left, Right, Newlink, Arrow } from '../svg'
 import { Link } from 'react-router-dom'
-import { screenWidth } from '../app/App'
 import Ui from "../contents/images/ui.png"
 import Secure from "../contents/images/secure.png"
 import Seo from "../contents/images/seo.png"
@@ -19,7 +18,6 @@ const Main = () => {
       const scroll = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
-      const screen = useContext(screenWidth)
       const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
      
       function getRandomIntInclusive(min, max) {
@@ -45,6 +43,13 @@ const Main = () => {
         scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
         return
       }
+      const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+      // useEffect(() => {
+      //   window.onresize = () => {
+      //     setInnerWidth(window.innerWidth)
+      //   }
+      // })
+      const screen = useContext(screenWidth)
       useEffect(()=>{
         const randomColor = getRandomIntInclusive(0,2)
         dynamicColor.current.style.color = `${colors[randomColor]}`

@@ -3,10 +3,9 @@ import Main from '../main/main';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {createContext} from 'react';
+import {createContext, useEffect, useState} from 'react';
 
 // route imports
-import Corelayout from '../../Layouts/corelayout';
 import Signlayout from '../../Layouts/signlayout';
 import LoggedIn from '../../Layouts/LoggedLayout';
 
@@ -24,21 +23,28 @@ import { signupValidate,loginValidation } from '../../sign';
 //context export
 export const screenWidth = createContext('')
 
-const Home = () => {  
+const Home = () => { 
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+  useEffect(() => {
+    window.onresize = () => {
+      setInnerWidth(window.innerWidth)
+    }
+  }) 
   return (
-    <div>
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <screenWidth.Provider value={innerWidth}>
+      <div>
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </screenWidth.Provider>
   )
 }
 const router = createBrowserRouter([
-  {
-    path:'/',
-    element: <Corelayout />,
-    children:[
-        {index:true, element:<Home/>},
+        {
+          path:'/',
+          element:<Home/>,
+        },
         {
           path:'about',
           element:<About/>,
@@ -64,8 +70,6 @@ const router = createBrowserRouter([
           path:"*",
           element:<Notfound/>
         }
-    ]
-  }
 ])
 
 function App() {
