@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useLocation } from 'react-router-dom'
 import "./About.css"
 
+
+const ScrollTop = () => {
+  const {pathname} = useLocation()
+  useEffect(() => {
+   const target = document.getElementById("about")
+   target.scrollTo(0,0)
+  },[pathname]) 
+  return null
+}
 const About = () => {
   return (
-    <div className='about'>
+    <div className='about' id='about'>
+      <ScrollTop/>
       <div className='about-header'>
         <h1>Skript_<span>n</span></h1> 
       </div>

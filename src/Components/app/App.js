@@ -2,12 +2,13 @@ import './App.css';
 import Main from '../main/main';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useLocation} from 'react-router-dom';
 import {createContext, useEffect, useState} from 'react';
 
 // route imports
 import Signlayout from '../../Layouts/signlayout';
 import LoggedIn from '../../Layouts/LoggedLayout';
+import Corelayout from '../../Layouts/CoreLayout';
 
 // page imports
 import {Sign, Signup, Signin} from '../../sign'
@@ -24,27 +25,21 @@ import { signupValidate,loginValidation } from '../../sign';
 export const screenWidth = createContext('')
 
 const Home = () => { 
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth)
-  useEffect(() => {
-    window.onresize = () => {
-      setInnerWidth(window.innerWidth)
-    }
-  }) 
   return (
-    <screenWidth.Provider value={innerWidth}>
-      <div>
+      <div className='home'>
         <Header />
         <Main />
         <Footer />
       </div>
-    </screenWidth.Provider>
   )
 }
+
 const router = createBrowserRouter([
-        {
-          path:'/',
-          element:<Home/>,
-        },
+  {
+    path:'/',
+    element: <Corelayout />,
+    children:[
+        {index:true, element:<Home/>},
         {
           path:'about',
           element:<About/>,
@@ -70,10 +65,13 @@ const router = createBrowserRouter([
           path:"*",
           element:<Notfound/>
         }
+    ]
+  }
 ])
 
 function App() {
   return (
+        
         <RouterProvider router={router}/>
   );
 }

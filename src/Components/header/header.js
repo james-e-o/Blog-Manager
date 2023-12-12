@@ -14,7 +14,7 @@ const Header = () => {
       let notMenu = screen -  310
       let ScrollYvalue;
       
-      if (screen>900){ScrollYvalue = 660}
+      if (screen>900){ScrollYvalue = 650}
       else if (screen<900){ScrollYvalue = 465}
       
       window.addEventListener('scroll',(e)=>{
