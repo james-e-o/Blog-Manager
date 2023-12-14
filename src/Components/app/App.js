@@ -2,8 +2,8 @@ import './App.css';
 import Main from '../main/main';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import { createBrowserRouter, RouterProvider, useLocation} from 'react-router-dom';
-import {createContext, useEffect, useState} from 'react';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {createContext} from 'react';
 
 // route imports
 import Signlayout from '../../Layouts/signlayout';
@@ -37,7 +37,7 @@ const Home = () => {
 const router = createBrowserRouter([
   {
     path:'/',
-    element: <Corelayout />,
+    element:<Corelayout />,
     children:[
         {index:true, element:<Home/>},
         {

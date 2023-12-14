@@ -1,17 +1,6 @@
-import { Outlet, useLocation} from "react-router-dom"
+import { Outlet, ScrollRestoration} from "react-router-dom"
 import { useEffect, useState } from "react"
 import { screenWidth } from "../Components/app/App"
-
-
-// routes import
-const ScrollTop = () => {
-    const {pathname} = useLocation()
-    useEffect(() => {
-     const target = document.getElementById("core-wrap")
-     target.scrollTo(0,0)
-    },[]) 
-    return null
-}
 
 const Corelayout = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
@@ -23,10 +12,8 @@ const Corelayout = () => {
   
   return (
     <screenWidth.Provider value={innerWidth}>
-      <div id="core-wrap">
-        <ScrollTop />
-        <Outlet />
-      </div>
+      <ScrollRestoration />
+      <Outlet />
     </screenWidth.Provider>
   )
 }
