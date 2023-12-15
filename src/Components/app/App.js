@@ -16,6 +16,7 @@ import Notfound from '../Errors/Notfound';
 import UserDashboard from '../dashboards/UserDashboard';
 import About from '../about/About';
 import NewContent from '../dashboards/dashboard-components/new-content/new-content';
+import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
 
 //actions
 import { signupValidate,loginValidation } from '../../sign';
@@ -58,7 +59,8 @@ const router = createBrowserRouter([
           element:<LoggedIn/>,
           children: [
             {index:true, element:<UserDashboard/>},
-            {path:"new", element:<NewContent/>}
+            {path:"new", element:<NewContent/>},
+            {path:"bookmarks", element:<Bookmarked/>}
           ]
         },
         {

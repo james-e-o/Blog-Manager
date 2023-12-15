@@ -1,0 +1,12 @@
+div.menu-drop {
+    position: absolute;
+    background-color: yellowgreen;
+    right: -1px;
+    border-radius: 15px;
+    font-family: Inter;
+    top: 180%;
+    width: 53vw;
+    height: 30vh;
+    padding: 12px;
+    box-sizing: border-box;
+}

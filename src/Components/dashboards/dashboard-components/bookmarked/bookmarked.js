@@ -1,10 +1,10 @@
 import React from 'react'
 import "./bookmarked.css"
 
-const bookmarked = () => {
+const Bookmarked = () => {
   return (
     <div>bookmarked</div>
   )
 }
 
-export default bookmarked
+export default Bookmarked

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
-import { Plus, Menu, Notify, RoundMenu, Arrow_B, Bookmark2 } from '../svg'
+import { Plus, Menu, Notify, RoundMenu, Arrow_B, Bookmark2, Menu_icon } from '../svg'
 import logo from "../contents/images/category-pirates-logo.png"
 import Content_img from "../contents/images/category-pirates.png"
 const popCheck = createContext('')
@@ -118,7 +118,7 @@ const UserDashboard = () => {
           <h1>Skript_<span>n</span></h1> 
           <nav >
             <button >&#9998;Get started</button>  
-            <Menu/>   
+            <Menu_icon/>   
           </nav>
           </header>
           // <div>
@@ -175,7 +175,7 @@ const MenuBar = () => {
         <div className={'blunt-fixed'}>
           <div className="menu-wrap">
               <Menus isToggled={activeIndex===1} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==1?setActiveIndex(1):setActiveIndex(0)}} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)} content={<Options/>} icon={<Plus/>}/>
-              <Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} content={<Bookmarks/>} icon={<Bookmark2/>}/>
+              <Link to={'bookmarks'}><Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} content={<Bookmarks/>} icon={<Bookmark2/>}/></Link>
               <Menus isToggled={activeIndex===3} togglepop={(e)=>{if (e.target.closest(".menu-pop")) {return} else activeIndex!==3?setActiveIndex(3):setActiveIndex(0)}} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)} content={<Create/>} icon={<Plus/>}/>
               <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>

@@ -1,7 +1,7 @@
 
 div.mobile-new {
     /* background-color: #F1F1F1; */
-    padding:18px 2px 5px;
+    padding:14px 2px 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -10,12 +10,14 @@ div.mobile-new {
 .mobile-new div.new-header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-bottom: 8px;
+    width: 94%;
+    margin-bottom: 2px;
+    align-items: center;
+    padding-top:8px ;
 }
 .mobile-new div.user {
     display: flex;
-    padding: 18px 20px 5px;
+    padding: 10px 15px;
     gap: 2vw;
     font-family: Capriola;
     align-items: center;
@@ -26,51 +28,45 @@ div.mobile-new {
     background: rgb(55, 14, 109);
     border-radius: 50%;
 }
-.mobile-new .user .welcome{
-   display: flex;
-   /* flex-direction: column; */
-   gap: 4px;
-   align-items: center;
-}
-.mobile-new .user .welcome p{
-   font-weight: light;
-   font-size: 14px;
-}
-.mobile-new .user .welcome h3{
-   color: rgb(42, 179, 101);
-   font-size: 18px;
-}
 .mobile-new nav {
     align-items: center;
     padding: 8px 5px;
     margin-right: 10px;
     display: flex;
     color:white;
+    gap : 25px;
     justify-content: space-between;
     width: fit-content;
 }
+.mobile-new button#post {
+    padding: 8px 21px;
+    width: fit-content;
+    border: none;
+    background-color: slategray;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    /* word-spacing:0.5; */
+}
 .mobile-new nav figure{
-    margin-top: 12px;
+    position: relative;
+    margin-top: 3%;
     width: fit-content;
     height: fit-content;
-
-}
-.mobile-new nav button{
-    color: slateblue;
-    font-size: 23px;
-    border: none;
-    background-color: transparent;
-    padding: 0px 8px;
 }
 
 
-.mobile-new .engagement-svg svg#menu {
-    fill: rgb(75, 84, 94);
-    width: 25px;
-    height: 25px;
-}
+
+
+
+
+
+
+
+
 .mobile-new form.new-main {
-    width: 92%;
+    width: 94%;
     background-color: white;
     border-radius: 12px;
     padding: 8px;
@@ -89,17 +85,6 @@ div.mobile-new {
     color: coral;
     font-family: ClashDisplay;
 
-}
-.mobile-new button#post {
-    padding: 8px 21px;
-    width: fit-content;
-    border: none;
-    background-color: slategray;
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 20px;
-    /* word-spacing:0.5; */
 }
 .mobile-new div.title-wrap{
      padding: 10px 17px ;
@@ -150,6 +135,11 @@ div.mobile-new {
 .mobile-new div.hashtag-niche-wrap {
     padding: 10px 14px;
 }
+div.hashtags, div.categories {
+    display: grid;
+    /* grid-template-columns: ; */
+
+}
 p.hashtag {
     display: inline-block;
     padding: 5px;
@@ -158,6 +148,8 @@ p.hashtag {
     font-family: Inter;
     font-size: 13px;
     font-weight: 600;
+    height: fit-content;
+    width: fit-content;
 }
 p.category {
     display: inline-block;
@@ -169,16 +161,21 @@ p.category {
     font-family: Inter;
     font-size: 13px;
     font-weight: 600;
+    height: fit-content;
+    width: fit-content;
 }
-.mobile-new input#hashtag {
+.mobile-new button#hashtag {
+    box-sizing: content-box;
     font-size: 16px;
+    cursor: none;
     outline: none;
-    padding: 10px 4px;
+    padding: 4px 7px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-bottom:1px solid salmon;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    width: 5px;
+    border: none;
+    width: 30px;
+    height: 20px;
+    /* margin: 3px 5px; */
+    display: inline-block;
+    background-color: rgb(122, 122, 100);
 }
