@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import "./new-content.css"
 import "./menu-drop.css"
-import { Menu, Menu_icon } from '../../../svg'
-
+import {Menu_icon } from '../../../svg'
 
 const NewContent = () => {
-  const [activeMenu, setActiveMenu] = useState()
+  const [activeMenu, setActiveMenu] = useState(false)
   useEffect(()=>{
-   const wrap = document.querySelector("div.mobile-new")
-   wrap.scrollTo(0, 10)
-  })
+  //  const wrap = document.querySelector("div.mobile-new")
+  //  wrap.addEventListener('click',(e)=>{
+  //   if (e.target.closest("div.engagement-svg")  && activeMenu === true){
+  //    console.log('hollarith')
+  //   } 
+    
+  //  })
+  },[])
   return (
     <div className='mobile-new'>
       <div className="new-header">
@@ -20,7 +24,9 @@ const NewContent = () => {
               <button id='post'>Post</button>
               <figure onClick={()=>setActiveMenu(!activeMenu)}>
                 <Menu_icon/>
-                <Menu_Drop />
+                <div className={!activeMenu?"menu-drop roll-up":"menu-drop roll-down"}>
+                  Menu_Drop hrllo
+                </div>
               </figure>     
             </nav>
       </div>
@@ -37,13 +43,13 @@ const NewContent = () => {
           <textarea name="new-post" id="new-post-body" cols="30" rows="18"></textarea>
         </div>
         <div className="hashtag-niche-wrap">
-          <div className="categories">
+          <div className="add-categories">
             <p className="category">newpost</p>
             <p className="category">webdev</p>
             <p className="category">newpost</p>
             <button id='hashtag'>+</button>
           </div>
-          <div className="hashtags">
+          <div className="add-hashtags">
             <p className="hashtag">#newpost</p>
             <p className="hashtag">#webdev</p>
             <p className="hashtag">#newpost</p>
@@ -59,10 +65,9 @@ const NewContent = () => {
 export default NewContent
 
 
-export const Menu_Drop = () => {
+const Menu_Drop = (activeState) => {
+  console.log(activeState)
   return (
-    <div className='menu-drop'>
-      Menu_Drop hrllo
-    </div>
+    "hello"
   )
 }

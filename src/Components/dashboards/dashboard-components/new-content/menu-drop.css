@@ -1,12 +1,23 @@
 div.menu-drop {
     position: absolute;
-    background-color: yellowgreen;
-    right: -1px;
+    right: -5px;
     border-radius: 15px;
     font-family: Inter;
-    top: 180%;
     width: 53vw;
     height: 30vh;
     padding: 12px;
     box-sizing: border-box;
+    background-color: rgb(50, 156, 205);
+}
+
+.roll-down {
+    opacity: 1;
+    top: 180%;
+    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
+    pointer-events: none;
+}
+.roll-up {
+    opacity: 0;
+    top: 100%;
+    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
 }

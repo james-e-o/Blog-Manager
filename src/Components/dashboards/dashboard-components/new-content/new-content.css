@@ -11,9 +11,9 @@ div.mobile-new {
     display: flex;
     justify-content: space-between;
     width: 94%;
-    margin-bottom: 2px;
     align-items: center;
-    padding-top:8px ;
+    padding:8px;
+    box-sizing: border-box;
 }
 .mobile-new div.user {
     display: flex;
@@ -54,6 +54,7 @@ div.mobile-new {
     margin-top: 3%;
     width: fit-content;
     height: fit-content;
+    cursor: pointer;
 }
 
 
@@ -135,12 +136,12 @@ div.mobile-new {
 .mobile-new div.hashtag-niche-wrap {
     padding: 10px 14px;
 }
-div.hashtags, div.categories {
-    display: grid;
+div.add-hashtags, div.add-categories {
+    /* display: grid; */
     /* grid-template-columns: ; */
 
 }
-p.hashtag {
+.mobile-new p.hashtag {
     display: inline-block;
     padding: 5px;
     color: black;
@@ -151,7 +152,7 @@ p.hashtag {
     height: fit-content;
     width: fit-content;
 }
-p.category {
+.mobile-new p.category {
     display: inline-block;
     padding: 5px 11px;
     background-color: salmon;
