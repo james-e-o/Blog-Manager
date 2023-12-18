@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import "./new-content.css"
 import "./menu-drop.css"
-import {Menu_icon } from '../../../svg'
+import {Menu_icon, Plus } from '../../../svg'
+import FroalaEditor from 'froala-editor'
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false)
+  var editor = new FroalaEditor('#froala')
   useEffect(()=>{
-  //  const wrap = document.querySelector("div.mobile-new")
-  //  wrap.addEventListener('click',(e)=>{
-  //   if (e.target.closest("div.engagement-svg")  && activeMenu === true){
-  //    console.log('hollarith')
-  //   } 
-    
-  //  })
+    // const menuWrap = document.querySelector("div.icon-wrap")
+    const menuDrop = document.querySelector("div.menu-drop")
+    document.addEventListener('click', (e)=>{  
+      if(!e.target.closest("div.icon-wrap") && menuDrop.classList.contains("roll-down")){
+        console.log("hoolaritha")
+        setActiveMenu(false)
+        menuDrop.classList.replace("roll-down","roll-up")
+      }
+    })
   },[])
   return (
     <div className='mobile-new'>
@@ -22,12 +26,12 @@ const NewContent = () => {
             </div>
             <nav >
               <button id='post'>Post</button>
-              <figure onClick={()=>setActiveMenu(!activeMenu)}>
-                <Menu_icon/>
+              <div className='icon-wrap' >
+                <div className='' onClick={()=>setActiveMenu(!activeMenu)}><Menu_icon /></div>
                 <div className={!activeMenu?"menu-drop roll-up":"menu-drop roll-down"}>
                   Menu_Drop hrllo
                 </div>
-              </figure>     
+              </div>     
             </nav>
       </div>
       <form className="new-main">
@@ -40,20 +44,21 @@ const NewContent = () => {
         </div>
         <div className="content-wrap">
           <p className='content'>Content</p>
-          <textarea name="new-post" id="new-post-body" cols="30" rows="18"></textarea>
+          {/* <textarea name="new-post" id="new-post-body" cols="30" rows="18"></textarea> */}
+          <div id="froala"></div>
         </div>
         <div className="hashtag-niche-wrap">
           <div className="add-categories">
             <p className="category">newpost</p>
             <p className="category">webdev</p>
             <p className="category">newpost</p>
-            <button id='hashtag'>+</button>
+            <button id='hashtag'><Plus/></button>
           </div>
           <div className="add-hashtags">
             <p className="hashtag">#newpost</p>
             <p className="hashtag">#webdev</p>
             <p className="hashtag">#newpost</p>
-            <button id='hashtag'>+</button>
+            <button id='hashtag'><Plus/></button>
           </div>
         </div>
 
@@ -65,9 +70,9 @@ const NewContent = () => {
 export default NewContent
 
 
-const Menu_Drop = (activeState) => {
-  console.log(activeState)
-  return (
-    "hello"
-  )
-}
+// const Menu_Drop = (activeState) => {
+//   console.log(activeState)
+//   return (
+//     "hello"
+//   )
+// }
