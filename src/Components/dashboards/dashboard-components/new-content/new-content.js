@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react'
 import "./new-content.css"
 import "./menu-drop.css"
 import {Menu_icon, Plus } from '../../../svg'
-import FroalaEditor from 'froala-editor'
+
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false)
-  var editor = new FroalaEditor('#froala')
   useEffect(()=>{
-    // const menuWrap = document.querySelector("div.icon-wrap")
     const menuDrop = document.querySelector("div.menu-drop")
     document.addEventListener('click', (e)=>{  
       if(!e.target.closest("div.icon-wrap") && menuDrop.classList.contains("roll-down")){
@@ -44,8 +42,8 @@ const NewContent = () => {
         </div>
         <div className="content-wrap">
           <p className='content'>Content</p>
-          {/* <textarea name="new-post" id="new-post-body" cols="30" rows="18"></textarea> */}
-          <div id="froala"></div>
+          <textarea name="new-post" id="new-post-body" cols="30" rows="18"></textarea>
+        
         </div>
         <div className="hashtag-niche-wrap">
           <div className="add-categories">

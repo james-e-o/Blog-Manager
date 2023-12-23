@@ -17,9 +17,11 @@ import UserDashboard from '../dashboards/UserDashboard';
 import About from '../about/About';
 import NewContent from '../dashboards/dashboard-components/new-content/new-content';
 import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
+import Niche from '../dashboards/dashboard-components/niche/niche';
 
 //actions
 import { signupValidate,loginValidation } from '../../sign';
+
 
 
 //context export
@@ -60,7 +62,8 @@ const router = createBrowserRouter([
           children: [
             {index:true, element:<UserDashboard/>},
             {path:"new", element:<NewContent/>},
-            {path:"bookmarks", element:<Bookmarked/>}
+            {path:"bookmarks", element:<Bookmarked/>},
+            {path:"niche", element:<Niche/>}
           ]
         },
         {

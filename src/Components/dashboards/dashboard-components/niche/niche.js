@@ -1,10 +1,10 @@
 import React from 'react'
 import "./niche.css"
 
-const niche = () => {
+const Niche = () => {
   return (
     <div>niche</div>
   )
 }
 
-export default niche
+export default Niche

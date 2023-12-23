@@ -494,7 +494,7 @@ div.advert-wrapper::-webkit-scrollbar {
     opacity: 1;
     height: 300px;
     pointer-events:auto;
-    transition: all 130ms ease-in-out ;
+    transition: all 110ms ease-in-out ;
     color: black;
     overflow: hidden;
 }

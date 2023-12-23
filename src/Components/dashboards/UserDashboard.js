@@ -65,9 +65,9 @@ const UserDashboard = () => {
               <p className='niche'>niche</p>
               <div className='categories'>
                   {niche3.map((niche)=>(
-                  <div className='category' key={niche.id}>{niche.name}</div>
+                  <Link to={"niche"}><div className='category' key={niche.id}>{niche.name}</div></Link>
                   ))}
-                  <button className='arrow-f'>more</button>
+                  <Link to={"niche"}><button className='arrow-f'>more</button></Link>
               </div>
               <p className='niche'>feeds</p>
               <div className="feeds">
