@@ -3,9 +3,9 @@ import "./new-content.css"
 import "./menu-drop.css"
 import {Menu_icon, Plus } from '../../../svg'
 
-
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false)
+  const [textState, setTextState] = useState("auto")
   useEffect(()=>{
     const menuDrop = document.querySelector("div.menu-drop")
     document.addEventListener('click', (e)=>{  
@@ -16,6 +16,22 @@ const NewContent = () => {
       }
     })
   },[])
+//   const resizeTextarea = (e)=> {
+//     const text_Area = document.getxgvElementById("textarea-content")
+//     text_Area.style.height = "auto"
+//     setTextState(text_Area.scrollHeight + 2)
+
+//     // text_Area.style.height = "auto"
+//     // text_Area.style.height = (text_Area.scrollHeight + 2)
+//     // console.log("kinbott")
+// }
+  // useEffect(()=>{
+  //   const text_Area = document.getElementById("textarea-content")
+  //   const text_Wrap = document.getElementById("wysiwyg-wrap")
+  //   text_Area.style.height = textState
+  //   text_Wrap.style.height = textState
+  //   console.log("kinbott")
+  // })
   return (
     <div className='mobile-new'>
       <div className="new-header">
@@ -33,17 +49,29 @@ const NewContent = () => {
             </nav>
       </div>
       <form className="new-main">
-       <div className="heading-wrap">
-        <h3 className='heading'>New post</h3>
-       </div>
-        <div className="title-wrap">
-          <p className='title'>Title</p>
-          <input id='new-post-title' type="text" />
+        <div className="heading-wrap">
+          <h3 className='heading'>New post</h3>
         </div>
         <div className="content-wrap">
-          <p className='content'>Content</p>
-          <textarea name="new-post" id="new-post-body" cols="30" rows="18"></textarea>
-        
+          <div className="editor">
+            <div className="editor-controls">
+              <button>B</button>
+              <button><i>I</i></button>
+              <button>U</button>
+              <button>hi</button>
+              <button>hi</button>
+              <input type="text" />
+              <button>hi</button>
+              <button>hi</button>
+            </div>
+            <div className="editor-inputs" id='wysiwyg-wrap'>
+              <textarea onKeyUp={(e)=>{
+                const text_Area = document.getElementById("wysiwyg-wrap")
+                let scHeight = e.target.scrollHeight
+                console.log(scHeight)
+              }} id="textarea-content" placeholder='type something here...'></textarea>
+            </div>
+          </div>  
         </div>
         <div className="hashtag-niche-wrap">
           <div className="add-categories">
