@@ -1,38 +1,47 @@
-div.mobile-new {
+div.mobile-bookmark {
     /* background-color: #F1F1F1; */
-    padding:14px 2px 5px;
+    padding:2px 2px 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
+.mobile-bookmark div.bookmark-header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    align-items: center;
+    padding:0px 8px 8px;
+    box-sizing: border-box;
+    height: fit-content;
+}
 
-.mobile-new .art::before{
+.mobile-bookmark .art::before{
     content: "";
     position: absolute;
     background-color:darkturquoise;
     width: 100%;
-    border-radius: 12px;
-    height: 50px;
+    border-radius: 4px;
+    height: 31px;
     transform: rotate(-7deg) translateX(-20%) translateY(3%);
-    box-shadow: 5px 5px 7px rgba(24, 28, 80, 0.747);
+    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
 }
-.mobile-new .art::after{
+.mobile-bookmark .art::after{
     content: "";
     position: absolute;
     background:linear-gradient(to bottom,#ffa90a,#7568cf);
     width: 100%;
-    border-radius: 14px;
-    height: 50px;
+    border-radius: 4px;
+    height: 31px;
     transform: rotate(-14deg) translateX(-40%) translateY(6%);
-    box-shadow: 5px 5px 7px rgba(24, 28, 80, 0.747);
+    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
 }
-.mobile-new .art{
-    position: absolute;
+.mobile-bookmark .art{
+    position: relative;
     background-color:rgb(190, 190, 190);
-    width: 40px;
-    border-radius: 10px;
-    height: 50px;
-    transform: rotate(23deg) translateX(178%) translateY(127%) scale(1.6);
-    box-shadow: 5px 5px 7px rgba(24, 28, 80, 0.747);
+    width: 25px;
+    border-radius: 4px;
+    height: 31px;
+    transform: rotate(8deg) translateX(178%) translateY(127%) scale(1.6);
+    box-shadow: 2px 2px 6px rgba(24, 28, 80, 0.747);
 }

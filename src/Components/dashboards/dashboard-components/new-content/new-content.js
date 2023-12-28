@@ -47,10 +47,21 @@ const NewContent = () => {
           <div className="editor">
             <div className="editor-controls">
               <div className="font-section">
-                <button>B</button>
-                <button><i>I</i></button>
-                <button>U</button>
-                
+                <button onClick={(e)=>{e.preventDefault()}}>B</button>
+                <button onClick={(e)=>{e.preventDefault()}}><i>I</i></button>
+                <button onClick={(e)=>{e.preventDefault()}}>U</button>
+                <select name="font-family" id="f-family">
+                  <option value="inter">Inter</option>
+                  <option value="cambria">Cambria</option>
+                  <option value="cambria">Helvetica</option>
+                  <option value="sans">Sans</option>
+                </select>
+                <select name="font-sizes" id="f-size">
+                  <option value="inter">12</option>
+                  <option value="cambria">16</option>
+                  <option value="sans">20</option>
+                  <option value="sans">24</option>
+                </select>
               </div>
               <div className="align-section">
                 <button><img src={alignLeft} height={"15px"} width={"20px"}/></button>
@@ -72,7 +83,15 @@ const NewContent = () => {
                 text_Area.style.height = `auto`
                 text_Area.style.height = `${scHeight}px`
                 console.log(scHeight)
-              }} id="textarea-content" placeholder='type something here...'></textarea>
+              }} 
+              onSelect={(e)=>{
+                const selection = e.target.value.substring(
+                  e.target.selectionStart,
+                  e.target.selectionEnd,
+                )
+                console.log(selection)
+              }}
+              id="textarea-content" placeholder='type something here...'></textarea>
             </div>
           </div>  
         </div>

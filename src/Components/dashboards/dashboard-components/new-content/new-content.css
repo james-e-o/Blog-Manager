@@ -1,7 +1,7 @@
 
 div.mobile-new {
     /* background-color: #F1F1F1; */
-    padding:14px 2px 5px;
+    padding:2px 2px 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -12,7 +12,7 @@ div.mobile-new {
     justify-content: space-between;
     width: 95%;
     align-items: center;
-    padding:8px;
+    padding:2px 8px 8px;
     box-sizing: border-box;
 }
 .mobile-new div.user {
@@ -77,7 +77,7 @@ div.mobile-new {
     align-items: center;
 }
 .mobile-new div.heading-wrap {
-    margin-top: 10px;
+    margin-top: 3px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -96,14 +96,17 @@ div.mobile-new {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 1px;
 }
 .mobile-new div.hashtag-niche-wrap {
     padding: 10px 14px;
+    display: block;
+    width: 94%;
 }
 div.add-hashtags, div.add-categories {
     display: grid;
-
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
 }
 .mobile-new p.hashtag {
     display: inline-block;

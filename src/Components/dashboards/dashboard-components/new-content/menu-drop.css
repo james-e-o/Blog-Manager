@@ -65,6 +65,18 @@ div.icon-wrap.active .menu-drop{
     padding: 3px;
     border: 1px solid rgb(207, 207, 207);
 }
+.mobile-new div.editor-controls select {
+    margin: 6px 3px;
+    width: max-content;
+    border-radius: 5px;
+    background-color: white;
+    color: gray;
+    font-weight: bolder;
+    font-size: 13px;
+    padding: 3px 5px;
+    outline: none;
+    border: 1px solid rgb(207, 207, 207);
+}
 .mobile-new div.editor-controls button:focus{
     background-color: gainsboro;
 }
@@ -75,7 +87,8 @@ div.icon-wrap.active .menu-drop{
     padding: 10px 5px 5px 5px;
     border: 1px solid rgb(207, 207, 207);
     width: inherit;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    /* box-sizing: border-box; */
     display: flex;
     justify-content: center;
     min-height: 40px;
