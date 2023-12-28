@@ -2,10 +2,16 @@ import React, { useEffect, useState } from 'react'
 import "./new-content.css"
 import "./menu-drop.css"
 import {Menu_icon, Plus } from '../../../svg'
+import alignLeft from "../../../contents/images/align-left.png"
+import alignCentre from "../../../contents/images/align-center.png"
+import alignRight from "../../../contents/images/align-right.png"
+import alignJustify from "../../../contents/images/align-justify.png"
+import Indent from "../../../contents/images/indent.png"
+import Outdent from "../../../contents/images/outdent.png"
+import Paragraph from "../../../contents/images/paragraph.png"
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false)
-  const [textState, setTextState] = useState("auto")
   useEffect(()=>{
     const menuDrop = document.querySelector("div.menu-drop")
     document.addEventListener('click', (e)=>{  
@@ -16,22 +22,7 @@ const NewContent = () => {
       }
     })
   },[])
-//   const resizeTextarea = (e)=> {
-//     const text_Area = document.getxgvElementById("textarea-content")
-//     text_Area.style.height = "auto"
-//     setTextState(text_Area.scrollHeight + 2)
 
-//     // text_Area.style.height = "auto"
-//     // text_Area.style.height = (text_Area.scrollHeight + 2)
-//     // console.log("kinbott")
-// }
-  // useEffect(()=>{
-  //   const text_Area = document.getElementById("textarea-content")
-  //   const text_Wrap = document.getElementById("wysiwyg-wrap")
-  //   text_Area.style.height = textState
-  //   text_Wrap.style.height = textState
-  //   console.log("kinbott")
-  // })
   return (
     <div className='mobile-new'>
       <div className="new-header">
@@ -55,19 +46,31 @@ const NewContent = () => {
         <div className="content-wrap">
           <div className="editor">
             <div className="editor-controls">
-              <button>B</button>
-              <button><i>I</i></button>
-              <button>U</button>
-              <button>hi</button>
-              <button>hi</button>
-              <input type="text" />
-              <button>hi</button>
-              <button>hi</button>
+              <div className="font-section">
+                <button>B</button>
+                <button><i>I</i></button>
+                <button>U</button>
+                
+              </div>
+              <div className="align-section">
+                <button><img src={alignLeft} height={"15px"} width={"20px"}/></button>
+                <button><img src={alignCentre} height={"15px"} width={"20px"}/></button>
+                <button><img src={alignRight} height={"15px"} width={"20px"}/></button>
+                <button><img src={alignJustify} height={"15px"} width={"20px"}/></button>
+                <button><img src={Indent} height={"15px"} width={"20px"}/></button>
+                <button><img src={Outdent} height={"15px"} width={"20px"}/></button>
+                <button><img src={Paragraph} height={"15px"} width={"20px"}/></button>
+              </div>
+              <div className="insert-section">
+
+              </div>
             </div>
             <div className="editor-inputs" id='wysiwyg-wrap'>
               <textarea onKeyUp={(e)=>{
                 const text_Area = document.getElementById("wysiwyg-wrap")
                 let scHeight = e.target.scrollHeight
+                text_Area.style.height = `auto`
+                text_Area.style.height = `${scHeight}px`
                 console.log(scHeight)
               }} id="textarea-content" placeholder='type something here...'></textarea>
             </div>

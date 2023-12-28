@@ -98,67 +98,6 @@ div.mobile-new {
     width: 100%;
     margin-top: 10px;
 }
-.mobile-new div.editor{
-    box-sizing: border-box;
-    padding: 12px ;
-}
-.mobile-new div.editor-controls{
-    background-color: rgb(251, 251, 251);
-    margin-bottom: 5px;
-    border-radius: 8px;
-    padding: 4px;
-    border: 1px solid gainsboro;
-    width: inherit;
-}
-.mobile-new div.editor-controls button{
-    margin: 5px 6px;
-    width: 40px;
-    border-radius: 10px;
-    background-color: white;
-    color: gray;
-    font-weight: bolder;
-    font-size: 13px;
-    padding: 4px 11px;
-    padding: 4px;
-    border: 1px solid rgb(207, 207, 207);
-}
-.mobile-new div.editor-controls button:focus{
-    background-color: gainsboro;
-}
-.mobile-new div.editor-inputs{
-    background-color: rgb(255, 255, 255);
-    margin-bottom: 5px;
-    border-radius: 8px;
-    padding: 9px;
-    border: 1px solid rgb(207, 207, 207);
-    width: inherit;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    height: fit-content;
-}
-.mobile-new div.editor-inputs textarea#textarea-content{
-    background-color: white;
-    padding: 5px;
-    border: none;
-    height: auto;
-    outline: none;
-    resize: none;
-    width: 94%;
-    font-size: 14px;
-}
-textarea#textarea-content::-webkit-scrollbar {
-    width: 0px;
-}
-.mobile-new textarea#new-post-body {
-    width: 95%;
-    font-size: 13px;
-    outline: none;
-    padding: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border:1px solid salmon;
-    border-radius: 11px;
-}
 .mobile-new div.hashtag-niche-wrap {
     padding: 10px 14px;
 }
