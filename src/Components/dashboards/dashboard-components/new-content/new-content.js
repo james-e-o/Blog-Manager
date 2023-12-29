@@ -9,9 +9,12 @@ import alignJustify from "../../../contents/images/align-justify.png"
 import Indent from "../../../contents/images/indent.png"
 import Outdent from "../../../contents/images/outdent.png"
 import Paragraph from "../../../contents/images/paragraph.png"
+import Image from "../../../contents/images/image-60.png"
+import Undo from "../../../contents/images/undo-48.png"
+import Redo from "../../../contents/images/redo-48.png"
 
 const NewContent = () => {
-  const [activeMenu, setActiveMenu] = useState(false)
+  const [activeMenu, setActiveMenu] = useState(false) 
   useEffect(()=>{
     const menuDrop = document.querySelector("div.menu-drop")
     document.addEventListener('click', (e)=>{  
@@ -26,7 +29,9 @@ const NewContent = () => {
   return (
     <div className='mobile-new'>
       <div className="new-header">
+           
             <div className="user">
+            <div className='art'></div>
               <figure></figure>
             </div>
             <nav >
@@ -73,7 +78,9 @@ const NewContent = () => {
                 <button><img src={Paragraph} height={"15px"} width={"20px"}/></button>
               </div>
               <div className="insert-section">
-
+                <button><img src={Image} height={"15px"} width={"20px"}/></button>
+                <button><img src={Undo} height={"15px"} width={"20px"}/></button>
+                <button><img src={Redo} height={"15px"} width={"20px"}/></button>
               </div>
             </div>
             <div className="editor-inputs" id='wysiwyg-wrap'>
