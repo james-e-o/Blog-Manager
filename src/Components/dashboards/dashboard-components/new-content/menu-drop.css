@@ -99,14 +99,17 @@ div.icon-wrap.active .menu-drop{
     background-color: white;
     /* padding: 15px 5px 8px; */
     border: none;
-    height: auto;
     outline: none;
+    height: auto;
     resize: none;
     width: 94%;
     font-size: 14px;
 }
 textarea#textarea-content::-webkit-scrollbar {
     width: 0px;
+}
+.mobile-new div.editor-inputs::-webkit-scrollbar {
+    display: none;
 }
 
 

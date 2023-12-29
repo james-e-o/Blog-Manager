@@ -1,6 +1,6 @@
 div.mobile-bookmark {
     /* background-color: #F1F1F1; */
-    padding:0px 2px 5px;
+    padding:5px 2px 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -11,9 +11,16 @@ div.mobile-bookmark {
     justify-content: space-between;
     width: 95%;
     align-items: center;
-    padding:0px 8px 8px;
+    padding: 2px 8px 8px;
     box-sizing: border-box;
     height: fit-content;
+}
+.mobile-bookmark div.logo {
+    display: flex;
+    padding: 12px 0px;
+    /* gap: 15px; */
+    font-family: Capriola;
+    align-items: center;
 }
 .mobile-bookmark .art::before{
     content: "";

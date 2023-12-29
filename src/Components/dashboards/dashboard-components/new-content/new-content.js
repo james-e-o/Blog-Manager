@@ -25,13 +25,30 @@ const NewContent = () => {
       }
     })
   },[])
+  function Controls (e){
+    const bold = document.getElementById("bold")
+    const italic = document.getElementById("italic")
+    const underline = document.getElementById("underline")
+    const aLeft = document.getElementById("a-left")
+
+   const selectedData = e.target.value.substring(
+      e.target.selectionStart,
+      e.target.selectionEnd,
+    )
+
+    bold.onclick = () =>{
+     let format= Array.from(selectedData)
+     
+     console.log(format.forEach(el =><strong>{el}</strong>))
+    }    
+  }
 
   return (
     <div className='mobile-new'>
       <div className="new-header">
            
             <div className="user">
-            <div className='art'></div>
+              <div className='art'></div>
               <figure></figure>
             </div>
             <nav >
@@ -52,9 +69,9 @@ const NewContent = () => {
           <div className="editor">
             <div className="editor-controls">
               <div className="font-section">
-                <button onClick={(e)=>{e.preventDefault()}}>B</button>
-                <button onClick={(e)=>{e.preventDefault()}}><i>I</i></button>
-                <button onClick={(e)=>{e.preventDefault()}}>U</button>
+                <button id='bold' onClick={(e)=>{e.preventDefault()}}>B</button>
+                <button id='italic' onClick={(e)=>{e.preventDefault()}}><i>I</i></button>
+                <button id='underline' onClick={(e)=>{e.preventDefault()}}>U</button>
                 <select name="font-family" id="f-family">
                   <option value="inter">Inter</option>
                   <option value="cambria">Cambria</option>
@@ -69,13 +86,13 @@ const NewContent = () => {
                 </select>
               </div>
               <div className="align-section">
-                <button><img src={alignLeft} height={"15px"} width={"20px"}/></button>
-                <button><img src={alignCentre} height={"15px"} width={"20px"}/></button>
-                <button><img src={alignRight} height={"15px"} width={"20px"}/></button>
-                <button><img src={alignJustify} height={"15px"} width={"20px"}/></button>
-                <button><img src={Indent} height={"15px"} width={"20px"}/></button>
-                <button><img src={Outdent} height={"15px"} width={"20px"}/></button>
-                <button><img src={Paragraph} height={"15px"} width={"20px"}/></button>
+                <button id='a-left' onClick={(e)=>{e.preventDefault()}}><img src={alignLeft} height={"15px"} width={"20px"}/></button>
+                <button id='a-centre' onClick={(e)=>{e.preventDefault()}}><img src={alignCentre} height={"15px"} width={"20px"}/></button>
+                <button id='a-right' onClick={(e)=>{e.preventDefault()}}><img src={alignRight} height={"15px"} width={"20px"}/></button>
+                <button id='a-justify' onClick={(e)=>{e.preventDefault()}}><img src={alignJustify} height={"15px"} width={"20px"}/></button>
+                <button id='indent' onClick={(e)=>{e.preventDefault()}}><img src={Indent} height={"15px"} width={"20px"}/></button>
+                <button id='outdent' onClick={(e)=>{e.preventDefault()}}><img src={Outdent} height={"15px"} width={"20px"}/></button>
+                <button id='paragraph' onClick={(e)=>{e.preventDefault()}}><img src={Paragraph} height={"15px"} width={"20px"}/></button>
               </div>
               <div className="insert-section">
                 <button><img src={Image} height={"15px"} width={"20px"}/></button>
@@ -89,15 +106,8 @@ const NewContent = () => {
                 let scHeight = e.target.scrollHeight
                 text_Area.style.height = `auto`
                 text_Area.style.height = `${scHeight}px`
-                console.log(scHeight)
               }} 
-              onSelect={(e)=>{
-                const selection = e.target.value.substring(
-                  e.target.selectionStart,
-                  e.target.selectionEnd,
-                )
-                console.log(selection)
-              }}
+              onSelect={Controls}
               id="textarea-content" placeholder='type something here...'></textarea>
             </div>
           </div>  

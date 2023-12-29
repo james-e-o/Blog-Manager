@@ -5,7 +5,9 @@ const Bookmarked = () => {
   return (
     <div className='mobile-bookmark' >
       <div className="bookmark-header">
+          <div className="logo">
             <div className='art'></div>
+          </div>
             <nav >
               <div className="user">  </div>
               <div className='icon-wrap' >
