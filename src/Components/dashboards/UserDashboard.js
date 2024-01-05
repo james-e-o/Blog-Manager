@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import "./mobile-dashboard.css"
 import { screenWidth } from '../app/App'
 import { Plus, Menu, Notify, RoundMenu, Arrow_B, Bookmark2, Menu_icon } from '../svg'
+import Logo from '../logo/logo'
 import logo from "../contents/images/category-pirates-logo.png"
 import Content_img from "../contents/images/category-pirates.png"
 const popCheck = createContext('')
@@ -38,14 +39,15 @@ const UserDashboard = () => {
         <div className='m-dashboard'>
           <header className='m-dashboard-header'>
             <div className="user">
-              <figure></figure>
+              <Logo />
               <div className="welcome">
-                <p>Hello,</p>
-                <h3>Jamie</h3>
+                <p>Hello</p>
+                <h3>User</h3>
               </div>
             </div>
             <nav >
-              <figure><Notify/></figure>     
+              <figure id='notify'><Notify/></figure> 
+              <figure id='profile-pic'></figure>    
             </nav>
           </header>
           <main ref={mainDashboard} className='m-dashboard-main'>

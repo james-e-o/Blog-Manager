@@ -12,6 +12,8 @@ import Paragraph from "../../../contents/images/paragraph.png"
 import Image from "../../../contents/images/image-60.png"
 import Undo from "../../../contents/images/undo-48.png"
 import Redo from "../../../contents/images/redo-48.png"
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false) 
@@ -129,7 +131,7 @@ const NewContent = () => {
             <button id='hashtag'><Plus/></button>
           </div>
         </div>
-
+        <ReactQuill theme="snow" />
       </form>
     </div>
   )

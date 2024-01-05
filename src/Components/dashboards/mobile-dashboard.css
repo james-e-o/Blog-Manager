@@ -1,11 +1,7 @@
 .m-dashboard-header {
     z-index: 10;
     height: fit-content;
-    /* position: sticky;
-    top: 0px;
-    left: 0px;
-    right: 0px; */
-    padding:12px 10px 5px;
+    padding:12px 8px 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,17 +10,12 @@
 }
 .m-dashboard-header div.user {
     display: flex;
-    padding: 18px 20px 5px;
-    gap: 2vw;
+    padding: 18px 17px 5px;
+    gap: 14px;
     font-family: Capriola;
     align-items: center;
 }
-.m-dashboard-header .user figure{
-    width: 40px;
-    height: 40px;
-    background: rgb(55, 14, 109);
-    border-radius: 50%;
-}
+
 .m-dashboard-header .user .welcome{
    display: flex;
    /* flex-direction: column; */
@@ -34,25 +25,36 @@
 .m-dashboard-header .user .welcome p{
    font-weight: light;
    font-size: 14px;
+   font-family: Inter;
 }
 .m-dashboard-header .user .welcome h3{
    color: rgb(42, 179, 101);
-   font-size: 18px;
+   /* color: rgb(255, 186, 58); */
+   font-size: 15px;
 }
 .m-dashboard-header nav {
+    position: relative;
     align-items: center;
     padding: 8px 5px;
-    margin-right: 10px;
+    margin-right: 15px;
     display: flex;
     color:white;
     justify-content: space-between;
     width: fit-content;
+    width: 19%;
 }
-.m-dashboard-header nav figure{
+.m-dashboard-header nav figure#notify{
     margin-top: 12px;
     width: fit-content;
     height: fit-content;
-
+}
+.m-dashboard-header nav figure#profile-pic{
+    width: 34px;
+    height: 34px;
+    background: rgb(55, 14, 109);
+    border-radius: 50%;
+    position: relative;
+    top: 4px;
 }
 .m-dashboard-header nav button{
     color: slateblue;
@@ -576,6 +578,7 @@ div.advert-wrapper::-webkit-scrollbar {
    margin-bottom: 9px;
    overflow-x: hidden;
    border-radius: 5px;
+   font-size: 14px;
 }
 .m-dashboard-main div.create-content h5#more {
     font-family: Inter;
