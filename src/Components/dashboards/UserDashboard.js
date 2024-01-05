@@ -194,9 +194,14 @@ const Menus = ({togglemenu,content, index, icon,togglepop, isToggled}) => {
 const Create = () => {
   return (
     <div className='create-content'>
-      <h1>Add new content</h1>
+      <div className="drafts">
+        <h5 id='draft'>Drafts</h5>
+        <Link  to={'new'}><p className="draft1">Alice in wonderland</p></Link>
+        <Link  to={'new'}><p className="draft1">Art of command: Admiral Chester Nimitz</p></Link>
+        <Link  to={'new'}><p className="draft1">Adventures of souza</p></Link>
+        <h5 id='more'>more ...</h5>
+      </div>
       <div className='create-buttons'>
-        <Link  to={'new'}><button id='add-content' >New post</button></Link>
         <Link to={'new'}><button id='add-content' >New post</button></Link>
       </div>
     </div>

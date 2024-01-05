@@ -142,13 +142,13 @@ export const  loginValidation = async ({request }) => {
   }
   console.log(data)
 
-  if (!data.email.match(validEmail)){
-    return {emailError : "enter a valid email address"}
-  }
-  if (data.password.length < 6 ){
-    return {passwordError : "password must be above 6 characters"}
-  } else if (!data.password.match(validPassword))
-    return {passwordError2 : "password must conatain numbers & letters"}
+  // if (!data.email.match(validEmail)){
+  //   return {emailError : "enter a valid email address"}
+  // }
+  // if (data.password.length < 6 ){
+  //   return {passwordError : "password must be above 6 characters"}
+  // } else if (!data.password.match(validPassword))
+  //   return {passwordError2 : "password must conatain numbers & letters"}
    
   
   return redirect('/dashboard')

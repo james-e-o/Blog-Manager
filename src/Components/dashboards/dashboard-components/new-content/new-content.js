@@ -42,6 +42,9 @@ const NewContent = () => {
      console.log(format.forEach(el =><strong>{el}</strong>))
     }    
   }
+  function Bold (){
+      content.document.execCommand('bold', true, null);
+  }
 
   return (
     <div className='mobile-new'>
@@ -56,7 +59,7 @@ const NewContent = () => {
               <div className='icon-wrap' >
                 <div className='' onClick={()=>setActiveMenu(!activeMenu)}><Menu_icon /></div>
                 <div className={!activeMenu?"menu-drop roll-up":"menu-drop roll-down"}>
-                  Menu_Drop hrllo
+                  Hi this is the menu bar
                 </div>
               </div>     
             </nav>
@@ -69,7 +72,7 @@ const NewContent = () => {
           <div className="editor">
             <div className="editor-controls">
               <div className="font-section">
-                <button id='bold' onClick={(e)=>{e.preventDefault()}}>B</button>
+                <button id='bold' onClick={(e)=>{e.preventDefault(), Bold}}>B</button>
                 <button id='italic' onClick={(e)=>{e.preventDefault()}}><i>I</i></button>
                 <button id='underline' onClick={(e)=>{e.preventDefault()}}>U</button>
                 <select name="font-family" id="f-family">

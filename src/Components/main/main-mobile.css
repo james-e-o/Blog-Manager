@@ -16,7 +16,7 @@ main{
 .mobile-main .h1-tag .art::before{
     content: "";
     position: absolute;
-    background-color:rgb(97, 82, 194);
+    background-color:darkturquoise;
     width: 100%;
     border-radius: 12px;
     height: 190px;
@@ -35,7 +35,7 @@ main{
 }
 .mobile-main .h1-tag .art{
     position: absolute;
-    background-color:rgb(97, 82, 194);
+    background-color:rgb(190, 190, 190);
     width: 120px;
     border-radius: 10px;
     height: 190px;
