@@ -2,11 +2,15 @@ import React, { createContext, useContext, useEffect, useRef, useState } from 'r
 import { Link } from 'react-router-dom'
 
 import "./mobile-dashboard.css"
+import "./desktop-dashboard.css"
 import { screenWidth } from '../app/App'
 import { Plus, Menu, Notify, RoundMenu, Arrow_B, Bookmark2, Menu_icon } from '../svg'
 import Logo from '../logo/logo'
-import logo from "../contents/images/category-pirates-logo.png"
+import CL_logo from "../contents/images/category-pirates-logo.png"
+import Gl_ai from "../contents/images/glai.png"
 import Content_img from "../contents/images/category-pirates.png"
+import User from "../contents/images/dummy.jpg"
+import Content_img2 from "../contents/images/glai-hackathon.jpeg"
 const popCheck = createContext('')
 
 const UserDashboard = () => {
@@ -47,7 +51,7 @@ const UserDashboard = () => {
             </div>
             <nav >
               <figure id='notify'><Notify/></figure> 
-              <figure id='profile-pic'></figure>    
+              <figure id='profile-pic'><img src={User} width="100%" height={"100%"} /></figure>    
             </nav>
           </header>
           <main ref={mainDashboard} className='m-dashboard-main'>
@@ -76,7 +80,7 @@ const UserDashboard = () => {
                   <div className='feed'>
                     <div className="feed-content">
                       <div className="content-id">
-                        <figure></figure>
+                        <figure><img src={CL_logo} width="100%" height={"100%"} /></figure>
                           <p className='content-author'> {"CATEGORY PIRATES"} </p>
                         </div>
                         <div className='content-title'>The Value Of Your Value.</div>
@@ -85,21 +89,21 @@ const UserDashboard = () => {
                            <div className="detail-options" onClick={feedPop}>...</div>
                         </div> 
                     </div>
-                    <div className="content-image"></div>
+                    <div className="content-image"><img src={Content_img} width="100%" height={"100%"} /></div>
                   </div>
                   <div className='feed'>
                     <div className="feed-content">
                       <div className="content-id">
-                        <figure></figure>
-                          <p className='content-author'> {"CATEGORY PIRATES"} </p>
+                        <figure><img src={Gl_ai} width="100%" height={"100%"} /></figure>
+                          <p className='content-author'> {"GETLINKED AI"} </p>
                         </div>
-                        <div className='content-title'>The Value Of Your Value.</div>
+                        <div className='content-title'>Where Dreams Meet Opportunities</div>
                         <div className="details">
                            <p>6 mins read</p>
                            <div className="detail-options" onClick={feedPop}>...</div>
                         </div> 
                     </div>
-                    <div className="content-image"></div>
+                    <div className="content-image"><img src={Content_img2} width="100%" height={"100%"} /></div>
                   </div>
           
               </div>         
@@ -137,23 +141,33 @@ const UserDashboard = () => {
         ):
         //DESKTOP 
         (
-        <header className='m-dashboard-header'>
-        <h1>Skript_<span>n</span></h1> 
-          <nav className='desktop'>
-        {/* partner with us */}
-          <ul>
-            <li>About us</li>
-            <li>Services</li>
-            <li>Sign in</li>
-          </ul>
-          <button className='started'>Get started</button>
-      </nav>  
-      </header>
-        )
+        <header className='desk-dashboard-header'>
+          <div className="desk-logo">
+            <Logo />
+            <h3>Skript_<span>n</span></h3> 
+            <div class="search">
+                <svg id="search" fill="none" height="16" viewBox="0 0 13 14" width="16" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m8.82264 10.3833c-.92307.7008-2.07429 1.1167-3.32264 1.1167-3.03757 0-5.5-2.46243-5.5-5.5s2.46243-5.5 5.5-5.5 5.5 2.46243 5.5 5.5c0 1.24835-.4159 2.39957-1.1167 3.32264l2.897 2.89706c.2929.2929.2929.7677 0 1.0606s-.7677.2929-1.0606 0zm.67736-4.3833c0 2.20914-1.79086 4-4 4s-4-1.79086-4-4 1.79086-4 4-4 4 1.79086 4 4z" fill="#B5B5B5" fill-rule="evenodd"/></svg>
+                <input type="search" name="search" id="" placeholder="Search" />
+            </div>
+          </div>
+          <nav className='desk-nav'>
+            <button className='started'>&#9998; Write</button>  
+            <figure id='profile-pic'><img src={User} width="100%" height={"100%"} /></figure>
+          </nav>  
+        </header>
+      )
   )
 }
 
 export default UserDashboard
+
+
+
+
+
+
+
+
 
 
 const MenuBar = () => {
@@ -165,6 +179,11 @@ const MenuBar = () => {
     }
   }
   useEffect(()=>{
+    document.onpointerdown = (e)=> {
+      if (toggleMenu && activeIndex === 0 && !e.target.closest("div.menu-wrap") ){
+          setToggleMenu(false)
+      }
+    }
     if (activeIndex !==0 && activeIndex !== null){
       document.getElementById("blurscreen").style.position="absolute"
     } else {

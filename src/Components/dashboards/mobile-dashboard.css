@@ -29,7 +29,6 @@
 }
 .m-dashboard-header .user .welcome h3{
    color: rgb(42, 179, 101);
-   /* color: rgb(255, 186, 58); */
    font-size: 15px;
 }
 .m-dashboard-header nav {
@@ -55,6 +54,7 @@
     border-radius: 50%;
     position: relative;
     top: 4px;
+    overflow: hidden;
 }
 .m-dashboard-header nav button{
     color: slateblue;
@@ -252,8 +252,6 @@ div.advert-wrapper::-webkit-scrollbar {
     align-items: center;
 }
 .m-dashboard-main .feed-content  .content-id figure{
-    /* position: absolute; */
-    background:url(../contents/images/category-pirates-logo.png);
     margin: 0px 4px;
     background-size:cover;
     background-repeat: no-repeat;
@@ -262,6 +260,7 @@ div.advert-wrapper::-webkit-scrollbar {
     border: 1px solid black;
     border-radius: 50%;
     display: inline-block;
+    overflow: hidden;
 }
 .m-dashboard-main .feed-content .content-id .content-author{
     font-family:  'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -277,11 +276,10 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .m-dashboard-main div.feed .content-image{
     width: 48%;
-    background:url(../contents/images/category-pirates.png);
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
     padding: 13px 10px 13px;
+}
+.m-dashboard-main div.feed .content-image img{
+   border-radius: 18px;
 }
 .m-dashboard-main .feed-content .content-title{
     font-weight: bold;
@@ -373,7 +371,7 @@ div.advert-wrapper::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition: transform 130ms ease-in-out -100ms;
+    transition: all 265ms ease-in-out -100ms;
     background:linear-gradient(to top left, slateblue 8%, skyblue 75%);
 }
 .m-dashboard-main .menu-bar div.menus-icon-active{
@@ -390,7 +388,7 @@ div.advert-wrapper::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition:transform 130ms ease-in-out;
+    transition:all 180ms ease-in-out;
     background:linear-gradient(to top left, slateblue 8%, skyblue 75%);
 }
 .m-dashboard-main div svg{

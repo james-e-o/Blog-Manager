@@ -1,25 +1,64 @@
 import {Form, Link, redirect, useActionData} from 'react-router-dom'
-import { useState} from 'react'
+import { useState, useContext} from 'react'
 import { Google, Noviews, Views } from './Components/svg';
-
+import { screenWidth } from './Components/app/App';
 
 
 export const Sign = () => {
+  const screen = useContext(screenWidth)
   return (
-    <>
-    <div className='sign-header'>
-        <h1>Skript_<span>n</span></h1>
-        <p>{'Get'}
-        <br/>{'Started'}</p>
-    </div>
-    <main className='sign-main'>
-      <div className='menu-main' style={{marginTop:'20px',gap:'8px'}}>
-        <Link to='signup' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px', padding:'7px'}}>Sign up</p></Link>
-        <Link to='login' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}>Login</p></Link>
-        <div style={{display:'flex',justifyContent:'space-between', marginTop:'15px', fontSize:'14px',color:'slategray'}}><hr style={{width:'38%',  color:'#d1cfe2',position:'relative',top:'9px'}}/> or <hr style={{width:'38%', color:'#d1cfe2', position:'relative',top:'9px'}}/></div>
-       <Link to='/google.com' style={{width:'70%'}}><div style={{display:'flex', fontSize:'14px',fontWeight:'light',  justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}><Google idth='48' eight='48'/>Sign  with Google</div></Link>
-      </div>
-    </main>
+  <>
+    {
+      //  MOBILE
+      screen<480?(
+        <>
+        <div className='sign-header'>
+            <h1>Skript_<span>n</span></h1>
+            <p>{'Get'}
+            <br/>{'Started'}</p>
+        </div>
+        <main className='sign-main'>
+          <div className='menu-main' style={{marginTop:'20px',gap:'8px'}}>
+            <Link to='signup' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px', padding:'7px'}}>Sign up</p></Link>
+            <Link to='login' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}>Login</p></Link>
+            <div style={{display:'flex',justifyContent:'space-between', marginTop:'15px', fontSize:'14px',color:'slategray'}}><hr style={{width:'38%',  color:'#d1cfe2',position:'relative',top:'9px'}}/> or <hr style={{width:'38%', color:'#d1cfe2', position:'relative',top:'9px'}}/></div>
+           <Link to='/google.com' style={{width:'70%'}}><div style={{display:'flex', fontSize:'14px',fontWeight:'light',  justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}><Google idth='48' eight='48'/>Sign  with Google</div></Link>
+          </div>
+        </main>
+        </>
+        )
+        // TABLET
+        :screen<720?(
+          <>
+          <div className='sign-header'>
+              <h1>Skript_<span>n</span></h1>
+              <p>{'Get'}
+              <br/>{'Started'}</p>
+          </div>
+          <main className='sign-main'>
+            <div className='menu-main' style={{marginTop:'20px',gap:'8px'}}>
+              <Link to='signup' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px', padding:'7px'}}>Sign up</p></Link>
+              <Link to='login' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}>Login</p></Link>
+              <div style={{display:'flex',justifyContent:'space-between', marginTop:'15px', fontSize:'14px',color:'slategray'}}><hr style={{width:'38%',  color:'#d1cfe2',position:'relative',top:'9px'}}/> or <hr style={{width:'38%', color:'#d1cfe2', position:'relative',top:'9px'}}/></div>
+             <Link to='/google.com' style={{width:'70%'}}><div style={{display:'flex', fontSize:'14px',fontWeight:'light',  justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}><Google idth='48' eight='48'/>Sign  with Google</div></Link>
+            </div>
+          </main>
+          </>
+        ):
+        //DESKTOP 
+        (
+        <div className='desktop-sign'>
+          <div className="sign-advert"></div> 
+          <main className='sign-main'>
+            <div className='menu-main' style={{marginTop:'20px',gap:'8px'}}>
+              <Link to='signup' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px', padding:'7px'}}>Sign up</p></Link>
+              <Link to='login' style={{width:'70%'}}> <p style={{display:'flex', fontSize:'14px',fontWeight:'light',justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}>Login</p></Link>
+              <div style={{display:'flex',justifyContent:'space-between', marginTop:'15px', fontSize:'14px',color:'slategray'}}><hr style={{width:'38%',  color:'#d1cfe2',position:'relative',top:'9px'}}/> or <hr style={{width:'38%', color:'#d1cfe2', position:'relative',top:'9px'}}/></div>
+              <Link to='/google.com' style={{width:'70%'}}><div style={{display:'flex', fontSize:'14px',fontWeight:'light',  justifyContent:'center', gap:'8px',marginTop:'15px',border:'1px solid grey',borderRadius:'30px',padding:'7px'}}><Google idth='48' eight='48'/>Sign  with Google</div></Link>
+            </div>
+          </main>
+        </div>  
+        )}
     </>
   )
 }
@@ -27,31 +66,87 @@ export const Sign = () => {
 //SIGN - UP
 export const Signup = () => {
   const data = useActionData()
-  
+  const screen = useContext(screenWidth)
   return (
-    <>
-    <div className='sign-header'>
-        <h1>Skript_<span>n</span></h1>
-        <p>{'Join us'}
-        <br/>{'today'}</p>
-    </div>
-    <main className='sign-main'>
-      <div className='signup'>
-        <h5 style={{padding:'7px 15px'}}>Sign up</h5>
-        <Form method='post' action='/sign/signup'>
-          <Indiv error ={data && data.usernameError} type={'text'} name={"username"}placehold={"Username"}/>
-          <Indiv error ={data && data.emailError} type={'text'} name={"email"}placehold={"Email"}/>
-          <Indiv icon={true} error ={data && (data.passwordError || data.passwordError2)} type={'password'} altType={'text'} name={"password"} placehold={"Password"}/>  
-          <button >Sign up</button>  
-        </Form>
-        <div id='sign-in-option'>
-          <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
-          <div id='google'><Google /> Sign up with Google</div>
-          <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/login'>have an account?  <span style={{fontSize:'11px', color:'slateblue'}}>Login</span></Link></p>  
-        </div>
+  <>
+    {
+      //  MOBILE
+      screen<480?(
+        <>
+          <div className='sign-header'>
+            <h1>Skript_<span>n</span></h1>
+            <p>{'Join us'}
+            <br/>{'today'}</p>
+          </div>
+          <main className='sign-main'>
+            <div className='signup'>
+              <h5 style={{padding:'7px 15px'}}>Sign up</h5>
+              <Form method='post' action='/sign/signup'>
+                <Indiv error ={data && data.usernameError} type={'text'} name={"username"}placehold={"Username"}/>
+                <Indiv error ={data && data.emailError} type={'text'} name={"email"}placehold={"Email"}/>
+                <Indiv icon={true} error ={data && (data.passwordError || data.passwordError2)} type={'password'} altType={'text'} name={"password"} placehold={"Password"}/>  
+                <button >Sign up</button>  
+              </Form>
+              <div id='sign-in-option'>
+                <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
+                <div id='google'><Google /> Sign up with Google</div>
+                <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/login'>have an account?  <span style={{fontSize:'11px', color:'slateblue'}}>Login</span></Link></p>  
+              </div>
 
-      </div>
-    </main>
+            </div>
+          </main>
+        </>
+        )
+        // TABLET
+        :screen<720?(
+          <>
+          <div className='sign-header'>
+            <h1>Skript_<span>n</span></h1>
+            <p>{'Join us'}
+            <br/>{'today'}</p>
+          </div>
+          <main className='sign-main'>
+            <div className='signup'>
+              <h5 style={{padding:'7px 15px'}}>Sign up</h5>
+              <Form method='post' action='/sign/signup'>
+                <Indiv error ={data && data.usernameError} type={'text'} name={"username"}placehold={"Username"}/>
+                <Indiv error ={data && data.emailError} type={'text'} name={"email"}placehold={"Email"}/>
+                <Indiv icon={true} error ={data && (data.passwordError || data.passwordError2)} type={'password'} altType={'text'} name={"password"} placehold={"Password"}/>  
+                <button >Sign up</button>  
+              </Form>
+              <div id='sign-in-option'>
+                <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
+                <div id='google'><Google /> Sign up with Google</div>
+                <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/login'>have an account?  <span style={{fontSize:'11px', color:'slateblue'}}>Login</span></Link></p>  
+              </div>
+
+            </div>
+          </main>
+        </>
+        ):
+        //DESKTOP 
+        (
+        <div className='desktop-sign'>
+          <div className="sign-advert"></div> 
+          <main className='sign-main'>
+            <div className='signup'>
+              <h5 style={{padding:'7px 15px'}}>Sign up</h5>
+              <Form method='post' action='/sign/signup'>
+                <Indiv error ={data && data.usernameError} type={'text'} name={"username"}placehold={"Username"}/>
+                <Indiv error ={data && data.emailError} type={'text'} name={"email"}placehold={"Email"}/>
+                <Indiv icon={true} error ={data && (data.passwordError || data.passwordError2)} type={'password'} altType={'text'} name={"password"} placehold={"Password"}/>  
+                <button >Sign up</button>  
+              </Form>
+              <div id='sign-in-option'>
+                <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
+                <div id='google'><Google /> Sign up with Google</div>
+                <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/login'>have an account?  <span style={{fontSize:'11px', color:'slateblue'}}>Login</span></Link></p>  
+              </div>
+
+            </div>
+          </main>
+        </div>  
+        )}
   </>
 
   )
@@ -60,31 +155,87 @@ export const Signup = () => {
 //SIGN- IN
 export const Signin = () => {
   const data = useActionData()
-  
+  const screen = useContext(screenWidth)
   return (
     <>
-    <div className='sign-header'>
-        <h1>Skript_<span>n</span></h1>
-        <p>{'Welcome'}
-        <br/>{'Back'}</p>
-    </div>
-    <main className='sign-main'>
-        <div className='signin'>
-          <h5 style={{padding:'8px 15px'}}>Login</h5>
-          <Form method='post' action='/sign/login'>
-            <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
-            <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
-            <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
-            <button type='submit' >Slide in</button>  
-          </Form>
-          <div id='sign-in-option'>
-            <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
+    {
+      //  MOBILE
+      screen<480?(
+        <>
+          <div className='sign-header'>
+              <h1>Skript_<span>n</span></h1>
+              <p>{'Welcome'}
+              <br/>{'Back'}</p>
+          </div>
+          <main className='sign-main'>
+              <div className='signin'>
+                <h5 style={{padding:'8px 15px'}}>Login</h5>
+                <Form method='post' action='/sign/login'>
+                  <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
+                  <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
+                  <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
+                  <button type='submit' >Slide in</button>  
+                </Form>
+                <div id='sign-in-option'>
+                  <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
 
-            <div id='google'><Google /> Continue with Google</div>
-            <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/signup'>not signed?  <span style={{fontSize:'11px', color:'slateblue'}}>  Create account</span></Link></p>  
-          </div>   
-      </div>
-    </main>
+                  <div id='google'><Google /> Continue with Google</div>
+                  <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/signup'>not signed?  <span style={{fontSize:'11px', color:'slateblue'}}>  Create account</span></Link></p>  
+                </div>   
+            </div>
+          </main>
+        </>
+        )
+        // TABLET
+        :screen<720?(
+          <>
+          <div className='sign-header'>
+              <h1>Skript_<span>n</span></h1>
+              <p>{'Welcome'}
+              <br/>{'Back'}</p>
+          </div>
+          <main className='sign-main'>
+              <div className='signin'>
+                <h5 style={{padding:'8px 15px'}}>Login</h5>
+                <Form method='post' action='/sign/login'>
+                  <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
+                  <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
+                  <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
+                  <button type='submit' >Slide in</button>  
+                </Form>
+                <div id='sign-in-option'>
+                  <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
+
+                  <div id='google'><Google /> Continue with Google</div>
+                  <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/signup'>not signed?  <span style={{fontSize:'11px', color:'slateblue'}}>  Create account</span></Link></p>  
+                </div>   
+            </div>
+          </main>
+        </>
+        ):
+        //DESKTOP 
+        (
+        <div className='desktop-sign'>
+          <div className="sign-advert"></div> 
+          <main className='sign-main'>
+              <div className='signin'>
+                <h5 style={{padding:'8px 15px'}}>Login</h5>
+                <Form method='post' action='/sign/login'>
+                  <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
+                  <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
+                  <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
+                  <button type='submit' >Slide in</button>  
+                </Form>
+                <div id='sign-in-option'>
+                  <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
+
+                  <div id='google'><Google /> Continue with Google</div>
+                  <p style={{width:'63%',marginTop:'7px'}}><Link style={{color:'slategray',fontSize:'10px'}} to='/sign/signup'>not signed?  <span style={{fontSize:'11px', color:'slateblue'}}>  Create account</span></Link></p>  
+                </div>   
+            </div>
+          </main>
+        </div>  
+        )}
   </>
   )
 }
