@@ -50,6 +50,9 @@ div.icon-wrap.active .menu-drop{
     padding: 4px;
     border: 1px solid gainsboro;
     width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .mobile-new div.editor-controls button{
     display: inline-flex;

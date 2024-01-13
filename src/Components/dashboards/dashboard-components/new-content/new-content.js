@@ -12,11 +12,10 @@ import Paragraph from "../../../contents/images/paragraph.png"
 import Image from "../../../contents/images/image-60.png"
 import Undo from "../../../contents/images/undo-48.png"
 import Redo from "../../../contents/images/redo-48.png"
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false) 
+  let selection;
   useEffect(()=>{
     const menuDrop = document.querySelector("div.menu-drop")
     document.addEventListener('click', (e)=>{  
@@ -27,26 +26,28 @@ const NewContent = () => {
       }
     })
   },[])
-  function Controls (e){
-    const bold = document.getElementById("bold")
-    const italic = document.getElementById("italic")
-    const underline = document.getElementById("underline")
-    const aLeft = document.getElementById("a-left")
+  // function Controls (e){
+  //   const bold = document.getElementById("bold")
+  //   const italic = document.getElementById("italic")
+  //   const underline = document.getElementById("underline")
+  //   const aLeft = document.getElementById("a-left")
 
-   const selectedData = e.target.value.substring(
-      e.target.selectionStart,
-      e.target.selectionEnd,
-    )
+  //  const selectedData = e.target.value.substring(
+  //     e.target.selectionStart,
+  //     e.target.selectionEnd,
+  //   )
 
-    bold.onclick = () =>{
-     let format= Array.from(selectedData)
+  //   bold.onclick = () =>{
+  //    let format= Array.from(selectedData)
      
-     console.log(format.forEach(el =><strong>{el}</strong>))
-    }    
-  }
-  function Bold (){
-      content.document.execCommand('bold', true, null);
-  }
+  //    console.log(format.forEach(el =><strong>{el}</strong>))
+  //   }    
+  // }
+  // function Bold (){
+  //    const textArea = document.getElementById("textarea-content")
+  //    selection = document.getSelection(textArea)
+  //    console.log(selection.anchorNode)
+  // }
 
   return (
     <div className='mobile-new'>
@@ -71,51 +72,7 @@ const NewContent = () => {
           <h3 className='heading'>New post</h3>
         </div>
         <div className="content-wrap">
-          <div className="editor">
-            <div className="editor-controls">
-              <div className="font-section">
-                <button id='bold' onClick={(e)=>{e.preventDefault(), Bold}}>B</button>
-                <button id='italic' onClick={(e)=>{e.preventDefault()}}><i>I</i></button>
-                <button id='underline' onClick={(e)=>{e.preventDefault()}}>U</button>
-                <select name="font-family" id="f-family">
-                  <option value="inter">Inter</option>
-                  <option value="cambria">Cambria</option>
-                  <option value="cambria">Helvetica</option>
-                  <option value="sans">Sans</option>
-                </select>
-                <select name="font-sizes" id="f-size">
-                  <option value="inter">12</option>
-                  <option value="cambria">16</option>
-                  <option value="sans">20</option>
-                  <option value="sans">24</option>
-                </select>
-              </div>
-              <div className="align-section">
-                <button id='a-left' onClick={(e)=>{e.preventDefault()}}><img src={alignLeft} height={"15px"} width={"20px"}/></button>
-                <button id='a-centre' onClick={(e)=>{e.preventDefault()}}><img src={alignCentre} height={"15px"} width={"20px"}/></button>
-                <button id='a-right' onClick={(e)=>{e.preventDefault()}}><img src={alignRight} height={"15px"} width={"20px"}/></button>
-                <button id='a-justify' onClick={(e)=>{e.preventDefault()}}><img src={alignJustify} height={"15px"} width={"20px"}/></button>
-                <button id='indent' onClick={(e)=>{e.preventDefault()}}><img src={Indent} height={"15px"} width={"20px"}/></button>
-                <button id='outdent' onClick={(e)=>{e.preventDefault()}}><img src={Outdent} height={"15px"} width={"20px"}/></button>
-                <button id='paragraph' onClick={(e)=>{e.preventDefault()}}><img src={Paragraph} height={"15px"} width={"20px"}/></button>
-              </div>
-              <div className="insert-section">
-                <button><img src={Image} height={"15px"} width={"20px"}/></button>
-                <button><img src={Undo} height={"15px"} width={"20px"}/></button>
-                <button><img src={Redo} height={"15px"} width={"20px"}/></button>
-              </div>
-            </div>
-            <div className="editor-inputs" id='wysiwyg-wrap'>
-              <textarea onKeyUp={(e)=>{
-                const text_Area = document.getElementById("wysiwyg-wrap")
-                let scHeight = e.target.scrollHeight
-                text_Area.style.height = `auto`
-                text_Area.style.height = `${scHeight}px`
-              }} 
-              onSelect={Controls}
-              id="textarea-content" placeholder='type something here...'></textarea>
-            </div>
-          </div>  
+          <Editor />
         </div>
         <div className="hashtag-niche-wrap">
           <div className="add-categories">
@@ -131,7 +88,6 @@ const NewContent = () => {
             <button id='hashtag'><Plus/></button>
           </div>
         </div>
-        <ReactQuill theme="snow" />
       </form>
     </div>
   )
@@ -140,9 +96,69 @@ const NewContent = () => {
 export default NewContent
 
 
-// const Menu_Drop = (activeState) => {
-//   console.log(activeState)
-//   return (
-//     "hello"
-//   )
-// }
+
+const Editor = () => {
+  // function Selection (){
+  //   const textArea = getElementById("textarea-content")
+  //   textArea.onselect = (e) => {
+  //     console.log(textArea.selection)
+  //   }
+  // }
+  useEffect(()=>{
+    const textArea = document.getElementById("textarea-content")
+    textArea.onselect = (e) => {
+      const range = new Range()
+      console.log(bold)
+
+      bold.onclick = () => {
+        
+      }
+      italic.onclick = () => {
+
+      }
+    }
+  })
+  return (
+            <div className="editor">
+            <div className="editor-controls">
+              
+                <button id='bold' onClick={(e)=>{e.preventDefault(), Bold}}>B</button>
+                <button id='italic' onClick={(e)=>{e.preventDefault()}}><i>I</i></button>
+                <button id='underline' onClick={(e)=>{e.preventDefault()}}>U</button>
+                <button id='a-left' onClick={(e)=>{e.preventDefault()}}><img src={alignLeft} height={"15px"} width={"20px"}/></button>
+                <button id='a-centre' onClick={(e)=>{e.preventDefault()}}><img src={alignCentre} height={"15px"} width={"20px"}/></button>
+                <button id='a-right' onClick={(e)=>{e.preventDefault()}}><img src={alignRight} height={"15px"} width={"20px"}/></button>
+                <button id='a-justify' onClick={(e)=>{e.preventDefault()}}><img src={alignJustify} height={"15px"} width={"20px"}/></button>
+                <button id='indent' onClick={(e)=>{e.preventDefault()}}><img src={Indent} height={"15px"} width={"20px"}/></button>
+                <button id='outdent' onClick={(e)=>{e.preventDefault()}}><img src={Outdent} height={"15px"} width={"20px"}/></button>
+                <button id='paragraph' onClick={(e)=>{e.preventDefault()}}><img src={Paragraph} height={"15px"} width={"20px"}/></button>
+                <button><img src={Image} height={"15px"} width={"20px"}/></button>
+                <button><img src={Undo} height={"15px"} width={"20px"}/></button>
+                <button><img src={Redo} height={"15px"} width={"20px"}/></button>
+                <select name="font-family" id="f-family">
+                  <option value="inter">Inter</option>
+                  <option value="cambria">Cambria</option>
+                  <option value="cambria">Helvetica</option>
+                  <option value="sans">Sans</option>
+                </select>
+                <select name="font-sizes" id="f-size">
+                  <option value="inter">12</option>
+                  <option value="cambria">16</option>
+                  <option value="sans">20</option>
+                  <option value="sans">24</option>
+                </select>
+              
+            </div>
+            <div className="editor-inputs" id='wysiwyg-wrap'>
+              <textarea onKeyUp={(e)=>{
+                const text_Area = document.getElementById("wysiwyg-wrap")
+                let scHeight = e.target.scrollHeight
+                text_Area.style.height = `auto`
+                text_Area.style.height = `${scHeight}px`
+              }} 
+              // onSelect={Controls}
+              id="textarea-content" placeholder='type something here...'></textarea>
+            </div>
+          </div>  
+  )
+}
