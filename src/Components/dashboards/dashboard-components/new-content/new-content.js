@@ -96,28 +96,16 @@ const NewContent = () => {
 export default NewContent
 
 
+import { EditorProvider, FloatingMenu, BubbleMenu } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 
+const extensions = [
+  StarterKit,
+]
+
+const content = '<p>Hello World!</p>'
 const Editor = () => {
-  // function Selection (){
-  //   const textArea = getElementById("textarea-content")
-  //   textArea.onselect = (e) => {
-  //     console.log(textArea.selection)
-  //   }
-  // }
-  useEffect(()=>{
-    const textArea = document.getElementById("textarea-content")
-    textArea.onselect = (e) => {
-      const range = new Range()
-      console.log(bold)
 
-      bold.onclick = () => {
-        
-      }
-      italic.onclick = () => {
-
-      }
-    }
-  })
   return (
             <div className="editor">
             <div className="editor-controls">
@@ -159,6 +147,11 @@ const Editor = () => {
               // onSelect={Controls}
               id="textarea-content" placeholder='type something here...'></textarea>
             </div>
+
+            <EditorProvider extensions={extensions} content={content}>
+              <FloatingMenu>This is the floating menu</FloatingMenu>
+              <BubbleMenu>This is the bubble menu</BubbleMenu>
+            </EditorProvider>
           </div>  
   )
 }
