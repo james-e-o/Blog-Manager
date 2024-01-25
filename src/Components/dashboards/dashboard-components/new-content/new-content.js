@@ -96,62 +96,196 @@ const NewContent = () => {
 export default NewContent
 
 
-import { EditorProvider, FloatingMenu, BubbleMenu } from '@tiptap/react'
+import { EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+import ListItem from '@tiptap/extension-list-item'
 
 const extensions = [
   StarterKit,
 ]
 
 const content = '<p>Hello World!</p>'
+const EditorMenu = () => {
+  const { editor } = useCurrentEditor()
+
+  if (!editor) {
+    return null
+  }
+
+  return (
+    <div className='editor-controls'>
+      <button
+        onClick={() => editor.chain().focus().toggleBold().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .toggleBold()
+            .run()
+        }
+        className={editor.isActive('bold') ? 'is-active' : ''}
+      >
+        B
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .toggleItalic()
+            .run()
+        }
+        className={editor.isActive('italic') ? 'is-active' : ''}
+      >
+        <i>I</i>
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleStrike().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .toggleStrike()
+            .run()
+        }
+        className={editor.isActive('strike') ? 'is-active' : ''}
+      >
+        <strike>S</strike>
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleCode().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .toggleCode()
+            .run()
+        }
+        className={editor.isActive('code') ? 'is-active' : ''}
+      >
+        code
+      </button>
+      <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
+        clear marks
+      </button>
+      <button onClick={() => editor.chain().focus().clearNodes().run()}>
+        clear nodes
+      </button>
+      <button
+        onClick={() => editor.chain().focus().setParagraph().run()}
+        className={editor.isActive('paragraph') ? 'is-active' : ''}
+      >
+        paragraph
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+        className={editor.isActive('heading', { level: 1 }) ? 'is-active' : ''}
+      >
+        h1
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+        className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
+      >
+        h2
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+        className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
+      >
+        h3
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
+        className={editor.isActive('heading', { level: 4 }) ? 'is-active' : ''}
+      >
+        h4
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
+        className={editor.isActive('heading', { level: 5 }) ? 'is-active' : ''}
+      >
+        h5
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
+        className={editor.isActive('heading', { level: 6 }) ? 'is-active' : ''}
+      >
+        h6
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBulletList().run()}
+        className={editor.isActive('bulletList') ? 'is-active' : ''}
+      >
+        bullet list
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleOrderedList().run()}
+        className={editor.isActive('orderedList') ? 'is-active' : ''}
+      >
+        ordered list
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+        className={editor.isActive('codeBlock') ? 'is-active' : ''}
+      >
+        code block
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBlockquote().run()}
+        className={editor.isActive('blockquote') ? 'is-active' : ''}
+      >
+        blockquote
+      </button>
+      <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
+        horizontal rule
+      </button>
+      <button onClick={() => editor.chain().focus().setHardBreak().run()}>
+        hard break
+      </button>
+      <button
+        onClick={() => editor.chain().focus().undo().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .undo()
+            .run()
+        }
+      >
+        undo
+      </button>
+      <button
+        onClick={() => editor.chain().focus().redo().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .redo()
+            .run()
+        }
+      >
+        redo
+      </button>
+      <button
+        onClick={() => editor.chain().focus().setColor('#958DF1').run()}
+        className={editor.isActive('textStyle', { color: '#958DF1' }) ? 'is-active' : ''}
+      >
+        purple
+      </button>
+    </div>
+  )
+}
+
 const Editor = () => {
 
   return (
-            <div className="editor">
-            <div className="editor-controls">
-              
-                <button id='bold' onClick={(e)=>{e.preventDefault(), Bold}}>B</button>
-                <button id='italic' onClick={(e)=>{e.preventDefault()}}><i>I</i></button>
-                <button id='underline' onClick={(e)=>{e.preventDefault()}}>U</button>
-                <button id='a-left' onClick={(e)=>{e.preventDefault()}}><img src={alignLeft} height={"15px"} width={"20px"}/></button>
-                <button id='a-centre' onClick={(e)=>{e.preventDefault()}}><img src={alignCentre} height={"15px"} width={"20px"}/></button>
-                <button id='a-right' onClick={(e)=>{e.preventDefault()}}><img src={alignRight} height={"15px"} width={"20px"}/></button>
-                <button id='a-justify' onClick={(e)=>{e.preventDefault()}}><img src={alignJustify} height={"15px"} width={"20px"}/></button>
-                <button id='indent' onClick={(e)=>{e.preventDefault()}}><img src={Indent} height={"15px"} width={"20px"}/></button>
-                <button id='outdent' onClick={(e)=>{e.preventDefault()}}><img src={Outdent} height={"15px"} width={"20px"}/></button>
-                <button id='paragraph' onClick={(e)=>{e.preventDefault()}}><img src={Paragraph} height={"15px"} width={"20px"}/></button>
-                <button><img src={Image} height={"15px"} width={"20px"}/></button>
-                <button><img src={Undo} height={"15px"} width={"20px"}/></button>
-                <button><img src={Redo} height={"15px"} width={"20px"}/></button>
-                <select name="font-family" id="f-family">
-                  <option value="inter">Inter</option>
-                  <option value="cambria">Cambria</option>
-                  <option value="cambria">Helvetica</option>
-                  <option value="sans">Sans</option>
-                </select>
-                <select name="font-sizes" id="f-size">
-                  <option value="inter">12</option>
-                  <option value="cambria">16</option>
-                  <option value="sans">20</option>
-                  <option value="sans">24</option>
-                </select>
-              
-            </div>
-            <div className="editor-inputs" id='wysiwyg-wrap'>
-              <textarea onKeyUp={(e)=>{
-                const text_Area = document.getElementById("wysiwyg-wrap")
-                let scHeight = e.target.scrollHeight
-                text_Area.style.height = `auto`
-                text_Area.style.height = `${scHeight}px`
-              }} 
-              // onSelect={Controls}
-              id="textarea-content" placeholder='type something here...'></textarea>
-            </div>
-
-            <EditorProvider extensions={extensions} content={content}>
-              <FloatingMenu>This is the floating menu</FloatingMenu>
-              <BubbleMenu>This is the bubble menu</BubbleMenu>
-            </EditorProvider>
-          </div>  
+      <div className="editor">
+        <EditorProvider slotBefore={<EditorMenu />} extensions={extensions} content={content}>
+          <FloatingMenu>This is the floating menu</FloatingMenu>
+          <BubbleMenu>This is the bubble menu</BubbleMenu>
+        </EditorProvider>
+      </div>  
   )
 }

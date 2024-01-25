@@ -119,7 +119,17 @@ textarea#textarea-content::-webkit-scrollbar {
 
 
 
-
+.mobile-new .tiptap{
+    background-color: rgb(188, 234, 255);
+    margin-bottom: 5px;
+    border-radius: 8px;
+    padding: 4px;
+    border: 1px solid rgb(245, 255, 188);
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 
 
