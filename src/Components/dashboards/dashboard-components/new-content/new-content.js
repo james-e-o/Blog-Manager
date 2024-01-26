@@ -140,6 +140,19 @@ const EditorMenu = () => {
       >
         <i>I</i>
       </button>
+      {/* <button
+        onClick={() => editor.chain().focus().toggleUnderline().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .toggleUnderline()
+            .run()
+        }
+        className={editor.isActive('underline') ? 'is-active' : ''}
+      >
+        <i>U</i>
+      </button> */}
       <button
         onClick={() => editor.chain().focus().toggleStrike().run()}
         disabled={
@@ -283,8 +296,8 @@ const Editor = () => {
   return (
       <div className="editor">
         <EditorProvider slotBefore={<EditorMenu />} extensions={extensions} content={content}>
-          <FloatingMenu>This is the floating menu</FloatingMenu>
-          <BubbleMenu>This is the bubble menu</BubbleMenu>
+          {/* <FloatingMenu>This is the floating menu</FloatingMenu>
+          <BubbleMenu>This is the bubble menu</BubbleMenu> */}
         </EditorProvider>
       </div>  
   )

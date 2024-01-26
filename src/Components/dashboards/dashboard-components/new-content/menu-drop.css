@@ -44,28 +44,29 @@ div.icon-wrap.active .menu-drop{
     padding: 12px ;
 }
 .mobile-new div.editor-controls{
-    background-color: rgb(251, 251, 251);
+    background-color: rgb(255, 255, 255);
     margin-bottom: 5px;
     border-radius: 8px;
     padding: 4px;
     border: 1px solid gainsboro;
-    width: inherit;
+    width: 86vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .mobile-new div.editor-controls button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 6px 4px;
-    width: 35px;
+    width: fit-content;
     border-radius: 5px;
-    background-color: white;
-    color: gray;
+    background-color: slateblue;
+    color: rgb(255, 255, 255);
     font-weight: bolder;
     font-size: 13px;
-    padding: 3px;
+    padding: 3px 12px;
+    box-sizing: border-box;
     border: 1px solid rgb(207, 207, 207);
 }
 .mobile-new div.editor-controls select {
@@ -129,6 +130,10 @@ textarea#textarea-content::-webkit-scrollbar {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 86vw;
+    height: auto;
+    resize: none;
+    font-size: 14px;
 }
 
 
