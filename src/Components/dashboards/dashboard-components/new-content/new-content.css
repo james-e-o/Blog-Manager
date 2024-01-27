@@ -103,9 +103,8 @@ div.mobile-new {
 
 
 .mobile-new form.new-main {
-    width: 95%;
-    background-color: white;
-    border-radius: 12px;
+    width: 100%;
+     background-color: #F1F1F1;
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -128,7 +127,6 @@ div.mobile-new {
 }
 .mobile-new div.content-wrap{
     font-family: Inter;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -157,25 +155,27 @@ div.add-hashtags, div.add-categories {
     width: fit-content;
 }
 .mobile-new p.category {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: 5px 11px;
-    background-color: salmon;
+    background-color: slateblue;
     color: white;
-    border-radius: 16px;
+    border-radius: 7px;
     margin: 3px 5px;
     font-family: Inter;
     font-size: 13px;
     font-weight: 600;
-    height: fit-content;
-    width: fit-content;
+    /* height: fit-content;
+    width: fit-content; */
 }
 .mobile-new button#hashtag {
     box-sizing: content-box;
     font-size: 16px;
-    color: salmon;
+    color: slateblue;
     cursor: none;
     outline: none;
-    border-radius: 50%;
+    border-radius: 7%;
     padding: 4px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

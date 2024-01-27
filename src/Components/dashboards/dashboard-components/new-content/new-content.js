@@ -55,7 +55,6 @@ const NewContent = () => {
            
             <div className="user">
               <div className='art'></div>
-              <figure></figure>
             </div>
             <nav >
               <button id='post'>Post</button>
@@ -68,17 +67,17 @@ const NewContent = () => {
             </nav>
       </div>
       <form className="new-main">
-        <div className="heading-wrap">
+        {/* <div className="heading-wrap">
           <h3 className='heading'>New post</h3>
-        </div>
+        </div> */}
         <div className="content-wrap">
           <Editor />
         </div>
         <div className="hashtag-niche-wrap">
           <div className="add-categories">
-            <p className="category">newpost</p>
-            <p className="category">webdev</p>
-            <p className="category">newpost</p>
+            <p className="category"><span>newpost</span></p>
+            <p className="category"><span>webdev</span></p>
+            <p className="category"><span>newpost</span></p>
             <button id='hashtag'><Plus/></button>
           </div>
           <div className="add-hashtags">
@@ -104,7 +103,7 @@ const extensions = [
   StarterKit,
 ]
 
-const content = '<p>Hello World!</p>'
+const content = '<'
 const EditorMenu = () => {
   const { editor } = useCurrentEditor()
 
@@ -115,7 +114,7 @@ const EditorMenu = () => {
   return (
     <div className='editor-controls'>
       <button
-        onClick={() => editor.chain().focus().toggleBold().run()}
+        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
         disabled={
           !editor.can()
             .chain()
@@ -128,7 +127,7 @@ const EditorMenu = () => {
         B
       </button>
       <button
-        onClick={() => editor.chain().focus().toggleItalic().run()}
+        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
         disabled={
           !editor.can()
             .chain()
@@ -154,7 +153,7 @@ const EditorMenu = () => {
         <i>U</i>
       </button> */}
       <button
-        onClick={() => editor.chain().focus().toggleStrike().run()}
+        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleStrike().run()}}
         disabled={
           !editor.can()
             .chain()
@@ -167,7 +166,7 @@ const EditorMenu = () => {
         <strike>S</strike>
       </button>
       <button
-        onClick={() => editor.chain().focus().toggleCode().run()}
+        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleCode().run()}}
         disabled={
           !editor.can()
             .chain()
@@ -179,7 +178,7 @@ const EditorMenu = () => {
       >
         code
       </button>
-      <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
+      <button onClick={(e) => {e.preventDefault(), editor.chain().focus().unsetAllMarks().run()}}>
         clear marks
       </button>
       <button onClick={() => editor.chain().focus().clearNodes().run()}>
@@ -189,7 +188,7 @@ const EditorMenu = () => {
         onClick={() => editor.chain().focus().setParagraph().run()}
         className={editor.isActive('paragraph') ? 'is-active' : ''}
       >
-        paragraph
+        <img src={Paragraph} height={15} width={15} alt="" />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
@@ -237,7 +236,7 @@ const EditorMenu = () => {
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         className={editor.isActive('orderedList') ? 'is-active' : ''}
       >
-        ordered list
+        <img src={Paragraph} height={15} width={15} alt="" />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
@@ -267,7 +266,7 @@ const EditorMenu = () => {
             .run()
         }
       >
-        undo
+        <img src={Undo} height={15} width={15} alt="" />
       </button>
       <button
         onClick={() => editor.chain().focus().redo().run()}
@@ -279,7 +278,7 @@ const EditorMenu = () => {
             .run()
         }
       >
-        redo
+        <img src={Redo} height={15} width={15} alt="" />
       </button>
       <button
         onClick={() => editor.chain().focus().setColor('#958DF1').run()}
@@ -295,7 +294,7 @@ const Editor = () => {
 
   return (
       <div className="editor">
-        <EditorProvider slotBefore={<EditorMenu />} extensions={extensions} content={content}>
+        <EditorProvider slotBefore={<EditorMenu />} extensions={extensions} >
           {/* <FloatingMenu>This is the floating menu</FloatingMenu>
           <BubbleMenu>This is the bubble menu</BubbleMenu> */}
         </EditorProvider>
