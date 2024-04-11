@@ -38,14 +38,15 @@ div.mobile-new {
     width: fit-content;
 }
 .mobile-new button#post {
-    padding: 8px 21px;
+    padding: 11px 21px;
     width: fit-content;
     border: none;
-    background-color: slategray;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: slategray;
     font-size: 13px;
     font-weight: 600;
     border-radius: 20px;
+    box-shadow: 0px 0px 3px slateblue;
     /* word-spacing:0.5; */
 }
 .mobile-new nav div.icon-wrap{
@@ -98,7 +99,12 @@ div.mobile-new {
 
 
 
-
+h2 {
+    background-color: transparent;
+    width: fit-content;
+    padding: 0px;
+    margin: 0px;
+}
 
 
 

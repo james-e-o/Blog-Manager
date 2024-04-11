@@ -44,74 +44,72 @@ div.icon-wrap.active .menu-drop{
     box-sizing: border-box;
 }
 .mobile-new div.editor-controls{
-    background-color: #F1F1F1;
-    /* background-color: #4d9c7e; */
-    border-bottom: 1px solid rgb(194, 194, 194);
-    margin-bottom: 5px;
-    padding: 4px;
-    width: 100%;
+    margin: 5px auto;
+    padding: 0px 4px ;
+    width: 85%;
     display: flex;
-    flex-wrap: wrap;
-    /* justify-content: flex-start; */
+    overflow-x: hidden;
+    background-color: white;
+    box-shadow: 0px 0px 2px darkturquoise;
+    border-radius: 10px;
+    position: relative;
 }
-.mobile-new div.editor-controls button{
+.mobile-new div.editor-controls p#leftarr{
+    position: absolute;    
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 35px;
+    opacity: 0;
+    z-index: -1;
+    background: linear-gradient(to right, darkturquoise, transparent);
+    transition: opacity 170ms ease-in-out
+}
+.mobile-new div.editor-controls p#rightarr{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 35px;
+    opacity: 1;
+    transition: opacity 170ms ease-in-out;
+    z-index: 1;
+    background: linear-gradient(to right, transparent, darkturquoise);
+    
+}
+.mobile-new div.controls-scroll{
+    margin: 0px auto;
+    padding: 4px ;
+    width: max-content;
+    display: flex;
+    overflow-x: scroll;
+}
+.mobile-new div.controls-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-new div.controls-scroll button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 6px 4px;
+    margin: 1px 4px;
     width: fit-content;
     border-radius: 5px;
     background-color: #F1F1F1;
     color: rgb(45, 55, 59);
     font-weight: bolder;
     font-size: 13px;
-    padding: 3px 6px;
+    padding: 0px 12px;
     box-sizing: border-box;
+    border: 1px solid rgb(197, 197, 197);
     /* border: 1px solid slateblue; */
 }
-.mobile-new div.editor-controls select {
-    margin: 6px 3px;
-    width: max-content;
-    border-radius: 5px;
-    background-color: white;
-    color: gray;
-    font-weight: bolder;
-    font-size: 13px;
-    padding: 3px 5px;
-    outline: none;
-    border: 1px solid rgb(207, 207, 207);
-}
+
 .mobile-new div.editor-controls button:focus{
     background-color: gainsboro;
 }
-.mobile-new div.editor-inputs{
-    background-color: rgb(255, 255, 255);
-    margin-bottom: 5px;
-    border-radius: 8px;
-    padding: 10px 5px 5px 5px;
-    border: 1px solid rgb(207, 207, 207);
-    width: inherit;
-    box-sizing: content-box;
-    /* box-sizing: border-box; */
-    display: flex;
-    justify-content: center;
-    min-height: 40px;
-    max-height: 400px;
-    overflow: scroll;
-}
-.mobile-new div.editor-inputs textarea#textarea-content{
-    background-color: white;
-    /* padding: 15px 5px 8px; */
-    border: none;
-    outline: none;
-    height: auto;
-    resize: none;
-    width: 100%;
-    font-size: 14px;
-}
-textarea#textarea-content::-webkit-scrollbar {
-    width: 0px;
-}
+
+
 .mobile-new div.editor-inputs::-webkit-scrollbar {
     display: none;
 }
