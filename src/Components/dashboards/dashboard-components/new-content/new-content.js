@@ -122,29 +122,29 @@ const EditorMenu = () => {
       <p id="leftarr" onClick={()=>{
           controlsScroll.scrollTo({
             top: 0,
-            left: (controlsScroll.scrollLeft - 45%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
+            left: (controlsScroll.scrollLeft - 45%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft - 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
             behavior: "smooth",
           });
       }} ></p>
       <p id="rightarr" onClick={()=>{
           controlsScroll.scrollTo({
             top: 0,
-            left: (controlsScroll.scrollLeft + 45%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
+            left: (controlsScroll.scrollLeft + 45%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft + 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
             behavior: "smooth",
           });
       }}></p>
       <div id="controls-scroll" className="controls-scroll" onScroll={(e)=>{
-          if (e.target.scrollLeft > 27){
+          if (e.target.scrollLeft > 34){
             menuLeftArr.style.zIndex = "1"
             menuLeftArr.style.opacity="1"
-          } else {
+          } else if(e.target.scrollLeft < 14){
             menuLeftArr.style.zIndex = "-1"
             menuLeftArr.style.opacity="0"
           } 
-          if (e.target.scrollLeft >= (e.target.scrollWidth - (e.target.offsetWidth + 20))){
+          if (e.target.scrollLeft >= (e.target.scrollWidth - (e.target.offsetWidth + 10))){
             menuRightArr.style.zIndex = "-1"
             menuRightArr.style.opacity="0"
-          } else {
+          } else if(e.target.scrollLeft <= (e.target.scrollWidth - (e.target.offsetWidth + 20))) {
             menuRightArr.style.zIndex = "1"
             menuRightArr.style.opacity="1"
           }
@@ -185,7 +185,11 @@ const EditorMenu = () => {
       >
        <img src={Under} height={15} width={15}/>
       </button>
-      <button
+      <button onClick={() => editor.chain().focus().toggleStrike().run()} className={editor.isActive('strike') ? 'is-active' : ''}>
+        <img src={Strike} height={15} width={15}/>
+      </button>
+      
+      {/* <button
         onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleStrike().run()}}
         disabled={
           !editor.can()
@@ -197,7 +201,7 @@ const EditorMenu = () => {
         className={editor.isActive('strike') ? 'is-active' : ''}
       >
         <img src={Strike} height={15} width={15}/>
-      </button>
+      </button> */}
       <button
         onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleCode().run()}}
         disabled={
@@ -288,12 +292,6 @@ const EditorMenu = () => {
         className={editor.isActive('orderedList') ? 'is-active' : ''}
       >
         <img src={Numbered} height={19} width={19} alt="" />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        className={editor.isActive('codeBlock') ? 'is-active' : ''}
-      >
-        code block
       </button>
       <button
         onClick={() => editor.chain().focus().toggleBlockquote().run()}

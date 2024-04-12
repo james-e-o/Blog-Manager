@@ -45,7 +45,7 @@ div.icon-wrap.active .menu-drop{
 }
 .mobile-new div.editor-controls{
     margin: 5px auto;
-    padding: 0px 4px ;
+    padding: 0px 8px ;
     width: 85%;
     display: flex;
     overflow-x: hidden;
@@ -99,7 +99,7 @@ div.icon-wrap.active .menu-drop{
     color: rgb(45, 55, 59);
     font-weight: bolder;
     font-size: 13px;
-    padding: 0px 12px;
+    padding: 0px 10px;
     box-sizing: border-box;
     border: 1px solid rgb(197, 197, 197);
     /* border: 1px solid slateblue; */
@@ -118,6 +118,11 @@ div.icon-wrap.active .menu-drop{
 
 
 
+
+
+
+/* PROSE MIRROR EDITOR*/
+
 .mobile-new .tiptap{
     background-color: rgb(255, 255, 255);
     background-color: #F1F1F1;
@@ -135,7 +140,12 @@ div.icon-wrap.active .menu-drop{
     box-sizing: border-box;
 }
 
-
+u {
+ text-decoration:underline ;
+}
+s, del, strike {
+ text-decoration:line-through ;
+}
 
 
 
