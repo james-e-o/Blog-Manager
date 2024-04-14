@@ -14,6 +14,15 @@ import Bold from "../../../contents/images/icons/bold.png"
 import Italics from "../../../contents/images/icons/italic.png"
 import Under from "../../../contents/images/icons/underline.png"
 import Line from "../../../contents/images/icons/line.png"
+import BlockQ from "../../../contents/images/icons/quote.png"
+import CodeBlock from "../../../contents/images/icons/codeblock.png"
+
+
+import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
+import Underline from '@tiptap/extension-underline'
+import ListItem from '@tiptap/extension-list-item'
+import Gapcursor from '@tiptap/extension-gapcursor'
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false) 
@@ -28,28 +37,6 @@ const NewContent = () => {
       }
     })
   },[])
-  // function Controls (e){
-  //   const bold = document.getElementById("bold")
-  //   const italic = document.getElementById("italic")
-  //   const underline = document.getElementById("underline")
-  //   const aLeft = document.getElementById("a-left")
-
-  //  const selectedData = e.target.value.substring(
-  //     e.target.selectionStart,
-  //     e.target.selectionEnd,
-  //   )
-
-  //   bold.onclick = () =>{
-  //    let format= Array.from(selectedData)
-     
-  //    console.log(format.forEach(el =><strong>{el}</strong>))
-  //   }    
-  // }
-  // function Bold (){
-  //    const textArea = document.getElementById("textarea-content")
-  //    selection = document.getSelection(textArea)
-  //    console.log(selection.anchorNode)
-  // }
 
   return (
     <div className='mobile-new'>
@@ -69,27 +56,26 @@ const NewContent = () => {
             </nav>
       </div>
       <form className="new-main">
-        {/* <div className="heading-wrap">
-          <h3 className='heading'>New post</h3>
-        </div> */}
-        <div className="content-wrap">
+        <div className="editor-wrap">
           <Editor />
         </div>
-        <div className="hashtag-niche-wrap">
-          <div className="add-categories">
-            <p className="category"><span>newpost</span></p>
-            <p className="category"><span>webdev</span></p>
-            <p className="category"><span>newpost</span></p>
-            <button id='hashtag'><Plus/></button>
-          </div>
-          <div className="add-hashtags">
-            <p className="hashtag">#newpost</p>
-            <p className="hashtag">#webdev</p>
-            <p className="hashtag">#newpost</p>
-            <button id='hashtag'><Plus/></button>
-          </div>
-        </div>
       </form>
+      <div className="form-footer">
+            <div className="hashtag-niche-wrap">
+              <div className="add-categories">
+                <p className="category"><span>newpost</span></p>
+                <p className="category"><span>webdev</span></p>
+                <p className="category"><span>newpost</span></p>
+                <button id='hashtag'><Plus/></button>
+              </div>
+              <div className="add-hashtags">
+                <p className="hashtag">#newpost</p>
+                <p className="hashtag">#webdev</p>
+                <p className="hashtag">#newpost</p>
+                <button id='hashtag'><Plus/></button>
+              </div>
+            </div>
+        </div>
     </div>
   )
 }
@@ -97,18 +83,17 @@ const NewContent = () => {
 export default NewContent
 
 
-import { EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
-import Underline from '@tiptap/extension-underline'
-import ListItem from '@tiptap/extension-list-item'
 
 const extensions = [
   StarterKit, Underline
 ]
-
-const content = '<'
-const EditorMenu = () => {
-  const { editor } = useCurrentEditor()
+const contentWrap ={
+  fontSize : "xx-small",
+  Height : "100%"
+}
+// const content = "<div style={{ fontSize : 'xx-small',Height : '100%'}}>Hello world of chu</div>"
+const TextEdit = () => {
+  const {editor} = useCurrentEditor()
   const controlsScroll = document.getElementById("controls-scroll")
   const menuLeftArr = document.getElementById("leftarr")
   const menuRightArr = document.getElementById("rightarr")
@@ -122,14 +107,14 @@ const EditorMenu = () => {
       <p id="leftarr" onClick={()=>{
           controlsScroll.scrollTo({
             top: 0,
-            left: (controlsScroll.scrollLeft - 45%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft - 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
+            left: (controlsScroll.scrollLeft - 180%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft - 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
             behavior: "smooth",
           });
       }} ></p>
       <p id="rightarr" onClick={()=>{
           controlsScroll.scrollTo({
             top: 0,
-            left: (controlsScroll.scrollLeft + 45%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft + 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
+            left: (controlsScroll.scrollLeft + 180%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft + 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
             behavior: "smooth",
           });
       }}></p>
@@ -188,20 +173,6 @@ const EditorMenu = () => {
       <button onClick={() => editor.chain().focus().toggleStrike().run()} className={editor.isActive('strike') ? 'is-active' : ''}>
         <img src={Strike} height={15} width={15}/>
       </button>
-      
-      {/* <button
-        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleStrike().run()}}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .toggleStrike()
-            .run()
-        }
-        className={editor.isActive('strike') ? 'is-active' : ''}
-      >
-        <img src={Strike} height={15} width={15}/>
-      </button> */}
       <button
         onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleCode().run()}}
         disabled={
@@ -297,10 +268,10 @@ const EditorMenu = () => {
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
         className={editor.isActive('blockquote') ? 'is-active' : ''}
       >
-        blockquote
+       <img src={BlockQ} height={20} width={20} />
       </button>
       <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-      <img src={Line} height={20} width={20} />
+        <img src={Line} height={20} width={20} />
       </button>
   
       </div>
@@ -308,13 +279,23 @@ const EditorMenu = () => {
   )
 }
 
+const BlockEdit = () =>{
+  const {editor} = useCurrentEditor()
+  return (
+    <div className="quick-edit">
+       <button
+        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+        className={editor.isActive('codeBlock') ? 'is-active' : ''}
+      >
+         <img src={CodeBlock} height={20} width={20} />
+      </button>
+    </div>
+  )
+}
+
 const Editor = () => {
 
   return (
-      <div className="editor">
-        <EditorProvider slotBefore={<EditorMenu />} extensions={extensions} >
-          
-        </EditorProvider>
-      </div>  
+    <EditorProvider slotAfter={<BlockEdit />} slotBefore={<TextEdit />} extensions={extensions} />
   )
 }
