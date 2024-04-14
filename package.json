@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@tiptap/extension-image": "^2.3.0",
+    "@tiptap/extension-placeholder": "^2.3.0",
+    "@tiptap/extension-text-align": "^2.3.0",
     "@tiptap/extension-underline": "^2.3.0",
     "@tiptap/pm": "^2.3.0",
     "@tiptap/react": "^2.3.0",

@@ -4,10 +4,10 @@ div.mobile-new {
     padding:4px 2px 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
-    height: 99vh;
+    height: fit-content;
     position: relative;
 }
 .mobile-new div.new-header {
@@ -98,18 +98,49 @@ div.mobile-new {
 
 
 
+/* DROPDOWN MENU 
+============= */
 
-
-
-
-
-h2 {
+div.menu-drop {
+    color: gray;
+    position: absolute;
+    right: -5px;
+    border-radius: 15px;
+    font-family: Inter;
+    width: 53vw;
+    height: 32vh;
+    padding: 12px;
+    box-sizing: border-box;
     background-color: transparent;
-    width: fit-content;
-    padding: 0px;
-    margin: 0px;
+    border: 1px solid rgb(216, 216, 216);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 1px 2px rgb(197, 197, 197);
+    z-index: 1000;
 }
 
+div.icon-wrap.active .menu-drop{
+    opacity: 1;
+    top: 180%;
+    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
+}
+.roll-down{
+    opacity: 1;
+    top: 180%;
+    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
+}
+.roll-up {
+    opacity: 0;
+    top: 100%;
+    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
+    pointer-events: none;
+}
+
+
+
+
+
+/* MAIN SECTION
+==================== */
 
 
 .mobile-new form.new-main {
@@ -127,7 +158,7 @@ h2 {
     font-family: Inter;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     height: 100%;
     margin-top: 1px;

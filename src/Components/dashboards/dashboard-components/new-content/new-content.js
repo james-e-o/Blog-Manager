@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import "./new-content.css"
-import "./menu-drop.css"
+import "./editor.css"
 import {Menu_icon, Plus } from '../../../svg'
 import Paragraph from "../../../contents/images/icons/para.png"
-import Image from "../../../contents/images/icons/images.png"
+import Pic from "../../../contents/images/icons/images.png"
 import Undo from "../../../contents/images/icons/undo.png"
 import Redo from "../../../contents/images/icons/redo.png"
 import Bullet from "../../../contents/images/icons/bullet.png"
@@ -22,7 +22,9 @@ import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} 
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
 import ListItem from '@tiptap/extension-list-item'
-import Gapcursor from '@tiptap/extension-gapcursor'
+import Image from '@tiptap/extension-image'
+import TextAlign from '@tiptap/extension-text-align'
+import Placeholder from '@tiptap/extension-placeholder'
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false) 
@@ -85,18 +87,31 @@ export default NewContent
 
 
 const extensions = [
-  StarterKit, Underline
+  StarterKit, 
+  Underline,
+  Image.configure({
+    inline: true,
+    allowBase64: true
+  }), 
+  TextAlign,
+  Placeholder.configure({
+    placeholder: 'Write something …',
+  })
 ]
-const contentWrap ={
-  fontSize : "xx-small",
-  Height : "100%"
-}
-// const content = "<div style={{ fontSize : 'xx-small',Height : '100%'}}>Hello world of chu</div>"
-const TextEdit = () => {
+
+const ScrollMenu = () => {
   const {editor} = useCurrentEditor()
   const controlsScroll = document.getElementById("controls-scroll")
   const menuLeftArr = document.getElementById("leftarr")
   const menuRightArr = document.getElementById("rightarr")
+
+  const addImage = useCallback(() => {
+  const url = window.prompt('URL')
+
+  if (url) {
+    editor.chain().focus().setImage({ src: url }).run()
+  }
+}, [editor])
 
   if (!editor) {
     return null
@@ -134,42 +149,6 @@ const TextEdit = () => {
             menuRightArr.style.opacity="1"
           }
       }}>
-      <button
-        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .toggleBold()
-            .run()
-        }
-        className={editor.isActive('bold') ? 'is-active' : ''}
-      >
-        <img src={Bold} height={15} width={15}/>
-      </button>
-      <button
-        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .toggleItalic()
-            .run()
-        }
-        className={editor.isActive('italic') ? 'is-active' : ''}
-      >
-        <img src={Italics} height={15} width={15}/>
-      </button>
-      <button
-        onClick={(e) => {e.preventDefault(), editor.commands.toggleUnderline()}}
-        disabled={
-          !editor.commands
-            .toggleUnderline()
-        }
-        className={editor.isActive('underline') ? 'is-active' : ''}
-      >
-       <img src={Under} height={15} width={15}/>
-      </button>
       <button onClick={() => editor.chain().focus().toggleStrike().run()} className={editor.isActive('strike') ? 'is-active' : ''}>
         <img src={Strike} height={15} width={15}/>
       </button>
@@ -186,6 +165,12 @@ const TextEdit = () => {
       >
         <img src={Code} height={19} width={19}/>
       </button>
+      <button
+        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+        className={editor.isActive('codeBlock') ? 'is-active' : ''}
+      >
+         <img src={CodeBlock} height={20} width={20} />
+      </button>
       {/* <button onClick={(e) => {e.preventDefault(), editor.chain().focus().unsetAllMarks().run()}}>
         clear marks
       </button>
@@ -198,30 +183,7 @@ const TextEdit = () => {
       >
         <img src={Paragraph} height={15} width={15} alt="" />
       </button>
-      <button
-        onClick={() => editor.chain().focus().undo().run()}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .undo()
-            .run()
-        }
-      >
-        <img src={Undo} height={15} width={15} alt="" />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().redo().run()}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .redo()
-            .run()
-        }
-      >
-        <img src={Redo} height={15} width={15} alt="" />
-      </button>
+
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
         className={editor.isActive('heading', { level: 1 }) ? 'is-active' : ''}
@@ -264,12 +226,6 @@ const TextEdit = () => {
       >
         <img src={Numbered} height={19} width={19} alt="" />
       </button>
-      <button
-        onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        className={editor.isActive('blockquote') ? 'is-active' : ''}
-      >
-       <img src={BlockQ} height={20} width={20} />
-      </button>
       <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
         <img src={Line} height={20} width={20} />
       </button>
@@ -279,15 +235,103 @@ const TextEdit = () => {
   )
 }
 
-const BlockEdit = () =>{
+const BasicMenu = () =>{
   const {editor} = useCurrentEditor()
+   const imageInput = document.createElement("img")
+ imageInput.setAttribute('type', 'image')
+
+ const addImage = useCallback(() => {
+
+
+  let selectedFile = imageInput.files[0];
+  let url ;
+ 
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const imageUrl = event.target.result;
+      url = imageUrl
+    }
+    reader?.readAsDataURL(selectedFile)
+
+  if (url) {
+    editor.chain().focus().setImage({ src: url }).run()
+  }
+}, [editor])
+
+  if (!editor) {
+    return null
+  }
+
   return (
-    <div className="quick-edit">
-       <button
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        className={editor.isActive('codeBlock') ? 'is-active' : ''}
+    <div className="quick-edit" onClick={(e) => e.preventDefault()}>
+         <button
+        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .toggleBold()
+            .run()
+        }
+        className={editor.isActive('bold') ? 'is-active' : ''}
       >
-         <img src={CodeBlock} height={20} width={20} />
+        <img src={Bold} height={15} width={15}/>
+      </button>
+      <button
+        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .toggleItalic()
+            .run()
+        }
+        className={editor.isActive('italic') ? 'is-active' : ''}
+      >
+        <img src={Italics} height={15} width={15}/>
+      </button>
+      <button
+        onClick={(e) => {e.preventDefault(), editor.commands.toggleUnderline()}}
+        disabled={
+          !editor.commands
+            .toggleUnderline()
+        }
+        className={editor.isActive('underline') ? 'is-active' : ''}
+      >
+       <img src={Under} height={15} width={15}/>
+      </button>
+      <button
+        onClick={() => editor.chain().focus().undo().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .undo()
+            .run()
+        }
+      >
+        <img src={Undo} height={15} width={15} alt="" />
+      </button>
+      <button
+        onClick={() => editor.chain().focus().redo().run()}
+        disabled={
+          !editor.can()
+            .chain()
+            .focus()
+            .redo()
+            .run()
+        }
+      >
+        <img src={Redo} height={15} width={15} alt="" />
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBlockquote().run()}
+        className={editor.isActive('blockquote') ? 'is-active' : ''}
+      >
+       <img src={BlockQ} height={16} width={16} />
+      </button>
+      <button onClick={addImage} id="image-upload" >
+        <img src={Pic} height={19} width={19} />
       </button>
     </div>
   )
@@ -296,6 +340,6 @@ const BlockEdit = () =>{
 const Editor = () => {
 
   return (
-    <EditorProvider slotAfter={<BlockEdit />} slotBefore={<TextEdit />} extensions={extensions} />
+    <EditorProvider slotAfter={<ScrollMenu />} slotBefore={<BasicMenu />} extensions={extensions} />
   )
 }
