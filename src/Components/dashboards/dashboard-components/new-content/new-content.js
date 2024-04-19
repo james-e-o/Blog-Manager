@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, createContext, useContext } from 'react'
 import "./new-content.css"
 import "./editor.css"
 import {Menu_icon, Plus } from '../../../svg'
@@ -25,6 +25,10 @@ import ListItem from '@tiptap/extension-list-item'
 import Image from '@tiptap/extension-image'
 import TextAlign from '@tiptap/extension-text-align'
 import Placeholder from '@tiptap/extension-placeholder'
+import Dialog from '../../dialog-template/dialog'
+
+
+export const imageProvider = createContext("")
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false) 
@@ -179,7 +183,9 @@ const ScrollMenu = () => {
       </button> */}
       <button
         onClick={() => editor.chain().focus().setParagraph().run()}
-        className={editor.isActive('paragraph') ? 'is-active' : ''}
+        className={
+        
+        editor.isActive('paragraph') ? 'is-active' : ''}
       >
         <img src={Paragraph} height={15} width={15} alt="" />
       </button>
@@ -235,12 +241,15 @@ const ScrollMenu = () => {
   )
 }
 
-const BasicMenu = () =>{
+const BasicMenu = ({inputMode}) =>{
   const {editor} = useCurrentEditor()
    const imageInput = document.createElement("img")
+   const imageContext = useContext(imageProvider)
+   
+   
  imageInput.setAttribute('type', 'image')
 
- const addImage = useCallback(() => {
+ const addImage = () => {
 
 
   let selectedFile = imageInput.files[0];
@@ -256,7 +265,7 @@ const BasicMenu = () =>{
   if (url) {
     editor.chain().focus().setImage({ src: url }).run()
   }
-}, [editor])
+}
 
   if (!editor) {
     return null
@@ -330,16 +339,26 @@ const BasicMenu = () =>{
       >
        <img src={BlockQ} height={16} width={16} />
       </button>
-      <button onClick={addImage} id="image-upload" >
+      <button onClick={inputMode} id="image-upload" >
         <img src={Pic} height={19} width={19} />
       </button>
     </div>
   )
 }
 
-const Editor = () => {
 
+
+const Editor = () => {
+  const [inputImage, setInputImage] = useState(false)
+  
+  
   return (
-    <EditorProvider slotAfter={<ScrollMenu />} slotBefore={<BasicMenu />} extensions={extensions} />
+      <imageProvider.Provider  value=''>
+        <EditorProvider slotAfter={<ScrollMenu />} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
+          <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)}/>
+        </EditorProvider>
+      </imageProvider.Provider>
+    
   )
 }
+
