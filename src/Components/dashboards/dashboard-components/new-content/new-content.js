@@ -350,12 +350,13 @@ const BasicMenu = ({inputMode}) =>{
 
 const Editor = () => {
   const [inputImage, setInputImage] = useState(false)
-  
+  const imageContext = useContext(imageProvider)
+  useEffect(()=>console.log(imageContext))
   
   return (
       <imageProvider.Provider  value=''>
         <EditorProvider slotAfter={<ScrollMenu />} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
-          <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)}/>
+          <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>console.log(imageContext)}/>
         </EditorProvider>
       </imageProvider.Provider>
     

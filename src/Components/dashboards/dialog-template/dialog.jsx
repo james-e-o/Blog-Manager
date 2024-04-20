@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import "./dialog.css"
 import { imageProvider } from '../dashboard-components/new-content/new-content'
+import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
 
-const Dialog = ({status, alterStatus}) => {
+const Dialog = ({status, alterStatus, addImage}) => {
   const [imageUrl, setImageUrl] = useState("")
+  const {editor} = useCurrentEditor()
 
   return (
    <imageProvider.Provider  value={imageUrl}>
@@ -11,8 +13,7 @@ const Dialog = ({status, alterStatus}) => {
         <div className="dialog-content">
             <div className="terminator" onClick={alterStatus}>{terminator}</div>
             <p>Insert image</p>
-            <div className="inner-content">
-              <input type="file" name="image" id="image" onChange={(e)=>{
+            <input type="file" name="image" id="image" onChange={(e)=>{
                   let file = e.target.files[0]
                   let reader = new FileReader()
                   reader.onload=()=>{
@@ -20,8 +21,13 @@ const Dialog = ({status, alterStatus}) => {
                     console.log(reader.result)
                   }
                   reader.readAsArrayBuffer(file)
-              }} />
-            </div>
+            }} />
+            <button id='addimage' onClick={(e)=>{
+                e.preventDefault()
+                 if (imageUrl) {
+                  editor.chain().focus().setImage({ src: imageUrl}).run()
+                }
+            }}>Insert</button>
         </div>
     </div>
     </imageProvider.Provider>
@@ -30,4 +36,4 @@ const Dialog = ({status, alterStatus}) => {
 
 export default Dialog;
 
-const terminator = <svg  xmlns="http://www.w3.org/2000/svg"  fill='gray' height="28" viewBox="0 -960 960 960" width="28"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+const terminator = <svg  xmlns="http://www.w3.org/2000/svg"  fill='gray' height="24" viewBox="0 -960 960 960" width="24"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>

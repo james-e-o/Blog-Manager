@@ -21,23 +21,26 @@ div.dialog-content {
     width: 50vw;
     background-color: white;
     border: 1px solid orange;
-    height: 20vh;
+    height: 23vh;
     border-radius: 10px;
     border: 1px solid rgb(165, 165, 165);
     transform: scale(0.5);
     transition: transform 200ms ease-in-out;
-    padding: 5px;
+    padding: 10px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 }
 
 .dialog-main.on div.dialog-content{
     width: 50vw;
     background-color: white;
     border: 1px solid orange;
-    height: 20vh;
+    height: 23vh;
     border-radius: 10px;
     border: 1px solid rgb(165, 165, 165);
     transform: scale(1);
-    padding: 5px;
+    padding: 10px;
 }
 
 
@@ -45,24 +48,39 @@ div.dialog-content {
     display: flex;
     justify-content: flex-end;
     padding: 0px 10px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
-.dialog-content .inner-content {
+/* .dialog-content .inner-content {
     display: flex;
     height: 60%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 5px;
-}
+} */
 .dialog-content p{
     text-align: center;
-    font-size: large;
+    font-size: 18px;
     font-weight: lighter;
     color: slateblue;
+    padding: 4px;
+    margin-bottom: 10px;
 }
-.dialog-content .inner-content input{
-    display: flex;
-    height: 60%;
-    justify-content: center;
-    align-items: center;
+.dialog-content button#addimage {
+    text-align: center;
+    color: slateblue;
+    border-radius: 5px;
+    background-color: gainsboro;
+    padding: 5px 13px;
+    width: fit-content;
+    margin: 2px auto;
+    text-align: center;
+    border: 1px solid slategray;
+    display: block;
+}
+.dialog-content input{
+    padding: 5px;
+    margin-bottom: 15px;
+    width: 90%;
+    border-radius: 5px;
 }
