@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import "./dialog.css"
 import { imageProvider } from '../dashboard-components/new-content/new-content'
 import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
@@ -6,6 +6,14 @@ import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} 
 const Dialog = ({status, alterStatus, addImage}) => {
   const [imageUrl, setImageUrl] = useState("")
   const {editor} = useCurrentEditor()
+  function insertImage (e){
+    return new Promise((res, rej)=>{
+       e.preventDefault()
+       if (imageUrl) {
+        res(editor.chain().focus().setImage({ src: imageUrl}).run())
+        } 
+    })
+  }
 
   return (
    <imageProvider.Provider  value={imageUrl}>
@@ -18,16 +26,11 @@ const Dialog = ({status, alterStatus, addImage}) => {
                   let reader = new FileReader()
                   reader.onload=()=>{
                     setImageUrl(reader.result)
-                    console.log(reader.result)
+                    console.log(reader.result) 
                   }
-                  reader.readAsArrayBuffer(file)
+                  file?reader.readAsDataURL(file):""
             }} />
-            <button id='addimage' onClick={(e)=>{
-                e.preventDefault()
-                 if (imageUrl) {
-                  editor.chain().focus().setImage({ src: imageUrl}).run()
-                }
-            }}>Insert</button>
+            <p id='addimage' onClick={(e)=>insertImage(e).then(alterStatus)}>Insert</p>
         </div>
     </div>
     </imageProvider.Provider>

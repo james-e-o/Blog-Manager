@@ -356,7 +356,7 @@ const Editor = () => {
   return (
       <imageProvider.Provider  value=''>
         <EditorProvider slotAfter={<ScrollMenu />} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
-          <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>console.log(imageContext)}/>
+          <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
         </EditorProvider>
       </imageProvider.Provider>
     

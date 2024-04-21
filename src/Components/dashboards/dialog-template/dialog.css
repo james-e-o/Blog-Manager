@@ -66,8 +66,10 @@ div.dialog-content {
     padding: 4px;
     margin-bottom: 10px;
 }
-.dialog-content button#addimage {
+.dialog-content p#addimage {
     text-align: center;
+    font-size: small;
+    cursor: pointer;
     color: slateblue;
     border-radius: 5px;
     background-color: gainsboro;
