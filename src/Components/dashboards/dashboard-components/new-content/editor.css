@@ -221,9 +221,9 @@ h2 {
   position: relative;
 }
 
-.ProseMirror-hideselection *::selection { background: transparent; }
-.ProseMirror-hideselection *::-moz-selection { background: transparent; }
-.ProseMirror-hideselection { caret-color: transparent; }
+.ProseMirror-hideselection *::selection { background: orange; }
+.ProseMirror-hideselection *::-moz-selection { background: yellow; }
+.ProseMirror-hideselection { caret-color: green; }
 
 /* See https://github.com/ProseMirror/prosemirror/issues/1421#issuecomment-1759320191 */
 .ProseMirror [draggable][contenteditable=false] { user-select: text }
@@ -259,3 +259,4 @@ li.ProseMirror-selectednode:after {
   text-underline-position: under alphabetic; /* Improve underline placement */
   animation: none !important; /* Remove underline animation */
 }
+
