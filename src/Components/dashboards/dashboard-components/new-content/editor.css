@@ -255,8 +255,14 @@ li.ProseMirror-selectednode:after {
 }
 
 .ProseMirror:focus span[data-ms-spellcheck-suggestion] {
-  text-decoration: underline !important; /* Force underline style */
+  text-decoration: underline ; /* Force underline style */
   text-underline-position: under alphabetic; /* Improve underline placement */
-  animation: none !important; /* Remove underline animation */
+  animation: none ; /* Remove underline animation */
 }
 
+.ProseMirror .gap-cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: #ca3939;
+  border: 1px solid ;
+}
