@@ -16,6 +16,7 @@ import Under from "../../../contents/images/icons/underline.png"
 import Line from "../../../contents/images/icons/line.png"
 import BlockQ from "../../../contents/images/icons/quote.png"
 import CodeBlock from "../../../contents/images/icons/codeblock.png"
+import Emoji from "../../../contents/images/icons/emoji.png"
 
 
 import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
@@ -54,7 +55,7 @@ const NewContent = () => {
             <nav >
               <button id='post'>Post</button>
               <div className='icon-wrap' >
-                <div className='' onClick={()=>setActiveMenu(!activeMenu)}><Menu_icon /></div>
+                <div className='' onClick={()=>setActiveMenu(!activeMenu)}>{menu}</div>
                 <div className={!activeMenu?"menu-drop roll-up":"menu-drop roll-down"}>
                   Hi this is the menu bar
                 </div>
@@ -243,29 +244,8 @@ const ScrollMenu = () => {
 
 const BasicMenu = ({inputMode}) =>{
   const {editor} = useCurrentEditor()
-   const imageInput = document.createElement("img")
-   const imageContext = useContext(imageProvider)
+  const imageContext = useContext(imageProvider)
    
-   
- imageInput.setAttribute('type', 'image')
-
- const addImage = () => {
-
-
-  let selectedFile = imageInput.files[0];
-  let url ;
- 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const imageUrl = event.target.result;
-      url = imageUrl
-    }
-    reader?.readAsDataURL(selectedFile)
-
-  if (url) {
-    editor.chain().focus().setImage({ src: url }).run()
-  }
-}
 
   if (!editor) {
     return null
@@ -346,6 +326,12 @@ const BasicMenu = ({inputMode}) =>{
   )
 }
 
+const Emojis = () => {
+  return(
+    <div className='emojis'><img src={Emoji} height={26} width={26} /></div>
+  )
+}
+
 
 
 const Editor = () => {
@@ -355,11 +341,12 @@ const Editor = () => {
   
   return (
       <imageProvider.Provider  value=''>
-        <EditorProvider slotAfter={<ScrollMenu />} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
+        <EditorProvider slotAfter={<div className='scroll-emoji'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
           <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
         </EditorProvider>
       </imageProvider.Provider>
-    
   )
 }
+
+const menu = <svg data-name="Layer 1" height="24" width="24" fill='orange' id="Layer_1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M21.86,18.73H9.18a2,2,0,0,1,0-4H21.86a2,2,0,0,1,0,4Z"/><path d="M54.82,18.73H34.88a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,34H9.18a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,49.27H30.07a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/></svg>
 
