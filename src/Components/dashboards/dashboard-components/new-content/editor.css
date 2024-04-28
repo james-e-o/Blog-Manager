@@ -260,9 +260,3 @@ li.ProseMirror-selectednode:after {
   animation: none ; /* Remove underline animation */
 }
 
-.ProseMirror .gap-cursor {
-  display: inline-block;
-  width: 2px;
-  background-color: #ca3939;
-  border: 1px solid ;
-}

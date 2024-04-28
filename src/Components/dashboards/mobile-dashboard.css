@@ -418,7 +418,6 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .open-menu{
     background:linear-gradient(to top left, slateblue 18%, skyblue 75%);
-    /* background-color: slateblue; */
     height: 45px;
     width: 45px;
     z-index: 1;
@@ -450,7 +449,7 @@ div.advert-wrapper::-webkit-scrollbar {
 .m-dashboard-main .menu-bar .pop2{
     background-color: transparent;
     height: 300px;
-    left: -12px;
+    left:-16px; 
     bottom: 99%;
     opacity: 0;
     pointer-events: none;
@@ -458,18 +457,19 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .m-dashboard-main .menu-bar .pop3{
     background-color: teal; 
-    left:-12px;
+    left:-16px;
     bottom: 99%;
     opacity: 0;
     height: 300px;
     pointer-events: none;
+    /* transform: translateX(-59vw); */
     transition: all 130ms ease-in-out -110ms
 }
 .menu-pop-open1 {
     background-color: white;
     border: 1px solid skyblue;
-    left: -12px;
-    height: 300px;
+    left:-16px;
+    height: 50vh;
     bottom: 200%;
     opacity: 1;
     pointer-events:auto;
@@ -478,8 +478,9 @@ div.advert-wrapper::-webkit-scrollbar {
 }
 .menu-pop-open2 {
     background-color: rgb(31, 205, 31);
-    height: 300px;
-    left: -12px;
+    height: 50vh;
+    /* left: var(--center-offset,) ;  */
+    left:-16px;
     bottom: 200%;
     opacity: 1;
     pointer-events:auto;
@@ -488,14 +489,16 @@ div.advert-wrapper::-webkit-scrollbar {
 .menu-pop-open3 {
     background: linear-gradient(to top, white -3%, rgb(134, 78, 238) 90%);
     border: 1px solid skyblue;
-    left: -12px; 
+    /* left: var(--center-offset,) ;  */
+    left:-16px;
     bottom: 200%;
     opacity: 1;
-    height: 300px;
+    height: 50vh;
     pointer-events:auto;
     transition: all 110ms ease-in-out ;
     color: black;
     overflow: hidden;
+    /* transform: translateX(-59vw); */
 }
 .menu-pop-open3::before {
     content: "";

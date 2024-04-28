@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import "./dialog.css"
-import { imageProvider } from '../dashboard-components/new-content/new-content'
+import { imageProvider } from '../new-content'
 import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
 
 const Dialog = ({status, alterStatus, addImage}) => {

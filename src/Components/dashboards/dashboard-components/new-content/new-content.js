@@ -26,7 +26,7 @@ import ListItem from '@tiptap/extension-list-item'
 import Image from '@tiptap/extension-image'
 import TextAlign from '@tiptap/extension-text-align'
 import Placeholder from '@tiptap/extension-placeholder'
-import Dialog from '../../dialog-template/dialog'
+import Dialog from './dialog-template/dialog'
 
 
 export const imageProvider = createContext("")
@@ -341,7 +341,7 @@ const Editor = () => {
   
   return (
       <imageProvider.Provider  value=''>
-        <EditorProvider slotAfter={<div className='scroll-emoji'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
+        <EditorProvider slotAfter={<div className='scroll-emoji'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" >
           <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
         </EditorProvider>
       </imageProvider.Provider>

@@ -25,18 +25,7 @@ const UserDashboard = () => {
       feedPopBox.classList.toggle("feed-pop-active")
       console.log('happy')
   }
-  useEffect(()=>{
-  //   const feedPopBox = document.querySelector("div.feed-pop")
-  //  document.addEventListener("click",(e)=>{
-  //   if (feedPopBox.classList.contains('feed-pop-active') && !e.target.closest("div.feed-pop")){
-  //     feedPopBox.classList.toggle("feed-pop-inactive")
-  //     feedPopBox.classList.toggle("feed-pop-active")
-  //   }else if (!feedPopBox.classList.contains('feed-pop-active') && e.target.matches("div.detail-options")){
-  //     feedPopBox.classList.toggle("feed-pop-inactive")
-  //     feedPopBox.classList.toggle("feed-pop-active")
-  //   }
-  //  })
-  })
+  // 
   return (
       //  MOBILE
       screen < 480?(
@@ -127,17 +116,6 @@ const UserDashboard = () => {
             <Menu_icon/>   
           </nav>
           </header>
-          // <div>
-          //     <div className='menu-header'>               
-          //       <svg  xmlns="http://www.w3.org/2000/svg" fill='gray' height="38" viewBox="0 -960 960 960" width="38"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
-          //     </div>
-          //     <div className='menu-main'>
-          //         <ul>
-          //           <Link to={'/sign/signup'}><li>Sign up</li></Link>
-          //           <Link to={'/sign/login'}><li>Login</li></Link>
-          //         </ul>
-          //     </div>
-          // </div>
         ):
         //DESKTOP 
         (
@@ -161,15 +139,6 @@ const UserDashboard = () => {
 
 export default UserDashboard
 
-
-
-
-
-
-
-
-
-
 const MenuBar = () => {
   const [toggleMenu,setToggleMenu]=useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -178,6 +147,8 @@ const MenuBar = () => {
       setActiveIndex(0)
     }
   }
+
+  
   useEffect(()=>{
     document.onpointerdown = (e)=> {
       if (toggleMenu && activeIndex === 0 && !e.target.closest("div.menu-wrap") ){
@@ -196,7 +167,7 @@ const MenuBar = () => {
         <div className={'blunt-fixed'}>
           <div className="menu-wrap">
               <Menus isToggled={activeIndex===1} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==1?setActiveIndex(1):setActiveIndex(0)}} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)} content={<Options/>} icon={<Plus/>}/>
-              <Link to={'bookmarks'}><Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} content={<Bookmarks/>} icon={<Bookmark2/>}/></Link>
+              <Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} content={<Bookmarks/>} icon={<Bookmark2/>}/>
               <Menus isToggled={activeIndex===3} togglepop={(e)=>{if (e.target.closest(".menu-pop")) {return} else activeIndex!==3?setActiveIndex(3):setActiveIndex(0)}} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)} content={<Create/>} icon={<Plus/>}/>
               <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>
@@ -206,6 +177,13 @@ const MenuBar = () => {
   )
 }
 const Menus = ({togglemenu,content, index, icon,togglepop, isToggled}) => {
+  const [popvalue, setPopvalue] = useState(window.innerWidth/200)
+  useEffect(()=>{
+    document.querySelectorAll(".menu-pop").forEach(pop => {
+      pop?.style.setProperty('--center-offset',`${popvalue}px`)
+    })
+  },[])
+ 
   return (
     <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"static",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>{icon}
       <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}>{content}</div>
