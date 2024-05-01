@@ -341,7 +341,7 @@ const Editor = () => {
   
   return (
       <imageProvider.Provider  value=''>
-        <EditorProvider slotAfter={<div className='scroll-emoji'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" >
+        <EditorProvider slotAfter={<div className='scroll-emoji'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
           <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
         </EditorProvider>
       </imageProvider.Provider>
