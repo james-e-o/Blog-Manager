@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, createContext, useContext } fr
 import "./new-content.css"
 import "./editor.css"
 import {Menu_icon, Plus } from '../../../svg'
-import Paragraph from "../../../contents/images/icons/para.png"
+import ParagraphI from "../../../contents/images/icons/para.png"
 import Pic from "../../../contents/images/icons/images.png"
 import Undo from "../../../contents/images/icons/undo.png"
 import Redo from "../../../contents/images/icons/redo.png"
@@ -24,6 +24,7 @@ import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
 import ListItem from '@tiptap/extension-list-item'
 import Image from '@tiptap/extension-image'
+import Paragraph from '@tiptap/extension-paragraph'
 import TextAlign from '@tiptap/extension-text-align'
 import Placeholder from '@tiptap/extension-placeholder'
 import Dialog from './dialog-template/dialog'
@@ -188,7 +189,7 @@ const ScrollMenu = () => {
         
         editor.isActive('paragraph') ? 'is-active' : ''}
       >
-        <img src={Paragraph} height={15} width={15} alt="" />
+        <img src={ParagraphI} height={15} width={15} alt="" />
       </button>
 
       <button
@@ -280,11 +281,11 @@ const BasicMenu = ({inputMode}) =>{
         <img src={Italics} height={15} width={15}/>
       </button>
       <button
-        onClick={(e) => {e.preventDefault(), editor.commands.toggleUnderline()}}
-        disabled={
-          !editor.commands
-            .toggleUnderline()
-        }
+        // onClick={(e) => {e.preventDefault(), editor.commands.toggleUnderline()}}
+        // disabled={
+        //   !editor.commands
+        //     .toggleUnderline()
+        // }
         className={editor.isActive('underline') ? 'is-active' : ''}
       >
        <img src={Under} height={15} width={15}/>
