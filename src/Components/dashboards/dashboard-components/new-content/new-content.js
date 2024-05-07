@@ -281,11 +281,8 @@ const BasicMenu = ({inputMode}) =>{
         <img src={Italics} height={15} width={15}/>
       </button>
       <button
-        // onClick={(e) => {e.preventDefault(), editor.commands.toggleUnderline()}}
-        // disabled={
-        //   !editor.commands
-        //     .toggleUnderline()
-        // }
+        onClick={(e) => {e.preventDefault(),editor.chain().focus().toggleUnderline().run()}}
+ 
         className={editor.isActive('underline') ? 'is-active' : ''}
       >
        <img src={Under} height={15} width={15}/>
