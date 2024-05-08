@@ -17,6 +17,7 @@ import Line from "../../../contents/images/icons/line.png"
 import BlockQ from "../../../contents/images/icons/quote.png"
 import CodeBlock from "../../../contents/images/icons/codeblock.png"
 import Emoji from "../../../contents/images/icons/emoji.png"
+import Post from "../../../contents/images/icons/plus.png"
 
 
 import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
@@ -38,8 +39,7 @@ const NewContent = () => {
   useEffect(()=>{
     const menuDrop = document.querySelector("div.menu-drop")
     document.addEventListener('click', (e)=>{  
-      if(!e.target.closest("div.icon-wrap") && menuDrop.classList.contains("roll-down")){
-        console.log("hoolaritha")
+      if(!e.target.closest("div.post-wrap") && menuDrop.classList.contains("roll-down")){
         setActiveMenu(false)
         menuDrop.classList.replace("roll-down","roll-up")
       }
@@ -54,9 +54,9 @@ const NewContent = () => {
               <div className='art'></div>
             </div>
             <nav >
-              <button id='post'>Post</button>
-              <div className='icon-wrap' >
-                <div className='' onClick={()=>setActiveMenu(!activeMenu)}>{menu}</div>
+              <div className='post-wrap' >
+                <button id='preview'>Preview</button>
+                <button id='progress' onClick={()=>setActiveMenu(!activeMenu)}><img className={!activeMenu?"not-rotated":"rotated"} src={Post} height={12} width={12}/></button>
                 <div className={!activeMenu?"menu-drop roll-up":"menu-drop roll-down"}>
                   Hi this is the menu bar
                 </div>
@@ -68,22 +68,6 @@ const NewContent = () => {
           <Editor />
         </div>
       </form>
-      <div className="form-footer">
-            <div className="hashtag-niche-wrap">
-              <div className="add-categories">
-                <p className="category"><span>newpost</span></p>
-                <p className="category"><span>webdev</span></p>
-                <p className="category"><span>newpost</span></p>
-                <button id='hashtag'><Plus/></button>
-              </div>
-              <div className="add-hashtags">
-                <p className="hashtag">#newpost</p>
-                <p className="hashtag">#webdev</p>
-                <p className="hashtag">#newpost</p>
-                <button id='hashtag'><Plus/></button>
-              </div>
-            </div>
-        </div>
     </div>
   )
 }
@@ -348,3 +332,22 @@ const Editor = () => {
 
 const menu = <svg data-name="Layer 1" height="24" width="24" fill='orange' id="Layer_1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M21.86,18.73H9.18a2,2,0,0,1,0-4H21.86a2,2,0,0,1,0,4Z"/><path d="M54.82,18.73H34.88a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,34H9.18a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/><path d="M54.82,49.27H30.07a2,2,0,0,1,0-4H54.82a2,2,0,0,1,0,4Z"/></svg>
 
+
+
+
+// <div className="form-footer">
+// <div className="hashtag-niche-wrap">
+//   <div className="add-categories">
+//     <p className="category"><span>newpost</span></p>
+//     <p className="category"><span>webdev</span></p>
+//     <p className="category"><span>newpost</span></p>
+//     <button id='hashtag'><Plus/></button>
+//   </div>
+//   <div className="add-hashtags">
+//     <p className="hashtag">#newpost</p>
+//     <p className="hashtag">#webdev</p>
+//     <p className="hashtag">#newpost</p>
+//     <button id='hashtag'><Plus/></button>
+//   </div>
+// </div>
+// </div>

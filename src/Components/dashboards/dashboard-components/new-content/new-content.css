@@ -7,7 +7,7 @@ div.mobile-new {
     justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
-    height: fit-content;
+    height: 100vh;
     position: relative;
 }
 .mobile-new div.new-header {
@@ -33,6 +33,7 @@ div.mobile-new {
     border-radius: 50%;
 }
 .mobile-new nav {
+    position: relative;
     align-items: center;
     padding: 8px 3px;
     display: flex;
@@ -41,19 +42,45 @@ div.mobile-new {
     justify-content: space-between;
     width: fit-content;
 }
-.mobile-new button#post {
-    padding: 11px 21px;
+.mobile-new button#preview {
+    font-family: Inter;
+    padding: 9px 13px;
     width: fit-content;
-    border: none;
+    border: 1px solid #c7bdff;
     background-color: rgb(255, 255, 255);
-    color: slategray;
+    color: slateblue;
     font-size: 13px;
-    font-weight: 600;
-    border-radius: 20px;
-    box-shadow: 0px 0px 3px slateblue;
-    /* word-spacing:0.5; */
+    font-weight: 400;
+    border-radius: 10px;
+    box-shadow: 6px 5px 12px 2px rgb(238, 235, 255) inset;
 }
-.mobile-new nav div.icon-wrap{
+.mobile-new button#progress {
+    font-family: Inter;
+    padding: 9px 13px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: rgb(144, 134, 207);
+    /* background: linear-gradient(to bottom, slateblue #f3f3f3, #bababe); */
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 10px;
+    box-shadow: 3px 3px 11px 4px slateblue inset;
+}
+.not-rotated{
+    transform: scale(1.5);
+    transition: transform 100ms ease-in-out
+}
+.rotated{
+    transform: scale(1.5) rotate(45deg);
+    transition: transform 100ms ease-in-out;
+}
+.mobile-new nav div.post-wrap{
+    display: flex;
+    gap: 12px;
     position: relative;
     margin-top: 3%;
     width: fit-content;
@@ -118,11 +145,6 @@ div.menu-drop {
     z-index: 1000;
 }
 
-div.icon-wrap.active .menu-drop{
-    opacity: 1;
-    top: 180%;
-    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
-}
 .roll-down{
     opacity: 1;
     top: 180%;
