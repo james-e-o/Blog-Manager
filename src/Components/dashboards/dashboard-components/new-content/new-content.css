@@ -67,25 +67,27 @@ div.mobile-new {
     padding: 8px 3px;
     display: flex;
     color:white;
-    gap : 18px;
+    gap : 20px;
     justify-content: space-between;
     width: fit-content;
 }
 .mobile-new button#preview {
     font-family: Inter;
-    padding: 9px 13px;
+    padding: 11px 14px;
     width: fit-content;
     border: 1px solid #c7bdff;
     background-color: rgb(255, 255, 255);
     color: slateblue;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     border-radius: 10px;
     box-shadow: 6px 5px 12px 2px rgb(238, 235, 255) inset;
+    display: flex;
+    align-items: center;
 }
 .mobile-new button#progress {
     font-family: Inter;
-    padding: 11px;
+    padding: 14px;
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -132,10 +134,11 @@ div.mobile-new {
 div.menu-slide {
     color: gray;
     position: absolute;
-    right: -17px;
-    top: calc(100% + 15px);
+    opacity: 1;
+    top: calc(100% + 13px);
     font-family: Inter;
     height: 100vh;
+    width: 100vw;
     padding: 12px;
     box-sizing: border-box;
     background-color: white;
@@ -145,14 +148,12 @@ div.menu-slide {
 }
 
 .roll-down{
-    opacity: 1;
-    width: 100vw;
-    transition: width 250ms ease-out, opacity 300ms ease-in;
+    left: calc(-100vw + 56px);
+    transition: left 160ms ease-out;
 }
 .roll-up {
-    opacity: 0;
-    width: 0vw;
-    transition: width 150ms ease-in, opacity 100ms ease-out 100ms;
+    left: calc(100% + 17px);
+    transition: left 150ms ease-out;
     pointer-events: none;
 }
 
@@ -187,7 +188,7 @@ div.menu-slide {
 }
 
 .mobile-new .editor-wrap .editor-header {
-    padding: 5px 16px;
+    padding: 1px 16px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -206,7 +207,6 @@ div.menu-slide {
     box-sizing: border-box;
     font-weight: bolder;
     font-size: 28px;
-    margin-top: 3px;
     padding: 8px 0px;
     /* letter-spacing: 0.3px; */
 } 
@@ -229,7 +229,7 @@ div.menu-slide {
     display: none;
 }
 .editor-header textarea::placeholder {
-    color: #adb5bd;
+    color: #a0a8b0;
 }
 
 

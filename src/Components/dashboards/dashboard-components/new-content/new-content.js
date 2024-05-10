@@ -54,7 +54,7 @@ const NewContent = () => {
               <div className='art'></div>
             </div>
             <nav >
-              <button id='preview'>Preview</button>
+              <button id='preview'><span>Preview</span></button>
               <div className='post-wrap' >
                 <button id='progress' onClick={()=>setActiveMenu(!activeMenu)}><img className={!activeMenu?"not-rotated":"rotated"} src={Post} height={12} width={12}/></button>
                 <div className={!activeMenu?"menu-slide roll-up":"menu-slide roll-down"}>
@@ -65,16 +65,6 @@ const NewContent = () => {
       </div>
       <form className="new-main">
         <div className="editor-wrap">
-          <div className="editor-header">
-            <textarea rows='1' onInput={(e)=>{
-               e.target.style.height = 'auto';
-               e.target.style.height = `${e.target.scrollHeight}px`
-            }} onKeyDown={(e)=> e.key==='Enter'? e.preventDefault():''} id="title" placeholder="Title"></textarea>
-            <textarea rows='1' onInput={(e)=>{
-               e.target.style.height = 'auto';
-               e.target.style.height = `${e.target.scrollHeight}px`
-            }} onKeyDown={(e)=> e.key==='Enter'? e.preventDefault():''} id="subtitle" placeholder="Add a subtitle"></textarea>
-          </div>
           <Editor />
         </div>
       </form>
@@ -318,6 +308,21 @@ const BasicMenu = ({inputMode}) =>{
   )
 }
 
+const EditorHeader = () => {
+  return (
+    <div className="editor-header">
+      <textarea rows='1' onInput={(e)=>{
+        e.target.style.height = 'auto';
+        e.target.style.height = `${e.target.scrollHeight}px`
+      }} onKeyDown={(e)=> e.key==='Enter'? e.preventDefault():''} id="title" placeholder="Title"></textarea>
+      <textarea rows='1' onInput={(e)=>{
+        e.target.style.height = 'auto';
+        e.target.style.height = `${e.target.scrollHeight}px`
+      }} onKeyDown={(e)=> e.key==='Enter'? e.preventDefault():''} id="subtitle" placeholder="Add a subtitle"></textarea>
+    </div>
+  )
+}
+
 const Emojis = () => {
   return(
     <div className='emojis'><img src={Emoji} height={26} width={26} /></div>
@@ -332,11 +337,10 @@ const Editor = () => {
   useEffect(()=>console.log(imageContext))
   
   return (
-      <imageProvider.Provider  value=''>
-        <EditorProvider slotAfter={<div className='bottom-menu-wrap'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
+        <EditorProvider slotAfter={<div className='bottom-menu-wrap'><ScrollMenu /><Emojis /></div>} slotBefore={<><BasicMenu inputMode={()=>setInputImage(!inputImage)} /> <EditorHeader /></>} extensions={extensions}>
+          {menu}
           <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
         </EditorProvider>
-      </imageProvider.Provider>
   )
 }
 

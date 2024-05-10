@@ -40,7 +40,7 @@
 .mobile-new div.quick-edit{
     margin: 5px auto;
     padding: 4px 6px;
-    width: 85%;
+    width: 90%;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -106,7 +106,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 1px 4px;
+    margin: 5px 4px 0px; 
     width: fit-content;
     cursor:pointer;
     border-radius: 5px;
@@ -159,7 +159,7 @@ div.content-wrap {
     border: none;
     outline: none;
     display: block;
-    padding: 15px 25px;
+    padding: 15px;
     width: 100%;
     min-height: 55vh;
     resize: none;
@@ -248,7 +248,7 @@ li.ProseMirror-selectednode:after {
   pointer-events: none;
 }
 .tiptap .is-editor-empty:first-child::before {
-  color: #adb5bd;
+  color: #a0a8b0;
   content: attr(data-placeholder);
   float: left;
   height: 0;
