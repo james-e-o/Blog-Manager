@@ -19,21 +19,6 @@ div.mobile-new {
     box-sizing: border-box;
     height: 60px;
 }
-.mobile-new div.user {
-    display: flex;
-    padding: 12px 0px;
-    gap: 15px;
-    font-family: Capriola;
-    align-items: center;
-}
-.mobile-new .user figure{
-    width: 34px;
-    height: 34px;
-    background: rgb(55, 14, 109);
-    border-radius: 50%;
-}
-
-
 
 
 
@@ -100,12 +85,14 @@ div.mobile-new {
 }
 .mobile-new button#progress {
     font-family: Inter;
-    padding: 9px 13px;
+    padding: 11px;
     width: fit-content;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
+    /* box-sizing: border-box; */
     background-color: rgb(144, 134, 207);
     /* background: linear-gradient(to bottom, slateblue #f3f3f3, #bababe); */
     color: white;
@@ -124,9 +111,10 @@ div.mobile-new {
 }
 .mobile-new nav div.post-wrap{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
     position: relative;
-    margin-top: 3%;
     width: fit-content;
     height: fit-content;
     cursor: pointer;
@@ -144,15 +132,13 @@ div.mobile-new {
 div.menu-slide {
     color: gray;
     position: absolute;
-    right: -5px;
-    border-radius: 15px;
+    right: -17px;
+    top: calc(100% + 15px);
     font-family: Inter;
-    width: 53vw;
-    height: 32vh;
+    height: 100vh;
     padding: 12px;
     box-sizing: border-box;
-    background-color: transparent;
-    border: 1px solid rgb(216, 216, 216);
+    background-color: white;
     backdrop-filter: blur(5px);
     box-shadow: 0px 1px 2px rgb(197, 197, 197);
     z-index: 1000;
@@ -160,13 +146,13 @@ div.menu-slide {
 
 .roll-down{
     opacity: 1;
-    top: 180%;
-    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
+    width: 100vw;
+    transition: width 250ms ease-out, opacity 300ms ease-in;
 }
 .roll-up {
     opacity: 0;
-    top: 100%;
-    transition: top 100ms ease-in-out, opacity 120ms ease-in-out;
+    width: 0vw;
+    transition: width 150ms ease-in, opacity 100ms ease-out 100ms;
     pointer-events: none;
 }
 

@@ -54,8 +54,8 @@ const NewContent = () => {
               <div className='art'></div>
             </div>
             <nav >
+              <button id='preview'>Preview</button>
               <div className='post-wrap' >
-                <button id='preview'>Preview</button>
                 <button id='progress' onClick={()=>setActiveMenu(!activeMenu)}><img className={!activeMenu?"not-rotated":"rotated"} src={Post} height={12} width={12}/></button>
                 <div className={!activeMenu?"menu-slide roll-up":"menu-slide roll-down"}>
                   Hi this is the menu bar
