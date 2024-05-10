@@ -1,7 +1,6 @@
 
 div.mobile-new {
-    /* background-color: #F1F1F1; */
-    padding:4px 2px 5px;
+    background-color: #F1F1F1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -11,13 +10,14 @@ div.mobile-new {
     position: relative;
 }
 .mobile-new div.new-header {
+    background-color:white;
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
     align-items: center;
-    padding:2px 8px 8px;
+    padding:6px 14px 8px;
     box-sizing: border-box;
-    height: 9%;
+    height: 60px;
 }
 .mobile-new div.user {
     display: flex;
@@ -32,6 +32,50 @@ div.mobile-new {
     background: rgb(55, 14, 109);
     border-radius: 50%;
 }
+
+
+
+
+
+
+
+/* LOGO */
+.mobile-new .art::before{
+    content: "";
+    position: absolute;
+    background-color:darkturquoise;
+    width: 100%;
+    border-radius: 3px;
+    height: 31px;
+    transform: rotate(-7deg) translateX(-20%) translateY(3%);
+    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
+}
+.mobile-new .art::after{
+    content: "";
+    position: absolute;
+    background:linear-gradient(to bottom,#ffa90a,#7568cf);
+    width: 100%;
+    border-radius: 3px;
+    height: 31px;
+    transform: rotate(-14deg) translateX(-40%) translateY(6%);
+    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
+}
+.mobile-new .art{
+    position: relative;
+    top: -2px;
+    background-color:rgb(190, 190, 190);
+    width: 25px;
+    border-radius: 3px;
+    height: 31px;
+    transform: rotate(8deg)  ;
+    box-shadow: 2px 2px 6px rgba(24, 28, 80, 0.747);
+    margin-left:16px ;
+}
+
+
+
+/* NAV */
+
 .mobile-new nav {
     position: relative;
     align-items: center;
@@ -72,11 +116,11 @@ div.mobile-new {
 }
 .not-rotated{
     transform: scale(1.5);
-    transition: transform 100ms ease-in-out
+    transition: transform 180ms ease-in-out
 }
 .rotated{
     transform: scale(1.5) rotate(45deg);
-    transition: transform 100ms ease-in-out;
+    transition: transform 180ms ease-in-out;
 }
 .mobile-new nav div.post-wrap{
     display: flex;
@@ -88,37 +132,6 @@ div.mobile-new {
     cursor: pointer;
 }
 
-.mobile-new .art::before{
-    content: "";
-    position: absolute;
-    background-color:darkturquoise;
-    width: 100%;
-    border-radius: 3px;
-    height: 31px;
-    transform: rotate(-7deg) translateX(-20%) translateY(3%);
-    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
-}
-.mobile-new .art::after{
-    content: "";
-    position: absolute;
-    background:linear-gradient(to bottom,#ffa90a,#7568cf);
-    width: 100%;
-    border-radius: 3px;
-    height: 31px;
-    transform: rotate(-14deg) translateX(-40%) translateY(6%);
-    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
-}
-.mobile-new .art{
-    position: relative;
-    top: -2px;
-    background-color:rgb(190, 190, 190);
-    width: 25px;
-    border-radius: 3px;
-    height: 31px;
-    transform: rotate(8deg)  ;
-    box-shadow: 2px 2px 6px rgba(24, 28, 80, 0.747);
-    margin-left:16px ;
-}
 
 
 
@@ -128,7 +141,7 @@ div.mobile-new {
 /* DROPDOWN MENU 
 ============= */
 
-div.menu-drop {
+div.menu-slide {
     color: gray;
     position: absolute;
     right: -5px;
@@ -167,12 +180,11 @@ div.menu-drop {
 
 .mobile-new form.new-main {
     width: 100%;
-     background-color: #F1F1F1;
-    padding: 8px;
+    background-color: #F1F1F1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 75%;
+    /* height: 75%; */
     align-items: center;
 }
 
@@ -187,6 +199,63 @@ div.menu-drop {
     position: relative;
     /* overflow-y: scroll; */
 }
+
+.mobile-new .editor-wrap .editor-header {
+    padding: 5px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.editor-header textarea#title{
+    padding: 3px;
+    border: none;
+    outline: none;
+    background-color: #F1F1F1;
+    width: 85%;
+    font-family: Arial;
+    resize: none;
+    height: auto;
+    box-sizing: border-box;
+    font-weight: bolder;
+    font-size: 28px;
+    margin-top: 3px;
+    padding: 8px 0px;
+    /* letter-spacing: 0.3px; */
+} 
+.editor-header textarea#subtitle{
+    padding: 3px;
+    border: none;
+    outline: none;
+    background-color: #F1F1F1;
+    width: 85%;
+    font-family: Inter;
+    resize: none;
+    height: auto;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 16px;
+    font-style: italic;
+    padding: 8px 0px ;    
+}
+.editor-header textarea::-webkit-scrollbar {
+    display: none;
+}
+.editor-header textarea::placeholder {
+    color: #adb5bd;
+}
+
+
+
+
+
+
+
+
+
+
+
 .mobile-new div.hashtag-niche-wrap {
     padding: 10px 14px;
     display: block;

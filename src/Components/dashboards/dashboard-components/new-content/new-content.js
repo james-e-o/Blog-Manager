@@ -37,7 +37,7 @@ const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false) 
   let selection;
   useEffect(()=>{
-    const menuDrop = document.querySelector("div.menu-drop")
+    const menuDrop = document.querySelector("div.menu-slide")
     document.addEventListener('click', (e)=>{  
       if(!e.target.closest("div.post-wrap") && menuDrop.classList.contains("roll-down")){
         setActiveMenu(false)
@@ -57,7 +57,7 @@ const NewContent = () => {
               <div className='post-wrap' >
                 <button id='preview'>Preview</button>
                 <button id='progress' onClick={()=>setActiveMenu(!activeMenu)}><img className={!activeMenu?"not-rotated":"rotated"} src={Post} height={12} width={12}/></button>
-                <div className={!activeMenu?"menu-drop roll-up":"menu-drop roll-down"}>
+                <div className={!activeMenu?"menu-slide roll-up":"menu-slide roll-down"}>
                   Hi this is the menu bar
                 </div>
               </div>     
@@ -65,6 +65,16 @@ const NewContent = () => {
       </div>
       <form className="new-main">
         <div className="editor-wrap">
+          <div className="editor-header">
+            <textarea rows='1' onInput={(e)=>{
+               e.target.style.height = 'auto';
+               e.target.style.height = `${e.target.scrollHeight}px`
+            }} onKeyDown={(e)=> e.key==='Enter'? e.preventDefault():''} id="title" placeholder="Title"></textarea>
+            <textarea rows='1' onInput={(e)=>{
+               e.target.style.height = 'auto';
+               e.target.style.height = `${e.target.scrollHeight}px`
+            }} onKeyDown={(e)=> e.key==='Enter'? e.preventDefault():''} id="subtitle" placeholder="Add a subtitle"></textarea>
+          </div>
           <Editor />
         </div>
       </form>
@@ -323,7 +333,7 @@ const Editor = () => {
   
   return (
       <imageProvider.Provider  value=''>
-        <EditorProvider slotAfter={<div className='scroll-emoji'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
+        <EditorProvider slotAfter={<div className='bottom-menu-wrap'><ScrollMenu /><Emojis /></div>} slotBefore={<BasicMenu inputMode={()=>setInputImage(!inputImage)} />} extensions={extensions}>
           <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
         </EditorProvider>
       </imageProvider.Provider>
