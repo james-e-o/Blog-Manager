@@ -338,7 +338,8 @@ const Editor = () => {
   
   return (
         <EditorProvider slotAfter={<div className='bottom-menu-wrap'><ScrollMenu /><Emojis /></div>} slotBefore={<><BasicMenu inputMode={()=>setInputImage(!inputImage)} /> <EditorHeader /></>} extensions={extensions}>
-          {menu}
+          {/* <FloatingMenu>This is the floating menu</FloatingMenu> */}
+          {/* <BubbleMenu>This is the floating menu</BubbleMenu> */}
           <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
         </EditorProvider>
   )

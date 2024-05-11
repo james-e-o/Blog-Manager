@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  width: 85%;
+  width: 90%;
   margin: 5px auto;
 }
 .mobile-new div.editor-controls{
@@ -27,7 +27,7 @@
     display: inline-flex;
     overflow: hidden;
     background-color: white;
-    box-shadow: 0px 0px 2px darkturquoise;
+    box-shadow: 0px 0px 2px slateblue;
     border-radius: 10px;
     position: relative;
     z-index: 10;
@@ -39,15 +39,16 @@
 }
 .mobile-new div.quick-edit{
     margin: 5px auto;
-    padding: 4px 6px;
+    padding: 4px;
     width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     overflow: hidden;
     background-color: white;
-    box-shadow: 0px 0px 2px orange;
-    border-radius: 10px;
-    position: relative;
+    box-shadow: 0px 0px 2px slateblue;
+    border-radius: 5px;
+    position: sticky;
+    top: 8px;
     z-index: 10;
     /* height: fit-content; */
 }
@@ -106,7 +107,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 5px 4px 0px; 
+    margin: 2px 3px; 
     width: fit-content;
     cursor:pointer;
     border-radius: 5px;
@@ -114,7 +115,7 @@
     color: rgb(45, 55, 59);
     font-weight: bolder;
     font-size: 13px;
-    padding: 4px 9px;
+    padding: 5px 9px;
     box-sizing: border-box;
     border: 1px solid rgb(197, 197, 197);
     position: relative;

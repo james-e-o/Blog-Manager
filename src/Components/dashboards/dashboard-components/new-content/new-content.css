@@ -188,11 +188,11 @@ div.menu-slide {
 }
 
 .mobile-new .editor-wrap .editor-header {
-    padding: 1px 16px;
+    padding: 1px 15px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: 95%;
 }
 
 .editor-header textarea#title{
