@@ -366,11 +366,13 @@ const Emojis = () => {
 const AddMedia = ({inputMode}) => {
   const [inputImage, setInputImage] = useState(false)
   return(
+  <>
     <button style={{width:'fit-content', background:'white',boxShadow:'0px 0px 2px orange'}} 
      onClick={(e)=>{e.preventDefault(),setInputImage(!inputImage)}} id="image-upload" >
       <img src={Pic} height={19} width={19} />
-      <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
     </button>
+    <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)}/>
+  </>
   )
 }
 

@@ -18,6 +18,9 @@ div.mobile-new {
     padding:6px 14px 8px;
     box-sizing: border-box;
     height: 60px;
+    position: sticky;
+    top: 0px;
+    z-index: 15;
 }
 
 

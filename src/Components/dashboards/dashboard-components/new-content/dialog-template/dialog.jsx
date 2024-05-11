@@ -3,7 +3,7 @@ import "./dialog.css"
 import { imageProvider } from '../new-content'
 import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
 
-const Dialog = ({status, alterStatus, addImage}) => {
+const Dialog = ({status, alterStatus}) => {
   const [imageUrl, setImageUrl] = useState("")
   const {editor} = useCurrentEditor()
   function insertImage (e){
@@ -17,8 +17,7 @@ const Dialog = ({status, alterStatus, addImage}) => {
 
   return (
    <imageProvider.Provider  value={imageUrl}>
-    <div className={!status?'dialog-main':"dialog-main on"}>
-        <div className="dialog-content">
+        <div className={!status?'dialog-box dialog-off':"dialog-box dialog-on"}>
             <div className="terminator" onClick={alterStatus}>{terminator}</div>
             <p>Insert image</p>
             <input type="file" name="image" id="image" onChange={(e)=>{
@@ -32,7 +31,6 @@ const Dialog = ({status, alterStatus, addImage}) => {
             }} />
             <p id='addimage' onClick={(e)=>insertImage(e).then(alterStatus)}>Insert</p>
         </div>
-    </div>
     </imageProvider.Provider>
   )
 }

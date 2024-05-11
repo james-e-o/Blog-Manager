@@ -1,56 +1,35 @@
-div.dialog-main {
+div.dialog-box {
     position: absolute;
-    background-color: cyan;
-    top: calc(100% + 8px);
-    bottom: 0px;
-    right: calc(0% + 8px);
-    /* left: calc(8px); */
-    display: flex;
-    justify-content:center ;
-    align-items: center;
-    z-index: -5;
-    opacity: 0.5;
-    transition: opacity 200ms ease-in, z-index 200ms ease-in;
-    width: 50vw;
-    height: fit-content;
-    padding: 20px;
+    right: calc(0% - 2px);
+    width: 55vw;
+    background-color: white;
+    border: 1px solid darkturquoise;
+    height: 23vh;
+    border-radius: 10px;
+    padding: 10px;
 }
-.dialog-main.on {
+
+div.dialog-off{
+    z-index: -5;
+    opacity:0 ;
+    top: calc(95%);
+    transition: top 100ms ease-out, opacity 80ms ease-in;
+}
+div.dialog-on{
     z-index: 5;
     opacity: 1;
-}
-
-div.dialog-content {
-    width: 60vw;
-    background-color: white;
-    border: 1px solid orange;
-    height: 23vh;
-    border-radius: 10px;
-    border: 1px solid rgb(165, 165, 165);
-    transform: scale(0.5);
-    transition: transform 200ms ease-in-out;
-    padding: 10px;
-}
-
-.dialog-main.on div.dialog-content{
-    width: 60vw;
-    background-color: white;
-    border: 1px solid orange;
-    height: 23vh;
-    border-radius: 10px;
-    border: 1px solid rgb(165, 165, 165);
-    transform: scale(1);
-    padding: 10px;
+    top: calc(100% + 10px) ;
+    transition: top 100ms ease-out, opacity 80ms ease-in;
 }
 
 
-.dialog-content .terminator {
+.dialog-box .terminator {
     display: flex;
     justify-content: flex-end;
     padding: 0px 10px;
     margin-bottom: 5px;
 }
-.dialog-content p{
+.dialog-box p{
     text-align: center;
     font-size: 18px;
     font-weight: lighter;
@@ -58,7 +37,7 @@ div.dialog-content {
     padding: 4px;
     margin-bottom: 10px;
 }
-.dialog-content p#addimage {
+.dialog-box p#addimage {
     text-align: center;
     font-size: small;
     cursor: pointer;
@@ -72,7 +51,7 @@ div.dialog-content {
     border: 1px solid slategray;
     display: block;
 }
-.dialog-content input{
+.dialog-box input{
     padding: 5px;
     margin-bottom: 15px;
     width: 90%;
