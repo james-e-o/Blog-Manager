@@ -366,6 +366,12 @@ const Emojis = () => {
   )
 }
 
+const AddMedia = () => {
+  return(
+    <div className='addmedia'><img src={Emoji} height={26} width={26} /></div>
+  )
+}
+
 
 
 const Editor = () => {
@@ -374,7 +380,7 @@ const Editor = () => {
   useEffect(()=>console.log(imageContext))
   
   return (
-        <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><BasicMenu inputMode={()=>setInputImage(!inputImage)} /> <EditorHeader />  <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/></>} extensions={extensions}>
+        <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><div className='top-menu-wrap'><BasicMenu inputMode={()=>setInputImage(!inputImage)} /><AddMedia/></div> <EditorHeader/>  <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/></>} extensions={extensions}>
           {/* <FloatingMenu>This is the floating menu</FloatingMenu> */}
           <BubbleMenu>  
             <Bubble/>
