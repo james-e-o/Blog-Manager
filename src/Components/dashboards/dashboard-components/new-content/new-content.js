@@ -131,7 +131,6 @@ const ScrollMenu = () => {
             menuRightArr.style.zIndex = "1"
             menuRightArr.style.opacity="1"
           }
-          console.log(controlsScroll)
       }}>
       <button onClick={() => editor.chain().focus().toggleStrike().run()} className={editor.isActive('strike') ? 'is-active' : ''}>
         <img src={Strike} height={15} width={15}/>
@@ -317,6 +316,50 @@ const EditorHeader = () => {
   )
 }
 
+const Bubble = () => {
+  const {editor} = useCurrentEditor()
+  return (
+          <div style={{display:'flex',gap:'2px',width:'fit-content'}}>
+            <button
+              style={{background:"white", border:"1px solid slateblue", height:"15px", width:"15px"}}
+              onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
+              disabled={
+                !editor.can()
+                  .chain()
+                  .focus()
+                  .toggleBold()
+                  .run()
+              }
+              className={editor.isActive('bold') ? 'is-active' : ''}
+            >
+              <img src={Bold} height={8} width={8}/>
+            </button>
+            <button
+              style={{background:"white", border:"1px solid slateblue", height:"15px", width:"15px"}}
+              onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
+              disabled={
+                !editor.can()
+                  .chain()
+                  .focus()
+                  .toggleItalic()
+                  .run()
+              }
+              className={editor.isActive('italic') ? 'is-active' : ''}
+            >
+              <img src={Italics} height={8} width={8}/>
+            </button>
+            <button
+             style={{background:"white", border:"1px solid slateblue", height:"15px", width:"15px"}}
+              onClick={(e) => {e.preventDefault(),editor.chain().focus().toggleUnderline().run()}}
+
+              className={editor.isActive('underline') ? 'is-active' : ''}
+            >
+            <img src={Under} height={8} width={8}/>
+            </button>
+        </div>
+  )
+}
+
 const Emojis = () => {
   return(
     <div className='emojis'><img src={Emoji} height={26} width={26} /></div>
@@ -333,42 +376,8 @@ const Editor = () => {
   return (
         <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><BasicMenu inputMode={()=>setInputImage(!inputImage)} /> <EditorHeader />  <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/></>} extensions={extensions}>
           {/* <FloatingMenu>This is the floating menu</FloatingMenu> */}
-          <BubbleMenu>
-            <div style={{display:'flex',gap:'2px',width:'fit-content'}}>
-                <button
-                  onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
-                  disabled={
-                    !editor.can()
-                      .chain()
-                      .focus()
-                      .toggleBold()
-                      .run()
-                  }
-                  className={editor.isActive('bold') ? 'is-active' : ''}
-                >
-                  <img src={Bold} height={15} width={15}/>
-                </button>
-                <button
-                  onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
-                  disabled={
-                    !editor.can()
-                      .chain()
-                      .focus()
-                      .toggleItalic()
-                      .run()
-                  }
-                  className={editor.isActive('italic') ? 'is-active' : ''}
-                >
-                  <img src={Italics} height={15} width={15}/>
-                </button>
-                <button
-                  onClick={(e) => {e.preventDefault(),editor.chain().focus().toggleUnderline().run()}}
-          
-                  className={editor.isActive('underline') ? 'is-active' : ''}
-                >
-                <img src={Under} height={15} width={15}/>
-                </button>
-            </div>
+          <BubbleMenu>  
+            <Bubble/>
           </BubbleMenu>
           {/* <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/> */}
         </EditorProvider>
