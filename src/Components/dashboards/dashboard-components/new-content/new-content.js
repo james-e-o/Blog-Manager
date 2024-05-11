@@ -220,7 +220,7 @@ const ScrollMenu = () => {
   )
 }
 
-const BasicMenu = ({inputMode}) =>{
+const BasicMenu = () =>{
   const {editor} = useCurrentEditor()
   const imageContext = useContext(imageProvider)
    
@@ -294,9 +294,6 @@ const BasicMenu = ({inputMode}) =>{
       >
        <img src={BlockQ} height={16} width={16} />
       </button>
-      <button onClick={inputMode} id="image-upload" >
-        <img src={Pic} height={19} width={19} />
-      </button>
     </div>
   )
 }
@@ -366,21 +363,25 @@ const Emojis = () => {
   )
 }
 
-const AddMedia = () => {
+const AddMedia = ({inputMode}) => {
+  const [inputImage, setInputImage] = useState(false)
   return(
-    <div className='addmedia'><img src={Emoji} height={26} width={26} /></div>
+    <button style={{width:'fit-content', background:'white',boxShadow:'0px 0px 2px orange'}} 
+     onClick={inputMode} id="image-upload" >
+      <img src={Pic} height={19} width={19} />
+      <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
+    </button>
   )
 }
 
 
 
 const Editor = () => {
-  const [inputImage, setInputImage] = useState(false)
   const imageContext = useContext(imageProvider)
   useEffect(()=>console.log(imageContext))
   
   return (
-        <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><div className='top-menu-wrap'><BasicMenu inputMode={()=>setInputImage(!inputImage)} /><AddMedia/></div> <EditorHeader/>  <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/></>} extensions={extensions}>
+        <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><div className='top-menu-wrap'><BasicMenu inputMode={()=>setInputImage(!inputImage)} /><AddMedia/></div> <EditorHeader/> </>} extensions={extensions}>
           {/* <FloatingMenu>This is the floating menu</FloatingMenu> */}
           <BubbleMenu>  
             <Bubble/>
