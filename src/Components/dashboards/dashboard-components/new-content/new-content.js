@@ -367,7 +367,7 @@ const AddMedia = ({inputMode}) => {
   const [inputImage, setInputImage] = useState(false)
   return(
     <button style={{width:'fit-content', background:'white',boxShadow:'0px 0px 2px orange'}} 
-     onClick={inputMode} id="image-upload" >
+     onClick={(e)=>{e.preventDefault(),setInputImage(!inputImage)}} id="image-upload" >
       <img src={Pic} height={19} width={19} />
       <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
     </button>
@@ -381,7 +381,7 @@ const Editor = () => {
   useEffect(()=>console.log(imageContext))
   
   return (
-        <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><div className='top-menu-wrap'><BasicMenu inputMode={()=>setInputImage(!inputImage)} /><AddMedia/></div> <EditorHeader/> </>} extensions={extensions}>
+        <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><div className='top-menu-wrap'><BasicMenu/> <AddMedia/> </div> <EditorHeader/> </>} extensions={extensions}>
           {/* <FloatingMenu>This is the floating menu</FloatingMenu> */}
           <BubbleMenu>  
             <Bubble/>
