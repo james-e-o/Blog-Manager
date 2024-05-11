@@ -18,6 +18,8 @@ import BlockQ from "../../../contents/images/icons/quote.png"
 import CodeBlock from "../../../contents/images/icons/codeblock.png"
 import Emoji from "../../../contents/images/icons/emoji.png"
 import Post from "../../../contents/images/icons/plus.png"
+import LeftDir from "../../../contents/images/icons/left-direct.png"
+import RightDir from "../../../contents/images/icons/right-direct.png"
 
 
 import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
@@ -49,7 +51,6 @@ const NewContent = () => {
   return (
     <div className='mobile-new'>
       <div className="new-header">
-           
             <div className="user">
               <div className='art'></div>
             </div>
@@ -95,14 +96,6 @@ const ScrollMenu = () => {
   const menuLeftArr = document.getElementById("leftarr")
   const menuRightArr = document.getElementById("rightarr")
 
-  const addImage = useCallback(() => {
-  const url = window.prompt('URL')
-
-  if (url) {
-    editor.chain().focus().setImage({ src: url }).run()
-  }
-}, [editor])
-
   if (!editor) {
     return null
   }
@@ -115,14 +108,14 @@ const ScrollMenu = () => {
             left: (controlsScroll.scrollLeft - 180%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft - 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
             behavior: "smooth",
           });
-      }} ></p>
+      }} ><img src={LeftDir} height={19} width={19}/></p>
       <p id="rightarr" onClick={()=>{
           controlsScroll.scrollTo({
             top: 0,
             left: (controlsScroll.scrollLeft + 180%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft + 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
             behavior: "smooth",
           });
-      }}></p>
+      }}><img src={RightDir} height={19} width={19}/></p>
       <div id="controls-scroll" className="controls-scroll" onScroll={(e)=>{
           if (e.target.scrollLeft > 34){
             menuLeftArr.style.zIndex = "1"
@@ -138,6 +131,7 @@ const ScrollMenu = () => {
             menuRightArr.style.zIndex = "1"
             menuRightArr.style.opacity="1"
           }
+          console.log(controlsScroll)
       }}>
       <button onClick={() => editor.chain().focus().toggleStrike().run()} className={editor.isActive('strike') ? 'is-active' : ''}>
         <img src={Strike} height={15} width={15}/>
@@ -238,7 +232,7 @@ const BasicMenu = ({inputMode}) =>{
 
   return (
     <div className="quick-edit" onClick={(e) => e.preventDefault()}>
-         <button
+      <button
         onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
         disabled={
           !editor.can()
@@ -337,10 +331,46 @@ const Editor = () => {
   useEffect(()=>console.log(imageContext))
   
   return (
-        <EditorProvider slotAfter={<div className='bottom-menu-wrap'><ScrollMenu /><Emojis /></div>} slotBefore={<><BasicMenu inputMode={()=>setInputImage(!inputImage)} /> <EditorHeader /></>} extensions={extensions}>
+        <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><BasicMenu inputMode={()=>setInputImage(!inputImage)} /> <EditorHeader />  <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/></>} extensions={extensions}>
           {/* <FloatingMenu>This is the floating menu</FloatingMenu> */}
-          {/* <BubbleMenu>This is the floating menu</BubbleMenu> */}
-          <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/>
+          <BubbleMenu>
+            <div style={{display:'flex',gap:'2px',width:'fit-content'}}>
+                <button
+                  onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
+                  disabled={
+                    !editor.can()
+                      .chain()
+                      .focus()
+                      .toggleBold()
+                      .run()
+                  }
+                  className={editor.isActive('bold') ? 'is-active' : ''}
+                >
+                  <img src={Bold} height={15} width={15}/>
+                </button>
+                <button
+                  onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
+                  disabled={
+                    !editor.can()
+                      .chain()
+                      .focus()
+                      .toggleItalic()
+                      .run()
+                  }
+                  className={editor.isActive('italic') ? 'is-active' : ''}
+                >
+                  <img src={Italics} height={15} width={15}/>
+                </button>
+                <button
+                  onClick={(e) => {e.preventDefault(),editor.chain().focus().toggleUnderline().run()}}
+          
+                  className={editor.isActive('underline') ? 'is-active' : ''}
+                >
+                <img src={Under} height={15} width={15}/>
+                </button>
+            </div>
+          </BubbleMenu>
+          {/* <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)} addImage={()=>setInputImage(!inputImage)}/> */}
         </EditorProvider>
   )
 }
