@@ -37,7 +37,7 @@
 }
 .mobile-new div.quick-edit{
     padding: 4px;
-    width: 85%;
+    max-width: 80%;
     display: flex;
     justify-content: space-evenly;
     overflow: hidden;
@@ -56,7 +56,7 @@
     left: 0px;
     top: 0px;
     height: 100%;
-    width: 35px;
+    width: 37px;
     opacity: 0;
     z-index: -1;
     background: linear-gradient(to right, darkturquoise, transparent);
@@ -71,7 +71,7 @@
     right: 0px;
     top: 0px;
     height: 100%;
-    width: 35px;
+    width: 37px;
     opacity: 1;
     transition: opacity 170ms ease-in-out;
     z-index: 1;
@@ -154,16 +154,16 @@ div.content-wrap {
 
 
 
+
+
+
 /* BUBBLE CONTAINER */
-.bubble-menu {
-  z-index: 2;
-}
 
 .mobile-new div.bubble {
   display: flex;
   padding: 0px 3px;
   /* flex-direction: column; */
-  margin: 40px;
+  margin: 45px;
   justify-content: space-evenly;
   overflow: hidden;
   background-color: white;
@@ -187,6 +187,11 @@ div.content-wrap {
   border: 1px solid #605ba8;
   position: relative; 
 }
+
+
+
+
+
 
 
 

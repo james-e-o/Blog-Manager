@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, createContext, useContext } from 'react'
+import React, { useEffect,useRef, useState, useCallback, createContext, useContext } from 'react'
 import "./new-content.css"
 import "./editor.css"
 import {Menu_icon, Plus } from '../../../svg'
@@ -37,16 +37,32 @@ export const imageProvider = createContext("")
 
 const NewContent = () => {
   const [activeMenu, setActiveMenu] = useState(false) 
-  let selection;
+  const [scroll, setScroll]= useState('')
+  const scrollOffset =useRef(window.scrollY)
+
   useEffect(()=>{
     const menuDrop = document.querySelector("div.menu-slide")
+    const EditorWrap = document.getElementById("editor-wrap")
     document.addEventListener('click', (e)=>{  
       if(!e.target.closest("div.post-wrap") && menuDrop.classList.contains("roll-down")){
         setActiveMenu(false)
         menuDrop.classList.replace("roll-down","roll-up")
       }
     })
-  },[])
+
+    window.addEventListener('scroll',(e)=>{
+      scrollOffset.current=window.scrollY
+    })
+
+    if (activeMenu){
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollOffset.current}px`
+     }else{
+      document.body.style.position = ''
+      window.scrollTo(0, scroll);
+     }
+     setScroll(scrollOffset.current)
+  },[activeMenu])
 
   return (
     <div className='mobile-new'>
@@ -65,7 +81,7 @@ const NewContent = () => {
             </nav>
       </div>
       <form className="new-main">
-        <div className="editor-wrap">
+        <div id='editor-wrap' className="editor-wrap">
           <Editor />
         </div>
       </form>
@@ -231,39 +247,7 @@ const BasicMenu = () =>{
 
   return (
     <div className="quick-edit" onClick={(e) => e.preventDefault()}>
-      <button
-        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .toggleBold()
-            .run()
-        }
-        className={editor.isActive('bold') ? 'is-active' : ''}
-      >
-        <img src={Bold} height={15} width={15}/>
-      </button>
-      <button
-        onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
-        disabled={
-          !editor.can()
-            .chain()
-            .focus()
-            .toggleItalic()
-            .run()
-        }
-        className={editor.isActive('italic') ? 'is-active' : ''}
-      >
-        <img src={Italics} height={15} width={15}/>
-      </button>
-      <button
-        onClick={(e) => {e.preventDefault(),editor.chain().focus().toggleUnderline().run()}}
- 
-        className={editor.isActive('underline') ? 'is-active' : ''}
-      >
-       <img src={Under} height={15} width={15}/>
-      </button>
+    
       <button
         onClick={() => editor.chain().focus().undo().run()}
         disabled={
@@ -299,6 +283,7 @@ const BasicMenu = () =>{
 }
 
 const EditorHeader = () => {
+  
   return (
     <div className="editor-header">
       <textarea rows='1' onInput={(e)=>{
@@ -325,7 +310,7 @@ const Bubble = () => {
     
   })
   return (
-          <div className='bubble' onClick={setZindex}>
+          <div className='bubble'>
             <button
               onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
               disabled={
@@ -373,9 +358,10 @@ const AddMedia = ({inputMode}) => {
   const [inputImage, setInputImage] = useState(false)
   return(
   <>
-    <button style={{width:'fit-content', background:'white',boxShadow:'0px 0px 2px orange'}} 
+    <button style={{width:'fit-content', height:'fit-content',padding:'8px', background:'white',boxShadow:'0px 0px 2px slateblue',fontWeight:'normal', fontSize:'14px'}} 
      onClick={(e)=>{e.preventDefault(),setInputImage(!inputImage)}} id="image-upload" >
-      <img src={Pic} height={19} width={19} />
+      {/* <img src={Pic} height={19} width={19} /> */}
+      <span >Add media</span>
     </button>
     <Dialog status={inputImage} alterStatus={()=>setInputImage(!inputImage)}/>
   </>
