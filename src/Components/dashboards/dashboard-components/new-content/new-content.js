@@ -96,13 +96,13 @@ const ScrollMenu = () => {
   const menuLeftArr = document.getElementById("leftarr")
   const menuRightArr = document.getElementById("rightarr")
 
-  if (!editor) {
-    return null
-  }
+  // if (!editor) {
+  //   return null
+  // }
 
   return (
-    <div className='editor-controls' onClick={(e) => e.preventDefault()}>
-      <p id="leftarr" onClick={()=>{
+    <div className='editor-controls' onLoad={(e)=>editor.view.focus()}  onClick={(e) => e.preventDefault()}>
+      <p id="leftarr" onClick={()=>{         
           controlsScroll.scrollTo({
             top: 0,
             left: (controlsScroll.scrollLeft - 180%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)) || (controlsScroll.scrollLeft - 20%(controlsScroll.scrollWidth - controlsScroll.offsetWidth)),
@@ -315,10 +315,18 @@ const EditorHeader = () => {
 
 const Bubble = () => {
   const {editor} = useCurrentEditor()
+ 
+    function setZindex(){
+       const tippy1 = document.getElementById('tippy-1')
+       console.log(tippy1)
+       tippy1.style.zIndex='14'
+    }
+  useEffect(()=>{
+    
+  })
   return (
-          <div style={{display:'flex',gap:'2px',width:'fit-content'}}>
+          <div className='bubble' onClick={setZindex}>
             <button
-              style={{background:"white", border:"1px solid slateblue", height:"15px", width:"15px"}}
               onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleBold().run()}}
               disabled={
                 !editor.can()
@@ -329,10 +337,9 @@ const Bubble = () => {
               }
               className={editor.isActive('bold') ? 'is-active' : ''}
             >
-              <img src={Bold} height={8} width={8}/>
+              <img src={Bold} height={16} width={16}/>
             </button>
             <button
-              style={{background:"white", border:"1px solid slateblue", height:"15px", width:"15px"}}
               onClick={(e) => {e.preventDefault(), editor.chain().focus().toggleItalic().run()}}
               disabled={
                 !editor.can()
@@ -343,15 +350,14 @@ const Bubble = () => {
               }
               className={editor.isActive('italic') ? 'is-active' : ''}
             >
-              <img src={Italics} height={8} width={8}/>
+              <img src={Italics} height={16} width={16}/>
             </button>
             <button
-             style={{background:"white", border:"1px solid slateblue", height:"15px", width:"15px"}}
-              onClick={(e) => {e.preventDefault(),editor.chain().focus().toggleUnderline().run()}}
+             onClick={(e) => {e.preventDefault(),editor.chain().focus().toggleUnderline().run()}}
 
               className={editor.isActive('underline') ? 'is-active' : ''}
             >
-            <img src={Under} height={8} width={8}/>
+            <img src={Under} height={16} width={16}/>
             </button>
         </div>
   )
@@ -380,7 +386,9 @@ const AddMedia = ({inputMode}) => {
 
 const Editor = () => {
   const imageContext = useContext(imageProvider)
-  useEffect(()=>console.log(imageContext))
+  useEffect(()=>{
+    
+  })
   
   return (
         <EditorProvider slotAfter={<div style={{position:'fixed', bottom:'3px', width:'100vw'}}><div className='bottom-menu-wrap'><Emojis/><ScrollMenu /></div></div>} slotBefore={<><div className='top-menu-wrap'><BasicMenu/> <AddMedia/> </div> <EditorHeader/> </>} extensions={extensions}>

@@ -20,7 +20,7 @@ div.mobile-new {
     height: 60px;
     position: sticky;
     top: 0px;
-    z-index: 15;
+    z-index: 12000;
 }
 
 

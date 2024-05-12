@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   width:90%;
+  z-index: 10000;
 }
 .mobile-new div.top-menu-wrap{
   width: 90%;
@@ -15,7 +16,7 @@
   position: sticky;
   top: 64px;
   align-items: center;
-  z-index: 10;
+  z-index: 12000;
 }
 .mobile-new div.editor-controls{ 
     padding: 0px 2px ;
@@ -103,7 +104,7 @@
     padding: 4px 9px;
     cursor:pointer;
     box-sizing: border-box;
-    border: 1px solid rgb(197, 197, 197);
+    border: 1px solid #605ba8;
 }
 .mobile-new div.top-menu-wrap button{
     display: inline-flex;
@@ -119,7 +120,7 @@
     font-size: 13px;
     padding: 5px 9px;
     box-sizing: border-box;
-    border: 1px solid rgb(197, 197, 197);
+    border: 1px solid #605ba8;
     position: relative;
 }
 
@@ -149,6 +150,43 @@ div.content-wrap {
 }
 
 
+
+
+
+
+/* BUBBLE CONTAINER */
+.bubble-menu {
+  z-index: 2;
+}
+
+.mobile-new div.bubble {
+  display: flex;
+  padding: 0px 3px;
+  /* flex-direction: column; */
+  margin: 40px;
+  justify-content: space-evenly;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 0px 2px slateblue;
+  border-radius: 8px;
+}
+.mobile-new div.bubble button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 3px; 
+  width: max-content;
+  cursor:pointer;
+  border-radius: 5px;
+  background-color: #F1F1F1;
+  color: rgb(45, 55, 59);
+  font-weight: bolder;
+  font-size: 13px;
+  padding: 5px 9px;
+  box-sizing: border-box;
+  border: 1px solid #605ba8;
+  position: relative; 
+}
 
 
 

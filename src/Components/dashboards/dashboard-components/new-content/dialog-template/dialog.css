@@ -13,6 +13,7 @@ div.dialog-off{
     z-index: -5;
     opacity:0 ;
     top: calc(95%);
+    pointer-events: none;
     transition: top 100ms ease-out, opacity 80ms ease-in;
 }
 div.dialog-on{
