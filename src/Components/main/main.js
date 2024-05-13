@@ -8,6 +8,13 @@ import Ui from "../contents/images/ui.png"
 import Secure from "../contents/images/secure.png"
 import Seo from "../contents/images/seo.png"
 import LightBulb from "../contents/images/lightbulb.png"
+import HeroImage from "../contents/images/skr.png"
+import CyanSquiggle from "../contents/images/cyanSqiggle.png"
+import SlateblueSquiggle from "../contents/images/slateSqiggle.png"
+import OrangeSquiggle from "../contents/images/orangeSqiggle.png"
+import SearchIcon from "../contents/images/lightbulb.png"
+import WriteIcon from "../contents/images/lightbulb.png"
+import BulbIcon from "../contents/images/lightbulb.png"
 import { screenWidth } from '../app/App'
 
 
@@ -45,26 +52,7 @@ const Main = () => {
         return
       }
       const [innerWidth, setInnerWidth] = useState(window.innerWidth)
-      // useEffect(() => {
-      //   window.onresize = () => {
-      //     setInnerWidth(window.innerWidth)
-      //   }
-      // })
       const screen = useContext(screenWidth)
-      useEffect(()=>{
-        const randomColor = getRandomIntInclusive(0,2)
-        dynamicColor.current.style.color = `${colors[randomColor]}`
-        setColorState(randomColor)
-
-        console.log("popping",Element)
-
-        // let newpoint
-        // scroll.current.addEventListener('pointercancel',(e)=>{
-        //   let scrollArray = Array.from(scroll.current.children) 
-        //   let distance = e.x 
-        //   console.log(scrollArray.indexOf(e.target.closest('div.rev')),distance )
-        // })
-      },[screen])
   return (
   
     <main>
@@ -72,15 +60,21 @@ const Main = () => {
       //-- MOBILE --
       (<>
         <div className='mobile-main'>
-          <div className='h1-tag'>
-            <div className='art'></div>
-              <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
-            <div id='cta'>
-              <p className="punch-line">With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br /></p>
-              <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
-            </div>
+          <div className='hero-tag'>
+              <h1 ref={dynamicColor} id='main-h1'>Share <span>your </span>  
+              Ideas & build 
+              <span> your </span>  
+              audience here.</h1>
+              <p className="punch-line">
+              <img id='cyansquiggle' src={CyanSquiggle} width={"23px"} height={"40px"} alt="question" />
+              <img id='orangesquiggle' src={OrangeSquiggle} width={"20px"} height={"35px"} alt="question" />
+              <img id='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} alt="question" />
+                Our platform provides you the best user experience you need to view & make great contents.</p>
+              <Link to={'sign'} state={{signValue:'start'}}><button id="cta" >Get started</button></Link>
+              <div className="hero-art">
+                <img src={HeroImage} width={"137px"} height={"150px"} alt="question" />
+              </div>
           </div>
-          <Link  to="/about" style={{textDecoration:"none"}}><div className="aboutlink"><span>Know more about us </span><Newlink/></div></Link>
           <div className='featured'>
             <div id='reads'>Top reads</div>
                       <div className='reads'>

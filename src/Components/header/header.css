@@ -1,15 +1,26 @@
 .header {
     z-index: 30;
-    height: fit-content;
+    height: 70px;
     position: sticky ;
     top: 0px;
     left: 0px;
     right: 0px;
-    padding:8px 10px;
+    padding:6px 14px 8px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color:slateblue;
+    box-sizing: border-box;
+    background-color:white;
     transition: background-color 280ms ease;
+}
+
+div.logo-wrap{
+    padding:4px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+    gap: 4px;
 }
 
 .active {
@@ -19,33 +30,22 @@
 .header h1.landing{
     
     font-family:Pacifico;
-    padding: 10px 20px;
-    color: rgb(255, 197, 8);
+    padding: 5px;
+    color: slateblue;
     font-weight:bolder;
-    font-size:large;
-}
-.header h1 span {
-    font-family: Pacifico;
-    color: darkturquoise;
-}
-.header nav {
-    align-items: center;
-    padding: 8px 18px;
-    display: flex;
-    color:white;
-    justify-content: space-around;
+    font-size:17px;
 }
 
-.header nav.desktop{
+.header nav {
+    align-items: center;
+    padding: 8px 2px;
     display: flex;
-    margin-right: 15px;
+    color:white;
+    justify-content: center;
+    gap:7px;
 }
+
 /* .desktop ul li{
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-} */
-.desktop ul li{
     list-style: none;
     display: inline-block;
     padding: 5px;
@@ -58,18 +58,19 @@
     display: inline-block;
     padding: 5px;
     margin: 6px;
-}
-.header nav button, .started {
+} */
+
+.header nav button{
     display: inline-block;
-    border-radius: 36px;
+    border-radius: 14px;
     font-weight: 600;
-    border: 1px solid white;
-    padding: 7px 12px;
-    color:white;
-    margin:0px 15px;
-    background-color: transparent;
-    font-size: medium;
-    font-family: monospace;
+    border: 2px solid slateblue;
+    padding: 6px 12px;
+    color:slateblue;
+    margin:0px 8px;
+    background-color: white;
+    font-size: 13px;
+    font-family: Inter;
     transition: background-color 200ms ease, border 200ms ease;
 }
 .header nav button:hover {
@@ -91,14 +92,12 @@
     height: 100%;
     width: 100%;
     position: relative;
-    fill: white;
+    fill: slateblue;
     transition: fill 200ms ease;
 }
 .nav-svg {
-    fill: black;
+    fill: slateblue;
 }
-/* why can't .nav-svg below be added to svg without .svg */
-
 
 
 .toggle-menu {
