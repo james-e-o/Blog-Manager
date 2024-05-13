@@ -66,13 +66,13 @@ const Main = () => {
               <span> your </span>  
               audience here.</h1>
               <p className="punch-line">
-              <img id='cyansquiggle' src={CyanSquiggle} width={"23px"} height={"40px"} alt="question" />
-              <img id='orangesquiggle' src={OrangeSquiggle} width={"20px"} height={"35px"} alt="question" />
-              <img id='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} alt="question" />
+              <img id='cyansquiggle' src={CyanSquiggle} width={"23px"} height={"40px"} />
+              <img id='orangesquiggle' src={OrangeSquiggle} width={"20px"} height={"35px"} />
+              <img id='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} />
                 Our platform provides you the best user experience you need to view & make great contents.</p>
               <Link to={'sign'} state={{signValue:'start'}}><button id="cta" >Get started</button></Link>
               <div className="hero-art">
-                <img src={HeroImage} width={"137px"} height={"150px"} alt="question" />
+                <img src={HeroImage}  />
               </div>
           </div>
           <div className='featured'>

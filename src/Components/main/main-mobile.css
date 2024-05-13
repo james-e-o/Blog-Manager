@@ -77,13 +77,12 @@ img#slatebluesquiggle {
 
 .mobile-main .hero-tag button#cta{
     display: block;
-    margin: 5px auto;
+    margin: 5px auto 27px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
     outline: none;
     border: none;
     padding: 6px 13px;
-    font-weight: 200;
     color: white;
     background-image:  linear-gradient(to right,slateblue,orange);
     background-color: white;
@@ -96,9 +95,13 @@ img#slatebluesquiggle {
 }
 
 .mobile-main div.hero-art {
-    width: 50%;
+    width: fit-content;
     margin: 10px auto;
 
+}
+.mobile-main div.hero-art img{
+    width:280px ;
+    aspect-ratio: 1.69;
 }
 
 
