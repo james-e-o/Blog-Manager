@@ -1,12 +1,13 @@
 main{
     font-family:   Arial, sans-serif;
     overflow-x: hidden;
-    
+    width: 100vw;
 }
 .mobile-main {
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
 }
 .mobile-main .hero-tag{
     background-color: transparent;
@@ -96,8 +97,7 @@ img#slatebluesquiggle {
 
 .mobile-main div.hero-art {
     width: fit-content;
-    margin: 10px auto;
-
+    margin: 10px auto 25px;
 }
 .mobile-main div.hero-art img{
     width:280px ;
@@ -131,16 +131,110 @@ div.aboutlink {
 
 
 /* FEATURED */
-.mobile-main div.featured{
-    padding: 20px;
-    background-color: white;
+.mobile-main p.interest-text {
+    font-family: Quicksand;
+    padding: 10px;
+    font-size: 18px;
+    text-align: start;
+    display: block;
+    width: 83%;
+}
+.mobile-main p.interest-text span {
+    color: darkturquoise;
+}
+.mobile-main div.interest{
+    background-color: #E2E0EF;
     height:fit-content;
     display: flex;
     flex-direction: column;
-    margin-bottom: 5px;
-    
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px auto;
+    width: 87vw;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    /* box-sizing: border-box; */
 }
-.mobile-main .featured div#reads {
+.mobile-main div.interest::before{
+    content: "";
+    background:url(../contents/images/mug2.avif) no-repeat;
+    background-origin: border-box;
+    background-clip: border-box;
+    background-size: 100%;
+    width: 100%;
+    height: 225px;
+    position: relative;
+    left: 0;
+}
+.mobile-main div.interest .categories {
+    position: relative;
+    top: -3px;
+    padding: 0px 5px;
+    width: 90%;
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+}
+.mobile-main div.categories p#leftarr{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;    
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 37px;
+    opacity: 0;
+    z-index: -1;
+    background: linear-gradient(to right, #E2E0EF 35%, transparent);
+    transition: opacity 170ms ease-in-out
+}
+.mobile-main div.categories p#rightarr{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 37px;
+    opacity: 1;
+    transition: opacity 170ms ease-in-out;
+    z-index: 1;
+    background: linear-gradient(to right, transparent, #E2E0EF 65%);   
+}
+.mobile-main div.interest .categories-scroll {
+    width: max-content;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 6px;
+}
+.mobile-main div.interest .categories-scroll::-webkit-scrollbar {
+    display: none;
+}
+.mobile-main div.interest .category {
+    min-width: max-content;
+    border-radius: 14px;
+    padding: 7px 11px;
+    background-color: white;
+    color: orange;
+    font-size: 14px;
+    transition: background-color 185ms ease-out;
+    border: 1px solid #545454;
+    cursor:pointer;
+}
+.mobile-main div.interest .more {
+    border: 1px solid orange;
+    background-color: #545454;
+    color: white;
+}
+
+
+
+
+.mobile-main div.interest .featured div#reads {
     display: inline-block;
     padding: 7px;
     font-weight: 600;
@@ -241,20 +335,8 @@ div.aboutlink {
     border-top-right-radius: 12px;
     background: linear-gradient(to left top, #fabf51, #6969e0)
 }
-.mobile-main .categories {
-    padding: 10px;
-}
-.mobile-main .category {
-    display: inline-grid;
-    margin-right: 10px ;
-    margin-top: 10px;
-    border-radius: 15px;
-    padding: 9px 13px;
-    background-color: #e6e1ff;
-    font-size: smaller;
-    transition: background-color 185ms ease-out;
-    border: none;
-}
+
+
 .mobile-main .category:hover {
     background-color: #c8c4dd;
 }

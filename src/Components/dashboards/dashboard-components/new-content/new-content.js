@@ -112,10 +112,6 @@ const ScrollMenu = () => {
   const menuLeftArr = document.getElementById("leftarr")
   const menuRightArr = document.getElementById("rightarr")
 
-  // if (!editor) {
-  //   return null
-  // }
-
   return (
     <div className='editor-controls' onLoad={(e)=>editor.view.focus()}  onClick={(e) => e.preventDefault()}>
       <p id="leftarr" onClick={()=>{         

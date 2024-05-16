@@ -15,13 +15,60 @@ import OrangeSquiggle from "../contents/images/orangeSqiggle.png"
 import SearchIcon from "../contents/images/lightbulb.png"
 import WriteIcon from "../contents/images/lightbulb.png"
 import BulbIcon from "../contents/images/lightbulb.png"
+import LeftDir from "../contents/images/icons/left-direct.png"
+import RightDir from "../contents/images/icons/right-direct.png"
 import { screenWidth } from '../app/App'
 
 
 const Main = () => {
+
+     
+   
+      useEffect(()=>{
+        let categoryScroll = document.getElementById("categories-scroll")
+        let menuLeftArr = document.getElementById("leftarr")
+        let menuRightArr = document.getElementById("rightarr")
+  
+
+          menuLeftArr.onclick = (e) =>{       
+              categoryScroll.scrollTo({
+                top: 0,
+                left: (categoryScroll.scrollLeft - 180%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)) || (categoryScroll.scrollLeft - 20%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)),
+                behavior: "smooth",
+              });
+          }
+          menuRightArr.onclick = (e) =>{       
+              categoryScroll.scrollTo({
+                top: 0,
+                left: (categoryScroll.scrollLeft + 180%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)) || (categoryScroll.scrollLeft + 20%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)),
+                behavior: "smooth",
+              });
+          }
+
+
+          categoryScroll.onscroll = (e) =>{
+            if (e.target.scrollLeft > 34){
+              menuLeftArr.style.zIndex = "1"
+              menuLeftArr.style.opacity="1"
+            } else if(e.target.scrollLeft < 14){
+              menuLeftArr.style.zIndex = "-1"
+              menuLeftArr.style.opacity="0"
+            } 
+            if (e.target.scrollLeft >= (e.target.scrollWidth - (e.target.offsetWidth + 10))){
+              menuRightArr.style.zIndex = "-1"
+              menuRightArr.style.opacity="0"
+            } else if(e.target.scrollLeft <= (e.target.scrollWidth - (e.target.offsetWidth + 20))) {
+              menuRightArr.style.zIndex = "1"
+              menuRightArr.style.opacity="1"
+            }
+          }
+      })
+      
+
       const title = 'james Onwuasoanya'
       const content = 'Title of my book is the fairy and the mao'
       const dynamicColor = useRef("")
+      const CategoryScroll = useRef("")
       const scrollWrap = useRef("")
       const scroll = useRef("")
       const colors= ['#00f3f7','#61fd88','#ffd167']
@@ -51,8 +98,11 @@ const Main = () => {
         scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
         return
       }
+    
       const [innerWidth, setInnerWidth] = useState(window.innerWidth)
       const screen = useContext(screenWidth)
+     
+     
   return (
   
     <main>
@@ -75,9 +125,19 @@ const Main = () => {
                 <img src={HeroImage}  />
               </div>
           </div>
-          <div className='featured'>
-            <div id='reads'>Top reads</div>
-                      <div className='reads'>
+          <p className="interest-text">Pick <span>Interest</span></p>
+          <div className='interest'>
+            <div className='categories'>
+              <p id="leftarr"  ><img src={LeftDir} height={19} width={19}/></p>
+              <p id="rightarr"><img src={RightDir} height={19} width={19}/></p>
+              <div ref={CategoryScroll} className='categories-scroll' id='categories-scroll'>
+                {niches.map((niche)=>(
+                  <button className='category' key={niche.id}>{niche.name}</button>
+                ))}
+                <button className='category more'>view more</button>
+              </div>
+            </div>
+                      {/* <div className='reads'>
                         <div className='read_id'>
                           <figure></figure>
                           <h5>{title}</h5>
@@ -87,11 +147,11 @@ const Main = () => {
                         <div id='engagement'>
                           <div className='post-date'>{'Aug. 24'}</div>
                           <div><Views/> {'9k'}</div>
-                          {/* <div><Like/> {'16k'}</div> */}
+                      
                           <div><Bookmark/> {'bookmark'}</div>
                         </div>
-                      </div>
-                      <div className='reads'>
+                      </div> */}
+                      {/* <div className='reads'>
                         <div className='read_id'>
                           <figure></figure>
                           <h5>{title}</h5>
@@ -101,10 +161,10 @@ const Main = () => {
                         <div id='engagement'>
                           <div className='post-date'>{'Aug. 24'}</div>
                           <div><Views/> {'9k'}</div>
-                          {/* <div><Like/> {'16k'}</div> */}
+                          
                           <div><Bookmark/> {'bookmark'}</div>
                         </div>
-                      </div>
+                      </div> */}
           </div>
           {/* NICHE */}
           <div className='niche-content'>
