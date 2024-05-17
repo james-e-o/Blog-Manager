@@ -17,17 +17,20 @@ import WriteIcon from "../contents/images/lightbulb.png"
 import BulbIcon from "../contents/images/lightbulb.png"
 import LeftDir from "../contents/images/icons/left-direct.png"
 import RightDir from "../contents/images/icons/right-direct.png"
+import melissa from "./ph-melissa.webp"
+import john from "./ph-john.avif"
+import kate from "./ph-kate.avif"
+import like from "./ph-like.png"
 import { screenWidth } from '../app/App'
 
 
 const Main = () => {
-
-     
-   
+   let figure
       useEffect(()=>{
         let categoryScroll = document.getElementById("categories-scroll")
         let menuLeftArr = document.getElementById("leftarr")
         let menuRightArr = document.getElementById("rightarr")
+        figure = document.getElementById("img")
   
 
           menuLeftArr.onclick = (e) =>{       
@@ -44,7 +47,6 @@ const Main = () => {
                 behavior: "smooth",
               });
           }
-
 
           categoryScroll.onscroll = (e) =>{
             if (e.target.scrollLeft > 34){
@@ -64,6 +66,7 @@ const Main = () => {
           }
       })
       
+      
 
       const title = 'james Onwuasoanya'
       const content = 'Title of my book is the fairy and the mao'
@@ -71,37 +74,10 @@ const Main = () => {
       const CategoryScroll = useRef("")
       const scrollWrap = useRef("")
       const scroll = useRef("")
-      const colors= ['#00f3f7','#61fd88','#ffd167']
       const [colorState, setColorState]= useState(false)
-      const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
-     
-      function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1) + min);
-      } 
-      function handleReviewLeft(e){
-        let scrollWidth = scroll.current.clientWidth
-        let childElememts = scroll.current.childElementCount
-        let scrollStart = scroll.current.offsetLeft
-        let fraction = scrollWidth/childElememts
-        console.log(childElememts)
-        scrollWrap.current?.scrollBy({left :-fraction,behavior: 'smooth'});
-        return
-      }
-      function handleReviewRight(e){
-        let scrollWidth = scroll.current.clientWidth
-        let childElememts = scroll.current.childElementCount
-        let scrollStart = scroll.current.offsetLeft
-        let fraction = scrollWidth/childElememts 
-        console.log(scrollStart)
-        scrollWrap.current?.scrollBy({left :fraction,behavior: 'smooth'});
-        return
-      }
-    
+      const niches = [{id:1, name:'Featured'}, {id:2, name:'Finance'}, {id:3,name:'Business'}, {id:4,name:'Culture'}, {id:5,name:'Technology'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
       const [innerWidth, setInnerWidth] = useState(window.innerWidth)
       const screen = useContext(screenWidth)
-     
      
   return (
   
@@ -137,45 +113,28 @@ const Main = () => {
                 <button className='category more'>view more</button>
               </div>
             </div>
-                      {/* <div className='reads'>
-                        <div className='read_id'>
-                          <figure></figure>
-                          <h5>{title}</h5>
-                          <p>{'12'}mins read</p>
-                        </div> 
-                        <h4 id='read_content'>{content}.</h4>
-                        <div id='engagement'>
-                          <div className='post-date'>{'Aug. 24'}</div>
-                          <div><Views/> {'9k'}</div>
-                      
-                          <div><Bookmark/> {'bookmark'}</div>
+            <div className='featured'>
+                <div className="featured-scroll">
+                  {posts.map((post)=>(
+                    <div className="feature" key={post.id}>
+                        <p className="title">{post.title}</p>
+                        <p className="subtitle">{post.subtitle}</p>
+                        <div className="details">
+                          <p className="likes"><img src={like} height={13} width={13}/> {post.likes}</p>
+                          <div className="id">
+                            <figure id='img' style={{backgroundImage:`url(${post.image})`}} ></figure>
+                            <p className="name">
+                              <span>{post.author.firstName}</span>
+                              <span>{post.author.lastName}</span>
+                            </p>
+                          </div>
                         </div>
-                      </div> */}
-                      {/* <div className='reads'>
-                        <div className='read_id'>
-                          <figure></figure>
-                          <h5>{title}</h5>
-                          <p>{'12'}mins read</p>
-                        </div> 
-                        <h4 id='read_content'>{content}.</h4>
-                        <div id='engagement'>
-                          <div className='post-date'>{'Aug. 24'}</div>
-                          <div><Views/> {'9k'}</div>
-                          
-                          <div><Bookmark/> {'bookmark'}</div>
-                        </div>
-                      </div> */}
-          </div>
-          {/* NICHE */}
-          <div className='niche-content'>
-            <p id='niche'>Find your niche</p>
-            <div className='categories'>
-              {niches.map((niche)=>(
-                <button className='category' key={niche.id}>{niche.name}</button>
-              ))}
+                    </div>
+                  ))}
+                </div>
             </div>
-            <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
           </div>
+          
           {/* PODCAST */}
           <div id='podcast'>
             <div className='podcast1-wrapper'>
@@ -267,8 +226,8 @@ const Main = () => {
             </div>
           </div>
             <div className='review-scroller'>
-              <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
-              <div className='arrow-right' onClick={handleReviewRight}><Right /></div>
+              {/* <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
+              <div className='arrow-right' onClick={handleReviewRight}><Right /></div> */}
             </div>
         </section>
           
@@ -423,53 +382,38 @@ const Main = () => {
 
 export default Main
 
-
-// export const Port = ({phase, port}) => {
-//   const allPort = document.querySelectorAll(".mobile-main .port")
-//   // const hipPop = document.getElementById("hippop")
-//   const lifecycle = document.querySelector(".lifecycle")
-
-//   function Pop1(e){
-//     let Element = e.target.closest(".port")
-//     let containerBox = lifecycle.getBoundingClientRect().width
-//     let box = Element.getBoundingClientRect()
-//     let childElement= Element.firstChild
-//     console.log(e.clientX,containerBox)
-//     // let shift = (containerBox/2)/2
-//     //   let x 
-//     //   let y 
-//     // if (e.clientX < containerBox/2){
-//     //   x =box.x + `${20}px`
-//     //   y =box.y
-//     // }else if(e.clientX > (containerBox/2)){
-//     //   x = box.x - (containerBox/2.5) 
-//     //   y =box.y
-//     // }else {
-//     //   x =box.x
-//     //   y =box.y
-//     // }
-    
-//     // hipPop.style.setProperty("--popleft",`${x}px`)
-//     // hipPop.style.setProperty('--poptop',`${y}px`)
-//     // hipPop.classList.add("hippop")
-//     Element.classList.toggle("front")
-//     childElement.classList.toggle("portview")
-//     //   allPort.forEach(port =>{
-//     //     let classes = port.classList
-//     //     if(port !== e.target.closest(".port") && port.firstChild.classList.contains("portview"))
-//     //     {port.firstChild.classList.toggle("portview")}
-//     //   })
-//     console.log(box.x,box.y,e.clientX, e.clientY)
-//   }
-//   const [toggleport, setToggleport]=useState(false)
-//   const parentClass = `phase${phase}-port port port${port}`
-//   const childClass = toggleport? "portview":"pop"
-//   return (
-//     <div className={parentClass} onClick={Pop1}><div className={childClass}>{port}</div></div>
-//     )
-//   }
-  
-
-
-
-  // const className = toggleport? `portview`:`phase${phase}-port port port${port}`
+const posts = [
+  { 
+    author:{
+      firstName:"Melissa",
+      lastName:"Khan",
+    },
+    title:"Unconventional Travel Hacks:",
+    likes:"240",
+    subtitle:"Exploring the World on a Budget.",
+    image:melissa,
+    id:1,
+  },
+  { 
+    author:{
+      firstName:"John",
+      lastName:"Doe",
+    },
+    title:"The Future of Work:",
+    likes:"218",
+    subtitle:"Automation or Amplification?",
+    image:john,
+    id:2,
+  },
+  {
+    author:{
+      firstName:"Kate",
+      lastName:"Henshaw"
+    },
+    title:"The Power of Personal Branding: ",
+    likes:"197",
+    subtitle:"Building Your Online Presence.",
+    image:kate,
+    id:3,
+  }
+]

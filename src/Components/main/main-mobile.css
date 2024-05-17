@@ -140,7 +140,7 @@ div.aboutlink {
     width: 83%;
 }
 .mobile-main p.interest-text span {
-    color: darkturquoise;
+    color: orange;
 }
 .mobile-main div.interest{
     background-color: #E2E0EF;
@@ -149,7 +149,7 @@ div.aboutlink {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 5px auto;
+    margin-bottom: 25px ;
     width: 87vw;
     border-radius: 20px;
     overflow: hidden;
@@ -210,6 +210,7 @@ div.aboutlink {
     overflow-x: scroll;
     overflow-y: hidden;
     gap: 6px;
+    margin: 0px 3px;
 }
 .mobile-main div.interest .categories-scroll::-webkit-scrollbar {
     display: none;
@@ -217,12 +218,13 @@ div.aboutlink {
 .mobile-main div.interest .category {
     min-width: max-content;
     border-radius: 14px;
-    padding: 7px 11px;
+    padding: 6px 11px;
     background-color: white;
     color: orange;
     font-size: 14px;
     transition: background-color 185ms ease-out;
-    border: 1px solid #545454;
+    border: none ;
+    box-shadow: 0px 0px 2px #545454;
     cursor:pointer;
 }
 .mobile-main div.interest .more {
@@ -230,6 +232,87 @@ div.aboutlink {
     background-color: #545454;
     color: white;
 }
+.mobile-main div.interest .featured{
+    width: 90%;
+    margin: 8px;
+    overflow: hidden;
+    display: flex;
+    height: fit-content;
+    font-family: Quicksand;
+}
+.mobile-main div.interest .featured-scroll {
+    width: max-content;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 10px;
+    margin: 2px;
+}
+.mobile-main div.interest .featured-scroll::-webkit-scrollbar {
+    display: none;
+}
+.mobile-main div.interest .feature{
+    height: 140px;
+    min-width: max-content;
+    background-color: white;
+    border-radius: 13px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    box-shadow: 0px 0px 2px darkturquoise;
+}
+
+.mobile-main div.interest .feature .title{
+    font-weight: bold;
+    font-size: 14.5px;
+    width: 164px;
+}
+.mobile-main div.interest .feature .subtitle{
+    font-weight: normal;
+    font-size: 13px;
+    font-style: italic;
+    width: 164px;
+}
+.mobile-main div.interest .feature .details{
+    display: flex;
+    flex-direction: column;
+    width: 164px;
+    justify-content: flex-end;
+    gap: 5px;
+}
+.mobile-main div.interest .feature p.likes{
+    font-size: 12px;
+}
+.mobile-main div.interest .feature .id{
+    display: flex;
+    gap: 9px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.mobile-main div.interest .feature figure{
+  border-radius: 50%;
+  border: 1px solid orange;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 48%;
+}
+.mobile-main div.interest .feature p.name{
+ font-size: 13px;
+ font-weight: bold;
+ line-height: 89%;
+}
+.mobile-main div.interest .feature p.name span{
+  display: block;
+}
+
+
+
+
 
 
 
