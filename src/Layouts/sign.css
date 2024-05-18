@@ -1,4 +1,8 @@
-
+div.sign {
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
 
 div.sign-header {
     background-color: slateblue;
@@ -27,6 +31,8 @@ div.sign-header {
 }
 main.sign-main {
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 .sign-main> div {
     width: 100%;

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import Ui from "../contents/images/ui.png"
 import Secure from "../contents/images/secure.png"
 import Seo from "../contents/images/seo.png"
-import LightBulb from "../contents/images/lightbulb.png"
+import LightBulb from "./ph-lightbulb.png"
 import HeroImage from "../contents/images/skr.png"
 import CyanSquiggle from "../contents/images/cyanSqiggle.png"
 import SlateblueSquiggle from "../contents/images/slateSqiggle.png"
@@ -134,7 +134,69 @@ const Main = () => {
                 </div>
             </div>
           </div>
+          <section className="strategy">
+            <div className='strategy-header'>
+              <p className="strategy-text">Content <span>Strategy</span></p>
+              <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
+            </div>
+            <div className='strategy-content'>
+              <div className="lead-wrap">
+                <div className="port eraser"></div>
+                <div className="port port1">step 1</div>
+                <div className="port port2">step 2</div>
+                <div className="port port3">step 3</div>
+                <div className="port port4">step 4</div>
+                <div className="port port5">step 5</div>
+                <div className=" lead"></div>
+              </div>
+              <div className="write-steps">
+                <div className="step step1">
+                <p className="step-header">Know your audience</p>
+                  <p className="step-content" style={{display:"inline-block"}}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
+                    <button id='toggle-full' >+</button>
+                  </p>
+                </div>
+                <div className="step step2">
+                <p className="step-header">Know your audience</p>
+                  <p className="step-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
+                    <button id='toggle-full' >+</button>
+                  </p>
+                </div>
+                <div className="step step3">
+                <p className="step-header">Know your audience</p>
+                  <p className="step-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
+                    <button id='toggle-full' >+</button>
+                  </p>
+                </div>
+                <div className="step step4">
+                <p className="step-header">Know your audience</p>
+                  <p className="step-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
+                    <button id='toggle-full' >+</button>
+                  </p>
+                </div>
+                <div className="step step5">
+                <p className="step-header">Know your audience</p>
+                  <p className="step-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
+                    <button id='toggle-full' >+</button>
+                  </p>
+                </div>
+              </div>
+            </div>          
+          </section>
           
+
+
+
+
+
+
+
+
           {/* PODCAST */}
           <div id='podcast'>
             <div className='podcast1-wrapper'>
@@ -148,23 +210,7 @@ const Main = () => {
           </div>
 
           {/* LIFECYCLE */}
-          <section className="lifecycle">
-            <div className='lifecycle-header'>
-              <h2>Content strategy</h2>
-              <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
-            </div>
-            <div className='lifecycle-content'>
-              <div className="content-wrap">
-                <div className="port eraser"></div>
-                <div className="port port1">step 1</div>
-                <div className="port port2">step 2</div>
-                <div className="port port3">step 3</div>
-                <div className="port port4">step 4</div>
-                <div className="port port5">step 5</div>
-                <div className="port lead"></div>
-              </div>
-            </div>          
-          </section>
+         
 
           {/* FEATURES */}
           <section className="features">
