@@ -24,14 +24,27 @@ import like from "./ph-like.png"
 import { screenWidth } from '../app/App'
 
 
+
+const Steps = ({isfocused, index, focus}) => {
+
+  return (
+    <div className={!isfocused? `step step${index}` :`stepfocused step${index}`} onClick={focus}>
+                <p className="step-header">Know your audience</p>
+                <p className={!isfocused?"step-content":"step step-contentfocus"} style={{backgroundColor:"transparent"}}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
+                    <button id='toggle-full' >+</button>
+                  </p>
+                </div>
+  )
+}
+
 const Main = () => {
-   let figure
+
       useEffect(()=>{
         let categoryScroll = document.getElementById("categories-scroll")
         let menuLeftArr = document.getElementById("leftarr")
         let menuRightArr = document.getElementById("rightarr")
-        figure = document.getElementById("img")
-  
+        // const steps = document.querySelectorAll(".write-steps div.step")
 
           menuLeftArr.onclick = (e) =>{       
               categoryScroll.scrollTo({
@@ -64,13 +77,18 @@ const Main = () => {
               menuRightArr.style.opacity="1"
             }
           }
+
+ 
+          const ports = document.querySelectorAll(".lead-wrap div.port")
+            ports.forEach(port => {
+            port.classList.contains(`${Steps.index}`)
+          })
+
+
+
       })
       
-      
-
-      const title = 'james Onwuasoanya'
-      const content = 'Title of my book is the fairy and the mao'
-      const dynamicColor = useRef("")
+      const [activeStep, setActiveStep] = useState(1)
       const CategoryScroll = useRef("")
       const scrollWrap = useRef("")
       const scroll = useRef("")
@@ -87,7 +105,7 @@ const Main = () => {
       (<>
         <div className='mobile-main'>
           <div className='hero-tag'>
-              <h1 ref={dynamicColor} id='main-h1'>Share <span>your </span>  
+              <h1 id='main-h1'>Share <span>your </span>  
               Ideas & build 
               <span> your </span>  
               audience here.</h1>
@@ -141,50 +159,23 @@ const Main = () => {
             </div>
             <div className='strategy-content'>
               <div className="lead-wrap">
-                <div className="port eraser"></div>
-                <div className="port port1">step 1</div>
-                <div className="port port2">step 2</div>
-                <div className="port port3">step 3</div>
-                <div className="port port4">step 4</div>
-                <div className="port port5">step 5</div>
+                <div className="eraser"></div>
+                <div className="port step1">step 1</div>
+                <div className="port step2">step 2</div>
+                <div className="port step3">step 3</div>
+                <div className="port step4">step 4</div>
+                <div className="port step5">step 5</div>
+                <div className="port step6">step 6</div>
                 <div className=" lead"></div>
               </div>
+              {/* <WriteSteps/> */}
               <div className="write-steps">
-                <div className="step step1">
-                <p className="step-header">Know your audience</p>
-                  <p className="step-content" style={{display:"inline-block"}}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
-                    <button id='toggle-full' >+</button>
-                  </p>
-                </div>
-                <div className="step step2">
-                <p className="step-header">Know your audience</p>
-                  <p className="step-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
-                    <button id='toggle-full' >+</button>
-                  </p>
-                </div>
-                <div className="step step3">
-                <p className="step-header">Know your audience</p>
-                  <p className="step-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
-                    <button id='toggle-full' >+</button>
-                  </p>
-                </div>
-                <div className="step step4">
-                <p className="step-header">Know your audience</p>
-                  <p className="step-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
-                    <button id='toggle-full' >+</button>
-                  </p>
-                </div>
-                <div className="step step5">
-                <p className="step-header">Know your audience</p>
-                  <p className="step-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
-                    <button id='toggle-full' >+</button>
-                  </p>
-                </div>
+                <Steps index={1} isfocused={activeStep===1} focus={(e)=>{activeStep!==1?setActiveStep(1):setActiveStep(1)}}/>
+                <Steps index={2} isfocused={activeStep===2} focus={(e)=>{activeStep!==2?setActiveStep(2):setActiveStep(1)}}/>
+                <Steps index={3} isfocused={activeStep===3} focus={(e)=>{activeStep!==3?setActiveStep(3):setActiveStep(1)}}/>
+                <Steps index={4} isfocused={activeStep===4} focus={(e)=>{activeStep!==4?setActiveStep(4):setActiveStep(1)}}/>
+                <Steps index={5} isfocused={activeStep===5} focus={(e)=>{activeStep!==5?setActiveStep(5):setActiveStep(1)}}/>
+                <Steps index={6} isfocused={activeStep===6} focus={(e)=>{activeStep!==6?setActiveStep(6):setActiveStep(1)}}/>
               </div>
             </div>          
           </section>

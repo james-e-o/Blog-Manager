@@ -294,12 +294,12 @@ img#slatebluesquiggle {
 }
 .mobile-main section.strategy::before {
     content: "";
-    background-image: linear-gradient(to bottom, orange, slateblue,orange, white, white);
+    background-image: linear-gradient(to bottom, rgba(255, 187, 0, 0.827), rgba(109, 86, 255, 0.474),orange, white, white);
     position: absolute;
     height: 28%;
     width: 100%;
-    filter: blur(27px);
-    opacity: 0.5;
+    filter: blur(20px);
+    opacity: 0.3;
     right: 0px;
     top: 17%;
     z-index: -1;
@@ -324,12 +324,14 @@ img#slatebluesquiggle {
 .mobile-main div.strategy-content {
     margin: 10px 25px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    align-items:flex-start;
     gap: 20px;
+    overflow: hidden;
   }
  .mobile-main div.strategy-content .lead-wrap{
      margin-top: 10px;
+     margin-left: 10px;
      width: fit-content;
      height: fit-content;
      transform: rotate(0deg);
@@ -340,7 +342,12 @@ img#slatebluesquiggle {
     justify-content: center;
     align-items: center;
     font-family: Capriola;
+    font-size: 13px;
     width: 50px;
+    border: 1px solid #545454;
+    border-radius: 4px;
+    padding: 0px 3px;
+    height: 45px;
  }
  .mobile-main  .lead-wrap div.eraser{
     border-top-left-radius: 29px;
@@ -352,39 +359,19 @@ img#slatebluesquiggle {
     height: 30px;
  }
  .mobile-main div.port5{
-    height: 50px;
-    background-color: chartreuse;
-    border-radius: 4px;
-    padding: 0px 3px;
-    border: 1px solid yellow;
+
  }
  .mobile-main div.port4{
-     height: 50px;
-    background-color: skyblue;
-    border-radius: 4px;
-    padding: 0px 3px;
-     border: 1px solid yellow;
+
  }
  .mobile-main div.port3{
-     height: 50px;
-     background-color: red;
-     border-radius: 4px;
-     padding: 0px 3px;
-      border: 1px solid yellow;
+
  }
  .mobile-main div.port2{
-     height: 50px;
-    background-color: chartreuse;
-    border-radius: 4px;
-    padding: 0px 3px;
-     border: 1px solid yellow;
+ 
  }
  .mobile-main div.port1{
-     height: 50px;
-     background-color: chartreuse;
-     border-radius: 4px;
-     padding: 0px 3px;
-      border: 1px solid yellow;
+     background-color: darkturquoise;
  }
  .mobile-main .lead-wrap div.lead {
      position: relative;
@@ -392,7 +379,7 @@ img#slatebluesquiggle {
      width: 1px;
      border-left: 27px solid transparent;
      border-right: 27px solid transparent;
-     border-top: 70px solid #ffc415;
+     border-top: 70px solid orange;
      left: 2px;
      margin: 4px;
  }
@@ -409,24 +396,61 @@ img#slatebluesquiggle {
      border-radius: 25px;
  }
  .mobile-main div.strategy-content .write-steps{
-     height: 90%;
+    margin-top: 30px;
+    height: fit-content;
  }
  .mobile-main div.strategy-content .write-steps .step{
-     
+     width: 55vw;
+     margin-top: 1px;
+     position: relative;
+    border-radius: 7px;
+      background-color: white;
+ }
+ .mobile-main div.strategy-content .write-steps .stepfocused{
+     width: 55vw;
+     margin-top: 1px;
+     position: relative;
  }
  .mobile-main div.strategy-content .write-steps .step-header{
+    width: 100%;
      font-size: 17px;
      font-weight: bold;
-     font-family: Inter;   
-     padding: 10px;
-     border: 2px solid white;
+     font-family: Quicksand;   
+     padding: 1px 1px 5px 8px;
+     border-top: 2px solid white;
+     position: relative;
+     top: 5px;
+ }
+ .mobile-main div.strategy-content .write-steps .step6 .step-header::before{
+    width: 100%;
+     position: absolute;
+     content: "";   
+     height: 80px;
+     background-color: white;
+     top: 100%;
  }
  .mobile-main div.strategy-content .write-steps .step-content{
-    padding: 10px;
+     padding: 5px 5px 5px 8px;
      font-size: 13px;
      font-weight: normal;
      font-family: Inter;  
-     display: none;
+     height:1px;
+     opacity: 0;
+     margin: 0%;
+     transition:height 600ms ease-in-out;
+     width: 100%;
+     overflow-y: hidden;
+ }
+ .write-steps .stepfocused .step-contentfocus{
+     padding: 0px 5px 5px 8px;
+     font-size: 13px;
+     font-weight: normal;
+     font-family: Inter;  
+     height:130px;
+     opacity: 1;
+     margin: 0%;
+     transition: height 600ms ease-in-out ;
+     width: 100%;
  }
  
  

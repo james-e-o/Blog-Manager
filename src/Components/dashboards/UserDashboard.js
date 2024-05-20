@@ -166,9 +166,9 @@ const MenuBar = () => {
       <div className={'menu-bar'}>
         <div className={'blunt-fixed'}>
           <div className="menu-wrap">
-              <Menus isToggled={activeIndex===1} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==1?setActiveIndex(1):setActiveIndex(0)}} togglemenu={toggleMenu} index={1} activeIndex={()=>setActiveIndex(1)} content={<Options/>} icon={<Plus/>}/>
-              <Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} activeIndex={()=>setActiveIndex(2)} content={<Bookmarks/>} icon={<Bookmark2/>}/>
-              <Menus isToggled={activeIndex===3} togglepop={(e)=>{if (e.target.closest(".menu-pop")) {return} else activeIndex!==3?setActiveIndex(3):setActiveIndex(0)}} togglemenu={toggleMenu} index={3} activeIndex={()=>setActiveIndex(3)} content={<Create/>} icon={<Plus/>}/>
+              <Menus isToggled={activeIndex===1} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==1?setActiveIndex(1):setActiveIndex(0)}} togglemenu={toggleMenu} index={1} content={<Options/>} icon={<Plus/>}/>
+              <Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} content={<Bookmarks/>} icon={<Bookmark2/>}/>
+              <Menus isToggled={activeIndex===3} togglepop={(e)=>{if (e.target.closest(".menu-pop")) {return} else activeIndex!==3?setActiveIndex(3):setActiveIndex(0)}} togglemenu={toggleMenu} index={3} content={<Create/>} icon={<Plus/>}/>
               <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>
         </div>
