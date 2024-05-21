@@ -21,6 +21,8 @@ import melissa from "./ph-melissa.webp"
 import john from "./ph-john.avif"
 import kate from "./ph-kate.avif"
 import like from "./ph-like.png"
+import write from "./ph-write.jpg"
+import collab from "./ph-collab.webp"
 import { screenWidth } from '../app/App'
 
 
@@ -39,6 +41,15 @@ const Steps = ({isfocused, index, focus}) => {
 }
 
 const Main = () => {
+
+      const [activeStep, setActiveStep] = useState(1)
+      const CategoryScroll = useRef("")
+      const scrollWrap = useRef("")
+      const scroll = useRef("")
+      const [colorState, setColorState]= useState(false)
+      const niches = [{id:1, name:'Featured'}, {id:2, name:'Finance'}, {id:3,name:'Business'}, {id:4,name:'Culture'}, {id:5,name:'Technology'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
+      const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+      const screen = useContext(screenWidth)
 
       useEffect(()=>{
         let categoryScroll = document.getElementById("categories-scroll")
@@ -78,24 +89,18 @@ const Main = () => {
             }
           }
 
- 
-          const ports = document.querySelectorAll(".lead-wrap div.port")
-            ports.forEach(port => {
-            port.classList.contains(`${Steps.index}`)
+          const ports = document.querySelectorAll('div.port')
+          let leadport = document.querySelector(`div.step${activeStep}`)
+         
+          leadport.classList.toggle("activeport")
+          ports.forEach(port =>{
+            if (port === leadport) return 
+            else if(port !== leadport && port.classList.contains('activeport')) {
+              // console.log(activeStep, leadport)
+               port.classList.toggle("activeport")
+            }
           })
-
-
-
       })
-      
-      const [activeStep, setActiveStep] = useState(1)
-      const CategoryScroll = useRef("")
-      const scrollWrap = useRef("")
-      const scroll = useRef("")
-      const [colorState, setColorState]= useState(false)
-      const niches = [{id:1, name:'Featured'}, {id:2, name:'Finance'}, {id:3,name:'Business'}, {id:4,name:'Culture'}, {id:5,name:'Technology'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
-      const [innerWidth, setInnerWidth] = useState(window.innerWidth)
-      const screen = useContext(screenWidth)
      
   return (
   
@@ -179,7 +184,13 @@ const Main = () => {
               </div>
             </div>          
           </section>
-          
+          <div className="create">
+            <div className="carousel">
+              <img id='edit-photo' src={write} width={"23px"} height={"40px"} />
+              <img id='collab-photo' src={collab} width={"20px"} height={"35px"} />
+              <img id='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} />
+            </div>
+          </div>
 
 
 
@@ -274,7 +285,7 @@ const Main = () => {
       (<>
         <div className='tab-main'>
           <div className='h1-tag'>
-            <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
+            <h1 id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
             <p id='cta'>
             With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
             <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
@@ -344,7 +355,7 @@ const Main = () => {
         <div className='desk-main'>
           <div className='main-display'>
             <div className='h1-tag'>
-              <h1 ref={dynamicColor} id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
+              <h1 id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
               <p id='cta'>
               With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
               <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
@@ -359,10 +370,10 @@ const Main = () => {
                       <div className='reads'>
                         <div className='read_id'>
                           <figure></figure>
-                          <h5>{title}</h5>
+                          <h5></h5>
                           <p>{'12'}mins read</p>
                         </div> 
-                        <h4 id='read_content'>{content}.</h4>
+                        <h4 id='read_content'>.</h4>
                         <div id='engagement'>
                           <div className='post-date'>{'Aug. 24'}</div>
                           <div><Views/> {'9k'}</div>
@@ -454,3 +465,4 @@ const posts = [
     id:3,
   }
 ]
+

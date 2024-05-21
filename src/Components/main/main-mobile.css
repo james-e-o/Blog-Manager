@@ -292,7 +292,7 @@ img#slatebluesquiggle {
     position: relative;
     z-index: 1;
 }
-.mobile-main section.strategy::before {
+/* .mobile-main section.strategy::before {
     content: "";
     background-image: linear-gradient(to bottom, rgba(255, 187, 0, 0.827), rgba(109, 86, 255, 0.474),orange, white, white);
     position: absolute;
@@ -303,8 +303,8 @@ img#slatebluesquiggle {
     right: 0px;
     top: 17%;
     z-index: -1;
-    /* transform: rotate(-45deg); */
-}
+    transform: rotate(-45deg); 
+} */
 .mobile-main div.strategy-header {
     width:84%;
     margin: 5px auto;
@@ -328,13 +328,14 @@ img#slatebluesquiggle {
     align-items:flex-start;
     gap: 20px;
     overflow: hidden;
+    height: 400px;
   }
  .mobile-main div.strategy-content .lead-wrap{
      margin-top: 10px;
      margin-left: 10px;
      width: fit-content;
      height: fit-content;
-     transform: rotate(0deg);
+     transform: rotate(-8deg) scale(0.7);
  }
  .mobile-main div.strategy-content .lead-wrap div.port{
     margin: 4px;
@@ -358,20 +359,8 @@ img#slatebluesquiggle {
     margin: 4px;
     height: 30px;
  }
- .mobile-main div.port5{
-
- }
- .mobile-main div.port4{
-
- }
- .mobile-main div.port3{
-
- }
- .mobile-main div.port2{
- 
- }
- .mobile-main div.port1{
-     background-color: darkturquoise;
+ .activeport {
+    background-color: turquoise;
  }
  .mobile-main .lead-wrap div.lead {
      position: relative;
@@ -413,7 +402,7 @@ img#slatebluesquiggle {
  }
  .mobile-main div.strategy-content .write-steps .step-header{
     width: 100%;
-     font-size: 17px;
+     font-size: 16px;
      font-weight: bold;
      font-family: Quicksand;   
      padding: 1px 1px 5px 8px;
@@ -437,7 +426,7 @@ img#slatebluesquiggle {
      height:1px;
      opacity: 0;
      margin: 0%;
-     transition:height 600ms ease-in-out;
+     transition:height 400ms ease-in-out;
      width: 100%;
      overflow-y: hidden;
  }
@@ -446,15 +435,43 @@ img#slatebluesquiggle {
      font-size: 13px;
      font-weight: normal;
      font-family: Inter;  
-     height:130px;
+     height:125px;
      opacity: 1;
      margin: 0%;
-     transition: height 600ms ease-in-out ;
+     transition: height 400ms ease-in-out ;
      width: 100%;
  }
  
- 
 
+
+
+
+
+
+
+ 
+ .mobile-main div.create {
+    background-color: rgb(152, 235, 227);
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px ;
+    width: 87vw;
+    border-radius: 20px;
+    overflow: scroll;
+    position: relative;
+ }
+ .mobile-main div.create div.carousel{
+    display: flex;
+    width: 100%;
+ }
+ .mobile-main div.create div.carousel img{
+    width: 100%;
+    height: 50%;
+ }
+ 
 
 
 
