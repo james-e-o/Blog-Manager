@@ -30,7 +30,7 @@ const Steps = ({isfocused, index, focus}) => {
   return (
     <div className={!isfocused? `step step${index}` :`stepfocused step${index}`} onClick={focus}>
                 <p className="step-header">Know your audience</p>
-                <p className={!isfocused?"step-content":"step step-contentfocus"} style={{backgroundColor:"transparent"}}>
+                <p className={!isfocused?" step-content":" step step-contentfocus"} style={{backgroundColor:"transparent"}}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
                     <button id='toggle-full' >+</button>
                   </p>
@@ -73,25 +73,22 @@ const Carousel = () => {
     const figSpan = document.querySelectorAll("p.section-head span")
     setInterval(()=>{
 
-      figures.forEach(figure => {
-
-        carousel.scrollBy(figure.clientWidth/2, 0)
-        if (carousel.scrollLeft >= (carousel.scrollWidth -  (figure.clientWidth + 2))){
-         carousel.scroll(0,0)
-        }
-        carousel.addEventListener('scroll',(e)=>{
-          console.log(figure.offsetLeft)
-          if (figure.offsetLeft == 2){
-            figSpan.forEach(span => {
-              span.classList.toggle('s-active')
-            })
-          }
-        })
-      })
-     
-      
-    },8000)
-  })
+      carousel.scrollBy(carousel.clientWidth, 0)
+      if (carousel.scrollLeft >= (carousel.scrollWidth -  (carousel.clientWidth + 2))){
+        carousel.scroll(0,0)
+      }
+      // figures.forEach(figure => {
+      //   carousel.addEventListener('scroll',(e)=>{
+      //     console.log(figure.offsetLeft)
+      //     if (figure.offsetLeft == 2){
+      //       figSpan.forEach(span => {
+      //         span.classList.toggle('s-active')
+      //       })
+      //     }
+      //   })
+      // })
+    },7000)
+  },[])
 
   return (
     <div className="carousel">
@@ -169,6 +166,8 @@ const Main = () => {
                port.classList.toggle("activeport")
             }
           })
+
+        
       })
      
   return (

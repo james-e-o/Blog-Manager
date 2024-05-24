@@ -322,20 +322,21 @@ img#slatebluesquiggle {
     color: slateblue;
 }
 .mobile-main div.strategy-content {
-    margin: 5px 25px 15px;
+    margin: 5px 20px 15px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items:flex-start;
-    gap: 20px;
+    gap: 25px;
     overflow: hidden;
     height: 370px;
+    width: 100%;
   }
  .mobile-main div.strategy-content .lead-wrap{
      margin-top: 1px;
      margin-left: 10px;
      width: fit-content;
      height: fit-content;
-     transform: rotate(-8deg) scale(0.7) translate(5px, -10px);
+     transform: rotate(-8deg) scale(0.7) translate(9px, -10px);
  }
  .mobile-main div.strategy-content .lead-wrap div.port{
     margin: 4px;
@@ -387,6 +388,7 @@ img#slatebluesquiggle {
  .mobile-main div.strategy-content .write-steps{
     margin-top: 10px;
     height: fit-content;
+    width: 185px;
  }
  .mobile-main div.strategy-content .write-steps .step{
      width: 55vw;
@@ -440,6 +442,17 @@ img#slatebluesquiggle {
      margin: 0%;
      transition: height 400ms ease-in-out ;
      width: 100%;
+     /* text-align: justify; */
+ }
+ .mobile-main div.strategy-content button#toggle-full{
+    background-color: orange;
+    width: fit-content;
+    aspect-ratio: 1.5;
+    border-radius: 20px;
+    padding: 1px 9px;
+    border: none;
+    color: white;
+    margin: 1px 3px;
  }
  
 
@@ -544,7 +557,7 @@ img#slatebluesquiggle {
     height: 100%;
  }
  .mobile-main div.create p.write{
-    background-color: #E8BCA1;
+    background-color: rgb(255, 192, 74);
     color: white;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
