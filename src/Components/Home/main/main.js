@@ -2,28 +2,26 @@ import './main-mobile.css'
 import './main-tab.css'
 import './main-desk.css'
 import { useRef,useState, useEffect, useContext } from 'react'
-import {  Views, Bookmark, Left, Right, Newlink, Arrow } from '../svg'
+import {  Views, Bookmark, Left, Right, Newlink, Arrow } from '../../svg'
 import { Link } from 'react-router-dom'
-import Ui from "../contents/images/ui.png"
-import Secure from "../contents/images/secure.png"
-import Seo from "../contents/images/seo.png"
+import Ui from "../../contents/images/ui.png"
+import Secure from "../../contents/images/secure.png"
+import Seo from "../../contents/images/seo.png"
 import LightBulb from "./ph-lightbulb.png"
-import HeroImage from "../contents/images/skr.png"
-import CyanSquiggle from "../contents/images/cyanSqiggle.png"
-import SlateblueSquiggle from "../contents/images/slateSqiggle.png"
-import OrangeSquiggle from "../contents/images/orangeSqiggle.png"
-import SearchIcon from "../contents/images/lightbulb.png"
-import WriteIcon from "../contents/images/lightbulb.png"
-import BulbIcon from "../contents/images/lightbulb.png"
-import LeftDir from "../contents/images/icons/left-direct.png"
-import RightDir from "../contents/images/icons/right-direct.png"
+import HeroImage from "../../contents/images/skr.png"
+import CyanSquiggle from "../../contents/images/cyanSqiggle.png"
+import SlateblueSquiggle from "../../contents/images/slateSqiggle.png"
+import OrangeSquiggle from "../../contents/images/orangeSqiggle.png"
+import LeftDir from "../../contents/images/icons/left-direct.png"
+import RightDir from "../../contents/images/icons/right-direct.png"
 import melissa from "./ph-melissa.webp"
 import john from "./ph-john.avif"
 import kate from "./ph-kate.avif"
 import like from "./ph-like.png"
 import write from "./ph-write.jpg"
+import share from "./ph-share.webp"
 import collab from "./ph-collab.webp"
-import { screenWidth } from '../app/App'
+import { screenWidth } from '../../app/App'
 
 
 
@@ -40,6 +38,77 @@ const Steps = ({isfocused, index, focus}) => {
   )
 }
 
+const Carousel = () => {
+
+  const carouselContent =[
+    {
+      carouselText:{
+        head :"Create",
+      content: "Unleash your inner creator!"
+      },
+      image:write,
+      id:'1'
+    },
+    {
+      carouselText:{
+        head :"Collaborate",
+        content: "Connect with creators and build something amazing together."
+      },
+      image:collab,
+      id:'2'
+    },
+    {
+      carouselText:{
+        head :"Share",
+      content: "Do you have a unique perspective? Our platform has your audience. "
+      },
+      image:share,
+      id:'3'
+    }
+  ]
+
+  useEffect(()=>{
+    const carousel = document.querySelector("div.carousel")
+    const figures = document.querySelectorAll("div.carousel figure")
+    const figSpan = document.querySelectorAll("p.section-head span")
+    setInterval(()=>{
+
+      figures.forEach(figure => {
+
+        carousel.scrollBy(figure.clientWidth/2, 0)
+        if (carousel.scrollLeft >= (carousel.scrollWidth -  (figure.clientWidth + 2))){
+         carousel.scroll(0,0)
+        }
+        carousel.addEventListener('scroll',(e)=>{
+          console.log(figure.offsetLeft)
+          if (figure.offsetLeft == 2){
+            figSpan.forEach(span => {
+              span.classList.toggle('s-active')
+            })
+          }
+        })
+      })
+     
+      
+    },8000)
+  })
+
+  return (
+    <div className="carousel">
+        {carouselContent.map(carousel => (
+          <figure key={carousel.id}>
+            <div className="carousel-text">
+              <p className="section-head"><span></span>{carousel.carouselText.head}</p>
+              <p className="section-content">{carousel.carouselText.content}</p>
+            </div>
+            <img id='share-photo' src={carousel.image} width={100} height={100}/>
+          </figure>
+        ))}
+     </div> 
+  )
+}
+
+
 const Main = () => {
 
       const [activeStep, setActiveStep] = useState(1)
@@ -55,7 +124,7 @@ const Main = () => {
         let categoryScroll = document.getElementById("categories-scroll")
         let menuLeftArr = document.getElementById("leftarr")
         let menuRightArr = document.getElementById("rightarr")
-        // const steps = document.querySelectorAll(".write-steps div.step")
+       
 
           menuLeftArr.onclick = (e) =>{       
               categoryScroll.scrollTo({
@@ -185,11 +254,8 @@ const Main = () => {
             </div>          
           </section>
           <div className="create">
-            <div className="carousel">
-              <img id='edit-photo' src={write} width={"23px"} height={"40px"} />
-              <img id='collab-photo' src={collab} width={"20px"} height={"35px"} />
-              <img id='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} />
-            </div>
+            < Carousel />
+            <p className="write">Start writing</p>
           </div>
 
 

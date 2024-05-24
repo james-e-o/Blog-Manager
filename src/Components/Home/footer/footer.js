@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './footer.css'
-import { Facebook, Linkedin, X } from '../svg'
+import { Facebook, Linkedin, X } from '../../svg'
 
 const Footer = () => {
   return (

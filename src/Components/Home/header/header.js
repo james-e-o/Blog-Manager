@@ -1,8 +1,8 @@
 import './header.css'
 import React, { useState, useEffect, useRef, useContext} from 'react';
 import{Link} from 'react-router-dom'
-import { screenWidth } from '../app/App';
-import Logo from '../logo/logo';
+import { screenWidth } from '../../app/App';
+import Logo from '../../logo/logo';
 
 const Header = () => {
   const [scroll, setScroll]= useState('')

@@ -1,7 +1,7 @@
 import './App.css';
-import Main from '../main/main';
-import Header from '../header/header';
-import Footer from '../footer/footer';
+import Main from '../Home/main/main';
+import Header from '../Home/header/header';
+import Footer from '../Home/footer/footer';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import {createContext} from 'react';
 
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
         {index:true, element:<Home/>},
         {
           path:'about',
+          element:<About/>,
+        },
+        {
+          path:'explore',
           element:<About/>,
         },
         {

@@ -147,7 +147,6 @@ const MenuBar = () => {
       setActiveIndex(0)
     }
   }
-
   
   useEffect(()=>{
     document.onpointerdown = (e)=> {
@@ -185,7 +184,7 @@ const Menus = ({togglemenu,content, index, icon,togglepop, isToggled}) => {
   },[])
  
   return (
-    <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"static",transition:"all 100ms ease-out"}:{position:"absolute", transition:"transition: all 250ms ease-out"}}>{icon}
+    <div onClick={togglepop} className={togglemenu?'open-menu':'menu'} style={togglemenu?{position:"static",transition:"all 140ms ease-out"}:{position:"absolute", transition:" all 260ms ease-out"}}>{icon}
       <div className={!isToggled?`menu-pop pop${index}`:`menu-pop menu-pop-open${index}`}>{content}</div>
     </div>
   )

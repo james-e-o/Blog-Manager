@@ -96,7 +96,7 @@
     left: 0px;
     right: 0px;
     z-index: 2;
-    transition:backdrop-filter 50ms ease-in-out 30ms;
+    transition:backdrop-filter 1.9s ease-out,position 1.9s ease-out ;
 }
 .m-dashboard-main div.welcome {
     height: fit-content;
