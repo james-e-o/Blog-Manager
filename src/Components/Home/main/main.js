@@ -17,6 +17,7 @@ import RightDir from "../../contents/images/icons/right-direct.png"
 import melissa from "./ph-melissa.webp"
 import john from "./ph-john.avif"
 import kate from "./ph-kate.avif"
+import podcast from "./ph-podcast.png"
 import like from "./ph-like.png"
 import write from "./ph-write.jpg"
 import share from "./ph-share.webp"
@@ -25,18 +26,19 @@ import { screenWidth } from '../../app/App'
 
 
 
-const Steps = ({isfocused, index, focus}) => {
+const Steps = ({isfocused, index, focus, header, content}) => {
 
-  return (
+  return ( 
     <div className={!isfocused? `step step${index}` :`stepfocused step${index}`} onClick={focus}>
-                <p className="step-header">Know your audience</p>
-                <p className={!isfocused?" step-content":" step step-contentfocus"} style={{backgroundColor:"transparent"}}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vel mollitia eligendi saepe eaque a alias cum quam! Nisi, quibusdam recusandae! Eius, nobis vel non quis impedit magni suscipit natus.
-                    <button id='toggle-full' >+</button>
-                  </p>
-                </div>
+      <p className="step-header">{header}</p>
+      <p className={!isfocused?" step-content":" step step-contentfocus"} style={{backgroundColor:"transparent"}}>
+        {content}
+        <button id='toggle-full' >+</button>
+      </p>
+    </div>
   )
 }
+
 
 const Carousel = () => {
 
@@ -68,26 +70,21 @@ const Carousel = () => {
   ]
 
   useEffect(()=>{
+    
     const carousel = document.querySelector("div.carousel")
     const figures = document.querySelectorAll("div.carousel figure")
     const figSpan = document.querySelectorAll("p.section-head span")
-    setInterval(()=>{
+    clearInterval()
+    const interval = setInterval(()=>{
 
       carousel.scrollBy(carousel.clientWidth, 0)
       if (carousel.scrollLeft >= (carousel.scrollWidth -  (carousel.clientWidth + 2))){
         carousel.scroll(0,0)
       }
-      // figures.forEach(figure => {
-      //   carousel.addEventListener('scroll',(e)=>{
-      //     console.log(figure.offsetLeft)
-      //     if (figure.offsetLeft == 2){
-      //       figSpan.forEach(span => {
-      //         span.classList.toggle('s-active')
-      //       })
-      //     }
-      //   })
-      // })
     },7000)
+    carousel.onscroll = () => {
+      clearInterval(interval) 
+    }
   },[])
 
   return (
@@ -243,12 +240,12 @@ const Main = () => {
               </div>
               {/* <WriteSteps/> */}
               <div className="write-steps">
-                <Steps index={1} isfocused={activeStep===1} focus={(e)=>{activeStep!==1?setActiveStep(1):setActiveStep(1)}}/>
-                <Steps index={2} isfocused={activeStep===2} focus={(e)=>{activeStep!==2?setActiveStep(2):setActiveStep(1)}}/>
-                <Steps index={3} isfocused={activeStep===3} focus={(e)=>{activeStep!==3?setActiveStep(3):setActiveStep(1)}}/>
-                <Steps index={4} isfocused={activeStep===4} focus={(e)=>{activeStep!==4?setActiveStep(4):setActiveStep(1)}}/>
-                <Steps index={5} isfocused={activeStep===5} focus={(e)=>{activeStep!==5?setActiveStep(5):setActiveStep(1)}}/>
-                <Steps index={6} isfocused={activeStep===6} focus={(e)=>{activeStep!==6?setActiveStep(6):setActiveStep(1)}}/>
+                <Steps index={1} isfocused={activeStep===1} focus={(e)=>{activeStep!==1?setActiveStep(1):setActiveStep(1)}} header={strategies[0].title} content={strategies[0].content}/>
+                <Steps index={2} isfocused={activeStep===2} focus={(e)=>{activeStep!==2?setActiveStep(2):setActiveStep(1)}} header={strategies[1].title} content={strategies[1].content}/>
+                <Steps index={3} isfocused={activeStep===3} focus={(e)=>{activeStep!==3?setActiveStep(3):setActiveStep(1)}} header={strategies[2].title} content={strategies[2].content}/>
+                <Steps index={4} isfocused={activeStep===4} focus={(e)=>{activeStep!==4?setActiveStep(4):setActiveStep(1)}} header={strategies[3].title} content={strategies[3].content}/>
+                <Steps index={5} isfocused={activeStep===5} focus={(e)=>{activeStep!==5?setActiveStep(5):setActiveStep(1)}} header={strategies[4].title} content={strategies[4].content}/>
+                <Steps index={6} isfocused={activeStep===6} focus={(e)=>{activeStep!==6?setActiveStep(6):setActiveStep(1)}} header={strategies[5].title} content={strategies[5].content}/>
               </div>
             </div>          
           </section>
@@ -256,25 +253,22 @@ const Main = () => {
             < Carousel />
             <p className="write">Start writing</p>
           </div>
+          <p className="amplify-text">Amplify</p>
+          <div id='podcast'>
+            <figure><img src={podcast} width={"50px"} height={"50px"} alt="question" /></figure>
+            <div>
+            <Link to={'sign'} state={{signValue:'start'}}><button id="podcast-cta" >Start today</button></Link>
+            </div>
+          </div>
 
 
-
-
+ 
 
 
 
 
           {/* PODCAST */}
-          <div id='podcast'>
-            <div className='podcast1-wrapper'>
-              <h2>Start your own podcast</h2>
-                <article>
-                  {'Get paid from your passionate subscribers'}
-                </article>
-                <button>Get started</button>                                                 
-            </div>                                                          
-            <div className='podcast-gradient'></div>
-          </div>
+          
 
           {/* LIFECYCLE */}
          
@@ -530,4 +524,40 @@ const posts = [
     id:3,
   }
 ]
+
+
+const strategies = [
+  { 
+    title:"Build a target:",
+    content:"This is where you define what kind of content do you want to create? who are you trying to reach with it? What are you hoping to achieve ",
+    id:1,
+  },
+  { 
+    title:"Research & develop:",
+    content:"Gather information based on related trends and already existing content from other sources. Use this knowledge to develop a unique structure or model for your content.",
+    id:2,
+  },
+  {
+    title:"Create Content::",
+    content:"This is where you bring your ideas to life. This could involve writing an article, recording a video, designing an infographic, or any other format that suits your content strategy.",
+    id:3,
+  },
+  {
+    title:"Edit & Optimize:",
+    content:"Ensure your content is clear, concise, and free of errors. Optimize it for search engines (SEO) if relevant, and format it for ease of access across different devices.",
+    id:4,
+  },
+  {
+    title:"Publish & Promote:",
+    content:"Publish it on your website & social media channels. Utilize promotion strategies like social media marketing, email marketing, or influencer outreach to reach your target audience.",
+    id:5,
+  },
+  {
+    title:"Analyze & Adapt:",
+    content:"Track the performance of your content. See what resonates with your audience and what doesn't. Use analytics data to learn and adapt your strategy for future content creation.",
+    id:6,
+  }
+]
+
+
 

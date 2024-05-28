@@ -12,6 +12,7 @@
     box-sizing: border-box;
     background-color:white;
     transition: background-color 280ms ease;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 div.logo-wrap{
