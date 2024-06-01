@@ -31,11 +31,20 @@ const Steps = ({isfocused, index, focus, header, content}) => {
   return ( 
     <div className={!isfocused? `step step${index}` :`stepfocused step${index}`} onClick={focus}>
       <p className="step-header">{header}</p>
-      <p className={!isfocused?" step-content":" step step-contentfocus"} style={{backgroundColor:"transparent"}}>
-        {content}
+      {/* <p className={!isfocused?" step-content":" step-contentfocus"}> */}
+      <p className={"step-content"}>
+        {/* <span> */}
+          {content}
+        {/* </span> */}
         <button id='toggle-full' >+</button>
       </p>
     </div>
+  )
+}
+const Port = ({focus, index}) => {
+
+  return ( 
+    <div onClick={focus} className={`port step${index}`}>{`step ${index}`}</div>
   )
 }
 
@@ -230,22 +239,25 @@ const Main = () => {
             <div className='strategy-content'>
               <div className="lead-wrap">
                 <div className="eraser"></div>
-                <div className="port step1">step 1</div>
-                <div className="port step2">step 2</div>
-                <div className="port step3">step 3</div>
-                <div className="port step4">step 4</div>
-                <div className="port step5">step 5</div>
-                <div className="port step6">step 6</div>
+                {/* <div className="port step1">1</div> */}
+                <Port index={1} focus={(e)=>{activeStep!==1?setActiveStep(1):``}}/>
+                <Port index={2} focus={(e)=>{activeStep!==2?setActiveStep(2):``}}/>
+                <Port index={3} focus={(e)=>{activeStep!==3?setActiveStep(3):``}}/>
+                <Port index={4} focus={(e)=>{activeStep!==4?setActiveStep(4):``}}/>
+                <Port index={5} focus={(e)=>{activeStep!==5?setActiveStep(5):``}}/>
+                <Port index={6} focus={(e)=>{activeStep!==6?setActiveStep(6):``}}/>
                 <div className=" lead"></div>
               </div>
               {/* <WriteSteps/> */}
               <div className="write-steps">
-                <Steps index={1} isfocused={activeStep===1} focus={(e)=>{activeStep!==1?setActiveStep(1):setActiveStep(1)}} header={strategies[0].title} content={strategies[0].content}/>
-                <Steps index={2} isfocused={activeStep===2} focus={(e)=>{activeStep!==2?setActiveStep(2):setActiveStep(1)}} header={strategies[1].title} content={strategies[1].content}/>
-                <Steps index={3} isfocused={activeStep===3} focus={(e)=>{activeStep!==3?setActiveStep(3):setActiveStep(1)}} header={strategies[2].title} content={strategies[2].content}/>
-                <Steps index={4} isfocused={activeStep===4} focus={(e)=>{activeStep!==4?setActiveStep(4):setActiveStep(1)}} header={strategies[3].title} content={strategies[3].content}/>
-                <Steps index={5} isfocused={activeStep===5} focus={(e)=>{activeStep!==5?setActiveStep(5):setActiveStep(1)}} header={strategies[4].title} content={strategies[4].content}/>
-                <Steps index={6} isfocused={activeStep===6} focus={(e)=>{activeStep!==6?setActiveStep(6):setActiveStep(1)}} header={strategies[5].title} content={strategies[5].content}/>
+                <div className="step-viewport">
+                    <Steps index={1} isfocused={activeStep===1} focus={(e)=>{activeStep!==1?setActiveStep(1):setActiveStep(1)}} header={strategies[0].title} content={strategies[0].content}/>
+                    <Steps index={2} isfocused={activeStep===2} focus={(e)=>{activeStep!==2?setActiveStep(2):setActiveStep(1)}} header={strategies[1].title} content={strategies[1].content}/>
+                    <Steps index={3} isfocused={activeStep===3} focus={(e)=>{activeStep!==3?setActiveStep(3):setActiveStep(1)}} header={strategies[2].title} content={strategies[2].content}/>
+                    <Steps index={4} isfocused={activeStep===4} focus={(e)=>{activeStep!==4?setActiveStep(4):setActiveStep(1)}} header={strategies[3].title} content={strategies[3].content}/>
+                    <Steps index={5} isfocused={activeStep===5} focus={(e)=>{activeStep!==5?setActiveStep(5):setActiveStep(1)}} header={strategies[4].title} content={strategies[4].content}/>
+                    <Steps index={6} isfocused={activeStep===6} focus={(e)=>{activeStep!==6?setActiveStep(6):setActiveStep(1)}} header={strategies[5].title} content={strategies[5].content}/>
+                </div>
               </div>
             </div>          
           </section>
@@ -260,22 +272,9 @@ const Main = () => {
             <Link to={'sign'} state={{signValue:'start'}}><button id="podcast-cta" >Start today</button></Link>
             </div>
           </div>
-
-
- 
-
-
-
-
-          {/* PODCAST */}
-          
-
-          {/* LIFECYCLE */}
-         
-
-          {/* FEATURES */}
           <section className="features">
                 <div className="features-wrap">
+                  <p className="features-text">Features</p>
                   <div className="feature">
                     <div className="feature-header">
                       <figure><img src={Secure} alt="secure" /></figure>
@@ -299,7 +298,6 @@ const Main = () => {
                     </div>
                     <p className='feature-content'>Great SEO features, designed to improve your content search engine rankings, and increase content engagement from other creators and viewers.</p>
                   </div>
-
                 </div>
           </section>
           {/* REVIEWS */}
