@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 const corsOptions = {
-    origin:"http://localhost:2000"
+    origin:"http://localhost:3000"
 }
 
 app.use(cors(corsOptions))

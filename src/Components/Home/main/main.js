@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import Ui from "../../contents/images/ui.png"
 import Secure from "../../contents/images/secure.png"
 import Seo from "../../contents/images/seo.png"
+import defaultUser from "../../contents/images/dummy.jpg"
 import LightBulb from "./ph-lightbulb.png"
 import HeroImage from "../../contents/images/skr.png"
 import CyanSquiggle from "../../contents/images/cyanSqiggle.png"
@@ -47,6 +48,46 @@ const Port = ({focus, index}) => {
     <div onClick={focus} className={`port step${index}`}>{`step ${index}`}</div>
   )
 }
+
+const Feature = () => {
+
+  return ( 
+    <div className="features-wrap">
+      <p className="features-text">Features</p>           
+      {features.map(feature =>(
+        <div key={feature.id} className="feature">
+        <div className="feature-header">
+          <figure><img src={feature.image} alt="secure" /></figure>
+          <p className="feature-heading">{feature.heading}</p>
+          </div>
+        <p className='feature-content'>{feature.content}</p>
+      </div>
+      ))}
+    </div>
+  )
+}
+
+const Reviews = () => {
+
+  return ( 
+    <div className="review-scroll">            
+      {reviews.map(review =>(
+       <div className='rev'>
+       <div className="review-content"><p>"</p>{review.content}</div> 
+       <div className='review-id'>
+         <figure className='review-image'><img src={review.image} /></figure>                       
+         <div className='review-portfolio'>
+           <h5>{review.name}</h5>
+           <p className='portfolio-title'>{review.title}</p> 
+         </div>
+       </div> 
+     </div>
+      ))}
+    </div>
+  )
+}
+
+
 
 
 const Carousel = () => {
@@ -189,16 +230,16 @@ const Main = () => {
               <span> your </span>  
               audience here.</h1>
               <p className="punch-line">
-              <img id='cyansquiggle' src={CyanSquiggle} width={"23px"} height={"40px"} />
-              <img id='orangesquiggle' src={OrangeSquiggle} width={"20px"} height={"35px"} />
-              <img id='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} />
+              <img className='cyansquiggle' src={CyanSquiggle} width={"23px"} height={"40px"} />
+              <img className='orangesquiggle' src={OrangeSquiggle} width={"20px"} height={"35px"} />
+              <img className='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} />
                 Our platform provides you the best user experience you need to view & make great contents.</p>
               <Link to={'sign'} state={{signValue:'start'}}><button id="cta" >Get started</button></Link>
               <div className="hero-art">
                 <img src={HeroImage}  />
               </div>
           </div>
-          <p className="interest-text">Pick <span>Interest</span></p>
+          <p className="interest-text"><span>Interest</span></p>
           <div className='interest'>
             <div className='categories'>
               <p id="leftarr"  ><img src={LeftDir} height={19} width={19}/></p>
@@ -232,11 +273,12 @@ const Main = () => {
             </div>
           </div>
           <section className="strategy">
-            <div className='strategy-header'>
-              <p className="strategy-text">Content <span>Strategy</span></p>
+            <div className='strategy-header'>   
+              <p className="strategy-text"><span>Strategy</span></p>
               <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
             </div>
             <div className='strategy-content'>
+            
               <div className="lead-wrap">
                 <div className="eraser"></div>
                 {/* <div className="port step1">1</div> */}
@@ -251,6 +293,11 @@ const Main = () => {
               {/* <WriteSteps/> */}
               <div className="write-steps">
                 <div className="step-viewport">
+                  <p className="squiggle">
+                    <img className='cyansquiggle' src={CyanSquiggle} width={"23px"} height={"40px"} />
+                    <img className='orangesquiggle' src={OrangeSquiggle} width={"20px"} height={"35px"} />
+                    <img className='slatebluesquiggle' src={SlateblueSquiggle} width={"25px"} height={"35px"} />
+                  </p>
                     <Steps index={1} isfocused={activeStep===1} focus={(e)=>{activeStep!==1?setActiveStep(1):setActiveStep(1)}} header={strategies[0].title} content={strategies[0].content}/>
                     <Steps index={2} isfocused={activeStep===2} focus={(e)=>{activeStep!==2?setActiveStep(2):setActiveStep(1)}} header={strategies[1].title} content={strategies[1].content}/>
                     <Steps index={3} isfocused={activeStep===3} focus={(e)=>{activeStep!==3?setActiveStep(3):setActiveStep(1)}} header={strategies[2].title} content={strategies[2].content}/>
@@ -273,138 +320,131 @@ const Main = () => {
             </div>
           </div>
           <section className="features">
-                <div className="features-wrap">
-                  <p className="features-text">Features</p>
-                  <div className="feature">
-                    <div className="feature-header">
-                      <figure><img src={Secure} alt="secure" /></figure>
-                      <p className="feature-heading">Secure</p>
-                      </div>
-                    <p className='feature-content'>Strong authentication and password security for you database to prevent phising attacks and unauthorized users.</p>
-                  </div>
-                  <div className="feature">
-                    <div className="feature-header">
-                      <figure><img src={Ui} alt="ui2" /></figure>
-                      <p className="feature-heading">Seamless</p>
-                      </div>
-                    <p className='feature-content'>
-                      Our site is built with our users' at heart to give you a smooth reading and content management expirience from desktop to tablet and smartphone. 
-                    </p>
-                  </div>
-                  <div className="feature">
-                    <div className="feature-header">
-                      <figure><img src={Seo} alt="seo" /></figure>
-                      <p className="feature-heading">Optimized</p>
-                    </div>
-                    <p className='feature-content'>Great SEO features, designed to improve your content search engine rankings, and increase content engagement from other creators and viewers.</p>
-                  </div>
-                </div>
+              <Feature />
           </section>
           {/* REVIEWS */}
           <section className='review-wrapper'>
-          <p className='review-header'>Our reviews</p>
-          <div ref={scrollWrap} className='reviews'>  
-            <div ref={scroll} className='review-scroll'>
-
-              <div className='rev'>
-                <div className="review-content"><p>"</p>first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <figure className='review-image'></figure>                       
-                  <div className='review-persona'>
-                    <h5> Name</h5>
-                    <p className='review-portfolio'>CEO abc enterprise</p> 
-                  </div>
-                </div> 
-              </div>
-              {/* again */}
-              <div className='rev'>
-                <div className="review-content"><p>"</p>first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
-                <div className='review-id'>
-                  <figure className='review-image'></figure>                       
-                  <div className='review-persona'>
-                    <h5> Name</h5>
-                    <p className='review-portfolio'>CEO abc enterprise</p> 
-                  </div>
-                </div> 
-              </div>
-              {/* again */}
-            </div>
+          <p className='review-header'>Reviews</p>
+          <div className='reviews'>  
+            <Reviews />
           </div>
-            <div className='review-scroller'>
-              {/* <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
-              <div className='arrow-right' onClick={handleReviewRight}><Right /></div> */}
-            </div>
         </section>
           
         </div>
       </>):screen < 720 ? 
       //  -- TABLET --
-      (<>
-        <div className='tab-main'>
-          <div className='h1-tag'>
-            <h1 id='main-h1'>Share <span>your</span> Ideas & build <span>your</span> audience here.</h1>
-            <p id='cta'>
-            With Skriptn, you can create your space, publish and manage engaging contents that will grow your audience. It is your world.<br />
-            <Link to={'sign'} state={{signValue:'start'}}><button>Explore</button></Link>
-            </p>
-          </div>
-          <div className='featured'>
-            <p id='reads'>Top reads</p>
-                      <div className='reads'>
-                        <div className='read_id'>
-                          <figure></figure>
-                          <h5>{title}</h5>
-                          <p>{'12'}mins read</p>
-                        </div> 
-                        <h4 id='read_content'>{content}.</h4>
-                        <div id='engagement'>
-                          <div className='post-date'>{'Aug. 24'}</div>
-                          <div><Views/> {'9k'}</div>
-                          {/* <div><Like/> {'16k'}</div> */}
-                          <div><Bookmark/> {'bookmark'}</div>
-                        </div>
+      ( <>
+          <div className='tab-main'>
+            <div className='hero-tag'>
+                <h1 id='main-h1'>Share <span>your </span>  
+                Ideas & build 
+                <span> your </span>  
+                audience here.</h1>
+                <p className="punch-line">
+                <img className='cyansquiggle' src={CyanSquiggle} width={"37px"} height={"64px"} />
+                <img className='orangesquiggle' src={OrangeSquiggle} width={"32px"} height={"56px"} />
+                <img className='slatebluesquiggle' src={SlateblueSquiggle} width={"40px"} height={"56px"} />
+                  Our platform provides you the best user experience you need to view & make great contents.</p>
+                <Link to={'sign'} state={{signValue:'start'}}><button id="cta" >Get started</button></Link>
+                <div className="hero-art">
+                  <img src={HeroImage}  />
+                </div>
+            </div>
+            <p className="interest-text"><span>Interest</span></p>
+            <div className='interest'>
+              <div className='categories'>
+                <p id="leftarr"  ><img src={LeftDir} height={19} width={19}/></p>
+                <p id="rightarr"><img src={RightDir} height={19} width={19}/></p>
+                <div ref={CategoryScroll} className='categories-scroll' id='categories-scroll'>
+                  {niches.map((niche)=>(
+                    <button className='category' key={niche.id}>{niche.name}</button>
+                  ))}
+                  <button className='category more'>view more</button>
+                </div>
+              </div>
+              <div className='featured'>
+                  <div className="featured-scroll">
+                    {posts.map((post)=>(
+                      <div className="feature" key={post.id}>
+                          <p className="title">{post.title}</p>
+                          <p className="subtitle">{post.subtitle}</p>
+                          <div className="details">
+                            <p className="likes"><img src={like} height={13} width={13}/> {post.likes}</p>
+                            <div className="id">
+                              <figure id='img' style={{backgroundImage:`url(${post.image})`}} ></figure>
+                              <p className="name">
+                                <span>{post.author.firstName}</span>
+                                <span>{post.author.lastName}</span>
+                              </p>
+                            </div>
+                          </div>
                       </div>
-          </div>
-          {/* NICHE */}
-          <div className='niche-content'>
-            <p id='niche'>Find your niche</p>
-            <div className='category'>
-              {niches.map((niche)=>(
-                <button className='categories' key={niche.id}>{niche.name}</button>
-              ))}            
+                    ))}
+                  </div>
+              </div>
             </div>
-            <div className='see'><p id='arrow'> →</p><p id='see'>See more topics </p></div>           
-          </div>
-          {/* PODCAST */}
-          <div id='podcast1'>
-            <div className='podcast1-wrapper'>
-              <h2>Start your own podcast</h2>
-                <article>
-                  {'Get paid from your passionate subscribers'}
-                </article>
-                <button>Get started</button>                                                          
-            </div>                                                          
-            <div className='podcast1-gradient'></div>
-          </div>
-          {/* REVIEWS */}
-          <div className='reviews'>
-            <div className='rev'>
-              <div className='rev_id'>
-                <figure></figure>
-                <h5>Name</h5>
-              </div> 
-              <div>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div> 
+            <section className="strategy">
+              <div className='strategy-header'>   
+                <p className="strategy-text"><span>Strategy</span></p>
+                <p id='light-bulb'><img src={LightBulb} width={"37px"} height={"50px"} alt="question" /></p>
+              </div>
+              <div className='strategy-content'>
+              
+                <div className="lead-wrap">
+                  <div className="eraser"></div>
+                  {/* <div className="port step1">1</div> */}
+                  <Port index={1} focus={(e)=>{activeStep!==1?setActiveStep(1):``}}/>
+                  <Port index={2} focus={(e)=>{activeStep!==2?setActiveStep(2):``}}/>
+                  <Port index={3} focus={(e)=>{activeStep!==3?setActiveStep(3):``}}/>
+                  <Port index={4} focus={(e)=>{activeStep!==4?setActiveStep(4):``}}/>
+                  <Port index={5} focus={(e)=>{activeStep!==5?setActiveStep(5):``}}/>
+                  <Port index={6} focus={(e)=>{activeStep!==6?setActiveStep(6):``}}/>
+                  <div className=" lead"></div>
+                </div>
+                {/* <WriteSteps/> */}
+                <div className="write-steps">
+                  <div className="step-viewport">
+                      <p className="squiggle">
+                        <img className='cyansquiggle' src={CyanSquiggle} width={"37px"} height={"64px"} />
+                        <img className='orangesquiggle' src={OrangeSquiggle} width={"32px"} height={"56px"} />
+                        <img className='slatebluesquiggle' src={SlateblueSquiggle} width={"40px"} height={"56px"} />
+                      </p>
+                      <Steps index={1} isfocused={activeStep===1} focus={(e)=>{activeStep!==1?setActiveStep(1):setActiveStep(1)}} header={strategies[0].title} content={strategies[0].content}/>
+                      <Steps index={2} isfocused={activeStep===2} focus={(e)=>{activeStep!==2?setActiveStep(2):setActiveStep(1)}} header={strategies[1].title} content={strategies[1].content}/>
+                      <Steps index={3} isfocused={activeStep===3} focus={(e)=>{activeStep!==3?setActiveStep(3):setActiveStep(1)}} header={strategies[2].title} content={strategies[2].content}/>
+                      <Steps index={4} isfocused={activeStep===4} focus={(e)=>{activeStep!==4?setActiveStep(4):setActiveStep(1)}} header={strategies[3].title} content={strategies[3].content}/>
+                      <Steps index={5} isfocused={activeStep===5} focus={(e)=>{activeStep!==5?setActiveStep(5):setActiveStep(1)}} header={strategies[4].title} content={strategies[4].content}/>
+                      <Steps index={6} isfocused={activeStep===6} focus={(e)=>{activeStep!==6?setActiveStep(6):setActiveStep(1)}} header={strategies[5].title} content={strategies[5].content}/>
+                  </div>
+                </div>
+              </div>          
+            </section>
+            <div className="create">
+              < Carousel />
+              <p className="write">Start writing</p>
             </div>
-            <div className='rev'>
-              <figure></figure>
-              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div>
+            <p className="amplify-text">Amplify</p>
+            <div id='podcast'>
+              <figure><img src={podcast} width={"50px"} height={"50px"} alt="question" /></figure>
+              <div>
+              <Link to={'sign'} state={{signValue:'start'}}><button id="podcast-cta" >Start today</button></Link>
+              </div>
             </div>
-            <div className='rev'>
-              <figure></figure>
-              <div><h4>Name</h4>Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.</div>
-            </div>
+            <section className="features">
+                <Feature />
+            </section>
+            {/* REVIEWS */}
+            <section className='review-wrapper'>
+              <p className='review-header'>Reviews</p>
+              <div className='reviews'>  
+                <Reviews />
+              </div>
+              <div className='review-scroller'>
+                {/* <div className='arrow-left' onClick={handleReviewLeft}><Left/></div>
+                <div className='arrow-right' onClick={handleReviewRight}><Right /></div> */}
+              </div>
+            </section>  
           </div>
-        </div>
         </>
       ):(
       //  -- DESKTOP --
@@ -527,7 +567,7 @@ const posts = [
 const strategies = [
   { 
     title:"Build a target:",
-    content:"This is where you define what kind of content do you want to create? who are you trying to reach with it? What are you hoping to achieve ",
+    content:"Strong authentication and password security for you database to prevent phising attacks and unauthorized users.",
     id:1,
   },
   { 
@@ -554,6 +594,52 @@ const strategies = [
     title:"Analyze & Adapt:",
     content:"Track the performance of your content. See what resonates with your audience and what doesn't. Use analytics data to learn and adapt your strategy for future content creation.",
     id:6,
+  }
+]
+
+const features = [
+  { 
+    heading:"Secure",
+    content:"This is where you define what kind of content do you want to create? who are you trying to reach with it? What are you hoping to achieve.",
+    id:1,
+    image:Secure
+  },
+  { 
+    heading:"Seamless",
+    content:"Our site is built with a seamless user interface to give you a smooth reading and content management expirience from desktop to tablet and smartphone.",
+    id:2,
+    image:Ui
+  },
+  {
+    heading:"Optimized",
+    content:"Great SEO features, designed to improve your content search engine rankings, and increase content engagement from other creators and viewers.",
+    id:3,
+    image:Seo
+  }
+]
+
+
+const reviews = [
+  { 
+    id:1,
+    content:"first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.",
+    name:'Name',
+    title:"Director ABC inc.",
+    image:defaultUser,
+  },
+  { 
+    id:2,
+    content:"first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.",
+    name:'Name',
+    title:"CEO BAC ltd",
+    image:defaultUser,
+  },
+  {
+    id:3,
+    content:"first Veniam pariatur cillum ullamco proident et id Lorem excepteur ad.",
+    name:'Name',
+    title:"Manger CAB enterprise",
+    image:defaultUser,
   }
 ]
 

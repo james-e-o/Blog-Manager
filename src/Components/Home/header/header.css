@@ -1,5 +1,5 @@
-.header {
-    z-index: 30;
+header.m-header {
+    z-index: 330;
     height: 70px;
     position: sticky ;
     top: 0px;
@@ -13,22 +13,18 @@
     background-color:white;
     transition: background-color 280ms ease;
     border-bottom: 1px solid #f1f1f1;
+    width: 100vw;
 }
 
-div.logo-wrap{
+.m-header .logo-wrap{
     padding:4px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     width: fit-content;
     justify-content: center;
     gap: 4px;
 }
-
-.active {
-    background-color: white;
-}
-
-.header h1.landing{
+.m-header h1.landing{
     
     font-family:Pacifico;
     padding: 5px;
@@ -37,31 +33,15 @@ div.logo-wrap{
     font-size:17px;
 }
 
-.header nav {
+.m-header nav {
     align-items: center;
     padding: 8px 2px;
-    display: flex;
+    display: inline-flex;
     color:white;
     justify-content: center;
     gap:7px;
 }
-
-/* .desktop ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 5px;
-    margin: 6px;
-    transition: color 150ms linear;
-}
-.desktop ul li:hover{
-    color: rgb(200, 245, 255);
-    list-style: none;
-    display: inline-block;
-    padding: 5px;
-    margin: 6px;
-} */
-
-.header nav button{
+.m-header nav button{
     display: inline-block;
     border-radius: 14px;
     font-weight: 600;
@@ -74,48 +54,43 @@ div.logo-wrap{
     font-family: Inter;
     transition: background-color 200ms ease, border 200ms ease;
 }
-.header nav button:hover {
+.m-header nav button:hover {
     color: white;
     background-color: rgb(135, 120, 235);
     transition:  background-color 150ms ease;
 }
-.nav-button {
-    color: white;
-    background-color: rgb(255, 103, 48);
-    border: 1px solid rgb(255, 103, 48);
-}
-.header div.svg {
+.m-header div.svg {
     height: 27px;
     width: 27px;
     display: inline-block;
 }
-.main-svg {
+.m-header .main-svg {
     height: 100%;
     width: 100%;
     position: relative;
     fill: slateblue;
     transition: fill 200ms ease;
 }
-.nav-svg {
+.m-header .nav-svg {
     fill: slateblue;
 }
 
 
-.toggle-menu {
+.m-header .toggle-menu {
     position: absolute;
     height: 100vh;
     overflow-x: hidden;
     background-color:white;
-    width: 310px;
+    width: 75vw;
     top: calc(0px );
     right: calc(0px);
-    z-index: 20;
+    z-index: 320;
     transition: width 200ms ease;
 }
-.toggle-off {
+.m-header .toggle-off {
     width: 0px;
 }
-div.menu-header {
+.m-header div.menu-header {
    height: 49px;
    color: black;
    display: flex;
@@ -124,23 +99,23 @@ div.menu-header {
    padding: 10px 20px;
    border-bottom: 1px solid rgb(245, 245, 245);
 }
-.scroll{
+.m-header .scroll{
     position: fixed;
     top: var(--scrollY);
 }
-div.menu-main {
+.m-header div.menu-main {
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.menu-main ul {
+.m-header .menu-main ul {
     display: flex;
     list-style: none;
     width: 98%;
     
 }
-.menu-main ul a {
+.m-header .menu-main ul a {
     text-align: center;
     border-radius: 2px;
     font-weight: 500;
@@ -151,5 +126,151 @@ div.menu-main {
     text-decoration: none;
     margin: 5px;  
     padding: 15px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/* TABLET MODE */
+/* =========== */
+
+
+
+
+
+
+header.t-header {
+    z-index: 330;
+    height: 110px;
+    position: sticky ;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding:10px 22px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color:white;
+    transition: background-color 280ms ease;
+    border-bottom: 2px solid #f1f1f1;
+    width: 100vw;
+}
+
+.t-header .logo-wrap{
+    padding:6px;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+    gap: 6px;
+}
+.t-header h1.landing{
+    
+    font-family:Pacifico;
+    padding: 8px;
+    color: slateblue;
+    font-weight:bolder;
+    font-size:27px;
+}
+
+.t-header nav {
+    align-items: center;
+    padding: 13px 3px;
+    display: inline-flex;
+    color:white;
+    justify-content: center;
+    gap:11px;
+}
+.t-header nav button{
+    display: inline-block;
+    border-radius: 22px;
+    font-weight: 600;
+    border: 3px solid slateblue;
+    padding: 10px 19px;
+    color:slateblue;
+    margin:0px 13px;
+    background-color: white;
+    font-size: 20px;
+    font-family: Inter;
+    transition: background-color 200ms ease, border 200ms ease;
+}
+.t-header nav button:hover {
+    color: white;
+    background-color: rgb(135, 120, 235);
+    transition:  background-color 150ms ease;
+}
+.t-header div.svg {
+    height: 43px;
+    width: 43px;
+    display: inline-block;
+}
+.t-header .main-svg {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    fill: slateblue;
+    transition: fill 200ms ease;
+}
+.t-header .nav-svg {
+    fill: slateblue;
+}
+
+
+.t-header .toggle-menu {
+    position: absolute;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color:white;
+    width: 75vw;
+    top: calc(0px );
+    right: calc(0px);
+    z-index: 320;
+    transition: width 200ms ease;
+}
+.t-header .toggle-off {
+    width: 0px;
+}
+.t-header div.menu-header {
+   height: 78px;
+   color: black;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding: 16px 32px;
+   border-bottom: 2px solid rgb(245, 245, 245);
+}
+.t-header .scroll{
+    position: fixed;
+    top: var(--scrollY);
+}
+.t-header div.menu-main {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.t-header .menu-main ul {
+    display: flex;
+    list-style: none;
+    width: 98%;
+    
+}
+.t-header .menu-main ul a {
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 500;
+    line-height: normal;
+    border: 2px solid gray;
+    width: 75%;
+    color: slateblue;
+    text-decoration: none;
+    margin: 8px;  
+    padding: 24px;
     font-weight: 600;
 }
