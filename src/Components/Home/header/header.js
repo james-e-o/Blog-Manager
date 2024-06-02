@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef, useContext} from 'react';
 import{Link} from 'react-router-dom'
 import { screenWidth } from '../../app/App';
 import Logo from '../../logo/logo';
+import search from "./ph-search.png"
 
 const Header = () => {
   const [scroll, setScroll]= useState('')
@@ -62,10 +63,17 @@ const Header = () => {
                   <svg  xmlns="http://www.w3.org/2000/svg" onClick={(e)=> setMenuActive(!menuActive)} fill='gray' height="38" viewBox="0 -960 960 960" width="38"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
                 </div>
                 <div className='menu-main'>
-                    <ul>
-                      <Link to={'/sign/signup'} state={{signValue:'signup'}}><li>Sign up</li></Link>
-                      <Link to={'/sign/login'} state={{signValue:'login'}}><li>Login</li></Link>
-                    </ul>
+                  <div className="search">
+                    <figure><img src={search} width={'20px'} height={'20px'} /></figure>
+                    <input type="search" name="" id="" placeholder='Search'/>
+                  </div>
+                  <p className="menu-list"><span>About</span></p>
+                  <p className="menu-list"><span>Podcasts</span></p>
+                  <p className="menu-list"><span>Contact us</span></p>
+                  <ul>
+                    <Link to={'/sign/signup'} state={{signValue:'signup'}}><li>Sign up</li></Link>
+                    <Link to={'/sign/login'} state={{signValue:'login'}}><li>Login</li></Link>
+                  </ul>
                 </div>
             </div>
           </header>
@@ -89,25 +97,38 @@ const Header = () => {
                  <svg  xmlns="http://www.w3.org/2000/svg" onClick={(e)=> setMenuActive(!menuActive)} fill='gray' height="38" viewBox="0 -960 960 960" width="38"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
                </div>
                <div className='menu-main'>
-                   <ul>
-                     <Link to={'/sign/signup'} state={{signValue:'signup'}}><li>Sign up</li></Link>
-                     <Link to={'/sign/login'} state={{signValue:'login'}}><li>Login</li></Link>
-                   </ul>
+                  <div className="search">
+                    <figure><img src={search} width={'20px'} height={'20px'} /></figure>
+                    <input type="search" name="" id="" placeholder='Search'/>
+                  </div>
+                  <p className="menu-list"><span>About</span></p>
+                  <p className="menu-list"><span>Podcasts</span></p>
+                  <p className="menu-list"><span>Contact us</span></p>
+                  <ul>
+                    <Link to={'/sign/signup'} state={{signValue:'signup'}}><li>Sign up</li></Link>
+                    <Link to={'/sign/login'} state={{signValue:'login'}}><li>Login</li></Link>
+                  </ul>
                </div>
            </div>
          </header>
           ):
           //DESKTOP 
           (
+          <header className='d-header'>
+            <div className="logo-wrap">
+              <Logo/>
+              <h1 className='landing'>Skriptn</h1> 
+            </div>
             <nav className='desktop'>
-          {/* partner with us */}
-            <ul>
-              <li>About us</li>
-              <li>Services</li>
-              <li>Sign in</li>
-            </ul>
-            <button className='started'>Get started</button>
-        </nav>  
+                <ul>
+                  <li>About us</li>
+                  <li>Services</li>
+                  <li>Sign in</li>
+                </ul>
+                <button className='started'>Get started</button>
+            </nav>
+          </header>
+           
           )}
         
        

@@ -1,36 +1,96 @@
-footer {
+footer.m-footer {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 20px;
     background-color: #ffe3ae;
 }
-footer h4 {
+.m-footer h4 {
     font-family: Pacifico;
     margin-left: 10px;
+    font-size: 18px;
 }
-.footdiv {
+.m-footer .footdiv {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     /* gap: 25%; */
 }
-.footdiv div.foot-brief {
+.m-footer .footdiv div.foot-brief {
     padding: 3px;
     display: flex;
     flex-direction: column;
 }
-div.foot-brief p {
+.m-footer div.foot-brief p {
   padding: 3px;
   color: black;
+  font-size: 16px;
 }
-.footdiv div.foot-icons {
+.m-footer .footdiv div.foot-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-right: 10%;
 }
-
-#copyright {
+.m-footer .footdiv div.foot-icons svg{
+ width: 26px;
+ height: 26px;
+}
+.m-footer #copyright {
     text-align: center;
     margin-top: 15px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+/* TABLET MODE */
+/* =========== */
+
+
+
+
+footer.t-footer {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 32px;
+    background-color: #ffe3ae;
+}
+.t-footer h4 {
+    font-family: Pacifico;
+    margin-left: 16px;
+    font-size: 29px;
+}
+.t-footer .footdiv {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 25%; */
+}
+.t-footer .footdiv div.foot-brief {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.t-footer div.foot-brief p {
+  padding: 5px;
+  color: black;
+  font-size: 25px;
+}
+.t-footer .footdiv div.foot-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-right: 10%;
+}
+.t-footer .footdiv div.foot-icons svg{
+ width: 42px;
+ height: 42px;
+}
+.t-footer #copyright {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 25px;
 }

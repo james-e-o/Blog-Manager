@@ -12,6 +12,10 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(express.static('build'))
 
+app.get('/',(req,res)=>{
+  res.send('<h1>Hello Nosa</h1>')
+})
+
 app.get('/api/',(req, res)=>{
     res.json({
         "id": 1,

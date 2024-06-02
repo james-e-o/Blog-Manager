@@ -170,22 +170,22 @@ const Main = () => {
         let menuRightArr = document.getElementById("rightarr")
        
 
-          menuLeftArr.onclick = (e) =>{       
+          menuLeftArr && ( menuLeftArr.onclick = (e) =>{       
               categoryScroll.scrollTo({
                 top: 0,
                 left: (categoryScroll.scrollLeft - 180%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)) || (categoryScroll.scrollLeft - 20%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)),
                 behavior: "smooth",
               });
-          }
-          menuRightArr.onclick = (e) =>{       
+          })
+          menuRightArr && (menuRightArr.onclick = (e) =>{       
               categoryScroll.scrollTo({
                 top: 0,
                 left: (categoryScroll.scrollLeft + 180%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)) || (categoryScroll.scrollLeft + 20%(categoryScroll.scrollWidth - categoryScroll.offsetWidth)),
                 behavior: "smooth",
               });
-          }
+          })
 
-          categoryScroll.onscroll = (e) =>{
+          categoryScroll && (categoryScroll.onscroll = (e) =>{
             if (e.target.scrollLeft > 34){
               menuLeftArr.style.zIndex = "1"
               menuLeftArr.style.opacity="1"
@@ -200,12 +200,12 @@ const Main = () => {
               menuRightArr.style.zIndex = "1"
               menuRightArr.style.opacity="1"
             }
-          }
+          })
 
           const ports = document.querySelectorAll('div.port')
           let leadport = document.querySelector(`div.step${activeStep}`)
          
-          leadport.classList.toggle("activeport")
+          leadport && (leadport.classList.toggle("activeport"))
           ports.forEach(port =>{
             if (port === leadport) return 
             else if(port !== leadport && port.classList.contains('activeport')) {
@@ -567,7 +567,7 @@ const posts = [
 const strategies = [
   { 
     title:"Build a target:",
-    content:"Strong authentication and password security for you database to prevent phising attacks and unauthorized users.",
+    content:"Define what kind of content do you want to create? who are you trying to reach with it? What are you hoping to achieve.",
     id:1,
   },
   { 
@@ -600,7 +600,7 @@ const strategies = [
 const features = [
   { 
     heading:"Secure",
-    content:"This is where you define what kind of content do you want to create? who are you trying to reach with it? What are you hoping to achieve.",
+    content:"Strong authentication and password security for you database to prevent phising attacks and unauthorized users.",
     id:1,
     image:Secure
   },

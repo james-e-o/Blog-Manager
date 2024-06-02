@@ -86,6 +86,7 @@ header.m-header {
     right: calc(0px);
     z-index: 320;
     transition: width 200ms ease;
+    border: 1px solid orange;
 }
 .m-header .toggle-off {
     width: 0px;
@@ -109,11 +110,63 @@ header.m-header {
     flex-direction: column;
     align-items: center;
 }
+.m-header div.search {
+    height: 35px;
+    padding:5px;
+    width:90%;
+    border: 1px solid #888888;
+    border-radius: 1px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.m-header div.search figure{
+    opacity: 0.8;
+}
+.m-header div.search figure img{
+    position: absolute;
+    top: 25%;
+}
+.m-header div.search input{
+    border: none;
+    position: relative;
+    left: 10px;
+    padding:5px;
+    outline: none;
+    width: 88%;
+    margin: 5px;
+    font-size: 15px;
+    font-family: CLashDisplay;
+    height: 33px;
+    z-index: 0;
+}
+.m-header p.menu-list {
+    height: 35px;
+    padding:5px;
+    width:90%;
+    border-radius: 1px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-top: 15px;  
+    font-family: Inter;
+}
+.m-header p.menu-list span {
+    margin-left: 35px;
+    font-size: 19px;
+    color: slateblue;
+}
 .m-header .menu-main ul {
     display: flex;
     list-style: none;
     width: 98%;
-    
+    margin-top: 15px;
 }
 .m-header .menu-main ul a {
     text-align: center;
@@ -122,7 +175,7 @@ header.m-header {
     line-height: normal;
     border: 1px solid gray;
     width: 47%;
-    color: slateblue;
+    color: #4f4f4f;
     text-decoration: none;
     margin: 5px;  
     padding: 15px;
@@ -232,6 +285,7 @@ header.t-header {
     right: calc(0px);
     z-index: 320;
     transition: width 200ms ease;
+    border: 1px solid orange;
 }
 .t-header .toggle-off {
     width: 0px;
@@ -255,11 +309,63 @@ header.t-header {
     flex-direction: column;
     align-items: center;
 }
+.t-header div.search {
+    height: 56px;
+    padding:8px;
+    width:90%;
+    border: 2px solid #888888;
+    border-radius: 2px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.t-header div.search figure{
+    opacity: 0.8;
+}
+.t-header div.search figure img{
+    position: absolute;
+    top: 25%;
+}
+.t-header div.search input{
+    border: none;
+    position: relative;
+    left: 16px;
+    padding:8px;
+    outline: none;
+    width: 88%;
+    margin: 8px;
+    font-size: 24px;
+    font-family: CLashDisplay;
+    height: 52px;
+    z-index: 0;
+}
+.t-header p.menu-list {
+    height: 56px;
+    padding:8px;
+    width:90%;
+    border-radius: 2px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 24px;  
+    font-family: Inter;
+}
+.t-header p.menu-list span {
+    margin-left: 56px;
+    font-size: 30px;
+    color: slateblue;
+}
 .t-header .menu-main ul {
     display: flex;
     list-style: none;
     width: 98%;
-    
+    margin-top: 24px;
 }
 .t-header .menu-main ul a {
     text-align: center;
@@ -267,8 +373,209 @@ header.t-header {
     font-weight: 500;
     line-height: normal;
     border: 2px solid gray;
-    width: 75%;
+    width: 47%;
+    color: #4f4f4f;
+    text-decoration: none;
+    margin: 8px;  
+    padding: 24px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+/* DESKTOP MODE */
+/* =========== */
+
+
+
+
+
+
+header.d-header {
+    z-index: 330;
+    height: 110px;
+    position: sticky ;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding:17px 37px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color:white;
+    transition: background-color 280ms ease;
+    border-bottom: 2px solid #f1f1f1;
+    width: 100vw;
+}
+
+.d-header .logo-wrap{
+    padding:10px;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+    gap: 10px;
+}
+.d-header h1.landing{
+    
+    font-family:Pacifico;
+    padding: 14px;
     color: slateblue;
+    font-weight:bolder;
+    font: size 46px;
+}
+
+.d-header nav {
+    align-items: center;
+    padding: 13px 3px;
+    display: inline-flex;
+    color:white;
+    justify-content: center;
+    gap:11px;
+}
+.d-header nav button{
+    display: inline-block;
+    border-radius: 22px;
+    font-weight: 600;
+    border: 3px solid slateblue;
+    padding: 10px 19px;
+    color:slateblue;
+    margin:0px 13px;
+    background-color: white;
+    font-size: 20px;
+    font-family: Inter;
+    transition: background-color 200ms ease, border 200ms ease;
+}
+.d-header nav button:hover {
+    color: white;
+    background-color: rgb(135, 120, 235);
+    transition:  background-color 150ms ease;
+}
+.d-header div.svg {
+    height: 43px;
+    width: 43px;
+    display: inline-block;
+}
+.d-header .main-svg {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    fill: slateblue;
+    transition: fill 200ms ease;
+}
+.d-header .nav-svg {
+    fill: slateblue;
+}
+
+
+.d-header .toggle-menu {
+    position: absolute;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color:white;
+    width: 75vw;
+    top: calc(0px );
+    right: calc(0px);
+    z-index: 320;
+    transition: width 200ms ease;
+    border: 1px solid orange;
+}
+.d-header .toggle-off {
+    width: 0px;
+}
+.d-header div.menu-header {
+   height: 78px;
+   color: black;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding: 16px 32px;
+   border-bottom: 2px solid rgb(245, 245, 245);
+}
+.d-header .scroll{
+    position: fixed;
+    top: var(--scrollY);
+}
+.d-header div.menu-main {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.d-header div.search {
+    height: 56px;
+    padding:8px;
+    width:90%;
+    border: 2px solid #888888;
+    border-radius: 2px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.d-header div.search figure{
+    opacity: 0.8;
+}
+.d-header div.search figure img{
+    position: absolute;
+    top: 25%;
+}
+.d-header div.search input{
+    border: none;
+    position: relative;
+    left: 16px;
+    padding:8px;
+    outline: none;
+    width: 88%;
+    margin: 8px;
+    font-size: 24px;
+    font-family: CLashDisplay;
+    height: 52px;
+    z-index: 0;
+}
+.d-header p.menu-list {
+    height: 56px;
+    padding:8px;
+    width:90%;
+    border-radius: 2px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 24px;  
+    font-family: Inter;
+}
+.d-header p.menu-list span {
+    margin-left: 56px;
+    font-size: 30px;
+    color: slateblue;
+}
+.d-header .menu-main ul {
+    display: flex;
+    list-style: none;
+    width: 98%;
+    margin-top: 24px;
+}
+.d-header .menu-main ul a {
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 500;
+    line-height: normal;
+    border: 2px solid gray;
+    width: 47%;
+    color: #4f4f4f;
     text-decoration: none;
     margin: 8px;  
     padding: 24px;
