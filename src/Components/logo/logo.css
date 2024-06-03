@@ -114,29 +114,29 @@ div.art{
     position: absolute;
     background-color:darkturquoise;
     width: 100%;
-    border-radius: 9px;
-    height: 48px;
+    border-radius: 3px;
+    height: 33px;
     transform: rotate(-7deg) translateX(-20%) translateY(3%);
-    box-shadow: 3px 3px 6px rgba(24, 28, 80, 0.747);
+    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
 }
 .d-header div.art::after{
     content: "";
     position: absolute;
     background:linear-gradient(to bottom,#ffa90a,#7568cf);
     width: 100%;
-    border-radius: 5px;
-    height: 48px;
+    border-radius: 3px;
+    height: 33px;
     transform: rotate(-14deg) translateX(-40%) translateY(6%);
-    box-shadow: 3px 3px 6px rgba(24, 28, 80, 0.747);
+    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
 }
 .d-header div.art{
     position: relative;
     top: -2px;
     background-color:rgb(190, 190, 190);
-    width: 38px;
+    width: 24px;
     border-radius: 3px;
-    height: 48px;
+    height: 33px;
     transform: rotate(8deg)  ;
-    box-shadow: 3px 3px 10px rgba(24, 28, 80, 0.747);
-    margin-left:26px ;
+    box-shadow: 2px 2px 6px rgba(24, 28, 80, 0.747);
+    margin-left:16px ;
 }

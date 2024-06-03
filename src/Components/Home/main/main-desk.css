@@ -9,16 +9,13 @@
     .desk-main div.main-display{
         display: flex;
         height: 80vh;
-        background-color: slateblue;
     }
     .desk-main .h1-tag{
-       background-color: slateblue;
         padding: 20px;
         width: 49%;
 
     }
     .desk-main .h1-art{
-        background-color: slateblue;
         padding: 20px;
         width: 49%;
      }

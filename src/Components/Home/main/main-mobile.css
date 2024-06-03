@@ -745,7 +745,7 @@ p.punch-line img.slatebluesquiggle {
    color: rgb(102, 204, 245);
 }
 .mobile-main .features .features-wrap .feature p.feature-content{
-    font-size: calc(1vmin + 13px);
+    font-size: 16px;
     line-height: 1.45;
     font-family: Inter;
 }

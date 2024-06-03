@@ -400,7 +400,7 @@ header.t-header {
 
 header.d-header {
     z-index: 330;
-    height: 110px;
+    height: 90px;
     position: sticky ;
     top: 0px;
     left: 0px;
@@ -422,38 +422,67 @@ header.d-header {
     align-items: center;
     width: fit-content;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
 }
 .d-header h1.landing{
     
     font-family:Pacifico;
-    padding: 14px;
+    padding: 10px;
     color: slateblue;
     font-weight:bolder;
-    font: size 46px;
+    font-size: 23px;
 }
 
-.d-header nav {
+.d-header nav{
+    margin-right: 24px;
     align-items: center;
-    padding: 13px 3px;
+    padding: 20px 5px;
     display: inline-flex;
-    color:white;
     justify-content: center;
-    gap:11px;
+    gap:12px;
+    font-size: 18px;
 }
+
+.d-header nav ul li{
+    list-style: none;
+    display: inline-block;
+    font-weight:400;
+    padding: 5px 8px;
+    color:rgb(120, 120, 120);
+    margin:0px 7px;
+    background-color: white;
+    font-size: 16px;
+    line-height: 120%;
+    font-family: Inter;
+    cursor: pointer;
+    transition: background-color 200ms ease-out, color 200ms ease-in-out;
+}
+.d-header nav ul li:hover{
+    color: rgb(71, 71, 71);
+    list-style: none;
+    display: inline-block;
+    padding: 5px 8px;
+    margin:0px 5px;
+}
+
 .d-header nav button{
     display: inline-block;
-    border-radius: 22px;
-    font-weight: 600;
-    border: 3px solid slateblue;
-    padding: 10px 19px;
-    color:slateblue;
-    margin:0px 13px;
-    background-color: white;
-    font-size: 20px;
+    font-weight: 400;
+    border: 2px solid #4d4d4d;
+    padding: 6px 16px;
+    color:#4d4d4d;
+    margin:0px 3px;
+    background-color: #6df3ff;
+    font-size: 16px;
     font-family: Inter;
     transition: background-color 200ms ease, border 200ms ease;
 }
+.d-header nav button:hover {
+    background-color: #77e7f1; ;
+    transition:  background-color 200ms ease;
+}
+/* 
+
 .d-header nav button:hover {
     color: white;
     background-color: rgb(135, 120, 235);
@@ -473,7 +502,7 @@ header.d-header {
 }
 .d-header .nav-svg {
     fill: slateblue;
-}
+} */
 
 
 .d-header .toggle-menu {

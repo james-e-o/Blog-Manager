@@ -121,11 +121,11 @@ const Header = () => {
             </div>
             <nav className='desktop'>
                 <ul>
-                  <li>About us</li>
-                  <li>Services</li>
-                  <li>Sign in</li>
+                  <li>About</li>
+                  <li>Podcasts</li>
+                  <li>Contact us</li>
                 </ul>
-                <button className='started'>Get started</button>
+                <button className='started'>Sign in</button>
             </nav>
           </header>
            
