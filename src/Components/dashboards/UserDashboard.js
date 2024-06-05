@@ -31,24 +31,19 @@ const UserDashboard = () => {
       screen < 480?(
         <div className='m-dashboard'>
           <header className='m-dashboard-header'>
-            <div className="user">
-              <Logo />
-              <div className="welcome">
-                <p>Hello</p>
-                <h3>User</h3>
-              </div>
+            <div className="logo-wrap">
+              <Logo space={'m'}/>
             </div>
             <nav >
-              <figure id='notify'><Notify/></figure> 
+              <figure className='notify'>{search}</figure> 
+              <figure className='notify'><Notify/></figure> 
               <figure id='profile-pic'><img src={User} width="100%" height={"100%"} /></figure>    
             </nav>
           </header>
           <main ref={mainDashboard} className='m-dashboard-main'>
               <div className="blur" id='blurscreen' ref={blurScreen}></div>
-              <div className='search'>
-                <input type="search" name="search" id="" /> 
-              </div>
-              <div className="advert-wrapper">
+              
+              {/* <div className="advert-wrapper">
                 <div className="adverts">
                   <div className="advert"></div>
                   <div className="advert"></div>
@@ -63,8 +58,15 @@ const UserDashboard = () => {
                   <Link to={"niche"}><div className='category' key={niche.id}>{niche.name}</div></Link>
                   ))}
                   <Link to={"niche"}><button className='arrow-f'>more</button></Link>
+              </div> */}
+              <div className="feed-header">
+                <p className='feed-text'>feeds</p>
+                <div className="feed-collection">
+                  <a className='feed-type'>personalized</a>
+                  <a className='feed-type'>following</a>
+                  <a className='feed-type'>featured</a>
+                </div>
               </div>
-              <p className='niche'>feeds</p>
               <div className="feeds">
                   <div className='feed'>
                     <div className="feed-content">
@@ -161,18 +163,18 @@ const MenuBar = () => {
     }  
   })
   return (
-    <popCheck.Provider value={activeIndex}>
+    // <popCheck.Provider value={activeIndex}>
       <div className={'menu-bar'}>
-        <div className={'blunt-fixed'}>
+        {/* <div className={'blunt-fixed'}>
           <div className="menu-wrap">
               <Menus isToggled={activeIndex===1} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==1?setActiveIndex(1):setActiveIndex(0)}} togglemenu={toggleMenu} index={1} content={<Options/>} icon={<Plus/>}/>
               <Menus isToggled={activeIndex===2} togglepop={(e)=>{if (e.target.matches(".menu-pop")) {return} else activeIndex!==2?setActiveIndex(2):setActiveIndex(0)}} togglemenu={toggleMenu} index={2} content={<Bookmarks/>} icon={<Bookmark2/>}/>
               <Menus isToggled={activeIndex===3} togglepop={(e)=>{if (e.target.closest(".menu-pop")) {return} else activeIndex!==3?setActiveIndex(3):setActiveIndex(0)}} togglemenu={toggleMenu} index={3} content={<Create/>} icon={<Plus/>}/>
               <div className={toggleMenu?'menus-icon-active':'menus-icon'} onClick={()=>{setToggleMenu(!toggleMenu);resetActiveIndex()}}>{toggleMenu?<Arrow_B/>:<RoundMenu/>}</div>          
           </div>
-        </div>
+        </div> */}
       </div>
-    </popCheck.Provider>
+    // </popCheck.Provider>
   )
 }
 const Menus = ({togglemenu,content, index, icon,togglepop, isToggled}) => {
@@ -266,3 +268,6 @@ const Options = () => {
   //    }
   //    setScroll(scrollOffset.current)
   // }
+
+const search = <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="24px" height="24px"><path d="M 27 9 C 17.075 9 9 17.075 9 27 C 9 36.925 17.075 45 27 45 C 31.129213 45 34.9263 43.587367 37.966797 41.240234 L 51.048828 54.322266 C 51.952828 55.226266 53.418266 55.226266 54.322266 54.322266 C 55.226266 53.418266 55.226266 51.952828 54.322266 51.048828 L 41.240234 37.966797 C 43.587367 34.9263 45 31.129213 45 27 C 45 17.075 36.925 9 27 9 z M 27 13 C 34.719 13 41 19.281 41 27 C 41 34.719 34.719 41 27 41 C 19.281 41 13 34.719 13 27 C 13 19.281 19.281 13 27 13 z"/></svg>
+const notify =  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/></svg>

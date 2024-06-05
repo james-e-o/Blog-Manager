@@ -1,23 +1,25 @@
 import './App.css';
-import Main from '../Home/main/main';
-import Header from '../Home/header/header';
-import Footer from '../Home/footer/footer';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {createContext} from 'react';
+import React,{createContext, lazy, Suspense} from 'react';
 
 // route imports
-import Signlayout from '../../Layouts/signlayout';
-import LoggedIn from '../../Layouts/LoggedLayout';
+const Home = lazy(()=>import('../Home/home'))
+// const Signlayout = lazy(()=>import('../../Layouts/signlayout'))
+const LoggedIn = lazy(()=>import('../../Layouts/LoggedLayout'))
 import Corelayout from '../../Layouts/CoreLayout';
+import Signlayout from '../../Layouts/signlayout';
 
 // page imports
 import {Sign, Signup, Signin} from '../../sign'
-import Notfound from '../Errors/Notfound';
-import UserDashboard from '../dashboards/UserDashboard';
-import About from '../about/About';
-import NewContent from '../dashboards/dashboard-components/new-content/new-content';
-import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
-import Niche from '../dashboards/dashboard-components/niche/niche';
+const Notfound = lazy(()=>import('../Errors/Notfound'))
+const UserDashboard = lazy(()=>import('../dashboards/UserDashboard'))
+const About = lazy(()=>import('../about/About'))
+const NewContent = lazy(()=>import('../dashboards/dashboard-components/new-content/new-content'))
+const Bookmarked = lazy(()=>import('../dashboards/dashboard-components/bookmarked/bookmarked'))
+const Niche = lazy(()=>import('../dashboards/dashboard-components/niche/niche'))
+// import NewContent from '../dashboards/dashboard-components/new-content/new-content';
+// import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
+// import Niche from '../dashboards/dashboard-components/niche/niche';
 
 //actions
 import { signupValidate,loginValidation } from '../../sign';
@@ -27,13 +29,13 @@ import { signupValidate,loginValidation } from '../../sign';
 //context export
 export const screenWidth = createContext('')
 
-const Home = () => { 
-  return (
-      <div className='home'>
-        <Header />
-        <Main />
-        <Footer />
-      </div>
+const Loading = ()=>{
+  return(
+    <div className='loading'>
+      <p className="dot-slateblue"></p>
+      <p className="dot-turquoise"></p>
+      <p className="dot-orange"></p>
+    </div>
   )
 }
 
@@ -80,8 +82,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-        
-        <RouterProvider router={router}/>
+        <Suspense fallback={<Loading />} >
+            <RouterProvider router={router}/>
+        </Suspense>
   );
 }
 

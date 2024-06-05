@@ -37,7 +37,7 @@ div.art{
 
 
 
-.m-header div.art::before{
+.m.art::before{
     content: "";
     position: absolute;
     background-color:darkturquoise;
@@ -47,7 +47,7 @@ div.art{
     transform: rotate(-7deg) translateX(-20%) translateY(3%);
     box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
 }
-.m-header div.art::after{
+.m.art::after{
     content: "";
     position: absolute;
     background:linear-gradient(to bottom,#ffa90a,#7568cf);
@@ -57,7 +57,7 @@ div.art{
     transform: rotate(-14deg) translateX(-40%) translateY(6%);
     box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
 }
-.m-header div.art{
+.m.art{
     position: relative;
     top: -2px;
     background-color:rgb(190, 190, 190);

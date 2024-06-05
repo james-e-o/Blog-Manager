@@ -5,47 +5,46 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #F1F1F1;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
     transition: background-color 280ms ease;
+    border-bottom: 1px solid #d5d5d5;;
+    position: sticky;
+    top: 0px;
 }
-.m-dashboard-header div.user {
+.m-dashboard-header div.logo-wrap {
     display: flex;
-    padding: 18px 17px 5px;
+    padding: 18px;
     gap: 14px;
     font-family: Capriola;
     align-items: center;
 }
-
-.m-dashboard-header .user .welcome{
-   display: flex;
-   /* flex-direction: column; */
-   gap: 4px;
-   align-items: center;
-}
-.m-dashboard-header .user .welcome p{
-   font-weight: light;
-   font-size: 14px;
-   font-family: Inter;
-}
-.m-dashboard-header .user .welcome h3{
-   color: rgb(42, 179, 101);
-   font-size: 15px;
-}
 .m-dashboard-header nav {
     position: relative;
+    top: -4px;
     align-items: center;
-    padding: 8px 5px;
+    padding:  5px;
     margin-right: 15px;
     display: flex;
     color:white;
     justify-content: space-between;
-    width: fit-content;
-    width: 19%;
+    height: fit-content;
+    gap: 10px;
+    width:150px;
 }
-.m-dashboard-header nav figure#notify{
-    margin-top: 12px;
+.m-dashboard-header nav figure.notify{
+    margin-top: 11px;
     width: fit-content;
     height: fit-content;
+    padding: 3px 5px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    border: 1px solid #dcdcdc;
+    position: relative;
+}
+.m-dashboard-header nav figure.notify svg{
+    position: relative;
+    top: 2px;
 }
 .m-dashboard-header nav figure#profile-pic{
     width: 34px;
@@ -55,6 +54,7 @@
     position: relative;
     top: 4px;
     overflow: hidden;
+    border: 1px solid #dcdcdc;
 }
 .m-dashboard-header nav button{
     color: slateblue;
@@ -76,13 +76,9 @@
 
 
 
-
-
-
-
 /* DASHBOARD MAIN */
 .m-dashboard-main {
-    background-color: #F1F1F1;
+    background-color: #fff;
     overflow-x: hidden;
     position: relative;
 }
@@ -98,33 +94,54 @@
     z-index: 2;
     transition:backdrop-filter 1.9s ease-out,position 1.9s ease-out ;
 }
-.m-dashboard-main div.welcome {
+
+.m-dashboard-main div.feed-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    align-items: center;
+    margin: 15px auto 5px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.m-dashboard-main div.feed-header p.feed-text{
+    margin: 2px 30px 0px;
+    padding:0px 3px;
+    font-size: 16px;
+    text-decoration: wavy;
+    color: orange;
+    font-family:LuckiestGuy;
+}
+.m-dashboard-main div.feed-header .feed-collection{
+    display: inline-flex;
+    font-family: Inter;
+    margin-right: 20px;
+}
+.m-dashboard-main .feed-collection a.feed-type{
+    color: rgb(62, 62, 62);
+    padding: 6px 8px;
+    margin:0px 4px;
+    font-size: 14px;
+}
+.m-dashboard-main .feed-collection a.feed-type:active{
+    color: slateblue;
+    padding: 6px 8px;
+    background-color: #DBDBDB;
+    width: fit-content;
     height: fit-content;
-    border: none;
+    margin:0px 4px;
+    font-size: 14px;
     border-radius: 17px;
-    margin: 10px 22px;
-    font-family: Capriola;
-    padding: 10px 16px;
 }
-.m-dashboard-main div.search {
-    height: fit-content;
-    padding:5px;
-    margin:10px 25px;
-    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
-    border: 1px solid #DBDBDB;
-    border-radius: 17px;
-    background-color: white;
-}
-.m-dashboard-main div.search input{
-    border: none;
-    padding:10px 15px;
-    outline: none;
-    width: 99%;
-    margin: 5px;
-    font-size: 15px;
-    font-family: CLashDisplay;
-    height: 15px;
-}
+
+
+
+
+
+
+
+
+/* 
 .m-dashboard-main .advert-wrapper{
     margin:10px 24px 7px ;
     scroll-snap-type: x mandatory;
@@ -133,7 +150,7 @@
     height: fit-content;
     width: 90vw;
 }
-/* .m-dashboard-main .advert-wrapper::before{
+.m-dashboard-main .advert-wrapper::before{
     content: "";
     z-index: 2;
     position: absolute;
@@ -142,7 +159,7 @@
     width: 100%;
     right: -10px;
     box-shadow: -23px 0px 25px 5px white inset;
-} */
+} 
 div.advert-wrapper::-webkit-scrollbar {
    display: none;
    background-color: transparent;
@@ -215,12 +232,12 @@ div.advert-wrapper::-webkit-scrollbar {
     font-size: smaller;
     line-height: 120%;
     margin-right: 10px;
-}
+} */
 
 
 
 .m-dashboard-main div.feeds {
-    margin: 10px 26px;
+    margin: 10px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,9 +248,8 @@ div.advert-wrapper::-webkit-scrollbar {
     justify-content: center;
     margin: 15px 2px;
     height: 160px;
-    width: 93%;
+    width: 100%;
     background-color: white;
-    border-radius: 32px;
     border: 1px solid #DBDBDB;
     box-shadow: 0px 0px 9px 2px rgb(226, 226, 226);
 }

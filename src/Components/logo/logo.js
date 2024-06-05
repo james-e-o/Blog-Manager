@@ -1,9 +1,9 @@
 import React from 'react'
 import "./logo.css"
 
-const Logo = () => {
+const Logo = ({space}) => {
   return (
-    <div className='art'></div>
+    <div className={`${space} art`}></div>
   )
 }
 

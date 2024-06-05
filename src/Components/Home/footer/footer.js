@@ -54,7 +54,7 @@ const Footer = () => {
              </div>
            </div>
            <hr />
-           <p id='copyright'>Copyright &#169;2023, JAMES.E.O | All rights reserved.</p>
+           <p id='copyright'>Copyright &#169;2023, JAMES.E.O</p>
       </footer>
        ):
        //DESKTOP 
