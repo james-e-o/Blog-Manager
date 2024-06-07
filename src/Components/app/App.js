@@ -5,18 +5,20 @@ import React,{createContext, lazy, Suspense} from 'react';
 // route imports
 const Home = lazy(()=>import('../Home/home'))
 // const Signlayout = lazy(()=>import('../../Layouts/signlayout'))
-const LoggedIn = lazy(()=>import('../../Layouts/LoggedLayout'))
+import LoggedIn from '../../Layouts/LoggedLayout'
 import Corelayout from '../../Layouts/CoreLayout';
 import Signlayout from '../../Layouts/signlayout';
 
 // page imports
 import {Sign, Signup, Signin} from '../../sign'
 const Notfound = lazy(()=>import('../Errors/Notfound'))
-const UserDashboard = lazy(()=>import('../dashboards/UserDashboard'))
+const Feeds = lazy(()=>import('../dashboards/feeds'))
 const About = lazy(()=>import('../about/About'))
 const NewContent = lazy(()=>import('../dashboards/dashboard-components/new-content/new-content'))
 const Bookmarked = lazy(()=>import('../dashboards/dashboard-components/bookmarked/bookmarked'))
-const Niche = lazy(()=>import('../dashboards/dashboard-components/niche/niche'))
+const Niches = lazy(()=>import('../dashboards/dashboard-components/niche/niche'))
+const Search = lazy(()=>import('../dashboards/dashboard-components/search/search'))
+const Write = lazy(()=>import('../dashboards/dashboard-components/write/write'))
 // import NewContent from '../dashboards/dashboard-components/new-content/new-content';
 // import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
 // import Niche from '../dashboards/dashboard-components/niche/niche';
@@ -66,10 +68,11 @@ const router = createBrowserRouter([
           path:'dashboard',
           element:<LoggedIn/>,
           children: [
-            {index:true, element:<UserDashboard/>},
-            {path:"new", element:<NewContent/>},
+            {index:true, element:<Feeds/>},
+            {path:"search", element:<Search/>},
+            {path:"write", element:<Write/>},
+            {path:"niches", element:<Niches/>},
             {path:"bookmarks", element:<Bookmarked/>},
-            {path:"niche", element:<Niche/>}
           ]
         },
         {

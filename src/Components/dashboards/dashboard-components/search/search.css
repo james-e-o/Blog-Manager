@@ -1,0 +1,53 @@
+div.loggedin-search {
+    height: 40px;
+    padding:5px;
+    margin: 25px auto;
+    width:88%;
+    box-shadow: 0 0 9px #d8d8d8;
+    border-radius: 1px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    border-radius: 22px;
+}
+div.loggedin-search figure{
+    position: relative;
+    top: 2px;
+    opacity: 1
+}
+div.loggedin-search figure img{
+ 
+}
+div.loggedin-search input{
+    border: none;
+    position: relative;
+    left: -2px;
+    padding:5px;
+    outline: none;
+    width: 88%;
+    margin: 5px;
+    font-size: 17px;
+    font-family: PT Sans;
+    height: 80%;
+    z-index: 0;
+}
+.search-page p.recent-text{
+    width: 90%;
+    font-family: Noto Sans;
+    margin: 20px auto 0px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+.search-page .recent-search {
+    font-family: Inter;
+    width: 95%;
+    margin:0px auto 3px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+.search-page .recent-search span{
+    font-size: 12px;
+}
