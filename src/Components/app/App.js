@@ -17,8 +17,10 @@ const About = lazy(()=>import('../about/About'))
 const NewContent = lazy(()=>import('../dashboards/dashboard-components/new-content/new-content'))
 const Bookmarked = lazy(()=>import('../dashboards/dashboard-components/bookmarked/bookmarked'))
 const Niches = lazy(()=>import('../dashboards/dashboard-components/niche/niche'))
-const Search = lazy(()=>import('../dashboards/dashboard-components/search/search'))
+const Explore = lazy(()=>import('../dashboards/dashboard-components/explore/explore'))
 const Write = lazy(()=>import('../dashboards/dashboard-components/write/write'))
+const Drafts = lazy(()=>import('../dashboards/dashboard-components/write/draft'))
+const Published = lazy(()=>import('../dashboards/dashboard-components/write/published'))
 // import NewContent from '../dashboards/dashboard-components/new-content/new-content';
 // import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
 // import Niche from '../dashboards/dashboard-components/niche/niche';
@@ -69,11 +71,22 @@ const router = createBrowserRouter([
           element:<LoggedIn/>,
           children: [
             {index:true, element:<Feeds/>},
-            {path:"search", element:<Search/>},
-            {path:"write", element:<Write/>},
-            {path:"niches", element:<Niches/>},
+            {path:"explore", element:<Explore/>},
+            {
+              path:"write", 
+              element:<Write/>,
+              children: [
+                {index:true, element:<Drafts/>},
+                {path:"published", element:<Published/>},
+              ]
+            },
+            {path:"niche", element:<Niches/>},
             {path:"bookmarks", element:<Bookmarked/>},
           ]
+        },
+        {
+          path:"new-content",
+          element:<NewContent/>
         },
         {
           path:"*",

@@ -16,7 +16,6 @@ div.m-dashboard {
     background-color: transparent;
     backdrop-filter: blur(20px);
     transition: background-color 280ms ease;
-    border-bottom: 1px solid #d5d5d5;;
     position: sticky;
     top: 0px;
     left: 0px;
@@ -47,10 +46,18 @@ div.m-dashboard {
     width: fit-content;
     height: fit-content;
     padding: 2px 4px;
-    background-color: #f1f1f1;
-    border-radius: 50%;
-    border: 1px solid #dcdcdc;
     position: relative;
+}
+.m-dashboard-header nav figure.notify .alert{
+    width: 1px;
+    height: 1px;
+    background-color: orange;
+    padding: 3px;
+    border-radius: 50%;
+    position: absolute;
+    right: 25%;
+    top: 19%;
+    z-index: 1;
 }
 .m-dashboard-header nav figure.notify svg{
     position: relative;
@@ -105,18 +112,8 @@ div.m-dashboard {
     z-index: 2;
     transition:backdrop-filter 1.9s ease-out,position 1.9s ease-out ;
 }
-
-.m-dashboard-main div.feed-header {
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    align-items: center;
-    margin: 15px auto 5px;
-    box-sizing: border-box;
-}
-.m-dashboard-main div.feed-header p.feed-text{
-    margin: 2px 15px 0px;
+.m-dashboard-main p.feed-text{
+    margin: 5px 15px 0px;
     padding:0px 3px;
     font-size: 15px;
     text-decoration: wavy;
@@ -124,22 +121,30 @@ div.m-dashboard {
     font-family:LuckiestGuy;
     box-sizing: border-box;
 }
-.m-dashboard-main div.feed-header .feed-collection{
-    display: inline-flex;
-    font-family: Inter;
-    margin-right: 15px;
-    display:flex ;
+
+.m-dashboard-main div.feed-header {
+    width: 100vw;
+    display: flex;
     justify-content: center;
-    gap: 6px;
+    align-items: center;
+    margin: 10px auto 20px;
+    box-sizing: border-box;
+    gap: 3%;
 }
-.m-dashboard-main .feed-collection a.feed-type{
+.m-dashboard-main div.feed-header p.feed-type{
     color: rgb(62, 62, 62);
-    padding: 4px;
+    padding: 4px 9px;
     font-size: 13px;
+    font-family: Inter;
 }
-.m-dashboard-main .feed-collection a.feed-type:active{
+.m-dashboard-main div.feed-header p.search {
+    position: relative;
+    top: 3px;
+    padding: 4px 9px;
+}
+.m-dashboard-main div.feed-header > p.feed-type:active, p.search:active{
     color: slateblue;
-    padding: 4px;
+    padding: 4px 9px;
     background-color: #f1f1f1;
     width: fit-content;
     height: fit-content;
@@ -266,17 +271,18 @@ div.advert-wrapper::-webkit-scrollbar {
     box-sizing: border-box;
 }
 .m-dashboard-main .feed div.feed-head{
-    width: 100%;
+    width:98%;
     display: flex;
     gap: 6px;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 6px 5px 0px;
+    padding: 6px 10px 0px;
 }
 .m-dashboard-main .feed-head div.content-author{
     display: flex;
     gap: 6px;
+    width: 60%;
     justify-content: flex-start;
     align-items: center;
 }
@@ -310,39 +316,36 @@ div.advert-wrapper::-webkit-scrollbar {
 .m-dashboard-main .feed div.feed-content{
     width: 100%;
     display: flex;
+    flex-direction: column;
     gap: 4px;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     box-sizing: border-box;
-    padding: 5px 5px 2px;
-    margin-top: 3px;
+    padding: 5px 5px 0px;
 }
 .m-dashboard-main .feed-content .content-texts {
   height: fit-content;
-  width: 65%;
+  width: 98%;
+  margin-bottom: 6px;
 }
 .m-dashboard-main .feed-content .content-texts p.content-title{
     font-weight: bold;
     font-family:  Noto Sans;
-    font-size: 16px;
+    font-size: 15px;
     padding: 3px;
     height: fit-content;
     width: 100%;
 }
-.m-dashboard-main .feed-content .content-texts p.sub-text{
-    font-weight: 300;
-    font-family:PT Sans,  Vollkorn;
-    font-size: 12px;
-    max-height:55px;
-    width: 100%;
-    padding: 2px 3px;
-    color: gray;
-    box-sizing: border-box;
-    overflow: hidden;
-    /* white-space:pre; */
-    text-overflow: ellipsis;
+.m-dashboard-main .content-image{
+    width: 98%;
+   
 }
-
+.m-dashboard-main .content-image img{
+    width: 100%;
+    aspect-ratio: 1.8;
+    border-radius: 12px;
+    /* height: 100%; */
+}
 .m-dashboard-main .feed div.feed-foot{
     width: 100%;
     display: flex;
@@ -384,11 +387,10 @@ div.advert-wrapper::-webkit-scrollbar {
 
 
 .m-dashboard div.menu-bar{
-    background-color: transparent;
-    backdrop-filter: blur(20px);
+    background-color: white;
     position: fixed;
     bottom: 0px;
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid #f1f1f1;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -398,7 +400,11 @@ div.advert-wrapper::-webkit-scrollbar {
     right: 0px;
     z-index: 100;
     overflow-x: hidden;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
 }
 
-.m-dashboard .menu-bar div.menu-wrap{}
+.m-dashboard .menu-bar p{
+    position: relative;
+}
 
