@@ -86,7 +86,7 @@ const MenuBar = () => {
     <div onLoad={()=>setActiveMenu(`${split[split.length-1]}`)} className='menu-bar'>
       {/* <div className="menu-wrap"> */}
           <Link to={'bookmarks'}><p onClick={()=>{setActiveMenu('bookmarks')}} className="bookmark">{activeMenu==='bookmarks'?mainBookmarkfill:mainBookmark}</p></Link>
-          <Link to={'niche'}><p onClick={()=>{setActiveMenu('niche')}} className="add"><img src={add} width="32px" height={"32px"} /></p></Link>
+          <Link to={'niche'}><p onClick={()=>{setActiveMenu('niche')}} className="add"><img src={activeMenu==='niche'?addfill:add} width="32px" height={"32px"} /></p></Link>
           <Link to={'write'}><p onClick={()=>{setActiveMenu('write')}} className="write"><img src={activeMenu==='write'?writefill:write} width="31px" height={"31px"} /></p></Link>
           <Link to={'explore'}><p onClick={()=>{setActiveMenu('explore')}} style={{top:"6px"}} className="explore">{activeMenu==='explore'?searchfill:search}</p></Link>
           <Link ><p onClick={()=>{setActiveMenu('dashboard')}} className="feeds">{activeMenu==='dashboard'?feedfill:feed}</p></Link>

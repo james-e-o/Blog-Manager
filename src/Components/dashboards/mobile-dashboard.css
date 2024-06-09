@@ -21,6 +21,7 @@ div.m-dashboard {
     left: 0px;
     right: 0px;
     box-sizing: border-box;
+    box-shadow: 0px 1px 5px #f5f5f5;
 }
 .m-dashboard-header div.logo-wrap {
     display: flex;
@@ -137,12 +138,7 @@ div.m-dashboard {
     font-size: 13px;
     font-family: Inter;
 }
-.m-dashboard-main div.feed-header p.search {
-    position: relative;
-    top: 3px;
-    padding: 4px 9px;
-}
-.m-dashboard-main div.feed-header > p.feed-type:active, p.search:active{
+.m-dashboard-main div.feed-header > p.feed-type:active{
     color: slateblue;
     padding: 4px 9px;
     background-color: #f1f1f1;

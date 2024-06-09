@@ -1,0 +1,63 @@
+.m-dashboard-main div.write {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+}
+.m-dashboard-main .write div.write-header {
+    /* width: 100%; */
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 15px 20px;
+}
+.m-dashboard-main .write .write-header div.written {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.m-dashboard-main .write .write-header button#new-article {
+    background-color: orange;
+    padding: 10px;
+    border-radius:9px ;
+    box-shadow: 0px 0px 10px 1px rgb(182, 182, 182);
+    border: none;
+    color: rgb(71, 71, 71);
+}
+.m-dashboard-main .write .write-header div.written  p{
+    color:rgb(82, 82, 82);
+    padding: 4px 9px;
+    background-color: #f1f1f1;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
+    border-radius: 12px;
+    font-family: Inter;
+}
+.m-dashboard-main .write .write-header div.written  p.active{
+    color: white;
+    padding: 4px 9px;
+    background-color:darkturquoise;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
+    border-radius: 12px;
+}
+.m-dashboard-main .write .draft-content {
+    margin: 5px 15px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

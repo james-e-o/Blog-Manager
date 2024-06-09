@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./write.css"
 import { Outlet,Link } from 'react-router-dom'
+import Drafts from './draft'
+import Published from './published'
 
 const Write = () => {
+  const [activeMenu, setActiveMenu] = useState('draft')
+
   return (
-    <div>
-        <div className="write-heading">
-            <Link ><p className="draft-text">Drafts</p></Link>
-            <Link to={'published'} ><p className="published-text">Published articles</p></Link>
+    <div className='write'>
+        <div className="write-header">
+          <div className="written">
+            <p onClick={()=>setActiveMenu('draft')} className={activeMenu==='draft'? 'active':""}>Drafts</p>
+            <p onClick={()=>setActiveMenu('published')} className={activeMenu==='published'? 'active':""}>Published articles</p>
+          </div>
+          <Link to={'/new-content'}><button id='new-article'>New Article</button></Link>
         </div>
         <div className="write-content">
-            <Outlet />
+            {activeMenu === 'draft'? <Drafts/>: activeMenu === 'published'?<Published/> : ""}
         </div>
-        <button>New Post</button>
+       
     </div>
   )
 }

@@ -19,8 +19,6 @@ const Bookmarked = lazy(()=>import('../dashboards/dashboard-components/bookmarke
 const Niches = lazy(()=>import('../dashboards/dashboard-components/niche/niche'))
 const Explore = lazy(()=>import('../dashboards/dashboard-components/explore/explore'))
 const Write = lazy(()=>import('../dashboards/dashboard-components/write/write'))
-const Drafts = lazy(()=>import('../dashboards/dashboard-components/write/draft'))
-const Published = lazy(()=>import('../dashboards/dashboard-components/write/published'))
 // import NewContent from '../dashboards/dashboard-components/new-content/new-content';
 // import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
 // import Niche from '../dashboards/dashboard-components/niche/niche';
@@ -72,14 +70,7 @@ const router = createBrowserRouter([
           children: [
             {index:true, element:<Feeds/>},
             {path:"explore", element:<Explore/>},
-            {
-              path:"write", 
-              element:<Write/>,
-              children: [
-                {index:true, element:<Drafts/>},
-                {path:"published", element:<Published/>},
-              ]
-            },
+            {path:"write", element:<Write/>,},
             {path:"niche", element:<Niches/>},
             {path:"bookmarks", element:<Bookmarked/>},
           ]
