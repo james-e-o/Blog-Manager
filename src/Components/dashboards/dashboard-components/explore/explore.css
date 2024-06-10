@@ -1,4 +1,11 @@
-div.loggedin-search {
+div.explore-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100vw;
+    align-items: center;
+}
+.explore-page div.loggedin-search {
     height: 35px;
     padding:5px;
     margin: 20px auto;
@@ -13,15 +20,15 @@ div.loggedin-search {
     gap: 5px;
     border-radius: 22px;
 }
-div.loggedin-search figure{
+.explore-page div.loggedin-search figure{
     position: relative;
     top: 2px;
     opacity: 1
 }
-div.loggedin-search figure img{
+.explore-page div.loggedin-search figure img{
  
 }
-div.loggedin-search input{
+.explore-page div.loggedin-search input{
     border: none;
     position: relative;
     left: -2px;
@@ -34,20 +41,26 @@ div.loggedin-search input{
     height: 80%;
     z-index: 0;
 }
-.search-page p.recent-text{
-    width: 90%;
-    font-family: Noto Sans;
-    margin: 20px auto 0px;
-    padding: 6px;
-    box-sizing: border-box;
-}
-.search-page .recent-search {
-    font-family: Inter;
+.explore-page h5#tag-text{
     width: 95%;
-    margin:0px auto 3px;
+    font-family: Noto Sans;
+    margin: 10px auto 0px;
+    padding: 6px 15px;
+    font-size: 16px;
     box-sizing: border-box;
-    padding: 15px;
 }
-.search-page .recent-search span{
-    font-size: 12px;
+.explore-page  div.explore-actions{
+    width: 95%;
+    box-sizing: border-box;
+    padding: 6px;
+}
+.explore-page  div.explore-actions button.tag{
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 14px; 
+    margin: 6px;
+    box-shadow: 0px 0px 1px #cdcdcd;
+    color: #474747;;
 }

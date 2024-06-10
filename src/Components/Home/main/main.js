@@ -24,6 +24,7 @@ import write from "./ph-write.jpg"
 import share from "./ph-share.webp"
 import collab from "./ph-collab.webp"
 import { screenWidth } from '../../app/App'
+export const niches = [{id:1, name:'Featured'}, {id:2, name:'Finance'}, {id:3,name:'Business'}, {id:4,name:'Culture'}, {id:5,name:'Technology'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
 
 
 
@@ -160,7 +161,6 @@ const Main = () => {
       const scrollWrap = useRef("")
       const scroll = useRef("")
       const [colorState, setColorState]= useState(false)
-      const niches = [{id:1, name:'Featured'}, {id:2, name:'Finance'}, {id:3,name:'Business'}, {id:4,name:'Culture'}, {id:5,name:'Technology'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
       const [innerWidth, setInnerWidth] = useState(window.innerWidth)
       const screen = useContext(screenWidth)
 

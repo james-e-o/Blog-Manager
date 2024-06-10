@@ -2,14 +2,19 @@
     position: relative;
     width: 100vw;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 .m-dashboard-main .write div.write-header {
-    /* width: 100%; */
+    width: 92vw;
     height: max-content;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 15px 20px;
+    margin: 10px 10px 20px;
+    box-sizing: border-box;
 }
 .m-dashboard-main .write .write-header div.written {
     display: flex;
@@ -22,31 +27,83 @@
     border-radius:9px ;
     box-shadow: 0px 0px 10px 1px rgb(182, 182, 182);
     border: none;
-    color: rgb(71, 71, 71);
+    color: #474747;
 }
 .m-dashboard-main .write .write-header div.written  p{
     color:rgb(82, 82, 82);
-    padding: 4px 9px;
+    padding: 5px 9px;
     background-color: #f1f1f1;
     width: fit-content;
     height: fit-content;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 12px;
     font-family: Inter;
 }
 .m-dashboard-main .write .write-header div.written  p.active{
     color: white;
-    padding: 4px 9px;
+    padding: 5px 9px;
     background-color:darkturquoise;
     width: fit-content;
     height: fit-content;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 12px;
 }
 .m-dashboard-main .write .draft-content {
+    font-family: Inter;
     margin: 5px 15px 10px;
+    width: 92vw;
+    box-sizing: border-box;
 }
+.m-dashboard-main .write .published-content {
+    font-family: Inter;
+    margin: 5px 15px 10px;
+    width: 92vw;
+    box-sizing: border-box;
+}
+.m-dashboard-main .write .draft-content div.draft {
+    background-color:#f9f9f9;
+    border-radius: 9px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    box-shadow: 0px 1px 4px #dddddd;
+    margin-bottom:  15px;
+    box-sizing: border-box;
 
+}
+.m-dashboard-main .write .draft-content .draft div.title {
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x:hidden ;
+    text-overflow: ellipsis;
+}
+.m-dashboard-main .write .draft-content .draft p.draft-date {
+    font-size: 11px;
+}
+.m-dashboard-main .write .published-content div.published {
+    background-color:#f9f9f9;
+    border-radius: 9px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    box-shadow: 0px 1px 4px #dddddd;
+    margin-bottom:  15px;
+    box-sizing: border-box;
+
+}
+.m-dashboard-main .write .published-content .published div.title {
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x:hidden ;
+    text-overflow: ellipsis;
+}
+.m-dashboard-main .write .published-content .published p.published-date {
+    font-size: 11px;
+}
 
 
 

@@ -9,6 +9,8 @@ import Gl_ai from "../contents/images/glai.png"
 import Content_img from "../contents/images/category-pirates.png"
 import User from "../contents/images/dummy.jpg"
 import Content_img2 from "../contents/images/glai-hackathon.jpeg"
+import dataClean from "./CL_data-cleaning.jpeg"
+import Content_img3 from "./Content_img3.jpeg"
 
 
 
@@ -19,7 +21,7 @@ const Feed = ()=>{
         <div key={feed.id} className='feed'>
           <div className="feed-head">
             <div className="content-author">
-              <figure><img src={feed.author.photo} /></figure>
+              <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
               <p className='author-name'>{feed.author.name}</p>
             </div>
             <p className="date-published">{`${feed.date.day} ${feed.date.month},${feed.date.year}`}</p>
@@ -127,6 +129,28 @@ const feeds = [
   engagements:{
     likes:144,
     comments:25,
+    bookmarked:33,
+  },
+  id:1
+},
+{
+  date:{
+    day:5,
+    month:"January",
+    year:2024
+  },
+  author:{
+    photo:"",
+    name:"NOSA FAVOUR",
+  },
+  content:{
+    title:"Essential Data Cleaning Techniques for Accurate Analysis.",
+    subText:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit voluptatem quasi totam.",
+    image:dataClean,
+  },
+  engagements:{
+    likes:106,
+    comments:35,
     bookmarked:52,
   },
   id:1
@@ -140,17 +164,17 @@ const feeds = [
   },
   author:{
     photo:Gl_ai,
-    name:"CATEGORY PIRATES",
+    name:"GETLINKED AI",
   },
   content:{
-    title:"The Value Of Your Value.",
+    title:"Hackathon 1.0.",
     subText:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit voluptatem quasi totam.",
     image:Content_img2,
   },
   engagements:{
-    likes:144,
+    likes:124,
     comments:25,
-    bookmarked:52,
+    bookmarked:12,
   },
   id:2
 },
@@ -166,9 +190,9 @@ const feeds = [
     name:"GETLINKED AI",
   },
   content:{
-    title:"The Value Of Your Value.",
+    title:"Recruitment Metrics: Key Performance Indicators Tracked by Getlinked.ai.",
     subText:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit voluptatem quasi totam.",
-    image:Content_img,
+    image:Content_img3,
   },
   engagements:{
     likes:144,

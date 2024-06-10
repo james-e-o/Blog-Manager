@@ -174,7 +174,7 @@ export const Signin = () => {
                   <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
                   <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
                   <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
-                  <button type='submit' >Slide in</button>  
+                  <button type='submit' >Quick view dashboard</button>  
                 </Form>
                 <div id='sign-in-option'>
                   <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
@@ -201,7 +201,7 @@ export const Signin = () => {
                   <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
                   <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
                   <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
-                  <button type='submit' >Slide in</button>  
+                  <button type='submit' >Quick view dashboard</button>  
                 </Form>
                 <div id='sign-in-option'>
                   <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
@@ -224,7 +224,7 @@ export const Signin = () => {
                   <Indiv  error ={data && data.emailError} type={'text'} name={"email"} placehold={"Email"} />
                   <Indiv error ={data && (data.passwordError || data.passwordError2)} icon={true} type={'password'} name={"password"} placehold={"Password"}/>
                   <p id='forgot'> <Link style={{color:'orange'}} to='/makeup'>forgot details?</Link></p>    
-                  <button type='submit' >Slide in</button>  
+                  <button type='submit' >Quick view dashboard</button>  
                 </Form>
                 <div id='sign-in-option'>
                   <p style={{color:'black',padding:'8px',fontSize:'13px'}}>or</p>
