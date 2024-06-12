@@ -15,6 +15,15 @@ import { Notify } from '../Components/svg'
 const LoggedIn = () => {
   const part = '/loggedin/route'
   const screen = useContext(screenWidth)
+  useEffect(()=>{
+    const profile = document.querySelector('div.profile')
+    const profilePic = document.getElementById('profile-pic')
+    const dashboard = document.querySelector('.m-dashboard-main')
+    profilePic.onclick = (e) => {
+      profile.classList.toggle("inactive")
+      dashboard.classList.toggle("blurred")
+    }
+  })
  
   return (
   // <div className='logged' 
@@ -24,21 +33,20 @@ const LoggedIn = () => {
   // </div>   
   //  MOBILE
   screen < 480?(
-    <div className='m-dashboard'>
+    <div id='m-dashboard' className='m-dashboard'>
       <header className='m-dashboard-header'>
         <Link to={'/'} ><div className="logo-wrap">
           <Logo space={'m'}/>
         </div></Link>
         <nav >
-          <figure className='notify'><span className='alert'></span>{notify}</figure> 
+          <Link to={'notifications'} ><figure className='notify'><span className='alert'></span>{notify}</figure> </Link>
           <figure id='profile-pic'><img src={User} width="100%" height={"100%"} /></figure>    
         </nav>
       </header>
       <main className='m-dashboard-main'>
-      <Outlet />
-                  {/* Hello world */}
-         
+        <Outlet />
       </main>
+      <div className="profile inactive"></div>
       <MenuBar/> 
     </div>
     
@@ -86,7 +94,7 @@ const MenuBar = () => {
     <div onLoad={()=>setActiveMenu(`${split[split.length-1]}`)} className='menu-bar'>
       {/* <div className="menu-wrap"> */}
           <Link to={'bookmarks'}><p onClick={()=>{setActiveMenu('bookmarks')}} className="bookmark">{activeMenu==='bookmarks'?mainBookmarkfill:mainBookmark}</p></Link>
-          <Link to={'niche'}><p onClick={()=>{setActiveMenu('niche')}} className="add"><img src={activeMenu==='niche'?addfill:add} width="32px" height={"32px"} /></p></Link>
+          {/* <Link to={'niche'}><p onClick={()=>{setActiveMenu('niche')}} className="add"><img src={activeMenu==='niche'?addfill:add} width="32px" height={"32px"} /></p></Link> */}
           <Link to={'write'}><p onClick={()=>{setActiveMenu('write')}} className="write"><img src={activeMenu==='write'?writefill:write} width="31px" height={"31px"} /></p></Link>
           <Link to={'explore'}><p onClick={()=>{setActiveMenu('explore')}} style={{top:"6px"}} className="explore">{activeMenu==='explore'?searchfill:search}</p></Link>
           <Link ><p onClick={()=>{setActiveMenu('dashboard')}} className="feeds">{activeMenu==='dashboard'?feedfill:feed}</p></Link>
@@ -117,3 +125,7 @@ const category = <svg fill="slateblue" width="33px" height="33px" viewBox="0 0 2
 // const add = <svg width='33px' height='33px' fill='slateblue' xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,100,100"> <g><path d="m74.91 11.379h-49.82c-8.3203 0-15.09 6.7617-15.09 15.082v45.449c0 8.3203 6.7695 15.09 15.09 15.09h49.828c8.3125 0 15.082-6.7695 15.082-15.09v-45.449c0-8.3203-6.7695-15.082-15.09-15.082zm6.8086 60.531c0 3.7617-3.0586 6.8086-6.8086 6.8086h-49.82c-3.7617 0-6.8086-3.0586-6.8086-6.8086v-45.449c0-3.7617 3.0586-6.8086 6.8086-6.8086h49.828c3.7617 0 6.8086 3.0586 6.8086 6.8086l0.003907 45.449z"/> <path d="m68.852 45.051h-14.711v-14.711c0-2.2891-1.8516-4.1406-4.1406-4.1406s-4.1406 1.8516-4.1406 4.1406v14.711h-14.711c-2.2891 0-4.1406 1.8516-4.1406 4.1406 0 2.2891 1.8516 4.1406 4.1406 4.1406h14.711v14.711c0 2.2891 1.8516 4.1406 4.1406 4.1406s4.1406-1.8516 4.1406-4.1406v-14.723h14.711c2.2891 0 4.1406-1.8516 4.1406-4.1406-0.011719-2.2812-1.8633-4.1289-4.1406-4.1289z"/></g> </svg>
 
 
+
+const profiles = [
+  
+]

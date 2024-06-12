@@ -1,66 +1,85 @@
 div.explore-page {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 100vw;
     align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
-.explore-page div.loggedin-search {
-    height: 35px;
+.explore-page div.search-link {
     padding:5px;
-    margin: 20px auto;
-    width:88%;
-    box-shadow: 0 0 9px #d8d8d8;
-    border-radius: 1px;
+    margin: 20px auto 10px;
+    width:88vw;
+    box-shadow: 0 0 5px #d8d8d8;
     background-color: white;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 5px;
-    border-radius: 22px;
+    border-radius: 9px;
 }
-.explore-page div.loggedin-search figure{
+.explore-page div.search-link figure{
     position: relative;
     top: 2px;
     opacity: 1
 }
-.explore-page div.loggedin-search figure img{
- 
-}
-.explore-page div.loggedin-search input{
-    border: none;
-    position: relative;
-    left: -2px;
-    padding:5px;
-    outline: none;
-    width: 88%;
-    margin: 5px;
-    font-size: 17px;
-    font-family: PT Sans;
-    height: 80%;
-    z-index: 0;
-}
 .explore-page h5#tag-text{
     width: 95%;
     font-family: Noto Sans;
-    margin: 10px auto 0px;
-    padding: 6px 15px;
-    font-size: 16px;
+    margin: 10px 0px 5px;
+    padding: 6px 12px;
+    font-size: 15px;
+    font-weight: 500;
     box-sizing: border-box;
 }
 .explore-page  div.explore-actions{
     width: 95%;
     box-sizing: border-box;
     padding: 6px;
+    margin: 0px 4px;
 }
-.explore-page  div.explore-actions button.tag{
+.explore-page .explore-actions div.explore-scroll{
+    width: max-content;
+    margin: 4px 0px 20px;
+}
+.explore-page .explore-actions div.explore-scroll > p{
+    padding: 7px 9px;
+    display: inline-block;
+    margin: 0px 6px;
+    background-color:#f1f1f1;
+    color:#474747;
+    border-radius: 5px;
+    font-size: 13px;
+    transition:background-color 150ms ease-out,color 150ms ease-out;
+}
+.explore-page .explore-actions div.explore-scroll > p.active{
+    padding: 7px 9px;
+    display: inline-block;
+    margin: 0px 6px;
+    background-color: slateblue;
+    color:white;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.explore-page .explore-actions div.explore-content{
+    margin: 5px -2px;
+}
+.explore-page .explore-actions .explore-content div.e{}
+.explore-page .explore-actions .explore-content div.e p.choose-text{
+    padding: 10px 10px 20px;
+    color: #b9b9b9;
+    font-size: 19px;
+    width: 50vw;
+}
+.explore-page  div.explore-actions .explore-content  div.e button.tag{
     display: inline-block;
     padding: 5px 12px;
-    background-color: #f1f1f1;
-    border: none;
-    border-radius: 14px; 
+    background-color: #fff;
+    border: 1px solid rgb(144, 144, 144);
+    border-radius: 12px; 
     margin: 6px;
     box-shadow: 0px 0px 1px #cdcdcd;
     color: #474747;;
 }
+ 

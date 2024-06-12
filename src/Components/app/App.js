@@ -19,13 +19,13 @@ const Bookmarked = lazy(()=>import('../dashboards/dashboard-components/bookmarke
 const Niches = lazy(()=>import('../dashboards/dashboard-components/niche/niche'))
 const Explore = lazy(()=>import('../dashboards/dashboard-components/explore/explore'))
 const Write = lazy(()=>import('../dashboards/dashboard-components/write/write'))
+const Notifications = lazy(()=>import('../dashboards/dashboard-components/notifications/notifications'))
 // import NewContent from '../dashboards/dashboard-components/new-content/new-content';
 // import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
 // import Niche from '../dashboards/dashboard-components/niche/niche';
 
 //actions
 import { signupValidate,loginValidation } from '../../sign';
-
 
 
 //context export
@@ -78,6 +78,10 @@ const router = createBrowserRouter([
         {
           path:"new-content",
           element:<NewContent/>
+        },
+        {
+          path:"notifications",
+          element:<Notifications/>
         },
         {
           path:"*",

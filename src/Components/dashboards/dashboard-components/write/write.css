@@ -29,7 +29,7 @@
     border: none;
     color: #474747;
 }
-.m-dashboard-main .write .write-header div.written  p{
+.m-dashboard-main .write .write-header div.written > p{
     color:rgb(82, 82, 82);
     padding: 5px 9px;
     background-color: #f1f1f1;
@@ -39,7 +39,7 @@
     border-radius: 12px;
     font-family: Inter;
 }
-.m-dashboard-main .write .write-header div.written  p.active{
+.m-dashboard-main .write .write-header div.written >  p.active{
     color: white;
     padding: 5px 9px;
     background-color:darkturquoise;

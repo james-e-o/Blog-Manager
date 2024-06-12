@@ -1,29 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, lazy, Suspense, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import "./explore.css"
 import { niches } from '../../../Home/main/main'
 
+
 const Explore = () => {
 
-const [searches, setSearches] =useState('')
-const tagList = [...niches]
+const [activeLink, setActiveLink] =useState('topics')
 
   return (
     <div className="explore-page">
-        <div className='loggedin-search'>
+        <Link to='/
+        search' ><div className='search-link'>
             <figure>{search}</figure>
-            <input type="search" name="" id="" placeholder='Search'/>
-        </div>
-        <h5 id='tag-text'>Explore</h5>
+        </div></Link>
+        <h5 id='tag-text'>Suggested</h5>
         <div className="explore-actions">
           <div className="explore-scroll">
-            <p>Suggestions</p>
-            <p>Following</p>
-            <p>Muted</p>
-            <p>Followers</p>
-            <p>History</p>
+            <p className={activeLink === 'topics'? 'active':''} onClick={()=>{setActiveLink('topics')}} >Topics</p>
+            <p className={activeLink === 'people'? 'active':''} onClick={()=>{setActiveLink('people')}} >People</p>
+            <p className={activeLink === 'publications'? 'active':''} onClick={()=>{setActiveLink('publications')}} >Publications</p>
+            <p className={activeLink === 'history'? 'active':''} onClick={()=>{setActiveLink('history')}} >History</p>
           </div>
           <div className="explore-content">
-            g
+            {activeLink === 'topics'? <Topics/>:
+              activeLink === 'people'? <People/>:
+              activeLink === 'publications'? < Publications/>:
+              activeLink === 'history'? <History/>:''
+            }
           </div>
 
 
@@ -32,10 +36,7 @@ const tagList = [...niches]
 
 
 
-        {tagList.map((tag)=>(
-                  <button className='tag' key={tag.id}>{tag.name}</button>
-        ))}
-        <p className="more"><span>+ </span>See more topics</p>
+       
         </div>
     </div>
   )
@@ -44,20 +45,46 @@ const tagList = [...niches]
 export default Explore;
 
 
-const Suggestions =() => {
-  
+const Topics =() => {
+  const tagList = [...niches]
+  const [selected, setSelected] =useState([])
+  useEffect(()=>{
+    console.log(selected)
+  },[selected])
+  return (
+    <div className='topic e'>
+    <p className='choose-text'>Choose your favourite topics.</p>
+    {tagList.map((tag)=>(
+    <button onClick={()=>{selected.includes(tag.name.toLowerCase())? setSelected(selected.filter(item => item !== tag.name.toLowerCase())) : setSelected([...selected, tag.name.toLowerCase()])}} className='tag' key={tag.id}><span></span> {tag.name}</button>
+    ))}
+    <p className="more"><span>+ </span>See more topics</p>
+    </div>
+  )
 }
-// const Suggestions =() => {
 
-// }
-// const Suggestions =() => {
+const People =() => {
+  return (
+    <div className='people e'>
+     <p className='choose-text'>Who to follow.</p>
+    </div>
+  )
+}
 
-// }
-// const Suggestions =() => {
+const Publications =() => {
+  return (
+    <div>
+      publications
+    </div>
+  )
+}
 
-// }
-// const Suggestions =() => {
-
+const History =() => {
+  return (
+    <div>
+      history
+    </div>
+  )
+}
 // }
 
 

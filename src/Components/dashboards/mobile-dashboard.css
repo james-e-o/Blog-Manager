@@ -100,20 +100,19 @@ div.m-dashboard {
     overflow-x: hidden;
     position: relative;
     width: 100vw;
+    padding-bottom: 60px ;
+    transition:filter 0.4s ease-in-out;
 }
-.m-dashboard-main div.blur{
-    background-color:transparent;
-    backdrop-filter: blur(10px) brightness(0.96);
+
+.m-dashboard-main div.feeds {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
     overflow-x: hidden;
-    /* position:absolute; */
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 2;
-    transition:backdrop-filter 1.9s ease-out,position 1.9s ease-out ;
+    box-sizing: border-box;
 }
-.m-dashboard-main p.feed-text{
+.m-dashboard-main div.feeds p.feed-text{
     margin: 5px 15px 0px;
     padding:0px 3px;
     font-size: 15px;
@@ -123,7 +122,7 @@ div.m-dashboard {
     box-sizing: border-box;
 }
 
-.m-dashboard-main div.feed-header {
+.m-dashboard-main div.feeds div.feed-header {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -132,13 +131,13 @@ div.m-dashboard {
     box-sizing: border-box;
     gap: 3%;
 }
-.m-dashboard-main div.feed-header p.feed-type{
+.m-dashboard-main div.feeds div.feed-header p.feed-type{
     color: rgb(62, 62, 62);
     padding: 4px 9px;
     font-size: 13px;
     font-family: Inter;
 }
-.m-dashboard-main div.feed-header > p.feed-type:active{
+.m-dashboard-main div.feeds div.feed-header > p.feed-type:active{
     color: slateblue;
     padding: 4px 9px;
     background-color: #f1f1f1;
@@ -249,15 +248,6 @@ div.advert-wrapper::-webkit-scrollbar {
 } */
 
 
-
-.m-dashboard-main div.feeds {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    overflow-x: hidden;
-    box-sizing: border-box;
-}
 .m-dashboard-main .feeds div.feed{
     margin: 7px 0px;
     height: fit-content;
@@ -381,7 +371,26 @@ div.advert-wrapper::-webkit-scrollbar {
 
 
 
-
+.m-dashboard div.profile{
+    background-color:#ffffff;
+    backdrop-filter: blur(10px) brightness(0.96);
+    overflow-x: hidden;
+    position:absolute;
+    height: 78%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 200;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transition:height 0.29s ease-out;
+}
+.m-dashboard-main.blurred {
+    filter:brightness(0.5) ;
+}
+.m-dashboard div.profile.inactive{
+    height: 0%;
+}
 .m-dashboard div.menu-bar{
     background-color: white;
     position: fixed;
@@ -391,7 +400,7 @@ div.advert-wrapper::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 35px;
     left: 0px;
     right: 0px;
     z-index: 100;
