@@ -4,10 +4,6 @@ import React from "react"
     return(
         <div className='published-content'>
             <div className="published">
-                <div className="title">Unconventional Travel Hacks</div>
-                <p className="published-date">{`${23} ${'Mar'}, ${2024}`}</p>
-            </div>
-            <div className="published">
                 <div className="title">The Future of Work</div>
                 <p className="published-date">{`${1} ${'May'}, ${2024}`}</p>
             </div>

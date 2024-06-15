@@ -14,7 +14,70 @@ import Content_img3 from "./Content_img3.jpeg"
 
 
 
-const Feed = ()=>{
+const For_you = ()=>{
+  return(
+    <>
+      {feeds.map(feed => (
+        <div key={feed.id} className='feed'>
+          <div className="feed-head">
+            <div className="content-author">
+              <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
+              <p className='author-name'>{feed.author.name}</p>
+            </div>
+            <p className="date-published">{`${feed.date.day} ${feed.date.month},${feed.date.year}`}</p>
+          </div>
+          <div className="feed-content">
+            <div className="content-texts">
+                <p className='content-title'>{feed.content.title}</p>
+            </div>
+            <div className="content-image"><img src={feed.content.image}/></div>
+          </div>
+          <div className="feed-foot"> 
+            <div className="engagement-wrap">
+              <p className="engagements comments">{comment} <span>{feed.engagements.comments}</span></p>
+              <p className="engagements comments">{like} <span>{feed.engagements.likes}</span></p>
+              <p className="engagements bookmarks">{bookmark} <span>{feed.engagements.bookmarked}</span></p>
+            </div>            
+          </div>
+        </div>
+      ))}
+    </>
+  )
+}
+
+
+const Following = ()=>{
+  return(
+    <>
+      {feeds.map(feed => (
+        <div key={feed.id} className='feed'>
+          <div className="feed-head">
+            <div className="content-author">
+              <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
+              <p className='author-name'>{feed.author.name}</p>
+            </div>
+            <p className="date-published">{`${feed.date.day} ${feed.date.month},${feed.date.year}`}</p>
+          </div>
+          <div className="feed-content">
+            <div className="content-texts">
+                <p className='content-title'>{feed.content.title}</p>
+            </div>
+            <div className="content-image"><img src={feed.content.image}/></div>
+          </div>
+          <div className="feed-foot"> 
+            <div className="engagement-wrap">
+              <p className="engagements comments">{comment} <span>{feed.engagements.comments}</span></p>
+              <p className="engagements comments">{like} <span>{feed.engagements.likes}</span></p>
+              <p className="engagements bookmarks">{bookmark} <span>{feed.engagements.bookmarked}</span></p>
+            </div>            
+          </div>
+        </div>
+      ))}
+    </>
+  )
+}
+
+const Featured = ()=>{
   return(
     <>
       {feeds.map(feed => (
@@ -48,25 +111,29 @@ const Feed = ()=>{
 
 
 
+
 const Feeds = () => {
   const screen = useContext(screenWidth)
-  // const niches = [{id:1, name:'Finance'}, {id:2,name:'Business'}, {id:3,name:'Culture'}, {id:4,name:'Technology'},{id:5,name:'Politics'}, {id:6,name:'Sports'}, {id:7,name:'Music'}, {id:8,name:'Religion'}, {id:9,name:'Self Improvement'}, {id:10,name:'Art'}, {id:11,name:'News'}]
-  // const niche3 = niches.filter((niche) => niche.name.length <= 6)
-  // const mainDashboard = useRef("")
-  // const blurScreen = useRef("")
+  const [activeFeed, setActiveFeed] = useState('for-you')
 
-  // 
   return (
     //  MOBILE
     <div className="feeds">
       <p className='feed-text'>feeds</p>
       <div className="feed-header">
-          <p className='feed-type'>for you</p>
-          <p className='feed-type'>following</p>
-          <p className='feed-type'>featured</p>
+          <p className={activeFeed === 'for-you'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('for-you')}} >for you</p>
+          <p className={activeFeed === 'following'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('following')}} >following</p>
+          <p className={activeFeed === 'featured'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('featured')}} >featured</p>
           {/* <Link to={'explore'}><p className="search">{search}</p></Link> */}
       </div>
-      <Feed />
+      <div className="feed-wrap">
+            { 
+              activeFeed === 'for-you'? <For_you/>:
+              activeFeed === 'following'? <Following/>:
+              activeFeed === 'featured'? <Featured/>:""
+            }
+      </div>
+      <For_you />
     </div> 
   )
 }
