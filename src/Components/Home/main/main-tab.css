@@ -128,7 +128,7 @@ main{
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 24px ;
-    width: 87vw;
+    width: 95vw;
     border-radius: 32px;
     overflow: hidden;
     position: relative;
@@ -141,7 +141,7 @@ main{
     background-clip: border-box;
     background-size: 100%;
     width: 100%;
-    height: 360px;
+    aspect-ratio: 1.5;
     position: relative;
     left: 0;
 }
@@ -149,8 +149,8 @@ main{
     position: relative;
     top: -5px;
     padding: 0px 8px;
-    width: 90%;
-    margin: 16px;
+    width: 99%;
+    margin: 24px 16px 13px;
     overflow: hidden;
     display: flex;
 }
@@ -202,16 +202,20 @@ main{
     font-size: 22px;
     transition: background-color 185ms ease-out;
     border: none ;
-    border: 1.6px solid #545454;
+    border: 1px solid #8c8c8c;
     cursor:pointer;
 }
 .tab-main div.interest .more {
     border: 1px solid orange;
-    background-color: #545454;
+    background-color: #6a6a6a;
     color: white;
+    margin: 16px 0px 19px;
+    font-weight: 400;
+    border-radius: 12px;
+    padding: 13px 40px;
 }
 .tab-main div.interest .featured{
-    width: 90%;
+    width: 100%;
     margin: 13px;
     overflow: hidden;
     display: flex;
@@ -225,6 +229,8 @@ main{
     overflow-y: hidden;
     gap: 16px;
     margin: 3px;
+    position: relative;
+    left: 11px;
 }
 .tab-main div.interest .featured-scroll::-webkit-scrollbar {
     display: none;
@@ -238,9 +244,9 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 13px;
+    margin-bottom: 3px;
     align-items: flex-start;
-    border: 1px solid darkturquoise;
+    box-shadow: 0px 0px 10px #b7b7b7;
 }
 
 .tab-main div.interest .feature .title{
@@ -292,7 +298,7 @@ main{
 .tab-main section.strategy {
     min-height:400px;
     width: 100%;
-    padding: 40px;
+    padding: 16px 32px 40px;
     background-color: transparent;
     position: relative;
     z-index: 1;
@@ -322,7 +328,6 @@ main{
  }
 .tab-main section p.strategy-text {   
     font-family: Quicksand;
-    padding: 16px;
     font-size: 29px;
     text-align:start;
     display: block;
@@ -509,7 +514,7 @@ main{
     background-color: rgb(152, 235, 227);
     height:fit-content;
     margin-bottom: 40px ;
-    width: 87vw;
+    width: 95vw;
     border-radius: 32px;
     overflow-x: hidden;
     position: relative;

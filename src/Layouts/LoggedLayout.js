@@ -2,8 +2,8 @@
 import {Outlet , Link, useNavigation, useLocation} from 'react-router-dom'
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { screenWidth } from '../Components/app/App'
-import "../Components/dashboards/mobile-dashboard.css"
-import "../Components/dashboards/desktop-dashboard.css"
+import "../Components/dashboards/feed/mobile-dashboard.css"
+import "../Components/dashboards/feed/desktop-dashboard.css"
 import Logo from '../Components/logo/logo'
 import User from "../Components/contents/images/dummy.jpg"
 import write from './icon-write.png'
@@ -11,6 +11,24 @@ import writefill from './icon-writefill.png'
 import add from './icon-add.png'
 import addfill from './icon-addfill.png'
 import { Notify } from '../Components/svg'
+import profileImg from "../Components/dashboards/feed/gemini-profile.jpeg"
+
+
+const Profile = () => {
+  return(
+    <div className="profile-main">
+      <p className="exfill">{cancel}</p>
+      <div className="profile-main-header">
+        <figure><img src={profileImg} width="100%" height={"100%"}/></figure>
+        <div className="id-wrap">
+          <p className="name">Jason Statham</p>
+          <p className="email">jasonstatham@gmail.com</p>
+        </div>
+      </div>
+      <div className="profile-main-content"></div>
+    </div>
+  )
+}
 
 const LoggedIn = () => {
   const part = '/loggedin/route'
@@ -26,12 +44,6 @@ const LoggedIn = () => {
   })
  
   return (
-  // <div className='logged' 
-  // style={{height:"100vh", width:"100vw", overflowX:"hidden", overflowY:"scroll"}}
-  // >
-  //   <Outlet />
-  // </div>   
-  //  MOBILE
   screen < 480?(
     <div id='m-dashboard' className='m-dashboard'>
       <header className='m-dashboard-header'>
@@ -40,13 +52,15 @@ const LoggedIn = () => {
         </div></Link>
         <nav >
           <Link to={'notifications'} ><figure className='notify'><span className='alert'></span>{notify}</figure> </Link>
-          <figure id='profile-pic'><img src={User} width="100%" height={"100%"} /></figure>    
+          <figure id='profile-pic'><img src={profileImg} width="100%" height={"100%"} /></figure>    
         </nav>
       </header>
       <main className='m-dashboard-main'>
         <Outlet />
       </main>
-      <div className="profile inactive"></div>
+      <div className="profile inactive">
+        <Profile/>
+      </div>
       <MenuBar/> 
     </div>
     
@@ -97,7 +111,7 @@ const MenuBar = () => {
           {/* <Link to={'niche'}><p onClick={()=>{setActiveMenu('niche')}} className="add"><img src={activeMenu==='niche'?addfill:add} width="32px" height={"32px"} /></p></Link> */}
           <Link to={'write'}><p onClick={()=>{setActiveMenu('write')}} className="write"><img src={activeMenu==='write'?writefill:write} width="31px" height={"31px"} /></p></Link>
           <Link to={'explore'}><p onClick={()=>{setActiveMenu('explore')}} style={{top:"6px"}} className="explore">{activeMenu==='explore'?searchfill:search}</p></Link>
-          <Link ><p onClick={()=>{setActiveMenu('dashboard')}} className="feeds">{activeMenu==='dashboard'?feedfill:feed}</p></Link>
+          <Link ><p onClick={()=>{setActiveMenu('home')}} className="feeds">{activeMenu==='home'?feedfill:feed}</p></Link>
       {/* </div> */}
 </div>
   )
@@ -122,6 +136,7 @@ const feedfill = <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="
 const categoryfill = <svg fill="slateblue" width="33px" height="33px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="slateblue" transform="rotate(0)"><g id="SVGRepo_bgCarrier" ></g><g id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"><path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm10 10h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zM17 3c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zM7 13c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"></path></g></svg>
 const category = <svg fill="slateblue" width="33px" height="33px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="slateblue"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"><path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11 4h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6h-4v-4h4v4zM17 3c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zM7 13c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path></g></svg>
 
+const cancel = <svg  xmlns="http://www.w3.org/2000/svg" onClick={(e)=> setMenuActive(!menuActive)} fill='gray' height="38" viewBox="0 -960 960 960" width="38"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
 // const add = <svg width='33px' height='33px' fill='slateblue' xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,100,100"> <g><path d="m74.91 11.379h-49.82c-8.3203 0-15.09 6.7617-15.09 15.082v45.449c0 8.3203 6.7695 15.09 15.09 15.09h49.828c8.3125 0 15.082-6.7695 15.082-15.09v-45.449c0-8.3203-6.7695-15.082-15.09-15.082zm6.8086 60.531c0 3.7617-3.0586 6.8086-6.8086 6.8086h-49.82c-3.7617 0-6.8086-3.0586-6.8086-6.8086v-45.449c0-3.7617 3.0586-6.8086 6.8086-6.8086h49.828c3.7617 0 6.8086 3.0586 6.8086 6.8086l0.003907 45.449z"/> <path d="m68.852 45.051h-14.711v-14.711c0-2.2891-1.8516-4.1406-4.1406-4.1406s-4.1406 1.8516-4.1406 4.1406v14.711h-14.711c-2.2891 0-4.1406 1.8516-4.1406 4.1406 0 2.2891 1.8516 4.1406 4.1406 4.1406h14.711v14.711c0 2.2891 1.8516 4.1406 4.1406 4.1406s4.1406-1.8516 4.1406-4.1406v-14.723h14.711c2.2891 0 4.1406-1.8516 4.1406-4.1406-0.011719-2.2812-1.8633-4.1289-4.1406-4.1289z"/></g> </svg>
 
 

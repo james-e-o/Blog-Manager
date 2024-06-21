@@ -112,24 +112,14 @@ div.m-dashboard {
     overflow-x: hidden;
     box-sizing: border-box;
 }
-.m-dashboard-main div.feeds p.feed-text{
-    margin: 15px 15px 0px;
-    padding:0px 3px;
-    font-size: 15px;
-    text-decoration: wavy;
-    color: orange;
-    font-family:LuckiestGuy;
-    box-sizing: border-box;
-}
-
 .m-dashboard-main div.feeds div.feed-header {
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px auto 10px;
+    margin: 15px auto;
     box-sizing: border-box;
-    gap: 3%;
+    gap: 4%;
 }
 .m-dashboard-main div.feeds div.feed-header p.feed-type{
     color: rgb(62, 62, 62);
@@ -140,9 +130,9 @@ div.m-dashboard {
     height: fit-content;
 }
 .m-dashboard-main div.feeds div.feed-header p.feed-type.active{
-    color: slateblue;
+    color: rgb(57, 44, 142);
     padding: 4px 9px;
-    background-color: #f1f1f1;
+    background-color: #e6e6e6;
     width: fit-content;
     height: fit-content;
     font-size: 14px;
@@ -157,40 +147,49 @@ div.m-dashboard {
 
 
 
-/* 
-.m-dashboard-main .advert-wrapper{
-    margin:10px 24px 7px ;
+
+
+
+
+/* FEED SECTION */
+/* ============= */
+
+
+
+
+.m-dashboard-main div.publication-container{
+    margin-left: 12px;
+}
+.m-dashboard-main div.followed-publications{
+    margin:2px 0px 7px ;
     scroll-snap-type: x mandatory;
     overflow-x: scroll;
     position: relative;
     height: fit-content;
-    width: 90vw;
+    width: 100vw;
 }
-.m-dashboard-main .advert-wrapper::before{
-    content: "";
-    z-index: 2;
-    position: absolute;
-    overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-    right: -10px;
-    box-shadow: -23px 0px 25px 5px white inset;
-} 
-div.advert-wrapper::-webkit-scrollbar {
+.m-dashboard-main div.followed-publications::-webkit-scrollbar {
    display: none;
    background-color: transparent;
 }
-.m-dashboard-main div.adverts{
-    margin: 0px 5px;
+.m-dashboard-main .publication-container span.trending{
+    font-size: 11px;
+    margin: 0px 14px;
+    font-family: system-ui, -apple-system;
+    color: rgb(112, 112, 112);
+    position: relative;
+}
+.m-dashboard-main .followed-publications div.publication-wrap{
+    margin-left: 8px;
     width: max-content;
     position: relative;
 }
-.m-dashboard-main .adverts div.advert{
-    scroll-snap-align: start; 
-    height: 170px;
-    width: 49vw;
+.m-dashboard-main .followed-publications div.publication-wrap div.publication{
+    scroll-snap-align: center; 
+ aspect-ratio: 1;
+    width: 30vw;
     border: 1px solid rgb(226, 226, 226);
-    border-radius: 23px; 
+    border-radius: 10px; 
     margin: 5px 15px 5px 1px;
     padding: 15px;
     background-color: transparent;
@@ -199,7 +198,7 @@ div.advert-wrapper::-webkit-scrollbar {
     position: relative;
     display: inline-block;
 }
-.m-dashboard-main .adverts div.advert::before {
+.m-dashboard-main .followed-publications div.publication-wrap div.publication::before {
     content: "";
     top: 20%;
     right: 20%;
@@ -209,46 +208,158 @@ div.advert-wrapper::-webkit-scrollbar {
     border-radius:50% ;
     height: 40%;
     aspect-ratio: 1;
+    opacity: 0.8;
     position: absolute;
     transform: scale(5) rotate(0deg);
 }
 
-.m-dashboard-main .categories {
+
+/*  */
+
+
+.m-dashboard-main .feeds div.publication-feed{
+    margin: 7px 0px;
+    height: fit-content;
+    width: 97%;
+    background-color: white;
+    border-top: 1px solid #e8e8e8;
+    box-sizing: border-box;
+}
+.m-dashboard-main div.publication-feed div.feed-head{
+    width:100%;
+    display: flex;
+    gap: 6px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 6px 0px 0px 9px;
+}
+.m-dashboard-main div.publication-feed .feed-head div.content-author{
+    display: flex;
+    gap: 6px;
+    width: 60%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.m-dashboard-main div.publication-feed .feed-head .content-author figure{
+    /* margin: 0px 4px; */
+    width:16px ;
+    height: 16px;
+    border: 1px solid rgb(60, 60, 60);
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+}
+.m-dashboard-main div.publication-feed .feed-head .content-author figure img{
+    height: 100%;
+    width: 100%;
+}
+.m-dashboard-main div.publication-feed .feed-head .content-author p.author-name{
+    font-family:  'Lucida Sans Regular';
+    font-style: italic;
+    color: grey;
+    font-weight: medium;
+    font-size: 11px;
+    padding: 5px 1px;
+    width:70%;
+}
+.m-dashboard-main div.publication-feed .feed-head p.date-published{
+    padding: 3px 7px;
+    font-size: x-small;
     font-family: Inter;
-    margin:5px 1px 20px 26px;  
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height:fit-content;
-    gap: 3px;
+    gap: 11px;
 }
-.m-dashboard-main p.niche {
-    margin: 9px 30px 0px;
-    padding: 3px;
+.m-dashboard-main div.publication-feed .feed-head p.date-published svg{
+    fill: slategray;
+}
+.m-dashboard-main div.publication-feed .feed-head p.date-published svg.boomarked{
+    fill:darkorange;
+}
+.m-dashboard-main div.publication-feed div.feed-content{
+    width: 100%;
+    display: flex;
+    gap: 4px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px 5px 0px;
+}
+.m-dashboard-main div.publication-feed  .feed-content .content-texts {
+  height: fit-content;
+  width: 98%;
+  margin-bottom: 6px;
+}
+.m-dashboard-main div.publication-feed .feed-content .content-texts p.content-title{
+    font-weight: bold;
+    font-family:  Noto Sans;
     font-size: 15px;
-    text-decoration: wavy;
-    color: orange;
-    font-family:LuckiestGuy;
+    padding: 3px;
+    height: fit-content;
+    width: 100%;
 }
-.m-dashboard-main .category {
-    display: inline-block;
-    border-radius: 15px;
-    padding: 8px 11px;
-    background-color: white;
-    font-size: smaller;
-    transition: background-color 185ms ease-out;
-    border: 1px solid slateblue;
+.m-dashboard-main div.publication-feed .feed-content .content-texts p.sub-text{
+    font-weight: lighter;
+    font-family: serif;
+    font-size: 12px;
+    padding: 3px;
+    height: fit-content;
+    width: 230px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
-.m-dashboard-main .arrow-f{
-    border-radius: 27px;
-    background-color: slateblue;
-    padding: 8px 11px;
-    border: 1px solid rgb(255, 255, 255);
-    color: white;
-    font-size: smaller;
-    line-height: 120%;
-    margin-right: 10px;
-} */
+.m-dashboard-main div.publication-feed .content-image{
+    width: 30%;
+}
+.m-dashboard-main div.publication-feed .content-image img{
+    width: 100%;
+    aspect-ratio: 1.1;
+    border-radius: 7px;
+    /* height: 100%; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .m-dashboard-main .feeds div.feed{
@@ -374,11 +485,25 @@ div.advert-wrapper::-webkit-scrollbar {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* DASHBOARD ITEMS */
+/* ========= ====*/
+
+
 .m-dashboard div.profile{
     background-color:#ffffff;
     backdrop-filter: blur(10px) brightness(0.96);
     overflow-x: hidden;
-    position:absolute;
+    position:fixed;
     height: 78%;
     bottom: 0px;
     left: 0px;
@@ -394,6 +519,9 @@ div.advert-wrapper::-webkit-scrollbar {
 .m-dashboard div.profile.inactive{
     height: 0%;
 }
+
+
+
 .m-dashboard div.menu-bar{
     background-color: white;
     position: fixed;
@@ -416,3 +544,61 @@ div.advert-wrapper::-webkit-scrollbar {
     position: relative;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PROFILE MAIN  */
+/* ============ */
+
+.m-dashboard .profile-main {
+    background-color: rgb(255, 255, 255);
+    padding: 13px;
+    position: relative;
+}
+.m-dashboard .profile-main p.exfill {
+   position: absolute;
+   padding: 2px;
+   left: 100%;
+}
+.m-dashboard .profile-main div.profile-main-header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.m-dashboard .profile-main div.profile-main-header figure{
+    width: 34px;
+    height: 34px;
+    background: rgb(55, 14, 109);
+    border-radius: 50%;
+    position: relative;
+    top: 4px;
+    overflow: hidden;
+    border: 1px solid #dcdcdc;
+}
+.m-dashboard .profile-main div.profile-main-header div.id-wrap {
+    text-align: center;
+    padding: 10px;
+    font-family: system-ui;
+}
+.m-dashboard .profile-main div.profile-main-header div.id-wrap p.name{
+    font-weight: 700;
+    padding: 1px;
+}
+.m-dashboard .profile-main div.profile-main-header div.id-wrap p.email{
+    text-align: center;
+    padding: 1px;
+}

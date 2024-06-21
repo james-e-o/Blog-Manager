@@ -125,7 +125,6 @@ const Carousel = () => {
     const carousel = document.querySelector("div.carousel")
     const figures = document.querySelectorAll("div.carousel figure")
     const figSpan = document.querySelectorAll("p.section-head span")
-    clearInterval()
     const interval = setInterval(()=>{
 
       carousel.scrollBy(carousel.clientWidth, 0)
@@ -242,13 +241,12 @@ const Main = () => {
           <p className="interest-text"><span>Interest</span></p>
           <div className='interest'>
             <div className='categories'>
-              <p id="leftarr"  ><img src={LeftDir} height={19} width={19}/></p>
-              <p id="rightarr"><img src={RightDir} height={19} width={19}/></p>
+              <p id="leftarr"  >{Arrow_B}</p>
+              <p id="rightarr">{Arrow_F}</p>
               <div ref={CategoryScroll} className='categories-scroll' id='categories-scroll'>
                 {niches.map((niche)=>(
                   <button className='category' key={niche.id}>{niche.name}</button>
                 ))}
-                <button className='category more'>view more</button>
               </div>
             </div>
             <div className='featured'>
@@ -271,6 +269,7 @@ const Main = () => {
                   ))}
                 </div>
             </div>
+            <Link to={'explore'}><button className='category more'>view more</button></Link>
           </div>
           <section className="strategy">
             <div className='strategy-header'>   
@@ -353,13 +352,12 @@ const Main = () => {
             <p className="interest-text"><span>Interest</span></p>
             <div className='interest'>
               <div className='categories'>
-                <p id="leftarr"  ><img src={LeftDir} height={19} width={19}/></p>
-                <p id="rightarr"><img src={RightDir} height={19} width={19}/></p>
+                <p id="leftarr"  >{Arrow_B}</p>
+                <p id="rightarr">{Arrow_F}</p>
                 <div ref={CategoryScroll} className='categories-scroll' id='categories-scroll'>
                   {niches.map((niche)=>(
                     <button className='category' key={niche.id}>{niche.name}</button>
                   ))}
-                  <button className='category more'>view more</button>
                 </div>
               </div>
               <div className='featured'>
@@ -382,6 +380,7 @@ const Main = () => {
                     ))}
                   </div>
               </div>
+              <Link to={'explore'}><button className='category more'>view more</button></Link>
             </div>
             <section className="strategy">
               <div className='strategy-header'>   
@@ -641,7 +640,9 @@ const reviews = [
     title:"Manger CAB enterprise",
     image:defaultUser,
   }
-]
+] 
 
 
 
+const Arrow_F = <svg xmlns="http://www.w3.org/2000/svg" fill='#545454' height="33px" viewBox="0 -960 960 960" width="33px"><path d="M400-280v-400l200 200-200 200Z"/></svg>
+const Arrow_B = <svg xmlns="http://www.w3.org/2000/svg" fill='#545454' height="33px" viewBox="0 -960 960 960" width="33px"><path d="M560-280 360-480l200-200v400Z"/></svg>

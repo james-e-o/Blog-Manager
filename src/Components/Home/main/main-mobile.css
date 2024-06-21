@@ -115,10 +115,11 @@ p.punch-line img.slatebluesquiggle {
     font-size: 18px;
     text-align: end;
     display: block;
-    width: 83%;
+    width: 93%;
 }
 .mobile-main p.interest-text span {
     color: orange;
+    padding: 0px 10px;
 }
 .mobile-main div.interest{
     background-color: #E2E0EF;
@@ -128,7 +129,7 @@ p.punch-line img.slatebluesquiggle {
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 15px ;
-    width: 87vw;
+    width: 95vw;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -141,7 +142,7 @@ p.punch-line img.slatebluesquiggle {
     background-clip: border-box;
     background-size: 100%;
     width: 100%;
-    height: 225px;
+    aspect-ratio: 1.5;
     position: relative;
     left: 0;
 }
@@ -149,8 +150,8 @@ p.punch-line img.slatebluesquiggle {
     position: relative;
     top: -3px;
     padding: 0px 5px;
-    width: 90%;
-    margin: 10px;
+    width: 99%;
+    margin: 15px 10px 7px;
     overflow: hidden;
     display: flex;
 }
@@ -202,17 +203,21 @@ p.punch-line img.slatebluesquiggle {
     font-size: 14px;
     transition: background-color 185ms ease-out;
     border: none ;
-    border: 1px solid #545454;
+    border: 1px solid #8c8c8c;
     cursor:pointer;
 }
 .mobile-main div.interest .more {
     border: 1px solid orange;
-    background-color: #545454;
-    color: white;
+    background-color: #6a6a6a;
+    color: #ffffff;
+    margin: 10px 0px 12px;
+    font-weight: 400;
+    border-radius: 12px;
+    padding: 8px 25px;
 }
 .mobile-main div.interest .featured{
-    width: 90%;
-    margin: 8px;
+    width: 100%;
+    margin: 0px 5px;
     overflow: hidden;
     display: flex;
     height: fit-content;
@@ -225,6 +230,8 @@ p.punch-line img.slatebluesquiggle {
     overflow-y: hidden;
     gap: 10px;
     margin: 2px;
+    position: relative;
+    left: 7px;
 }
 .mobile-main div.interest .featured-scroll::-webkit-scrollbar {
     display: none;
@@ -238,9 +245,9 @@ p.punch-line img.slatebluesquiggle {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     align-items: flex-start;
-    border: 1px solid darkturquoise;
+    box-shadow: 0px 0px 9px #b7b7b7;
 }
 
 .mobile-main div.interest .feature .title{
@@ -292,7 +299,7 @@ p.punch-line img.slatebluesquiggle {
 .mobile-main section.strategy {
     min-height:250px;
     width: 100%;
-    padding: 25px;
+    padding: 10px 20px 25px;
     background-color: transparent;
     position: relative;
     z-index: 1;
@@ -322,7 +329,6 @@ p.punch-line img.slatebluesquiggle {
  }
 .mobile-main section p.strategy-text {   
     font-family: Quicksand;
-    padding: 10px;
     font-size: 18px;
     text-align:start;
     display: block;
@@ -509,7 +515,7 @@ p.punch-line img.slatebluesquiggle {
     background-color: rgb(152, 235, 227);
     height:fit-content;
     margin-bottom: 25px ;
-    width: 87vw;
+    width: 95vw;
     border-radius: 20px;
     overflow-x: hidden;
     position: relative;

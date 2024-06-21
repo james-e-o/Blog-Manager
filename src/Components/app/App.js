@@ -12,7 +12,7 @@ import Signlayout from '../../Layouts/signlayout';
 // page imports
 import {Sign, Signup, Signin} from '../../sign'
 const Notfound = lazy(()=>import('../Errors/Notfound'))
-const Feeds = lazy(()=>import('../dashboards/feeds'))
+const Feeds = lazy(()=>import('../dashboards/feed/feeds'))
 const About = lazy(()=>import('../about/About'))
 const NewContent = lazy(()=>import('../dashboards/dashboard-components/new-content/new-content'))
 const Bookmarked = lazy(()=>import('../dashboards/dashboard-components/bookmarked/bookmarked'))
@@ -20,10 +20,7 @@ const Niches = lazy(()=>import('../dashboards/dashboard-components/niche/niche')
 const Explore = lazy(()=>import('../dashboards/dashboard-components/explore/explore'))
 const Write = lazy(()=>import('../dashboards/dashboard-components/write/write'))
 const Notifications = lazy(()=>import('../dashboards/dashboard-components/notifications/notifications'))
-// import NewContent from '../dashboards/dashboard-components/new-content/new-content';
-// import Bookmarked from '../dashboards/dashboard-components/bookmarked/bookmarked';
-// import Niche from '../dashboards/dashboard-components/niche/niche';
-
+const HomeExplore = lazy(()=>import('../Home/explore/HomeExplore'))
 //actions
 import { signupValidate,loginValidation } from '../../sign';
 
@@ -53,7 +50,7 @@ const router = createBrowserRouter([
         },
         {
           path:'explore',
-          element:<About/>,
+          element:<HomeExplore/>,
         },
         {
           path:'sign', 
@@ -65,7 +62,7 @@ const router = createBrowserRouter([
           ]
         },
         {
-          path:'dashboard',
+          path:'home',
           element:<LoggedIn/>,
           children: [
             {index:true, element:<Feeds/>},

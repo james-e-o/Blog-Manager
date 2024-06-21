@@ -302,5 +302,5 @@ export const  loginValidation = async ({request }) => {
   //   return {passwordError2 : "password must conatain numbers & letters"}
    
   
-  return redirect('/dashboard')
+  return redirect('/home')
 }
