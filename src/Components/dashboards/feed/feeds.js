@@ -12,35 +12,13 @@ import User from "../../contents/images/dummy.jpg"
 import Content_img2 from "../../contents/images/glai-hackathon.jpeg"
 import dataClean from "./CL_data-cleaning.jpeg"
 import Content_img3 from "./Content_img3.jpeg"
+import Content_img4 from "./Content_img4.jpeg"
 
 
 
 const Publications = ()=>{
   return(
     <div className='publication-container'>
-      <span className="trending">Trending</span>
-      <div className="followed-publications">
-        <div className="publication-wrap">
-          <div className="publication">
-            <figure><img src={CL_logo} alt="" /></figure>
-            <p className="pub-title"></p>
-            <p className="pub-author"></p>
-            <div className="pub-foot"></div>
-          </div>
-          <div className="publication">
-            
-          </div>
-          <div className="publication">
-            
-          </div>
-          <div className="publication">
-            
-          </div>
-          <div className="publication">
-            
-          </div>
-        </div>
-      </div>
       {feeds.map(feed => (
           <div key={feed.id} className='publication-feed'>
             <div className="feed-head">
@@ -53,7 +31,7 @@ const Publications = ()=>{
             <div className="feed-content">
               <div className="content-texts">
                   <p className='content-title'>{feed.content.title}</p>
-                  <p className="sub-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, nostrum laboriosam non molestiae sapiente quidem iure cumque amet, excepturi, consequatur alias reprehenderit impedit optio aspernatur est nulla ullam provident officiis?</p>
+                  <p className="sub-text">{feed.content.subText}</p>
               </div>
               <div className="content-image"><img src={feed.content.image}/></div>
             </div>
@@ -141,6 +119,29 @@ const Feeds = () => {
   return (
     //  MOBILE
     <div className="feeds">
+      <p className="sponsored">Sponsored</p>
+      <div className="followed-publications">
+        <div className="publication-wrap">
+          <div className="publication">
+            <figure><img src={CL_logo} alt="" /></figure>
+            <p className="pub-title"></p>
+            <p className="pub-author"></p>
+            <div className="pub-foot"></div>
+          </div>
+          <div className="publication">
+            
+          </div>
+          <div className="publication">
+            
+          </div>
+          <div className="publication">
+            
+          </div>
+          <div className="publication">
+            
+          </div>
+        </div>
+      </div>
       <div className="feed-header">
           <p className={activeFeed === 'publications'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('publications')}} >Publications</p>
           <p className={activeFeed === 'posts'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('posts')}} >Posts</p>
@@ -197,7 +198,7 @@ export default Feeds
 
 
 
-const feeds = [
+export const feeds = [
 {
   date:{
     day:4,
@@ -240,9 +241,30 @@ const feeds = [
     comments:35,
     bookmarked:52,
   },
-  id:1
+  id:2
 },
-
+{
+  date:{
+    day:9,
+    month:"September",
+    year:2023
+  },
+  author:{
+    photo:CL_logo,
+    name:"CATEGORY PIRATES",
+  },
+  content:{
+    title:"The Big Strategy Lie: Why Strategy Is Not As Complex, Hard, Or Intellectual As You've Been Taught.",
+    subText:"Simplicity scales. Complexity fails.",
+    image:Content_img4,
+  },
+  engagements:{
+    likes:71,
+    comments:28,
+    bookmarked:22,
+  },
+  id:3
+},
 {
   date:{
     day:6,
@@ -263,7 +285,7 @@ const feeds = [
     comments:25,
     bookmarked:12,
   },
-  id:2
+  id:4
 },
 
 {
@@ -273,7 +295,7 @@ const feeds = [
     year:2023
   },
   author:{
-    photo:CL_logo,
+    photo:Gl_ai,
     name:"GETLINKED AI",
   },
   content:{
@@ -286,7 +308,7 @@ const feeds = [
     comments:25,
     bookmarked:52,
   },
-  id:3
+  id:5
 },
 
 {
@@ -309,7 +331,7 @@ const feeds = [
     comments:25,
     bookmarked:52,
   },
-  id:4
+  id:6
 },
 
 ]

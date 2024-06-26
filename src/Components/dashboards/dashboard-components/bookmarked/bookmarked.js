@@ -1,24 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import "./bookmarked.css"
+import Publications from './Publications'
+import Articles from './Articles'
+
 
 const Bookmarked = () => {
+  const [activeMenu, setActiveMenu] = useState('publications')
+
   return (
-    <div className='mobile-bookmark' >
-      <div className="bookmark-header">
-          <div className="logo">
-            <div className='art'></div>
-          </div>
-            <nav >
-              <div className="user">  </div>
-              <div className='icon-wrap' >
-                {/* <div className='' onClick={()=>setActiveMenu(!activeMenu)}><Menu_icon /></div>
-                <div className={!activeMenu?"menu-drop roll-up":"menu-drop roll-down"}>
-                  Menu_Drop hrllo
-                </div> */}
-              </div>     
-            </nav>
+    <div className='bookmark'>
+    <div className="bookmark-header">
+      <div className="articles">
+        <button onClick={()=>setActiveMenu('publications')} className={activeMenu==='publications'? 'active':""}>Publications</button>
+        <button onClick={()=>setActiveMenu('articles')} className={activeMenu==='articles'? 'active':""}>Articles</button>
       </div>
     </div>
+    <div className="write-content">
+        {activeMenu === 'publications'? <Publications/>: activeMenu === 'articles'?<Articles/> : ""}
+    </div>
+   
+</div>
   )
 }
 

@@ -14,10 +14,10 @@ import { Notify } from '../Components/svg'
 import profileImg from "../Components/dashboards/feed/gemini-profile.jpeg"
 
 
-const Profile = () => {
+const Profile = ({exfill}) => {
   return(
     <div className="profile-main">
-      <p className="exfill">{cancel}</p>
+      <p onClick={exfill} className="exfill">{cancel}</p>
       <div className="profile-main-header">
         <figure><img src={profileImg} width="100%" height={"100%"}/></figure>
         <div className="id-wrap">
@@ -25,7 +25,15 @@ const Profile = () => {
           <p className="email">jasonstatham@gmail.com</p>
         </div>
       </div>
-      <div className="profile-main-content"></div>
+      <div className="profile-main-content">
+        <p>Home</p>
+        <p>Newsletters</p>
+        <p>Chat</p>
+        <div><span>My publications</span> <span>{droparrow}</span></div>
+        <p>Settings</p>
+        <p>Support</p>
+        <p>Sign out</p>
+      </div>
     </div>
   )
 }
@@ -33,14 +41,15 @@ const Profile = () => {
 const LoggedIn = () => {
   const part = '/loggedin/route'
   const screen = useContext(screenWidth)
+  const [profileState, setProfileState] = useState(false)
   useEffect(()=>{
-    const profile = document.querySelector('div.profile')
-    const profilePic = document.getElementById('profile-pic')
-    const dashboard = document.querySelector('.m-dashboard-main')
-    profilePic.onclick = (e) => {
-      profile.classList.toggle("inactive")
-      dashboard.classList.toggle("blurred")
-    }
+    // const profile = document.querySelector('div.profile')
+    // const profilePic = document.getElementById('profile-pic')
+    // const dashboard = document.querySelector('.m-dashboard-main')
+    // profilePic.onclick = (e) => {
+    //   profile.classList.toggle("inactive")
+    //   dashboard.classList.toggle("blurred")
+    // }
   })
  
   return (
@@ -52,14 +61,14 @@ const LoggedIn = () => {
         </div></Link>
         <nav >
           <Link to={'notifications'} ><figure className='notify'><span className='alert'></span>{notify}</figure> </Link>
-          <figure id='profile-pic'><img src={profileImg} width="100%" height={"100%"} /></figure>    
+          <figure id='profile-pic' onClick={()=>setProfileState(!profileState)}><img src={profileImg} width="100%" height={"100%"} /></figure>    
         </nav>
       </header>
-      <main className='m-dashboard-main'>
+      <main className={profileState? `m-dashboard-main blurred`:`m-dashboard-main`}>
         <Outlet />
       </main>
-      <div className="profile inactive">
-        <Profile/>
+      <div className={profileState? `profile`:`profile inactive`}>
+        <Profile exfill={()=>setProfileState(false)}/>
       </div>
       <MenuBar/> 
     </div>
@@ -136,10 +145,19 @@ const feedfill = <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="
 const categoryfill = <svg fill="slateblue" width="33px" height="33px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="slateblue" transform="rotate(0)"><g id="SVGRepo_bgCarrier" ></g><g id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"><path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm10 10h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zM17 3c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zM7 13c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"></path></g></svg>
 const category = <svg fill="slateblue" width="33px" height="33px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="slateblue"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"><path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11 4h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6h-4v-4h4v4zM17 3c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zM7 13c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path></g></svg>
 
-const cancel = <svg  xmlns="http://www.w3.org/2000/svg" onClick={(e)=> setMenuActive(!menuActive)} fill='gray' height="38" viewBox="0 -960 960 960" width="38"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+const cancel = <svg  xmlns="http://www.w3.org/2000/svg" fill='white' height="33px" viewBox="0 -960 960 960" width="33px"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
 // const add = <svg width='33px' height='33px' fill='slateblue' xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,100,100"> <g><path d="m74.91 11.379h-49.82c-8.3203 0-15.09 6.7617-15.09 15.082v45.449c0 8.3203 6.7695 15.09 15.09 15.09h49.828c8.3125 0 15.082-6.7695 15.082-15.09v-45.449c0-8.3203-6.7695-15.082-15.09-15.082zm6.8086 60.531c0 3.7617-3.0586 6.8086-6.8086 6.8086h-49.82c-3.7617 0-6.8086-3.0586-6.8086-6.8086v-45.449c0-3.7617 3.0586-6.8086 6.8086-6.8086h49.828c3.7617 0 6.8086 3.0586 6.8086 6.8086l0.003907 45.449z"/> <path d="m68.852 45.051h-14.711v-14.711c0-2.2891-1.8516-4.1406-4.1406-4.1406s-4.1406 1.8516-4.1406 4.1406v14.711h-14.711c-2.2891 0-4.1406 1.8516-4.1406 4.1406 0 2.2891 1.8516 4.1406 4.1406 4.1406h14.711v14.711c0 2.2891 1.8516 4.1406 4.1406 4.1406s4.1406-1.8516 4.1406-4.1406v-14.723h14.711c2.2891 0 4.1406-1.8516 4.1406-4.1406-0.011719-2.2812-1.8633-4.1289-4.1406-4.1289z"/></g> </svg>
 
-
+const droparrow = <svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="17px" height="17px" class="css-1jiuhrf"><g transform="translate(904.92214,-879.1482)"><path d="
+m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
+-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
+0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
+-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,
+-174.68583 0.6895,0 26.281,25.03215 56.8701,
+55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
+-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
+-104.0616 -231.873,-231.248 z
+" fill="currentColor"></path></g></svg>
 
 const profiles = [
   

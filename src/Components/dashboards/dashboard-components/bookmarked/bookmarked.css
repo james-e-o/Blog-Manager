@@ -1,55 +1,147 @@
-div.mobile-bookmark {
-    /* background-color: #F1F1F1; */
-    padding:5px 2px 5px;
+.m-dashboard-main div.bookmark {
+    position: relative;
+    width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
-.mobile-bookmark div.bookmark-header {
+.m-dashboard-main .bookmark div.bookmark-header {
+    width: 87vw;
+    height: max-content;
     display: flex;
     justify-content: space-between;
-    width: 95%;
     align-items: center;
-    padding: 2px 8px 8px;
+    margin: 17px 10px 20px;
     box-sizing: border-box;
-    height: fit-content;
 }
-.mobile-bookmark div.logo {
+.m-dashboard-main .bookmark .bookmark-header div.articles{
     display: flex;
-    padding: 12px 0px;
-    /* gap: 15px; */
-    font-family: Capriola;
+    justify-content: center;
+    gap: 8px;
+}
+.m-dashboard-main .bookmark .bookmark-header div.articles> button{
+    color:rgb(82, 82, 82);
+    padding: 5px 9px;
+    background-color: #f1f1f1;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    border-radius:9px ;
+    box-shadow: 0px 1px 6px  rgb(182, 182, 182);
+    border: none;
+    font-family:system-ui;
+    margin-right: 10px;
+}
+.m-dashboard-main .bookmark .bookmark-header div.articles>  button.active{
+    color: white;
+    padding: 5px 9px;
+    background-color:slateblue;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    border-radius:9px ;
+    box-shadow: 0px 0px 10px 1px rgb(182, 182, 182);
+    font-family:system-ui;
+    border: none;
+}
+.m-dashboard-main .bookmark .article-wrapper {
+    font-family: Inter;
+    margin: 5px 15px 10px;
+    width: 92vw;
+    box-sizing: border-box;
+}
+.m-dashboard-main .bookmark .publications-wrapper {
+    font-family: Inter;
+    margin: 5px 15px 10px;
+    width: 92vw;
+    box-sizing: border-box;
+}
+.m-dashboard-main .bookmark .article-wrapper div.article {
+    background-color:#f9f9f9;
+    display: flex;
     align-items: center;
-}
-.mobile-bookmark .art::before{
-    content: "";
-    position: absolute;
-    background-color:darkturquoise;
+    gap: 10px;
+    border-radius: 9px;
     width: 100%;
-    border-radius: 3px;
-    height: 31px;
-    transform: rotate(-7deg) translateX(-20%) translateY(3%);
-    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
+    height: fit-content;
+    padding: 10px;
+    box-shadow: 0px 1px 4px #dddddd;
+    margin-bottom:  15px;
+    box-sizing: border-box;
+
 }
-.mobile-bookmark .art::after{
-    content: "";
-    position: absolute;
-    background:linear-gradient(to bottom,#ffa90a,#7568cf);
+.m-dashboard-main .bookmark .article-wrapper .article div.title {
+    font-size: 14px;
+    font-weight: 700;
     width: 100%;
-    border-radius: 3px;
-    height: 31px;
-    transform: rotate(-14deg) translateX(-40%) translateY(6%);
-    box-shadow: 2px 2px 4px rgba(24, 28, 80, 0.747);
+    white-space: nowrap;
+    overflow-x:hidden ;
+    text-overflow: ellipsis;
 }
-.mobile-bookmark .art{
-    position: relative;
-    top: -2px;
-    background-color:rgb(190, 190, 190);
-    width: 25px;
-    border-radius: 3px;
-    height: 31px;
-    transform: rotate(8deg)  ;
-    box-shadow: 2px 2px 6px rgba(24, 28, 80, 0.747);
-    margin-left:16px ;
+.m-dashboard-main .bookmark .article-wrapper .article p.article-date {
+    font-size: 11px;
 }
+.m-dashboard-main .bookmark .article-wrapper div.article .article-image{
+    width: 10%;
+}
+.m-dashboard-main .bookmark .article-wrapper div.article .article-image img{
+    width: 100%;
+    aspect-ratio: 1.1;
+    border-radius: 7px;
+    /* height: 100%; */
+}
+
+
+
+
+.m-dashboard-main .bookmark .publications-wrapper div.publications {
+    background-color:#f9f9f9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 9px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    box-shadow: 0px 1px 4px #dddddd;
+    margin-bottom:  15px;
+    box-sizing: border-box;
+
+}
+.m-dashboard-main .bookmark .publications-wrapper .publications div.title {
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x:hidden ;
+    text-overflow: ellipsis;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publications p.publications-date {
+    font-size: 11px;
+}
+
+.m-dashboard-main .bookmark .publications-wrapper div.publications .publications-image{
+    width: 10%;
+}
+.m-dashboard-main  .bookmark .publications-wrapper div.publications .publications-image img{
+    width: 100%;
+    aspect-ratio: 1.1;
+    border-radius: 7px;
+    /* height: 100%; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
