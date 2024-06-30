@@ -21,6 +21,10 @@ const Explore = lazy(()=>import('../dashboards/dashboard-components/explore/expl
 const Write = lazy(()=>import('../dashboards/dashboard-components/write/write'))
 const Notifications = lazy(()=>import('../dashboards/dashboard-components/notifications/notifications'))
 const HomeExplore = lazy(()=>import('../Home/explore/HomeExplore'))
+const Reading = lazy(()=>import('../read/reading'))
+const Settings = lazy(()=>import('../dashboards/settings/settings'))
+const Chat = lazy(()=>import('../dashboards/chats/chat'))
+const MyProfile = lazy(()=>import('../dashboards/myProfile/MyProfile'))
 //actions
 import { signupValidate,loginValidation } from '../../sign';
 
@@ -68,7 +72,11 @@ const router = createBrowserRouter([
             {index:true, element:<Feeds/>},
             {path:"explore", element:<Explore/>},
             {path:"write", element:<Write/>,},
+            {path:"notifications", element:<Notifications/> },
+            {path:"chats", element:<Chat /> },
+            {path:"settings", element:<Settings /> },
             {path:"niche", element:<Niches/>},
+            {path:"profile", element:<MyProfile/>},
             {path:"bookmarks", element:<Bookmarked/>},
           ]
         },
@@ -77,8 +85,8 @@ const router = createBrowserRouter([
           element:<NewContent/>
         },
         {
-          path:"notifications",
-          element:<Notifications/>
+          path:"article",
+          element:<Reading/>
         },
         {
           path:"*",

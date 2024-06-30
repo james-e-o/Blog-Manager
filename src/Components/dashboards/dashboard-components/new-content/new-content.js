@@ -41,27 +41,27 @@ const NewContent = () => {
   const scrollOffset =useRef(window.scrollY)
 
   useEffect(()=>{
-    const menuDrop = document.querySelector("div.menu-slide")
-    const EditorWrap = document.getElementById("editor-wrap")
-    document.addEventListener('click', (e)=>{  
-      if(!e.target.closest("div.post-wrap") && menuDrop.classList.contains("roll-down")){
-        setActiveMenu(false)
-        menuDrop.classList.replace("roll-down","roll-up")
-      }
-    })
+    // const menuDrop = document.querySelector("div.menu-slide")
+    // const EditorWrap = document.getElementById("editor-wrap")
+    // document.addEventListener('click', (e)=>{  
+    //   if(!e.target.closest("div.post-wrap") && menuDrop.classList.contains("roll-down")){
+    //     setActiveMenu(false)
+    //     menuDrop.classList.replace("roll-down","roll-up")
+    //   }
+    // })
 
-    window.addEventListener('scroll',(e)=>{
-      scrollOffset.current=window.scrollY
-    })
+    // window.addEventListener('scroll',(e)=>{
+    //   scrollOffset.current=window.scrollY
+    // })
 
-    if (activeMenu){
-      document.body.style.position = 'fixed'
-      document.body.style.top = `-${scrollOffset.current}px`
-     }else{
-      document.body.style.position = ''
-      window.scrollTo(0, scroll);
-     }
-     setScroll(scrollOffset.current)
+    // if (activeMenu){
+    //   document.body.style.position = 'fixed'
+    //   document.body.style.top = `-${scrollOffset.current}px`
+    //  }else{
+    //   document.body.style.position = ''
+    //   window.scrollTo(0, scroll);
+    //  }
+    //  setScroll(scrollOffset.current)
   },[activeMenu])
 
   return (
@@ -72,9 +72,9 @@ const NewContent = () => {
             </div>
             <nav >
               <button id='preview'><span>Preview</span></button>
-              <div className='post-wrap' >
-                <button id='progress' onClick={()=>setActiveMenu(!activeMenu)}><img className={!activeMenu?"not-rotated":"rotated"} src={Post} height={12} width={12}/></button>
-                <div className={!activeMenu?"menu-slide roll-up":"menu-slide roll-down"}>
+              <div className='post-wrap' onClick={(e)=>{e.preventDefault()}} >
+                <button id='progress' onClick={(e)=>{e.preventDefault(), setActiveMenu(!activeMenu)}}><img className={!activeMenu?"not-rotated":"rotated"} src={Post} height={12} width={12}/></button>
+                <div  className={!activeMenu?"menu-slide roll-up":"menu-slide roll-down"}>
                   Hi this is the menu bar
                 </div>
               </div>     

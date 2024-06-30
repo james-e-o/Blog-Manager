@@ -1,0 +1,80 @@
+div.m-reading-page{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+div.m-reading-page div.reading-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    position: relative;
+}
+
+.m-reading-page .reading-header .mode-wrap{
+    position: relative;
+}
+.m-reading-page .reading-header .mode-wrap  button#mode-button{
+    color: white;
+    padding: 5px 9px;
+    background-color:rgba(105, 90, 205, 0.331);
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    border-radius:9px ;
+    box-shadow: 0px 0px 4px rgb(99, 99, 99);
+    font-family:system-ui;
+    border: none;
+    position: relative;
+}
+
+
+
+.m-reading-page .reading-header .mode-wrap div.menu-roll {
+    color: rgb(133, 98, 98);
+    position: absolute;
+    right: 0px;
+    font-family: Inter;
+    height: fit-content;
+    width: 80px;
+    padding: 12px;
+    border-radius: 15px;
+    background-color: orange;
+    backdrop-filter: blur(6px);
+    box-shadow: 0px 1px 2px rgb(81, 81, 81);
+}
+
+.m-reading-page .roll-down{
+    top: calc(100% + 10px);
+    opacity: 1;
+    transition: top 160ms ease-out, opacity 100ms ease-out;
+}
+.m-reading-page .roll-up {
+    top: calc(100% - 10px);
+    opacity: 0;
+    transition: top 150ms ease-out, opacity 100ms ease-out;
+    pointer-events: none;
+}
+
+
+
+
+div.m-reading-page div.bg{
+   inset: 0 0 0 0;
+    position: absolute;
+    z-index: -100;
+}
+div.m-reading-page div.red{
+    height: 100vh;
+    width: 100vw;
+    background-color:rgb(240, 178, 171);
+}
+div.m-reading-page div.green{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(168, 222, 168);
+}
+div.m-reading-page div.blue{
+    height: 100vh;
+    width: 100vw;
+    background-color: skyblue;
+}

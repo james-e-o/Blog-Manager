@@ -18,7 +18,7 @@ div.mobile-new {
     padding:6px 14px 8px;
     box-sizing: border-box;
     height: 70px;
-    /* position: sticky; */
+    position: relative;
     /* top: 0px; */
     z-index: 12500;
 }
@@ -68,7 +68,6 @@ div.mobile-new {
 /* NAV */
 
 .mobile-new nav {
-    position: relative;
     align-items: center;
     padding: 8px 3px;
     display: flex;
@@ -100,6 +99,7 @@ div.mobile-new {
     align-items: center;
     justify-content: center;
     border: none;
+    z-index: 5;
     /* box-sizing: border-box; */
     background-color: rgb(144, 134, 207);
     /* background: linear-gradient(to bottom, slateblue #f3f3f3, #bababe); */
@@ -108,6 +108,7 @@ div.mobile-new {
     font-weight: 400;
     border-radius: 10px;
     box-shadow: 3px 3px 11px 4px slateblue inset;
+    cursor: pointer;
 }
 .not-rotated{
     transform: scale(1.5);
@@ -122,10 +123,9 @@ div.mobile-new {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    position: relative;
+    /* position: relative; */
     width: fit-content;
     height: fit-content;
-    cursor: pointer;
 }
 
 
@@ -141,10 +141,10 @@ div.menu-slide {
     color: gray;
     position: absolute;
     opacity: 1;
-    top: calc(100% + 10px);
+    top: calc(100%);
     font-family: Inter;
     height: 100vh;
-    width: 100vw;
+    width: 75vw;
     padding: 12px;
     box-sizing: border-box;
     background-color: white;
@@ -154,12 +154,12 @@ div.menu-slide {
 }
 
 .roll-down{
-    left: calc(-100vw + 56px);
-    transition: left 160ms ease-out;
+    right: calc(0px);
+    transition: right 160ms ease-out;
 }
 .roll-up {
-    left: calc(100% + 17px);
-    transition: left 150ms ease-out;
+    right: calc(-100%);
+    transition: right 150ms ease-out;
     pointer-events: none;
 }
 

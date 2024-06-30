@@ -231,6 +231,7 @@ div.m-dashboard {
     background-color: white;
     border-top: 1px solid #e8e8e8;
     box-sizing: border-box;
+    color: black;
 }
 .m-dashboard-main div.publication-feed div.feed-head{
     width:100%;
@@ -244,12 +245,11 @@ div.m-dashboard {
 .m-dashboard-main div.publication-feed .feed-head div.content-author{
     display: flex;
     gap: 6px;
-    width: 60%;
+    width: 50%;
     justify-content: flex-start;
     align-items: center;
 }
 .m-dashboard-main div.publication-feed .feed-head .content-author figure{
-    /* margin: 0px 4px; */
     width:16px ;
     height: 16px;
     border: 1px solid rgb(60, 60, 60);
@@ -272,7 +272,7 @@ div.m-dashboard {
 }
 .m-dashboard-main div.publication-feed .feed-head p.date-published{
     padding: 3px 7px;
-    font-size: x-small;
+    font-size: xx-small;
     font-family: Inter;
     display: flex;
     align-items: center;
@@ -321,6 +321,10 @@ div.m-dashboard {
 }
 .m-dashboard-main div.publication-feed .content-image{
     width: 30%;
+}
+a {
+    text-decoration: none;
+    list-style: none;
 }
 .m-dashboard-main div.publication-feed .content-image img{
     width: 100%;
@@ -377,6 +381,7 @@ div.m-dashboard {
     background-color: white;
     border-top: 1px solid #e8e8e8;
     box-sizing: border-box;
+    color: black;
 }
 .m-dashboard-main .feed div.feed-head{
     width:98%;
@@ -612,24 +617,64 @@ div.m-dashboard {
 }
 .m-dashboard .profile-main div.profile-main-header div.id-wrap p.email{
     text-align: center;
-    font-size: small;
+    font-size: x-small;
 }
 .m-dashboard .profile-main div.profile-main-content{
     padding: 18px 10px 10px;
     font-family: system-ui;
-    
+    font-size: small;
 }
 .m-dashboard .profile-main div.profile-main-content p{
     padding:15px 5px;
     font-family: Noto Sans;
     font-weight: 400;
+    position:relative;
 }
-.m-dashboard .profile-main div.profile-main-content div{
-    padding:15px 5px;
+.m-dashboard .profile-main div.profile-main-content div.subscribed{
+    padding:0px 5px 15px;
+    font-family: Noto Sans;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    overflow: hidden;
+    position: relative;
+}
+.m-dashboard .profile-main div.profile-main-content div.subscribed p.sub-title{
+    display: flex;
+    padding: 20px 0px 0px;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+}
+.m-dashboard .profile-main div.profile-main-content .subscribed div.pub-list{
+    overflow-x: scroll;
+    scroll-snap-align:start;
+    padding: 5px;
     font-family: Noto Sans;
     font-weight: 400;
     display: flex;
     justify-content: flex-start;
     gap: 25px;
     align-items: center;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: x-small;
+    height: 67px;
+}
+.m-dashboard .profile-main div.profile-main-content .subscribed div.pub-list::-webkit-scrollbar{
+    display: none;
+}
+.m-dashboard div.pub-list .roll-down{
+    position: relative;
+    /* top: calc(70px); */
+    opacity: 1;
+    transition: top 860ms ease-out, opacity 100ms ease-out;
+}
+.m-dashboard div.pub-list.roll-up {
+    position: absolute;
+    /* top: 50px; */
+    opacity: 0.5;
+    transition: top 860ms ease-out, opacity 100ms ease-out;
+    pointer-events: none;
 }

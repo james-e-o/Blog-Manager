@@ -15,23 +15,39 @@ import profileImg from "../Components/dashboards/feed/gemini-profile.jpeg"
 
 
 const Profile = ({exfill}) => {
+  const [subscribeActive, setSubscribeActive] = useState(false)
+  useEffect(()=>{
+    exfill?setSubscribeActive(false):''
+  },[exfill])
+  
   return(
     <div className="profile-main">
       <p onClick={exfill} className="exfill">{cancel}</p>
       <div className="profile-main-header">
-        <figure><img src={profileImg} width="100%" height={"100%"}/></figure>
-        <div className="id-wrap">
+        <Link to={'profile'}><figure><img src={profileImg} width="100%" height={"100%"}/></figure></Link>
+        <Link to={'profile'}><div className="id-wrap">
           <p className="name">Jason Statham</p>
           <p className="email">jasonstatham@gmail.com</p>
-        </div>
+        </div></Link>
       </div>
       <div className="profile-main-content">
-        <p>Home</p>
-        <p>Newsletters</p>
-        <p>Chat</p>
-        <div><span>My publications</span> <span>{droparrow}</span></div>
-        <p>Settings</p>
-        <p>Support</p>
+        <Link to={'/home'}><p>Home</p></Link>
+        <Link to={'chats'}><p>Chat</p></Link>
+        <div className='subscribed' >
+          <p className='sub-title' onClick={()=>setSubscribeActive(!subscribeActive)}>
+            <span >Subscribed</span> 
+            <span >{subscribeActive? pullarrow : droparrow}</span>
+          </p>
+          <div className={!subscribeActive?"pub-list roll-up":"pub-list roll-down"}>
+            <p>Category Pirates</p>
+            <p>West Africa weekly</p>
+            <p>The Guardian</p>
+            <p>Sahara reporters</p>
+            <p>Finance daily</p>
+          </div> 
+        </div>
+        <Link to={'settings'}><p>Settings</p></Link>
+        <Link to={'support'}><p>Support</p></Link>
         <p>Sign out</p>
       </div>
     </div>
@@ -42,16 +58,12 @@ const LoggedIn = () => {
   const part = '/loggedin/route'
   const screen = useContext(screenWidth)
   const [profileState, setProfileState] = useState(false)
+  const location = useLocation();
   useEffect(()=>{
-    // const profile = document.querySelector('div.profile')
-    // const profilePic = document.getElementById('profile-pic')
-    // const dashboard = document.querySelector('.m-dashboard-main')
-    // profilePic.onclick = (e) => {
-    //   profile.classList.toggle("inactive")
-    //   dashboard.classList.toggle("blurred")
-    // }
-  })
- 
+    setProfileState(false)
+    const main = document.querySelector('main.dmain')
+
+  },[location])
   return (
   screen < 480?(
     <div id='m-dashboard' className='m-dashboard'>
@@ -64,7 +76,7 @@ const LoggedIn = () => {
           <figure id='profile-pic' onClick={()=>setProfileState(!profileState)}><img src={profileImg} width="100%" height={"100%"} /></figure>    
         </nav>
       </header>
-      <main className={profileState? `m-dashboard-main blurred`:`m-dashboard-main`}>
+      <main className={profileState? `m-dashboard-main blurred dmain`:`m-dashboard-main dmain`}>
         <Outlet />
       </main>
       <div className={profileState? `profile`:`profile inactive`}>
@@ -148,16 +160,8 @@ const category = <svg fill="slateblue" width="33px" height="33px" viewBox="0 0 2
 const cancel = <svg  xmlns="http://www.w3.org/2000/svg" fill='white' height="33px" viewBox="0 -960 960 960" width="33px"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
 // const add = <svg width='33px' height='33px' fill='slateblue' xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0,0,100,100"> <g><path d="m74.91 11.379h-49.82c-8.3203 0-15.09 6.7617-15.09 15.082v45.449c0 8.3203 6.7695 15.09 15.09 15.09h49.828c8.3125 0 15.082-6.7695 15.082-15.09v-45.449c0-8.3203-6.7695-15.082-15.09-15.082zm6.8086 60.531c0 3.7617-3.0586 6.8086-6.8086 6.8086h-49.82c-3.7617 0-6.8086-3.0586-6.8086-6.8086v-45.449c0-3.7617 3.0586-6.8086 6.8086-6.8086h49.828c3.7617 0 6.8086 3.0586 6.8086 6.8086l0.003907 45.449z"/> <path d="m68.852 45.051h-14.711v-14.711c0-2.2891-1.8516-4.1406-4.1406-4.1406s-4.1406 1.8516-4.1406 4.1406v14.711h-14.711c-2.2891 0-4.1406 1.8516-4.1406 4.1406 0 2.2891 1.8516 4.1406 4.1406 4.1406h14.711v14.711c0 2.2891 1.8516 4.1406 4.1406 4.1406s4.1406-1.8516 4.1406-4.1406v-14.723h14.711c2.2891 0 4.1406-1.8516 4.1406-4.1406-0.011719-2.2812-1.8633-4.1289-4.1406-4.1289z"/></g> </svg>
 
-const droparrow = <svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="17px" height="17px" class="css-1jiuhrf"><g transform="translate(904.92214,-879.1482)"><path d="
-m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
--55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
-0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
--174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,
--174.68583 0.6895,0 26.281,25.03215 56.8701,
-55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
--231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
--104.0616 -231.873,-231.248 z
-" fill="currentColor"></path></g></svg>
+const droparrow = <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 1024 1024" version="1.1"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000"/></svg>
+const pullarrow = <svg xmlns="http://www.w3.org/2000/svg"  width="17px" height="17px" viewBox="0 0 1024 1024" version="1.1"><path d="M903.232 768l56.768-50.432L512 256l-448 461.568 56.768 50.432L512 364.928z" fill="#000000"/></svg>
 
 const profiles = [
   

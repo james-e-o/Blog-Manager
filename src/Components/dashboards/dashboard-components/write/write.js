@@ -3,21 +3,24 @@ import "./write.css"
 import { Outlet,Link } from 'react-router-dom'
 import Drafts from './draft'
 import Published from './published'
+import WriteProp from './prop'
 
 const Write = () => {
-  const [activeMenu, setActiveMenu] = useState('draft')
+  const [activeMenu, setActiveMenu] = useState('new')
 
   return (
     <div className='write'>
         <div className="write-header">
-          <div className="written">
+            <p onClick={()=>setActiveMenu('new')} className={activeMenu==='new'? 'active':""}>New</p>
             <p onClick={()=>setActiveMenu('draft')} className={activeMenu==='draft'? 'active':""}>Drafts</p>
             <p onClick={()=>setActiveMenu('published')} className={activeMenu==='published'? 'active':""}>Published articles</p>
-          </div>
-          <Link to={'/new-content'}><button id='new-article'>New Article</button></Link>
         </div>
         <div className="write-content">
-            {activeMenu === 'draft'? <Drafts/>: activeMenu === 'published'?<Published/> : ""}
+            {
+              activeMenu === 'new'? <WriteProp/>: 
+              activeMenu === 'draft'? <Drafts/>: 
+              activeMenu === 'published'?<Published/> : ""
+            }
         </div>
        
     </div>

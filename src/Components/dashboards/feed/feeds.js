@@ -20,7 +20,7 @@ const Publications = ()=>{
   return(
     <div className='publication-container'>
       {feeds.map(feed => (
-          <div key={feed.id} className='publication-feed'>
+          <Link to={'/article'}><div key={feed.id} className='publication-feed'>
             <div className="feed-head">
               <div className="content-author">
                 <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
@@ -35,7 +35,7 @@ const Publications = ()=>{
               </div>
               <div className="content-image"><img src={feed.content.image}/></div>
             </div>
-          </div>
+          </div></Link>
       ))}
     </div>
   )
@@ -49,7 +49,7 @@ const Posts = ()=>{
         <figure></figure>
       </div>
       {feeds.map(feed => (
-        <div key={feed.id} className='feed'>
+        <Link to={'/articles'}><div key={feed.id} className='feed'>
           <div className="feed-head">
             <div className="content-author">
               <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
@@ -70,7 +70,7 @@ const Posts = ()=>{
               <p className="engagements bookmarks">{bookmark} <span>{feed.engagements.bookmarked}</span></p>
             </div>            
           </div>
-        </div>
+        </div></Link>
       ))}
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor illum deserunt amet inventore perspiciatis reiciendis totam nemo facilis impedit. Aspernatur dicta molestias beatae vero ullam. Voluptatum odit dolorem animi nemo.
     </div>
@@ -81,7 +81,7 @@ const Featured = ()=>{
   return(
     <>
       {feeds.map(feed => (
-        <div key={feed.id} className='feed'>
+        <Link to={'/articles'}><div key={feed.id} className='feed'>
           <div className="feed-head">
             <div className="content-author">
               <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
@@ -102,7 +102,7 @@ const Featured = ()=>{
               <p className="engagements bookmarks">{bookmark} <span>{feed.engagements.bookmarked}</span></p>
             </div>            
           </div>
-        </div>
+        </div></Link>
       ))}
     </>
   )

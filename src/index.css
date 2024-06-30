@@ -64,5 +64,10 @@ hr.inner{
     height: 1px;
     box-shadow: 1px 1px 0px rgb(165, 165, 165);
 }
-
-
+.no-decor {
+    text-decoration: none;
+    /* Add other styles here */
+  }
+a {
+    color: none;
+}
