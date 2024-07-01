@@ -1,0 +1,69 @@
+div.m-my-profile{
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.m-my-profile div.non-edit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.m-my-profile div.non-edit div.profile-image-wrap{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+.m-my-profile div.non-edit figure{
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    background: rgb(55, 14, 109);
+    border-radius: 50%;
+    position: relative;
+    top: 4px;
+    overflow: hidden;
+    border: 1px solid #dcdcdc;
+}
+.m-my-profile div.non-edit p.my-name{
+    font-weight: bold;
+    font-size: 26px;
+    font-family: system-ui, Inter;
+    margin:0px 0px 10px;
+    width: 90%;
+}
+.m-my-profile div.non-edit p.profile-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    width: 90%;
+    height: fit-content;
+}
+.m-my-profile div.non-edit button.edit-profile{
+    color:white;
+    padding: 9px 16px;
+    background-color: slateblue;
+    width: 48%;
+    height: fit-content;
+    font-size: 13px;
+    border-radius: 9px;
+    font-family: system-ui, Noto Sans;
+    border: 1px solid #dbdbdb;
+}
+.m-my-profile div.non-edit button.subscriptions{
+    color:rgb(0, 0, 0);
+    padding: 9px 16px;
+    background-color: #e1e1e1;
+    width: 48%;
+    height: fit-content;
+    font-size: 13px;
+    border-radius: 9px;
+    font-family: system-ui, Noto Sans;
+    border: none;
+}
