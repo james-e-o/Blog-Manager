@@ -59,22 +59,81 @@
     width: 92vw;
     box-sizing: border-box;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .m-dashboard-main .bookmark .article-wrapper div.article {
-    background-color:#f9f9f9;
+    background-color:#f4f4f4;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     border-radius: 9px;
     width: 100%;
     height: fit-content;
-    padding: 10px;
+    padding: 11px;
     box-shadow: 0px 1px 4px #dddddd;
-    margin-bottom:  15px;
     box-sizing: border-box;
-
+    margin-bottom: 15px;
 }
-.m-dashboard-main .bookmark .article-wrapper .article div.title {
-    font-size: 14px;
+.m-dashboard-main .bookmark .article-wrapper div.article div.sub-article {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+ }
+ .m-dashboard-main .bookmark .article-wrapper .article .sub-article div.article-content{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 90%;
+ }
+ .m-dashboard-main .bookmark .article-wrapper .article .sub-article .article-content div.article-author{
+    display: flex;
+    justify-content: flex-start;
+    gap: 6px;
+    align-items: center;
+ }
+ .m-dashboard-main .bookmark .article-wrapper .article .sub-article .article-content .article-author figure{
+    width: 25px;
+    height: 25px;
+    background: rgb(55, 14, 109);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .m-dashboard-main .bookmark .article-wrapper .article .sub-article .article-content .article-author p{
+    font-family:  'Lucida Sans Regular';
+    font-style: italic;
+    color: darkorange;
+    font-weight: medium;
+    font-size: 11px;
+    padding: 5px 1px;
+ }
+
+ .m-dashboard-main .bookmark .article-wrapper .article .sub-article div.article-image  img{
+    width: 100%;
+    aspect-ratio: 1.1;
+    border-radius: 7px;
+ }
+
+.m-dashboard-main .bookmark .article-wrapper .article .sub-article .article-content div.title {
+    font-size: 15px;
     font-weight: 700;
     width: 100%;
     white-space: nowrap;
@@ -82,55 +141,170 @@
     text-overflow: ellipsis;
 }
 .m-dashboard-main .bookmark .article-wrapper .article p.article-date {
-    font-size: 11px;
+    font-size: 10px;
 }
-.m-dashboard-main .bookmark .article-wrapper div.article .article-image{
-    width: 10%;
+.m-dashboard-main .bookmark .article-wrapper .article .sub-article .article-content .article-date  {
+    font-family: Noto Sans;
+    width: 100%;
+    height: fit-content;
+    padding: 2px 2px 0px;
+    color: #333333;
+    font-weight: 500;
 }
-.m-dashboard-main .bookmark .article-wrapper div.article .article-image img{
+.m-dashboard-main .bookmark .article-wrapper .article .sub-article .article-content .article-date span.key{
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 4px;
+}
+.m-dashboard-main .bookmark .article-wrapper .article .sub-article div.article-image  {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+.m-dashboard-main .bookmark .article-wrapper .article .sub-article .article-image img{
     width: 100%;
     aspect-ratio: 1.1;
     border-radius: 7px;
     /* height: 100%; */
 }
 
-
-
-
-.m-dashboard-main .bookmark .publications-wrapper div.publications {
-    background-color:#f9f9f9;
+.m-dashboard-main .bookmark .article-wrapper div.article div.article-engagements {
+    margin-top: 3px;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+}
+.m-dashboard-main .bookmark .article-wrapper div.article div.article-engagements > .engagement-l, .engagement-r{
+    display: inline-flex;
+    font-size: 10px;
+    gap: 10px;
+}
+.m-dashboard-main .bookmark .article-wrapper div.article div.article-engagements p {
+   display: flex;
+   align-items: center;
+   gap: 2px;
+}
+.m-dashboard-main .bookmark .article-wrapper div.article div.article-engagements p svg{
+   width: 11px;
+   height: 11px;
+}
+
+
+
+
+
+
+
+
+
+
+.m-dashboard-main .bookmark .publications-wrapper div.publication {
+    background-color:#f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0px 1px 4px #dddddd;
+    margin-bottom:  15px;
+    padding: 10px;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication div.sub-publication {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     border-radius: 9px;
     width: 100%;
     height: fit-content;
-    padding: 10px;
-    box-shadow: 0px 1px 4px #dddddd;
-    margin-bottom:  15px;
     box-sizing: border-box;
-
 }
-.m-dashboard-main .bookmark .publications-wrapper .publications div.title {
-    font-size: 14px;
+.m-dashboard-main .bookmark .publications-wrapper .publication .sub-publication div.sub-pub-split{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 9px;
+    width: 75%;
+    height: fit-content;
+    box-sizing: border-box;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication .sub-publication div.pub-controls{
+    width: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+   
+    margin-right: 15px;
+    position: relative;
+    font-family: system-ui, -apple-system;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication .sub-publication .pub-controls div.control-options{
+    width: fit-content;
+    height: fit-content;
+    padding: 6px;
+    position: absolute;
+    font-size: xx-small;
+    background-color: #ffedcc;
+    border-radius: 5px;
+    left: -70%;
+}
+.m-dashboard-main .bookmark .roll-down{
+    top: calc(100% + 4px);
+    opacity: 1;
+    transition: top 160ms ease-out, opacity 100ms ease-out;
+}
+.m-dashboard-main .bookmark .roll-up {
+    top: calc(100% - 10px);
+    opacity: 0;
+    transition: top 150ms ease-out, opacity 100ms ease-out;
+    pointer-events: none;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication .sub-publication .pub-controls p{
+    padding:1px 5px;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication .sub-publication .pub-controls div.control-options p{
+    padding: 3px;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication p.publications-date {
+    font-size: 10px;
+    font-family: Noto Sans;
+    width: 100%;
+    height: fit-content;
+    padding: 2px 2px 0px;
+    margin-left: 3px;
+    color: #333333;
+    font-weight: 500;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication p.publications-date span.key{
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 4px;
+}
+.m-dashboard-main .bookmark .publications-wrapper .publication div.title {
+    font-size: 15px;
     font-weight: 700;
     width: 100%;
     white-space: nowrap;
     overflow-x:hidden ;
     text-overflow: ellipsis;
 }
-.m-dashboard-main .bookmark .publications-wrapper .publications p.publications-date {
-    font-size: 11px;
+.m-dashboard-main .bookmark .publications-wrapper .publication p.pub-author {
+    width: fit-content;
+    height: fit-content;
+    color: slateblue;
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 2px;
 }
-
-.m-dashboard-main .bookmark .publications-wrapper div.publications .publications-image{
-    width: 10%;
+.m-dashboard-main .bookmark .publications-wrapper div.publication .publications-image{
+    width: 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.m-dashboard-main  .bookmark .publications-wrapper div.publications .publications-image img{
+.m-dashboard-main  .bookmark .publications-wrapper div.publication .publications-image img{
     width: 100%;
     aspect-ratio: 1.1;
     border-radius: 7px;
-    /* height: 100%; */
 }
 
 

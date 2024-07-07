@@ -24,6 +24,11 @@ const MyProfile = () => {
                         <button className="edit-profile">Edit profile</button>
                         <button className="subscriptions">View following</button>
                     </p>
+                    <div className="publication-links">
+                        <div className="publication1">Publication</div>
+                        <div className="publication1">Publication</div>
+                        <div className="publication1">Publication</div>
+                    </div>
                 </div>
                 :
                 <div>

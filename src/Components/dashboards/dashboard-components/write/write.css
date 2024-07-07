@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .m-dashboard-main .write div.write-header {
     width: 90vw;
@@ -30,9 +32,9 @@
     margin-right: 4px;
 }
 .m-dashboard-main .write .write-header >  p.active{
-    color: white;
+    color:#000000;
     padding: 5px 9px;
-    background-color:rgb(1, 190, 194);
+    background-color:darkturquoise;
     /* background-color: orange; */
     width: fit-content;
     height: fit-content;
@@ -55,7 +57,7 @@
 .m-dashboard-main .write .new-setup {
     font-family: Inter;
     margin: 5px 15px 10px;
-    width: 92vw;
+    width: 93vw;
     box-sizing: border-box;
 }
 
@@ -144,7 +146,7 @@
 
 
 .m-dashboard-main .write .new-setup div.new-publication{
-    background-color:#f3f3f3;
+    background-color:#ededed;
     border-radius: 9px;
     width: 97%;
     height: fit-content;
@@ -154,9 +156,10 @@
     box-sizing: border-box;
 }
 .m-dashboard-main .write .new-setup div.new-publication p.title{
-    font-size: xx-small;
+    font-size: 14px;
     margin-bottom: 10px;
     padding: 2px;
+    margin-left:2px;
 }
 .m-dashboard-main .write .new-setup div.new-publication button.add-pub{
     color: rgb(36, 36, 36);
@@ -170,6 +173,7 @@
     font-family:Inter;
     border: none;
     margin-bottom: 10px;
+    margin-left:2px;
 }
 .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication{
     background-color:#ffffff;
@@ -179,6 +183,111 @@
     padding: 10px;
     box-sizing: border-box;
 }
+.m-dashboard-main .write .new-setup div.new-publication div.no-new-pub{
+    background-color:#ffffff;
+    border-radius: 9px;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    z-index: -2;
+    pointer-events: none;
+}
+            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication label{
+                font-size: 14px;
+                margin-left: 2px;
+            }
+            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication span{
+                font-size: 14px;
+                margin-left: 2px;
+            }
+            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication button{
+                font-size: 13px;
+                border: none;
+                padding: 4px 10px;
+                background-color: slateblue;
+                color: white;
+                border-radius: 6px;
+                margin: 3px 0px;
+            }
+            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication textarea{
+                border: none;
+                outline: none;
+                background-color: #ededed;
+                border-radius: 9px;
+                padding: 9px;
+                width: 75%;
+            }
+            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication input{
+                border: none;
+                outline: none;
+                background-color: #ededed;
+                border-radius: 8px;
+                padding:5px 9px;
+                width: 75%;
+                margin-top: 2px;
+            }
+            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication img{
+                border-radius: 8px;
+            }
+
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.add-logo{
+    border-radius: 8px;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication  div.add-logo p{
+   display: flex;
+   gap: 15px;
+   align-items: center;
+   justify-content: flex-start;
+   margin: 15px 0px;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication p.about-publication{
+   display: flex;
+   gap: 25px;
+   align-items: center;
+   justify-content: flex-start;
+   margin: 10px 0px;
+   font-size: 14px;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.pick-niche{
+    font-size: 14px;
+    margin: 10px 0px;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.pick-niche select{
+    border-radius:4px ;
+    padding:2px 5px;
+    margin-left: 25px;
+    outline: none;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.pick-niche select option{
+    border-radius:4px ;
+    padding:2px 5px;
+    margin-left: 25px;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-size: smaller;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.collab{
+    font-size: 14px;
+    margin: 13px 0px;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication p.add-emails{
+   display: flex;
+   gap: 25px;
+   align-items: center;
+   justify-content: flex-start;
+   margin: 10px 0px;
+   font-size: 14px;
+}
+.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication button.submit{
+    font-size: 14px;
+    border: none;
+    padding: 6px 10px;
+    background-color: orange;
+    color: #000000;
+    border-radius: 6px;
+    margin: 10px 0px 5px;
+}
 
 
 
@@ -189,6 +298,63 @@
 
 
 
+
+
+
+
+
+.m-dashboard-main .write .new-setup div.new-article{
+    background-color:#ededed;
+    border-radius: 9px;
+    width: 97%;
+    height: fit-content;
+    padding: 10px;
+    box-shadow: 0px 1px 4px #cecece;
+    margin:  20px auto 15px;
+    box-sizing: border-box;
+}
+.m-dashboard-main .write .new-setup div.new-article p.title{
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 2px;
+    margin-left:3px;
+}
+.m-dashboard-main .write .new-setup div.new-article div.article-type{
+    background-color:#ffffff;
+    border-radius: 9px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.m-dashboard-main .write .new-setup div.new-article button.write{
+    font-size: 14px;
+    border: none;
+    padding: 6px 10px;
+    background-color: orange;
+    color: #000000;
+    border-radius: 6px;
+    margin: 10px 0px 5px;
+}
+.m-dashboard-main .write .new-setup div.new-article div.article-type input{
+    border: 1px solid gray;
+    outline: none;
+    background-color: #ededed;
+    border-radius: 8px;
+    padding:5px 9px;
+    margin: 2px 8px;
+}
+.m-dashboard-main .write .new-setup div.new-article div.article-type span.type{
+    font-size: 14px;
+    margin-left: 2px;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: slateblue;
+}
+.m-dashboard-main .write .new-setup div.new-article div.article-type label{
+    font-size: 16px;
+    margin-left: 2px;
+}
 
 
 

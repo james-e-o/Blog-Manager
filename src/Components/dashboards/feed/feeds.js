@@ -120,25 +120,27 @@ const Feeds = () => {
     //  MOBILE
     <div className="feeds">
       <p className="sponsored">Sponsored</p>
-      <div className="followed-publications">
-        <div className="publication-wrap">
-          <div className="publication">
-            <figure><img src={CL_logo} alt="" /></figure>
-            <p className="pub-title"></p>
-            <p className="pub-author"></p>
-            <div className="pub-foot"></div>
-          </div>
-          <div className="publication">
-            
-          </div>
-          <div className="publication">
-            
-          </div>
-          <div className="publication">
-            
-          </div>
-          <div className="publication">
-            
+      <div className="adverts">
+        <div className="adverts-scroll">
+          <div className="adverts-wrap">
+            <div className="advert">
+              <figure><img src={CL_logo} alt="" /></figure>
+              <p className="pub-title"></p>
+              <p className="pub-author"></p>
+              <div className="pub-foot"></div>
+            </div>
+            <div className="advert">
+              
+            </div>
+            <div className="advert">
+              
+            </div>
+            <div className="advert">
+              
+            </div>
+            <div className="advert">
+              
+            </div>
           </div>
         </div>
       </div>

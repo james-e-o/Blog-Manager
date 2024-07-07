@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
+import logoImg from "../../feed/gemini-profile.jpeg"
+import { Link } from 'react-router-dom'
 
 const WriteProp = () => {
     const [furtherEdit, setFurtherEdit] = useState(false)
+    const [newpub, setNewpub] = useState(false)
+    const [parameters, setParameters] = useState({
+        type:"",
+    })
     const [logoUrl, setLogoUrl] = useState("")
     const [collaborators, setCollaborators] = useState([])
     function trigger (){
@@ -9,36 +15,35 @@ const WriteProp = () => {
         input.click()
     }
   return (
-    <>
-    {furtherEdit?
-    <div className="further-edit">
-        <p className="control" onClick={()=>setFurtherEdit(false)}>{cancel}</p>
-        further
-    </div> :
+
     <div className="new-setup">
         <div className="new-publication">
             <p className="title">Create new publication</p>
-            <button className="add-pub">Add Publication</button>
-            <div className="set-new-publication">
+            <button onClick={()=>setNewpub(!newpub)} className="add-pub">Add Publication</button>
+            <div className={newpub?'set-new-publication': 'no-new-pub'}>
                 <label>Publication name</label><br />
                 <input type="text" /><br />
                 <label>Description</label><br />
                 <textarea id=""></textarea>
-                <p className="add-logo">
-                    <label>Add logo</label><br />
-                    <input hidden type="file" id="pub-logo" onChange={(e)=>{
+                <div className="add-logo">
+                    <p>
+                        <label>Add logo</label><br />
+                        <img src={logoUrl?logoUrl:logoImg} width={70} height={70} />
+                    </p>
+                    <p>
+                        <input hidden type="file" id="pub-logo" onChange={(e)=>{
                          let file = e.target.files[0]
                          let reader = new FileReader()
                          reader.onload=()=>{
                            setLogoUrl(reader.result)
                          }
                          file?reader.readAsDataURL(file):""
-                    }} />
-                    <button className="insert-logo" onClick={trigger}>Insert</button><br />
-                    <img src={logoUrl?logoUrl:""} width={logoUrl?70:0} height={logoUrl?70:0} />
-                    <span onClick={()=> setLogoUrl("")} >remove</span>
-                </p>
-                <p className="about publication"><span>About publication</span> <button onClick={()=>setFurtherEdit(true)}>edit</button></p>
+                        }} />
+                        <button className="insert-logo" onClick={trigger}>Insert</button><br />
+                        <button onClick={()=> setLogoUrl("")} >remove</button>
+                    </p>
+                </div>
+                <p className="about-publication"><span>About publication</span> <button onClick={()=>setFurtherEdit(true)}>edit</button></p>
                 <div className="pick-niche">Select your niche 
                     <select name="" id="">
                         <option value="">tech</option>
@@ -47,7 +52,8 @@ const WriteProp = () => {
                         <option value="">climate</option>
                     </select>
                 </div>
-                <div className="collab">Add Collaborators
+                <div className="collab">
+                    <span>Add Collaborators</span>
                     <input type="text" onChange={(e)=>{setCollaborators([...collaborators, e.target.value]), console.log(collaborators)}} id="collab" />
                     <p>{ collaborators.map(user => (
                         <span>{user}, </span>
@@ -63,22 +69,22 @@ const WriteProp = () => {
                     <input type="text" />
                     <span className="skriptn">.skriptn.com</span>
                 </p>
-                <button className="submit">Submit</button>
+                <button className="submit">Create</button>
             </div>
         </div>
-        <div className="new-publication">
-            <p>New Article</p>
-            <p className="article-type">
-                <span>Type</span><br />
+        <div className="new-article">
+            <p className='title'>Write new article</p>
+            <div className="article-type">
+                <span className='type'>Type</span><br />
                 <label for="post">Stand alone post </label>
-                <input type="radio" id="post" name='type' value="HTML"/><br />
+                <input onChange={()=>setParameters( { type:"post"})} type="radio" id="post" name='type' value="HTML"/><br />
                 <label for="post">Add to publication </label>
-                <input type="radio" id="post" name='type' value="HTML"/>
-            </p>
+                <input onChange={()=>setParameters({ type:"pub"})} type="radio" id="post" name='type' value="HTML"/>
+            </div>
+            <Link to={parameters.type=null?"":"/new-content"} ><button className="write">Write</button></Link>
         </div>
     </div>
-    }
-    </>
+
   )
 }
 

@@ -61,7 +61,6 @@ const LoggedIn = () => {
   const location = useLocation();
   useEffect(()=>{
     setProfileState(false)
-    const main = document.querySelector('main.dmain')
 
   },[location])
   return (
