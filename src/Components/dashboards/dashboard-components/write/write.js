@@ -11,9 +11,9 @@ const Write = () => {
   return (
     <div className='write'>
         <div className="write-header">
-            <p onClick={()=>setActiveMenu('new')} className={activeMenu==='new'? 'active':""}>New</p>
-            <p onClick={()=>setActiveMenu('draft')} className={activeMenu==='draft'? 'active':""}>Drafts</p>
-            <p onClick={()=>setActiveMenu('published')} className={activeMenu==='published'? 'active':""}>Published articles</p>
+            <p onClick={()=>setActiveMenu('new')} className={activeMenu==='new'? 'active':""}><span>New</span></p>
+            <p onClick={()=>setActiveMenu('draft')} className={activeMenu==='draft'? 'active':""}><span>Drafts</span></p>
+            <p onClick={()=>setActiveMenu('published')} className={activeMenu==='published'? 'active':""}><span>Published articles</span></p>
         </div>
         <div className="write-content">
             {

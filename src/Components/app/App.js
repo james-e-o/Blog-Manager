@@ -81,7 +81,7 @@ const router = createBrowserRouter([
           ]
         },
         {
-          path:"new-content",
+          path:"new-content/post/:id",
           element:<NewContent/>
         },
         {

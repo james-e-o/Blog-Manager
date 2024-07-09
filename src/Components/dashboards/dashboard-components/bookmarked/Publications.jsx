@@ -24,6 +24,7 @@ const Publications = () => {
             <p className="pub-author"><span style={{color:'#333333'}}>from </span>  {'CATEGORY PIRATES'}</p>
           </div>
         </div>
+
         <div className="pub-controls">
           <p onClick={()=>setPubControl(!pubControl)} className="cont-button">...</p>
           <div className={!pubControl?"control-options      roll-up":"control-options roll-down"}>

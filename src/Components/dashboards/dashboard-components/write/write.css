@@ -8,10 +8,11 @@
     align-items: center;
     overflow-x: hidden;
     overflow-y: scroll;
+    box-sizing: border-box;
 }
 .m-dashboard-main .write div.write-header {
     width: 90vw;
-    height: max-content;
+    height:30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -30,35 +31,49 @@
     font-family: Inter;
     border: 1px solid #dbdbdb;
     margin-right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .m-dashboard-main .write .write-header >  p.active{
     color:#000000;
     padding: 5px 9px;
     background-color:darkturquoise;
-    /* background-color: orange; */
+    margin-right: 4px;
     width: fit-content;
     height: fit-content;
     font-size: 14px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgb(182, 182, 182);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.m-dashboard-main .write .draft-content {
+.m-dashboard-main .write .write-content {
+  height: calc(100% - 60px);
+}
+.m-dashboard-main .write .draft-wrap {
     font-family: Inter;
     margin: 5px 15px 10px;
     width: 92vw;
     box-sizing: border-box;
+    height: 100%;
 }
 .m-dashboard-main .write .published-content {
     font-family: Inter;
     margin: 5px 15px 10px;
     width: 92vw;
     box-sizing: border-box;
+    height: 100%;
 }
 .m-dashboard-main .write .new-setup {
     font-family: Inter;
     margin: 5px 15px 10px;
     width: 93vw;
     box-sizing: border-box;
+    height: 100%;
+    position: relative;
+
 }
 
 
@@ -71,30 +86,91 @@
 
 
 
+/* DRAFTS */
+/* ====== */
 
 
-
-.m-dashboard-main .write .draft-content div.draft {
-    background-color:#f9f9f9;
+.m-dashboard-main .write .draft-wrap div.draft {
+    background-color:#ededed;
     border-radius: 9px;
     width: 100%;
     height: fit-content;
     padding: 10px;
-    box-shadow: 0px 1px 4px #dddddd;
+    box-shadow: 0px 1px 4px #cecece;
     margin-bottom:  15px;
     box-sizing: border-box;
 
 }
-.m-dashboard-main .write .draft-content .draft div.title {
-    font-size: 14px;
+.m-dashboard-main .write .draft-wrap .draft div.title {
+    font-size: 16px;
     font-weight: 700;
     width: 100%;
     white-space: nowrap;
     overflow-x:hidden ;
     text-overflow: ellipsis;
+    font-family: Bitter;
 }
-.m-dashboard-main .write .draft-content .draft p.draft-date {
+.m-dashboard-main .write .draft-wrap .draft p.draft-date {
+    font-size: 13px;
+}
+.m-dashboard-main .write .draft-wrap .draft p.draft-type {
     font-size: 11px;
+    background-color: slateblue;
+    font-style: italic;
+    border-radius: 6px;
+    padding: 2px 5px;
+    display: inline-block;
+    color: white;
+    margin: 2px 0px 0px;
+}
+.m-dashboard-main .write .draft-wrap .draft div.draft-content{
+    margin-top: 8px;
+    background-color:white;
+    border-radius: 5px;
+    font-size: 12px;
+    max-width: 55%;
+    padding: 6px 10px;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content p.drop-list {
+    margin: 3px 0px;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content p.drop-list span.key{
+    font-style: italic;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content p.drop-list span.value{
+    font-weight: bold;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content p.share-draft{
+    font-weight: bold;
+    font-style: italic;
+    margin: 5px 0px;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content p.controls{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content .controls button.edit{
+    background-color: darkturquoise;
+    border-radius: 4px;
+    border: none;
+    padding: 3px 8px;
+      font-size: 11px;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content .controls button.duplicate{
+    background-color: rgb(170, 170, 170);
+    border-radius: 4px;
+    border: none;
+    padding: 2px 8px;
+    color: white;
+      font-size: 11px;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content .controls button.delete{
+    background-color: orange;
+    border-radius: 4px;
+    border: none;
+    padding: 2px 8px;
+      font-size: 11px;
 }
 
 
@@ -108,6 +184,12 @@
 
 
 
+
+
+
+
+/* PUBLISHED POSTS */
+/* =============== */
 
 
 .m-dashboard-main .write .published-content div.published {
@@ -148,12 +230,14 @@
 .m-dashboard-main .write .new-setup div.new-publication{
     background-color:#ededed;
     border-radius: 9px;
-    width: 97%;
+    width: 100%;
     height: fit-content;
     padding: 10px;
     box-shadow: 0px 1px 4px #cecece;
-    margin:  20px auto 15px;
+    margin:  0px auto ;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 .m-dashboard-main .write .new-setup div.new-publication p.title{
     font-size: 14px;
@@ -161,46 +245,44 @@
     padding: 2px;
     margin-left:2px;
 }
+.m-dashboard-main .write .new-setup div.new-publication p.pub-wrap{
+    display: flex ;
+    justify-content: space-between;
+    width: 100%;
+}
 .m-dashboard-main .write .new-setup div.new-publication button.add-pub{
-    color: rgb(36, 36, 36);
+    color: #22157a;
     padding: 10px;
     background-color:rgb(255, 180, 40);
-    width: fit-content;
+    width: 48%;
     height: fit-content;
     font-size: 14px;
     border-radius:8px ;
-    /* box-shadow: 0px 0px 10px 1px rgb(182, 182, 182); */
     font-family:Inter;
     border: none;
     margin-bottom: 10px;
     margin-left:2px;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication{
+.m-dashboard-main .write .new-setup div.new-publication form.set-new-publication{
     background-color:#ffffff;
     border-radius: 9px;
-    width: 100%;
-    height: fit-content;
+    width: 99%;
+    height: 30%;
     padding: 10px;
     box-sizing: border-box;
+    flex-grow: 1;
+    overflow-y: scroll;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.no-new-pub{
-    background-color:#ffffff;
-    border-radius: 9px;
-    width: 100%;
-    height: 0;
-    opacity: 0;
-    z-index: -2;
-    pointer-events: none;
-}
-            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication label{
+
+            .m-dashboard-main .write .new-setup div.new-publication .set-new-publication label{
                 font-size: 14px;
                 margin-left: 2px;
             }
-            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication span{
+            .m-dashboard-main .write .new-setup div.new-publication .set-new-publication span{
                 font-size: 14px;
                 margin-left: 2px;
             }
-            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication button{
+            .m-dashboard-main .write .new-setup div.new-publication .set-new-publication button{
                 font-size: 13px;
                 border: none;
                 padding: 4px 10px;
@@ -209,7 +291,7 @@
                 border-radius: 6px;
                 margin: 3px 0px;
             }
-            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication textarea{
+            .m-dashboard-main .write .new-setup div.new-publication .set-new-publication textarea{
                 border: none;
                 outline: none;
                 background-color: #ededed;
@@ -217,7 +299,7 @@
                 padding: 9px;
                 width: 75%;
             }
-            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication input{
+            .m-dashboard-main .write .new-setup div.new-publication .set-new-publication input{
                 border: none;
                 outline: none;
                 background-color: #ededed;
@@ -226,21 +308,21 @@
                 width: 75%;
                 margin-top: 2px;
             }
-            .m-dashboard-main .write .new-setup div.new-publication div.set-new-publication img{
+            .m-dashboard-main .write .new-setup div.new-publication .set-new-publication img{
                 border-radius: 8px;
             }
 
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.add-logo{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication div.add-logo{
     border-radius: 8px;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication  div.add-logo p{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication  div.add-logo p{
    display: flex;
    gap: 15px;
    align-items: center;
    justify-content: flex-start;
    margin: 15px 0px;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication p.about-publication{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication p.about-publication{
    display: flex;
    gap: 25px;
    align-items: center;
@@ -248,17 +330,17 @@
    margin: 10px 0px;
    font-size: 14px;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.pick-niche{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication div.pick-niche{
     font-size: 14px;
     margin: 10px 0px;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.pick-niche select{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication div.pick-niche select{
     border-radius:4px ;
     padding:2px 5px;
     margin-left: 25px;
     outline: none;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.pick-niche select option{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication div.pick-niche select option{
     border-radius:4px ;
     padding:2px 5px;
     margin-left: 25px;
@@ -267,11 +349,11 @@
     border: none;
     font-size: smaller;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication div.collab{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication div.collab{
     font-size: 14px;
     margin: 13px 0px;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication p.add-emails{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication p.add-emails{
    display: flex;
    gap: 25px;
    align-items: center;
@@ -279,12 +361,12 @@
    margin: 10px 0px;
    font-size: 14px;
 }
-.m-dashboard-main .write .new-setup div.new-publication div.set-new-publication button.submit{
+.m-dashboard-main .write .new-setup div.new-publication .set-new-publication button.submit{
     font-size: 14px;
     border: none;
     padding: 6px 10px;
     background-color: orange;
-    color: #000000;
+    color: #22157a;
     border-radius: 6px;
     margin: 10px 0px 5px;
 }
@@ -303,40 +385,36 @@
 
 
 
-.m-dashboard-main .write .new-setup div.new-article{
-    background-color:#ededed;
+.m-dashboard-main .write .new-setup form.new-article{
+    background-color:white;
     border-radius: 9px;
-    width: 97%;
+    width: 99%;
     height: fit-content;
     padding: 10px;
     box-shadow: 0px 1px 4px #cecece;
-    margin:  20px auto 15px;
+    margin:  0px auto ;
     box-sizing: border-box;
 }
-.m-dashboard-main .write .new-setup div.new-article p.title{
+.m-dashboard-main .write .new-setup form.new-article p.title{
     font-size: 14px;
     margin-bottom: 10px;
     padding: 2px;
-    margin-left:3px;
+    margin-left: 0px;
 }
-.m-dashboard-main .write .new-setup div.new-article div.article-type{
-    background-color:#ffffff;
-    border-radius: 9px;
+.m-dashboard-main .write .new-setup .new-article div.article-type{
     width: 100%;
     height: fit-content;
-    padding: 10px;
-    box-sizing: border-box;
 }
-.m-dashboard-main .write .new-setup div.new-article button.write{
+.m-dashboard-main .write .new-setup .new-article button.write{
     font-size: 14px;
     border: none;
     padding: 6px 10px;
     background-color: orange;
-    color: #000000;
+    color: #22157a;
     border-radius: 6px;
     margin: 10px 0px 5px;
 }
-.m-dashboard-main .write .new-setup div.new-article div.article-type input{
+.m-dashboard-main .write .new-setup .new-article div.article-type input{
     border: 1px solid gray;
     outline: none;
     background-color: #ededed;
@@ -344,17 +422,58 @@
     padding:5px 9px;
     margin: 2px 8px;
 }
-.m-dashboard-main .write .new-setup div.new-article div.article-type span.type{
+.m-dashboard-main .write .new-setup .new-article div.article-type span.type{
     font-size: 14px;
     margin-left: 2px;
     margin-bottom: 8px;
     display: inline-block;
     color: slateblue;
 }
-.m-dashboard-main .write .new-setup div.new-article div.article-type label{
-    font-size: 16px;
-    margin-left: 2px;
+.m-dashboard-main .write .new-setup .new-article .article-type p.post-type{
+    font-size: 15px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
+.m-dashboard-main .write .new-setup .new-article .article-type p.post-type svg{
+    margin-left: 7px;
+}
+.m-dashboard-main .write .new-setup .new-article .article-type p.post-type input{
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 1px solid darkorange;
+    transition: 0.15s all linear;
+    position: relative;
+    background-color: white;
+}
+.m-dashboard-main .write .new-setup .new-article .article-type p.post-type input:checked{
+   background-color: slateblue;
+   border: 1px solid darkorange;
+}
+.m-dashboard-main .write .new-setup .new-article .article-type div.choose-pub{
+    font-size: 15px;
+    margin-left: 14px;
+    margin-top: 10px;
+}
+.m-dashboard-main .write .new-setup .new-article .article-type .choose-pub p.pubs{
+    margin: 4px;
+    padding: 2px;
+}
+                .m-dashboard-main .write .new-setup .new-article .article-type p.pubs input{
+                    appearance: none;
+                    width: 12px;
+                    height: 12px;
+                    border: 1px solid darkturquoise;
+                    transition: 0.15s all linear;
+                    position: relative;
+                    background-color: white;
+                }
+                .m-dashboard-main .write .new-setup .new-article .article-type p.pubs input:checked{
+                    background-color: slateblue;
+                    border: 1px solid darkturquoise;
+                }
 
 
 
