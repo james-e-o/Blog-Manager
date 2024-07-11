@@ -1,6 +1,8 @@
 import React, { useEffect,useRef, useState, useCallback, createContext, useContext } from 'react'
 import "./new-content.css"
 import "./editor.css"
+import { PostSettings } from './dialog-template/dialog'
+
 import {Menu_icon, Plus } from '../../../svg'
 import ParagraphI from "../../../contents/images/icons/para.png"
 import Pic from "../../../contents/images/icons/images.png"
@@ -40,29 +42,6 @@ const NewContent = () => {
   const [scroll, setScroll]= useState('')
   const scrollOffset =useRef(window.scrollY)
 
-  useEffect(()=>{
-    // const menuDrop = document.querySelector("div.menu-slide")
-    // const EditorWrap = document.getElementById("editor-wrap")
-    // document.addEventListener('click', (e)=>{  
-    //   if(!e.target.closest("div.post-wrap") && menuDrop.classList.contains("roll-down")){
-    //     setActiveMenu(false)
-    //     menuDrop.classList.replace("roll-down","roll-up")
-    //   }
-    // })
-
-    // window.addEventListener('scroll',(e)=>{
-    //   scrollOffset.current=window.scrollY
-    // })
-
-    // if (activeMenu){
-    //   document.body.style.position = 'fixed'
-    //   document.body.style.top = `-${scrollOffset.current}px`
-    //  }else{
-    //   document.body.style.position = ''
-    //   window.scrollTo(0, scroll);
-    //  }
-    //  setScroll(scrollOffset.current)
-  },[activeMenu])
 
   return (
     <div className='mobile-new'>
@@ -72,10 +51,10 @@ const NewContent = () => {
             </div>
             <nav >
               <button id='preview'><span>Preview</span></button>
-              <div className='post-wrap' onClick={(e)=>{e.preventDefault()}} >
+              <div className='post-wrap' >
                 <button id='progress' onClick={(e)=>{e.preventDefault(), setActiveMenu(!activeMenu)}}><img className={!activeMenu?"not-rotated":"rotated"} src={Post} height={12} width={12}/></button>
                 <div  className={!activeMenu?"menu-slide roll-up":"menu-slide roll-down"}>
-                  Hi this is the menu bar
+                  <PostSettings />
                 </div>
               </div>     
             </nav>
@@ -387,20 +366,3 @@ const menu = <svg data-name="Layer 1" height="24" width="24" fill='orange' id="L
 
 
 
-
-// <div className="form-footer">
-// <div className="hashtag-niche-wrap">
-//   <div className="add-categories">
-//     <p className="category"><span>newpost</span></p>
-//     <p className="category"><span>webdev</span></p>
-//     <p className="category"><span>newpost</span></p>
-//     <button id='hashtag'><Plus/></button>
-//   </div>
-//   <div className="add-hashtags">
-//     <p className="hashtag">#newpost</p>
-//     <p className="hashtag">#webdev</p>
-//     <p className="hashtag">#newpost</p>
-//     <button id='hashtag'><Plus/></button>
-//   </div>
-// </div>
-// </div>

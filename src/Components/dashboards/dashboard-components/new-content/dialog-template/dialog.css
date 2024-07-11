@@ -58,3 +58,76 @@ div.dialog-on{
     width: 90%;
     border-radius: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mobile-new .post-wrap .post-setup{
+    width: 100%;
+    position: relative;
+}
+.mobile-new .post-wrap .post-setup p.title{
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 10px;
+} 
+.mobile-new .post-wrap .post-setup fieldset{
+    margin: 8px 5px;
+    border-radius: 7px;
+    padding: 7px;
+    border: 2px solid #b6b6b6;
+    font-size: 14px;
+}
+.mobile-new .post-wrap .post-setup fieldset legend{
+    margin: 0px 15px;
+    padding: 2px 5px;
+    font-size: 13px;
+
+}
+.mobile-new .post-wrap .post-setup fieldset p.input-wrap{
+    margin: 0px 0px 5px;
+    padding: 2px;
+}
+.mobile-new .post-wrap .post-setup  p.tag-title{
+    margin: 8px 5px;
+    font-size: 13px;
+}
+.mobile-new .post-wrap .post-setup  div.add-tag{
+    margin: 8px 5px;
+    padding: 9px;
+    box-shadow: 0px 0px 3px rgb(135, 135, 135);
+}
+.mobile-new .post-wrap .post-setup .add-tag div.added{
+    display: inline-block;
+}
+.mobile-new .post-wrap .post-setup .add-tag .added p.tag{
+    display: inline-block;
+    background-color: #e8e8e8;
+    width: fit-content;
+    padding: 2px 5px;
+    margin-right: 7px;
+    font-size: 13px;
+    border-radius: 3px;
+    color: black;
+    border: 1px solid rgb(220, 220, 220);
+}
+.mobile-new .post-wrap .post-setup .add-tag input{
+    outline: none;
+    size: auto;
+    border: none;
+    font-size: 12px;
+    width: 40%;
+}

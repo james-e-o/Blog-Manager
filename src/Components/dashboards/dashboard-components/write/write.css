@@ -385,7 +385,7 @@
 
 
 
-.m-dashboard-main .write .new-setup form.new-article{
+.m-dashboard-main .write .new-setup div.new-article{
     background-color:white;
     border-radius: 9px;
     width: 99%;
@@ -395,7 +395,7 @@
     margin:  0px auto ;
     box-sizing: border-box;
 }
-.m-dashboard-main .write .new-setup form.new-article p.title{
+.m-dashboard-main .write .new-setup div.new-article p.title{
     font-size: 14px;
     margin-bottom: 10px;
     padding: 2px;

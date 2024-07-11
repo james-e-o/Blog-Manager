@@ -211,6 +211,7 @@ div.content-wrap {
     resize: none;
     font-size: 14px;
     box-sizing: border-box; 
+    z-index: 11000;
 }
 
 u {

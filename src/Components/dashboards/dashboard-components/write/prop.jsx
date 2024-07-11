@@ -17,9 +17,7 @@ const WriteProp = () => {
     useEffect(()=>{
         setChoosePub(false)
     },[newpub])
-    useEffect(()=>{
-    
-    })
+ 
   return (
 
     <div className="new-setup">
@@ -84,16 +82,16 @@ const WriteProp = () => {
                 <button className="submit">Create</button>
             </form>
                 : newpub === 'newpost' ?
-            <form className="new-article">
+            <div className="new-article">
                 <p className='title'>Write new article</p>
                 <div className="article-type">
                     <span className='type'>Choose type</span>
                     <p className='post-type' onClick={(e)=>{setChoosePub(false)}}>
-                        <label for="post">Stand alone post </label>
-                        <input checked={!choosePub? true:false} type="radio" name='post-type' value="single-post"/>
+                        <label htmlFor="post">Stand alone post </label>
+                        <input id="post" readOnly checked={!choosePub? true:false} type="radio" name='post-type' value="single-post"/>
                     </p>
                     <p className='post-type' onClick={(e)=>{setChoosePub(true)}}>
-                        <label for="post">Add to publication </ label>
+                        <label >Add to publication </ label>
 
                         <span >{choosePub ? pullarrow : droparrow}</span>
                     </p>
@@ -101,9 +99,9 @@ const WriteProp = () => {
                     {choosePub?
                     <div className='choose-pub'>
                     {pubs.map(pub => (
-                        <p onClick={(e)=>{setChoosePub(pub.id)}}className="pubs">
+                        <p key={pub.id} onClick={(e)=>{setChoosePub(pub.id)}}className="pubs">
                             <span>{pub.name}</span>
-                            <input checked={choosePub === pub.id? true:false}type="radio" name='pub' value="pub-1" />
+                            <input readOnly checked={choosePub === pub.id? true:false}type="radio" name='pub' value="pub-1" />
                         </p>
                     ))}
                     </div>
@@ -112,7 +110,7 @@ const WriteProp = () => {
                     }
                 </div>
                 <Link to={"/new-content/post/1234"} ><button className="write">Write</button></Link>
-            </form>
+            </div>
                 :
                 ""
             }
