@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import "./dialog.css"
 import { imageProvider } from '../new-content'
 import { useEditor, EditorProvider, FloatingMenu, BubbleMenu, useCurrentEditor} from '@tiptap/react'
+import logoImg from "../../../feed/gemini-profile.jpeg"
 
 const Dialog = ({status, alterStatus}) => {
   const [imageUrl, setImageUrl] = useState("")
@@ -46,6 +47,11 @@ export const PostSettings = () => {
   const [preferences, setPreferences] = useState({
 
   })
+  const [contentImg, setContentImg] = useState("")
+  function trigger (){
+    const input = document.getElementById('pub-logo')
+    input.click()
+  }
 
   return (
     <div className="post-setup">
@@ -73,18 +79,62 @@ export const PostSettings = () => {
             <input type="radio" id='nobody' name="comment" value="subscribers" />
           </p>    
         </fieldset>
-        <p className="tag-title">Add tags</p>
-        <div className="add-tag">
+        <fieldset>
+          <legend>Tags</legend>
             <div className="added">
               {tags.map(tag => (
                 <p className="tag">{tag}</p>
               ))}
             </div>
-            <input type="text"/>
-            <div className="tag-search"></div>
-        </div>  
+            <input id='tags' type="text" placeholder='add tags...'/>
+            {/* <div className="tag-search active"> hello</div> */}
+        </fieldset>
+        <fieldset>
+          <legend>Preview</legend>
+          <div className="prev prev-title">
+            <p className="mini-title">Title :</p>
+            <textarea style={{fontWeight:"bold"}} name="" id="" rows="2"></textarea>
+          </div>
+          <div className="prev prev-subtext">
+            <p className="mini-title">Sub-<br /> text :</p>
+            <textarea style={{fontSize:"12px"}} name="" id="" rows="3"></textarea>
+          </div>
+          <div className="prev prev-image">
+            <p className="mini-title">Content <br /> image :</p>
+            <div className="add-img">
+                <img src={contentImg?contentImg:logoImg} width={120} height={70} />        
+                <input hidden type="file" id="pub-logo" onChange={(e)=>{
+                  let file = e.target.files[0]
+                  let reader = new FileReader()
+                  reader.onload=()=>{
+                    setContentImg(reader.result)
+                  }
+                  file?reader.readAsDataURL(file):""
+                }} />
+                <p className='imgnav'>
+                  <button className="insert-logo" onClick={trigger}>Add</button>
+                  <button onClick={()=> setContentImg("")} >remove</button>
+                </p>
+                </div>
+          </div>
+        
+        </fieldset>
+        <fieldset>
+          <legend>Preview link</legend>
+          <p className= "prev-link">http://localhost:3002/new-content/post/1234</p>
+        </fieldset>
+        <div className="finalize">
+          <button className="insert-logo" >Save</button>
+          <div className="delete-wrap">
+            <p>
+              <input type="checkbox" name="" id="" />
+              <span style={{fontSize:"11px"}}>confirm delete</span>
+            </p>
+            <button className='delete' >Delete</button>
+          </div>
+        </div>
   </div>
   )
 }
 
-const tags = ['boys', 'girls', 'men', 'women']
+const tags = ['boys', 'girls','boys', 'girls']

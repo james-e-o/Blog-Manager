@@ -5,8 +5,32 @@ div.explore-page {
     width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    justify-content: flex-start;
+    overflow-y: scroll;
 }
-.explore-page div.search-link {
+
+
+
+
+
+.explore-page div.explore-heading{
+    position: relative;
+    opacity: 1;
+    margin-top: 0px;
+    transition: margin 300ms ease-in-out,opacity 300ms ease-in-out;
+}
+.explore-page div.explore-heading-tilt{
+    position: relative;
+    z-index: -5;
+    margin-top: -164px;
+    pointer-events: none;
+    opacity: 0;
+    transition: margin 300ms ease-in-out;
+    height: 164px;
+}
+.explore-page .explore-heading div.search-link {
     padding:5px;
     margin: 20px auto 10px;
     width:88vw;
@@ -24,53 +48,95 @@ div.explore-page {
     top: 2px;
     opacity: 1
 }
-.explore-page h5#tag-text{
-    width: 95%;
+.explore-page .explore-heading h5#tag-text{
+    width: 88vw;
     font-family: Noto Sans;
-    margin: 10px 0px 5px;
-    padding: 6px 12px;
+    margin: 15px 0px 5px;
+    padding: 6px;
     font-size: 15px;
     font-weight: 500;
     box-sizing: border-box;
 }
-.explore-page  div.explore-actions{
-    width: 95%;
-    box-sizing: border-box;
-    padding: 6px;
-    margin: 0px 4px;
+.explore-page .explore-heading div.explore-scroll{
+    width: 88vw;
+    margin: 4px 0px 20px 5px;
+    display: flex;
+    gap: 13px;
 }
-.explore-page .explore-actions div.explore-scroll{
-    width: max-content;
-    margin: 4px 0px 20px;
-}
-.explore-page .explore-actions div.explore-scroll > p{
+.explore-page .explore-heading div.explore-scroll > p{
     padding: 7px 9px;
     display: inline-block;
-    margin: 0px 6px;
     background-color:#f1f1f1;
     color:#474747;
     border-radius: 5px;
     font-size: 13px;
     transition:background-color 150ms ease-out,color 150ms ease-out;
 }
-.explore-page .explore-actions div.explore-scroll > p.active{
+.explore-page .explore-heading div.explore-scroll > p.active{
     padding: 7px 9px;
     display: inline-block;
-    margin: 0px 6px;
     background-color: slateblue;
     color:white;
     border-radius: 5px;
     font-size: 13px;
 }
+
+
+
+
+
+
+
+
+.explore-page  div.explore-actions{
+    width: 95%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 6px;
+    margin: 0px 4px;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+.explore-page  div.explore-actions p.tilt-back{
+    position: fixed;
+    margin: 20px;
+    z-index: 1;
+    bottom: 61px;
+    right: 6px;
+    transition:opacity  300ms ease-in-out;
+}
+.explore-page  div.explore-actions p.tilt-disabled{
+    position: fixed;
+    pointer-events: none;
+    margin: 20px;
+    opacity: 0;
+    bottom: 61px;
+    right: 6px;
+    transition:opacity  300ms ease-in-out;
+}
 .explore-page .explore-actions div.explore-content{
     margin: 5px -2px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
-.explore-page .explore-actions .explore-content div.e{}
-.explore-page .explore-actions .explore-content div.e p.choose-text{
+.explore-page .explore-actions .explore-content div.e{
+    width: 100%;
+}
+.explore-page .explore-actions .explore-content .e p.choose-text{
     padding: 10px 10px 20px;
     color: #b9b9b9;
-    font-size: 19px;
+    font-size: 21px;
     width: 50vw;
+}
+.explore-page  div.explore-actions .explore-content .e > div.tag-container, div.people-container, div.publication-container {
+    width: 95%;
+}
+.explore-page  div.explore-actions .explore-content .e div.tag-container div.tag{
+    
 }
 .explore-page  div.explore-actions .explore-content  div.e button.tag{
     display: inline-block;
@@ -82,4 +148,47 @@ div.explore-page {
     box-shadow: 0px 0px 1px #cdcdcd;
     color: #474747;;
 }
- 
+.explore-page .explore-actions .explore-content .e p.more{
+    padding: 10px;
+    font-size: 13px;
+    font-family: Noto Sans;
+    width: fit-content;
+    color: darkorange;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+    transition:opacity  300ms ease-in-out;
+}
+.explore-page  div.explore-actions p.more-disabled{
+    padding: 10px;
+    font-size: 13px;
+    font-family: Noto Sans;
+    width: fit-content;
+    color: darkorange;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    gap: 4px;
+    justify-content: center;
+    pointer-events: none;
+    transition:opacity  100ms ease-in-out;
+}
+.explore-page .explore-actions .explore-content .e p.more span#plus{
+    font-size: 20px;
+    color: slateblue;
+    position: relative;
+    /* top: -1px; */
+}
+
+@keyframes drop {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+
+}

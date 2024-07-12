@@ -12,26 +12,29 @@ export const Drafts = ()=>{
                 {
                     openDraft?
                     <div className="draft-content">
-                        <p className="drop-list">
-                            <span className="key">Words: </span>
-                            <span className="value">{34}</span>
-                        </p>
-                        <p className="drop-list">
-                            <span className="key">Sentences: </span>
-                            <span className="value">{14}</span>
-                        </p>
-                        <p className="drop-list">
-                            <span className="key">Contributors: </span>
-                            <span className="value">{2}</span>
-                        </p>
-                        <p className="share-draft">
-                           Share
-                        </p>
-                        <p className="controls">
+                        <div className="content-stats">
+                            <p className="drop-list">
+                                <span className="key">Words: </span>
+                                <span className="value">{34}</span>
+                            </p>
+                            <p className="drop-list">
+                                <span className="key">Sentences: </span>
+                                <span className="value">{14}</span>
+                            </p>
+                            <p className="drop-list">
+                                <span className="key">Contributors: </span>
+                                <span className="value">{2}</span>
+                            </p>
+                            <p className="share-draft">
+                            Share
+                            </p>
+                        </div>
+                        <div className="content-controls">
                             <button className="edit">Edit</button>
                             <button className="duplicate">Duplicate</button>
                             <button className="delete">Delete</button>
-                        </p>
+                        </div>
+                    
                     </div>
                     :
                     ""

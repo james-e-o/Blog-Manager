@@ -78,6 +78,7 @@ div.dialog-on{
 .mobile-new .post-wrap .post-setup{
     width: 100%;
     position: relative;
+
 }
 .mobile-new .post-wrap .post-setup p.title{
     font-weight: 600;
@@ -90,44 +91,136 @@ div.dialog-on{
     padding: 7px;
     border: 2px solid #b6b6b6;
     font-size: 14px;
+    position: relative;
 }
 .mobile-new .post-wrap .post-setup fieldset legend{
     margin: 0px 15px;
     padding: 2px 5px;
     font-size: 13px;
-
+    font-weight: 500;
 }
 .mobile-new .post-wrap .post-setup fieldset p.input-wrap{
     margin: 0px 0px 5px;
     padding: 2px;
 }
-.mobile-new .post-wrap .post-setup  p.tag-title{
-    margin: 8px 5px;
-    font-size: 13px;
-}
-.mobile-new .post-wrap .post-setup  div.add-tag{
-    margin: 8px 5px;
-    padding: 9px;
-    box-shadow: 0px 0px 3px rgb(135, 135, 135);
-}
-.mobile-new .post-wrap .post-setup .add-tag div.added{
+
+.mobile-new .post-wrap .post-setup fieldset div.added{
     display: inline-block;
 }
-.mobile-new .post-wrap .post-setup .add-tag .added p.tag{
+.mobile-new .post-wrap .post-setup fieldset .added p.tag{
     display: inline-block;
     background-color: #e8e8e8;
     width: fit-content;
-    padding: 2px 5px;
+    padding: 3px 5px;
+    margin-top: 1px;
     margin-right: 7px;
     font-size: 13px;
     border-radius: 3px;
     color: black;
     border: 1px solid rgb(220, 220, 220);
 }
-.mobile-new .post-wrap .post-setup .add-tag input{
+.mobile-new .post-wrap .post-setup fieldset input#tags{
     outline: none;
-    size: auto;
     border: none;
     font-size: 12px;
     width: 40%;
+    padding: 3px;
+    margin-top: 3px;
+}
+.mobile-new .post-wrap .post-setup fieldset div.tag-search.active{
+    border-radius: 7px;
+    width: calc(100% - 16px);
+    top: calc(100% + 6px);
+    right:  0;
+    padding: 9px;
+    position: absolute;
+    box-shadow: 0px 0px 7px #7d7d7d;
+}
+.mobile-new .post-wrap .post-setup fieldset div.prev{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+.mobile-new .post-wrap .post-setup fieldset .prev p.mini-title{
+    font-size: 12px;
+    display: inline-block;
+}
+.mobile-new .post-wrap .post-setup fieldset .prev textarea{
+    font-size: 13px;
+    display: inline-block;
+    color: black;
+    flex-grow: 1;
+    font-family: Noto Sans;
+    outline: none;
+    border:1px solid #e8e8e8;
+    padding: 5px;
+    resize: none;
+}
+.mobile-new .post-wrap .post-setup fieldset .prev .add-img img{
+    border-radius: 5px;
+}
+.mobile-new .post-wrap .post-setup fieldset .prev .add-img p.imgnav {
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.mobile-new .post-wrap .post-setup fieldset .prev .add-img p.imgnav button {
+    font-size: 11px;
+    border: none;
+    padding: 4px 10px;
+    background-color: darkorange;
+    color: white;
+    border-radius: 4px;
+    margin: 3px 0px;
+}
+.mobile-new .post-wrap .post-setup fieldset p.prev-link{
+   font-size: 12px;
+}
+.mobile-new .post-wrap .post-setup div.finalize{
+   font-size: 12px;
+   display: flex;
+   margin: 8px 5px;
+   border-radius: 7px;
+   padding: 7px;
+   position: relative;
+   justify-content: space-between;
+   align-items: center;
+}
+.mobile-new .post-wrap .post-setup div.finalize div.delete-wrap{
+   display: flex;
+   padding: 3px;
+   position: relative;
+   justify-content: center;
+   gap: 7px;
+   align-items: center;
+}
+.mobile-new .post-wrap .post-setup div.finalize div.delete-wrap p{
+   display: flex;
+   position: relative;
+   justify-content: center;
+   gap: 2px;
+   align-items: center;
+}
+.mobile-new .post-wrap .post-setup div.finalize button{
+    font-size: 11px;
+    border: none;
+    padding: 6px 12px;
+    background-color: slateblue;
+    color: white;
+    border-radius: 4px;
+    margin: 3px 0px;
+    height: fit-content;
+}
+.mobile-new .post-wrap .post-setup div.finalize button.delete{
+    font-size: 11px;
+    border: none;
+    padding: 6px 12px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    margin: 3px 0px;
+    height: fit-content;
 }

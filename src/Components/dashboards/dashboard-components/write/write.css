@@ -95,7 +95,7 @@
     border-radius: 9px;
     width: 100%;
     height: fit-content;
-    padding: 10px;
+    padding-bottom: 3px;
     box-shadow: 0px 1px 4px #cecece;
     margin-bottom:  15px;
     box-sizing: border-box;
@@ -109,9 +109,11 @@
     overflow-x:hidden ;
     text-overflow: ellipsis;
     font-family: Bitter;
+    padding:  10px 10px 2px;
 }
 .m-dashboard-main .write .draft-wrap .draft p.draft-date {
     font-size: 13px;
+    padding: 1px 10px;
 }
 .m-dashboard-main .write .draft-wrap .draft p.draft-type {
     font-size: 11px;
@@ -121,15 +123,23 @@
     padding: 2px 5px;
     display: inline-block;
     color: white;
-    margin: 2px 0px 0px;
+    margin: 2px 10px 2px;
 }
 .m-dashboard-main .write .draft-wrap .draft div.draft-content{
-    margin-top: 8px;
+    margin: 8px 5px;
     background-color:white;
-    border-radius: 5px;
-    font-size: 12px;
-    max-width: 55%;
+    border-radius: 7px;
+    font-size: 13px;
     padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.m-dashboard-main .write .draft-wrap .draft .draft-content div.content-controls{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px;
+    flex-direction: column;
+    gap: 10px;
 }
 .m-dashboard-main .write .draft-wrap .draft .draft-content p.drop-list {
     margin: 3px 0px;
@@ -143,34 +153,19 @@
 .m-dashboard-main .write .draft-wrap .draft .draft-content p.share-draft{
     font-weight: bold;
     font-style: italic;
-    margin: 5px 0px;
-}
-.m-dashboard-main .write .draft-wrap .draft .draft-content p.controls{
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0px;
-}
-.m-dashboard-main .write .draft-wrap .draft .draft-content .controls button.edit{
-    background-color: darkturquoise;
+    margin: 10px 0px 5px;
+    padding: 4px 8px;
+    background-color: rgb(205, 204, 204);
+    width: fit-content;
     border-radius: 4px;
-    border: none;
-    padding: 3px 8px;
-      font-size: 11px;
 }
-.m-dashboard-main .write .draft-wrap .draft .draft-content .controls button.duplicate{
-    background-color: rgb(170, 170, 170);
-    border-radius: 4px;
-    border: none;
-    padding: 2px 8px;
-    color: white;
-      font-size: 11px;
-}
-.m-dashboard-main .write .draft-wrap .draft .draft-content .controls button.delete{
+.m-dashboard-main .write .draft-wrap .draft .draft-content .content-controls button{
     background-color: orange;
     border-radius: 4px;
     border: none;
-    padding: 2px 8px;
-      font-size: 11px;
+    padding: 4px 8px;
+    font-size: 11px;
+    color: #22157a;
 }
 
 

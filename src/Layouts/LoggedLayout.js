@@ -13,7 +13,7 @@ import addfill from './icon-addfill.png'
 import { Notify } from '../Components/svg'
 import profileImg from "../Components/dashboards/feed/gemini-profile.jpeg"
 
-
+const realTimeContext = createContext()
 const Profile = ({exfill}) => {
   const [subscribeActive, setSubscribeActive] = useState(false)
   useEffect(()=>{
@@ -123,6 +123,9 @@ const MenuBar = () => {
   const location = useLocation()
   const [activeMenu, setActiveMenu] = useState('feeds')
   let split = location.pathname.split('/')
+  useEffect(()=>{
+    setActiveMenu(`${split[split.length-1]}`)
+  },[location])
   
   return(
     <div onLoad={()=>setActiveMenu(`${split[split.length-1]}`)} className='menu-bar'>

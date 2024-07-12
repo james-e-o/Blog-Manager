@@ -144,6 +144,7 @@ div.mobile-new {
     font-family: Inter;
     height: 100vh;
     width: 75vw;
+    overflow-y: scroll;
     padding: 12px;
     box-sizing: border-box;
     background-color: white;
