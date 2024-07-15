@@ -89,7 +89,7 @@ div.explore-page {
 
 
 .explore-page  div.explore-actions{
-    width: 95%;
+    width: 100%;
     position: relative;
     box-sizing: border-box;
     padding: 6px;
@@ -115,9 +115,10 @@ div.explore-page {
     transition:opacity  300ms ease-in-out;
 }
 .explore-page .explore-actions div.explore-content{
-    margin: 5px -2px;
+    margin: 5px 0px ;
     position: relative;
     width: 100%;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -125,6 +126,7 @@ div.explore-page {
 }
 .explore-page .explore-actions .explore-content div.e{
     width: 100%;
+    margin-left: 12px;
 }
 .explore-page .explore-actions .explore-content .e p.choose-text{
     padding: 10px 10px 20px;
@@ -133,20 +135,38 @@ div.explore-page {
     width: 50vw;
 }
 .explore-page  div.explore-actions .explore-content .e > div.tag-container, div.people-container, div.publication-container {
-    width: 95%;
+    width: 88%;
+    font-size: 13px;
+    margin-left: 12px;
+    margin-top: 10px;
 }
-.explore-page  div.explore-actions .explore-content .e div.tag-container div.tag{
-    
-}
+
+
+
+
+
+
+
+
+/* TOPICS */
+/* ====== */
+
 .explore-page  div.explore-actions .explore-content  div.e button.tag{
     display: inline-block;
-    padding: 5px 12px;
+    padding: 5px 10px;
     background-color: #fff;
     border: 1px solid rgb(144, 144, 144);
     border-radius: 9px; 
-    margin: 6px;
+    margin: 0px 12px 12px 0px;
+    font-size: 14px;
     box-shadow: 0px 0px 1px #cdcdcd;
     color: #474747;;
+}
+.explore-page  div.explore-actions .explore-content  div.e button.tag span{
+    margin-right: 5px;
+    position: relative;
+    margin-left: -6px;
+    top: 2px;
 }
 .explore-page .explore-actions .explore-content .e p.more{
     padding: 10px;
@@ -181,14 +201,54 @@ div.explore-page {
     /* top: -1px; */
 }
 
-@keyframes drop {
-    from {
-        top: -100px;
-        opacity: 0;
-    }
-    to {
-        top: 0px;
-        opacity: 1;
-    }
 
+
+
+
+
+
+
+/* PEOPLE */
+/* ====== */
+
+.explore-page  div.explore-actions .explore-content  div.e div.person{
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    border-top: 1px solid #b2b2b2;
+    padding: 15px 0px;
+    gap: 10px;
+    width: 100%;
+}
+.explore-page  div.explore-actions .explore-content .e .person figure{
+    width: 54px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    position: relative;
+    top: -4px;
+    overflow: hidden;
+    border: 1px solid darkturquoise;
+}
+.explore-page  div.explore-actions .explore-content .e .person figure img{
+    width: 100%;
+    height: 100%;
+}
+
+.explore-page  div.explore-actions .explore-content .e .person div.details{
+    width: fit-content;
+    margin-left: 10px;
+}
+.explore-page  div.explore-actions .explore-content .e .person div.details p.name{
+    font-weight: 700;
+}
+.explore-page  div.explore-actions .explore-content .e .person div.details p.bio{
+
+}
+.explore-page  div.explore-actions .explore-content .e .person button.follow{
+    background-color: orange;
+    border-radius: 4px;
+    border: none;
+    padding: 4px 8px;
+    font-size: 11px;
+    color: #22157a;
 }

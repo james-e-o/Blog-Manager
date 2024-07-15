@@ -24,7 +24,9 @@ const HomeExplore = lazy(()=>import('../Home/explore/HomeExplore'))
 const Reading = lazy(()=>import('../read/reading'))
 const Settings = lazy(()=>import('../dashboards/settings/settings'))
 const Chat = lazy(()=>import('../dashboards/chats/chat'))
+const SingleChat = lazy(()=>import('../dashboards/chats/SingleChat'))
 const MyProfile = lazy(()=>import('../dashboards/myProfile/MyProfile'))
+const ChatLandingPage = lazy(()=>import('../dashboards/chats/ChatLandingPage'))
 //actions
 import { signupValidate,loginValidation } from '../../sign';
 
@@ -73,7 +75,14 @@ const router = createBrowserRouter([
             {path:"explore", element:<Explore/>},
             {path:"write", element:<Write/>,},
             {path:"notifications", element:<Notifications/> },
-            {path:"chats", element:<Chat /> },
+            {
+              path:"chats", 
+              element:<Chat />,
+              children:[
+                {index:true, element:<ChatLandingPage/>},
+                {path:":id/chat", element:<SingleChat/>},
+              ] 
+            },
             {path:"settings", element:<Settings /> },
             {path:"niche", element:<Niches/>},
             {path:"profile", element:<MyProfile/>},

@@ -29,14 +29,7 @@ export const Articles = ()=>{
                 </div>
               </div>
             </div>
-            <div className="article">
-                <div className="title">The Future of Work</div>
-                <p className="article-date">{`${1} ${'May'}, ${2024}`}</p>
-            </div>
-            <div className="article">
-                <div className="title">The Power of Personal Branding</div>
-                <p className="article-date">{`${16} ${'Nov'}, ${2023}`}</p>
-            </div>
+           
         </div>
     )
 }

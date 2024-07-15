@@ -35,22 +35,6 @@ const Publications = () => {
       </div>
         <p className="publications-date"><span className="key">date bookmarked:</span>  <span className="value"> {'  5 days ago'}</span></p>
     </div>
-    <div className="publication"> 
-        <div className="title">The Unexpected History of Everyday Objects</div>
-        <p className="publications-date">{`${16} ${'Nov'}, ${2023}`}</p>
-    </div>
-    <div className="publication">
-        <div className="title">The Power of Personal Branding</div>
-        <p className="publications-date">{`${21} ${'Apr'}, ${2023}`}</p>
-    </div>
-    <div className="publication">
-        <div className="title"> Data Detox: Regaining Control of Your Digital Life</div>
-        <p className="publications-date">{`${16} ${'Nov'}, ${2023}`}</p>
-    </div>
-    <div className="publication">
-        <div className="title">The Metaverse Explained: Understanding the Next Frontier of the Internet</div>
-        <p className="publications-date">{`${1} ${'Dec'}, ${2023}`}</p>
-    </div>
 </div>
   )
 }
