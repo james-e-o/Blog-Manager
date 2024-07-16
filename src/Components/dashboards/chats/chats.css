@@ -27,6 +27,7 @@
     box-sizing: border-box;
     position: relative;
     padding: 10px ;
+    height: 15%;
 }
 .m-dashboard-main .chat-ui div.landing-header p.title-chat{
    font-weight: 600;
@@ -76,14 +77,14 @@
 .m-dashboard-main .chat-ui div.landing-main{
     box-sizing: border-box;
     width: 100%;
-    padding: 10px;
+
     z-index: 1;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    height: 82%;
+    height: 85%;
 }
 .m-dashboard-main .chat-ui .landing-main p.chat-nav{
     display: flex;
@@ -107,7 +108,7 @@
 .m-dashboard-main .chat-ui .landing-main p.chat-nav  button.dm{
     font-size: 13px;
     border: none;
-    padding:15px;
+    padding:10px;
     font-family: Noto Sans;
     background-color: white;
     color: darkorange;
@@ -118,7 +119,7 @@
 .m-dashboard-main .chat-ui .landing-main p.chat-nav  button.-off{
     font-size: 13px;
     border: none;
-    padding:15px;
+    padding:10px;
     background-color: #7160da;
     color: white;
     font-family: Noto Sans;
@@ -132,7 +133,7 @@
 .m-dashboard-main .chat-ui .landing-main p.chat-nav  button.group{
     font-size: 13px;
     border: none;
-    padding:15px;
+    padding:10px;
     font-family: Noto Sans;
     background-color: white;
     color: darkorange;
@@ -145,8 +146,6 @@
     display: flex;
     background-color: white;
     flex-grow: 1;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
     position: relative;
     z-index: -5;
 }

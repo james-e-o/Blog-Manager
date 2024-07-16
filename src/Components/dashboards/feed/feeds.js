@@ -77,36 +77,36 @@ const Posts = ()=>{
   )
 }
 
-const Featured = ()=>{
-  return(
-    <>
-      {feeds.map(feed => (
-        <Link to={'/articles'}><div key={feed.id} className='feed'>
-          <div className="feed-head">
-            <div className="content-author">
-              <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
-              <p className='author-name'>{feed.author.name}</p>
-            </div>
-            <p className="date-published">{`${feed.date.day} ${feed.date.month},${feed.date.year}`}</p>
-          </div>
-          <div className="feed-content">
-            <div className="content-texts">
-                <p className='content-title'>{feed.content.title}</p>
-            </div>
-            <div className="content-image"><img src={feed.content.image}/></div>
-          </div>
-          <div className="feed-foot"> 
-            <div className="engagement-wrap">
-              <p className="engagements comments">{comment} <span>{feed.engagements.comments}</span></p>
-              <p className="engagements comments">{like} <span>{feed.engagements.likes}</span></p>
-              <p className="engagements bookmarks">{bookmark} <span>{feed.engagements.bookmarked}</span></p>
-            </div>            
-          </div>
-        </div></Link>
-      ))}
-    </>
-  )
-}
+// const Featured = ()=>{
+//   return(
+//     <>
+//       {feeds.map(feed => (
+//         <Link to={'/articles'}><div key={feed.id} className='feed'>
+//           <div className="feed-head">
+//             <div className="content-author">
+//               <figure><img src={feed.author.photo!== ""? feed.author.photo:User} /></figure>
+//               <p className='author-name'>{feed.author.name}</p>
+//             </div>
+//             <p className="date-published">{`${feed.date.day} ${feed.date.month},${feed.date.year}`}</p>
+//           </div>
+//           <div className="feed-content">
+//             <div className="content-texts">
+//                 <p className='content-title'>{feed.content.title}</p>
+//             </div>
+//             <div className="content-image"><img src={feed.content.image}/></div>
+//           </div>
+//           <div className="feed-foot"> 
+//             <div className="engagement-wrap">
+//               <p className="engagements comments">{comment} <span>{feed.engagements.comments}</span></p>
+//               <p className="engagements comments">{like} <span>{feed.engagements.likes}</span></p>
+//               <p className="engagements bookmarks">{bookmark} <span>{feed.engagements.bookmarked}</span></p>
+//             </div>            
+//           </div>
+//         </div></Link>
+//       ))}
+//     </>
+//   )
+// }
 
 
 
@@ -147,14 +147,14 @@ const Feeds = () => {
       <div className="feed-header">
           <p className={activeFeed === 'publications'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('publications')}} >Publications</p>
           <p className={activeFeed === 'posts'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('posts')}} >Posts</p>
-          <p className={activeFeed === 'podcasts'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('podcasts')}} >Podcasts</p>
+          {/* <p className={activeFeed === 'podcasts'? 'active feed-type':'feed-type'} onClick={()=>{setActiveFeed('podcasts')}} >Podcasts</p> */}
           {/* <Link to={'explore'}><p className="search">{search}</p></Link> */}
       </div>
       <div className="feed-wrap">
             { 
               activeFeed === 'publications'? <Publications/>:
-              activeFeed === 'posts'? <Posts/>:
-              activeFeed === 'podcasts'? <Featured/>:""
+              activeFeed === 'posts'? <Posts/>:""
+              // activeFeed === 'podcasts'? <Featured/>:""
             }
       </div>
     </div> 
@@ -162,40 +162,6 @@ const Feeds = () => {
 }
 
 export default Feeds
-
-
-//   const Create = () => {
-//   return (
-//     <div className='create-content'>
-//       <div className="drafts">
-//         <h5 id='draft'>Drafts</h5>
-//         <Link  to={'new'}><p className="draft1">Alice in wonderland</p></Link>
-//         <Link  to={'new'}><p className="draft1">Art of command: Admiral Chester Nimitz</p></Link>
-//         <Link  to={'new'}><p className="draft1">Adventures of souza</p></Link>
-//         <h5 id='more'>more ...</h5>
-//       </div>
-//       <div className='create-buttons'>
-//         <Link to={'new'}><button id='add-content' >New post</button></Link>
-//       </div>
-//     </div>
-//   )
-// }
-// const Bookmarks = () => {
-//   return (
-//     <div className='create-content'>
-//       <h1>Add new content</h1>
-//      <button id='adda-content' >Get started</button>
-//     </div>
-//   )
-// }
-// const Options = () => {
-//   return (
-//     <div className='options'>
-//       <h1>Add new content</h1>
-//      <button id='add-content' >Get started</button>
-//     </div>
-//   )
-// }
 
 
 
