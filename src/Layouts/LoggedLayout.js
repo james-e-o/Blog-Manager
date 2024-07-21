@@ -13,6 +13,29 @@ import addfill from './icon-addfill.png'
 import { Notify } from '../Components/svg'
 import profileImg from "../Components/dashboards/feed/gemini-profile.jpeg"
 
+
+
+
+
+
+
+export const PopUp = ({ deactivate, state, content}) => {
+
+  return(
+  <div className={state? `m-pop`:`m-pop disabled`}>
+    <div className="pop-wrap">
+      <div className="pop-header">
+        <p onClick={deactivate} className={"unpop"}>{cancel}</p>
+      </div>
+      <div className="pop-content">
+        {content}
+      </div>
+    </div>
+  </div>
+  )
+}
+
+
 const realTimeContext = createContext()
 const Profile = ({exfill}) => {
   const [subscribeActive, setSubscribeActive] = useState(false)
@@ -61,7 +84,6 @@ const LoggedIn = () => {
   const location = useLocation();
   useEffect(()=>{
     setProfileState(false)
-
   },[location])
   return (
   screen < 480?(

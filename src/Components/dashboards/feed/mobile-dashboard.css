@@ -565,7 +565,7 @@ a {
     right: 0px;
     z-index: 100;
     overflow-x: hidden;
-    margin: 0px 10px;
+    /* margin: 0px 10px; */
 }
 
 .m-dashboard .menu-bar p{
@@ -690,3 +690,10 @@ a {
     transition: top 860ms ease-out, opacity 100ms ease-out;
     pointer-events: none;
 }
+
+
+
+
+
+
+

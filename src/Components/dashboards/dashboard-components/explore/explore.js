@@ -256,7 +256,7 @@ const addBookmark = <svg width="17" height="17" viewBox="0 0 24 24" fill="none" 
 
 
 
-const allTags = [
+export const allTags = [
       {
       id:1,
       name:'Culture',
